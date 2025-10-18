@@ -19,7 +19,6 @@
 		</a>
 
 		<div class="nav-links">
-			<a href="/" class="nav-link {currentPath === '/' ? 'active' : ''}"> Início </a>
 			<a href="/simulado" class="nav-link {currentPath.startsWith('/simulado') ? 'active' : ''}">
 				Simulado
 			</a>
@@ -143,10 +142,6 @@
 	}
 
 	@media (max-width: 640px) {
-		.logo-text {
-			display: none;
-		}
-
 		.nav-link:not(.github-link) {
 			padding: var(--space-sm) var(--space-md);
 			font-size: var(--text-xs);

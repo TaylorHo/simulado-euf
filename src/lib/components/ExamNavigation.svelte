@@ -137,9 +137,21 @@
 		color: var(--success);
 	}
 
+	:global([data-theme='dark']) .nav-item.answered {
+		background-color: rgba(16, 185, 129, 0.2);
+		border-color: #10b981;
+		color: #34d399;
+	}
+
 	.nav-item.unanswered {
 		background-color: var(--bg-primary);
 		border-color: var(--border-color);
+	}
+
+	@media (max-width: 600px) {
+		.nav-grid {
+			grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+		}
 	}
 
 	@media print {

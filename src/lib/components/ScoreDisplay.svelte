@@ -326,10 +326,22 @@
 		border: 1px solid var(--success);
 	}
 
+	:global([data-theme='dark']) .insight-tag.strong {
+		background-color: rgba(16, 185, 129, 0.15);
+		color: #34d399;
+		border-color: #10b981;
+	}
+
 	.insight-tag.weak {
 		background-color: var(--error-light);
 		color: var(--error);
 		border: 1px solid var(--error);
+	}
+
+	:global([data-theme='dark']) .insight-tag.weak {
+		background-color: rgba(239, 68, 68, 0.15);
+		color: #fca5a5;
+		border-color: #ef4444;
 	}
 
 	.insight-tag.strong-topic {
@@ -338,10 +350,22 @@
 		border: 1px solid var(--accent-primary);
 	}
 
+	:global([data-theme='dark']) .insight-tag.strong-topic {
+		background-color: rgba(59, 130, 246, 0.15);
+		color: #60a5fa;
+		border-color: #3b82f6;
+	}
+
 	.insight-tag.weak-topic {
 		background-color: var(--warning-light);
 		color: var(--warning);
 		border: 1px solid var(--warning);
+	}
+
+	:global([data-theme='dark']) .insight-tag.weak-topic {
+		background-color: rgba(249, 115, 22, 0.15);
+		color: #fb923c;
+		border-color: #f97316;
 	}
 
 	@media (max-width: 640px) {

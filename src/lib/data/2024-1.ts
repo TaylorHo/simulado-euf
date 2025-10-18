@@ -525,7 +525,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		questionNumber: 1,
 		statement: {
-			text: 'O campo elétrico de uma onda plana que se propaga no vácuo é dado por<br/><br/>$$E(r,t) = E_0(\\hat{x} + \\hat{z}) e^{-i(\\omega t - ky)} \\text{,}$$<br/><br/>sendo $k = k\\hat{y}$ o vetor de onda. Determine o campo magnético $B(r,t)$.'
+			text: 'O campo elétrico de uma onda plana que se propaga no vácuo é dado por<br/><br/>$$E(r,t) = E_0(\\hat{x} + \\hat{z}) e^{-i(\\omega t - ky)} \\text{,}$$<br/>sendo $k = k\\hat{y}$ o vetor de onda. Determine o campo magnético $B(r,t)$.'
 		},
 		alternatives: [
 			{
@@ -556,7 +556,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		questionNumber: 1,
 		statement: {
-			text: 'O campo elétrico de uma onda plana que se propaga no vácuo é dado por<br/><br/>$$E(r,t) = E_0(\\hat{y} + \\hat{z}) e^{-i(\\omega t - kx)} \\text{,}$$<br/><br/>sendo $k = k\\hat{x}$ o vetor de onda. Determine o campo magnético $B(r,t)$.'
+			text: 'O campo elétrico de uma onda plana que se propaga no vácuo é dado por<br/><br/>$$E(r,t) = E_0(\\hat{y} + \\hat{z}) e^{-i(\\omega t - kx)} \\text{,}$$<br/>sendo $k = k\\hat{x}$ o vetor de onda. Determine o campo magnético $B(r,t)$.'
 		},
 		alternatives: [
 			{
@@ -2017,7 +2017,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 1,
 		statement: {
-			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = b \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/><br/>onde $b = −\\hbar\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
+			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = b \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $b = −\\hbar\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
 		},
 		alternatives: [
 			{
@@ -2048,7 +2048,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 1,
 		statement: {
-			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = \\hbar c \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/><br/>onde $c = −\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
+			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = \\hbar c \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $c = −\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
 		},
 		alternatives: [
 			{
@@ -2141,7 +2141,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 3,
 		statement: {
-			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/><br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/><br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Re(z)$ a parte real do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $x$ são, respectivamente:'
+			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Re(z)$ a parte real do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $x$ são, respectivamente:'
 		},
 		alternatives: [
 			{
@@ -2172,7 +2172,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 3,
 		statement: {
-			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/><br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/><br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Im(z)$ a parte imaginária do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $y$ são, respectivamente:'
+			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Im(z)$ a parte imaginária do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $y$ são, respectivamente:'
 		},
 		alternatives: [
 			{
@@ -2327,7 +2327,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 6,
 		statement: {
-			text: 'Considere uma partícula de massa $m$ movendo-se em uma dimensão sob a ação de um potencial do tipo poço infinito,<br/><br/>$$V(x) = \\begin{cases}0, & |x| \\lt a/2 \\\\ \\infty, & |x| \\geq a/2\\end{cases} \\space \\text{,}$$<br/><br/>sendo $a$ uma constante positiva com unidades de distância. A autofunção de energia para o estado fundamental desse problema é dada por<br/><br/>$$\\psi_0(x) = \\begin{cases}\\sqrt{\\frac{2}{a}}\\cos{(\\frac{\\pi x}{a})}, & |x| \\lt a/2 \\\\ 0, & |x| \\geq a/2\\end{cases} \\space \\text{.}$$<br/><br/>Suponha que essa partícula esteja no estado fundamental do sistema. Imagine agora que aumentemos instantaneamente a largura do poço para $2a$, mantendo sua forma simétrica com relação à origem. Como esse processo é rápido, a função de onda permanece inalterada. Qual é a probabilidade de encontrarmos a partícula no estado fundamental do novo poço?<br/>Dados: $\\int \\cos{(x)} \\cos{(x/2)} dx = \\sin{(x/2)} + \\sin{(3x/2)}/3$'
+			text: 'Considere uma partícula de massa $m$ movendo-se em uma dimensão sob a ação de um potencial do tipo poço infinito,<br/><br/>$$V(x) = \\begin{cases}0, & |x| \\lt a/2 \\\\ \\infty, & |x| \\geq a/2\\end{cases} \\space \\text{,}$$<br/>sendo $a$ uma constante positiva com unidades de distância. A autofunção de energia para o estado fundamental desse problema é dada por<br/><br/>$$\\psi_0(x) = \\begin{cases}\\sqrt{\\frac{2}{a}}\\cos{(\\frac{\\pi x}{a})}, & |x| \\lt a/2 \\\\ 0, & |x| \\geq a/2\\end{cases} \\space \\text{.}$$<br/>Suponha que essa partícula esteja no estado fundamental do sistema. Imagine agora que aumentemos instantaneamente a largura do poço para $2a$, mantendo sua forma simétrica com relação à origem. Como esse processo é rápido, a função de onda permanece inalterada. Qual é a probabilidade de encontrarmos a partícula no estado fundamental do novo poço?<br/>Dados: $\\int \\cos{(x)} \\cos{(x/2)} dx = \\sin{(x/2)} + \\sin{(3x/2)}/3$'
 		},
 		alternatives: [
 			{
@@ -2358,7 +2358,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 6,
 		statement: {
-			text: 'Considere uma partícula de massa $m$ movendo-se em uma dimensão sob a ação de um potencial do tipo poço infinito,<br/><br/>$$V(x) = \\begin{cases}0, & |x| \\lt a/2 \\\\ \\infty, & |x| \\geq a/2\\end{cases} \\space \\text{,}$$<br/><br/>sendo $a$ uma constante positiva com unidades de distância. A autofunção de energia para o estado fundamental desse problema é dada por<br/><br/>$$\\psi_0(x) = \\begin{cases}\\sqrt{\\frac{2}{a}}\\cos{(\\frac{\\pi x}{a})}, & |x| \\lt a/2 \\\\ 0, & |x| \\geq a/2\\end{cases} \\space \\text{.}$$<br/><br/>Suponha que essa partícula esteja no estado fundamental do sistema. Imagine agora que aumentemos instantaneamente a largura do poço para $3a$, mantendo sua forma simétrica com relação à origem. Como esse processo é rápido, a função de onda permanece inalterada. Qual é a probabilidade de encontrarmos a partícula no estado fundamental do novo poço?<br/>Dados: $\\int \\cos{(x)} \\cos{(x/3)} dx = 3\\sin{(2x/3)}/4 + 3\\sin{(4x/3)}/8$'
+			text: 'Considere uma partícula de massa $m$ movendo-se em uma dimensão sob a ação de um potencial do tipo poço infinito,<br/><br/>$$V(x) = \\begin{cases}0, & |x| \\lt a/2 \\\\ \\infty, & |x| \\geq a/2\\end{cases} \\space \\text{,}$$<br/>sendo $a$ uma constante positiva com unidades de distância. A autofunção de energia para o estado fundamental desse problema é dada por<br/><br/>$$\\psi_0(x) = \\begin{cases}\\sqrt{\\frac{2}{a}}\\cos{(\\frac{\\pi x}{a})}, & |x| \\lt a/2 \\\\ 0, & |x| \\geq a/2\\end{cases} \\space \\text{.}$$<br/>Suponha que essa partícula esteja no estado fundamental do sistema. Imagine agora que aumentemos instantaneamente a largura do poço para $3a$, mantendo sua forma simétrica com relação à origem. Como esse processo é rápido, a função de onda permanece inalterada. Qual é a probabilidade de encontrarmos a partícula no estado fundamental do novo poço?<br/>Dados: $\\int \\cos{(x)} \\cos{(x/3)} dx = 3\\sin{(2x/3)}/4 + 3\\sin{(4x/3)}/8$'
 		},
 		alternatives: [
 			{
@@ -2453,7 +2453,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 8,
 		statement: {
-			text: 'Considere uma partícula de spin $1/2$ sob a ação de um campo magnético estático e uniforme, cuja orientação define a direção $x$. Os demais graus de liberdade podem ser considerados "congelados" em um estado quântico definido, de forma que o hamiltoniano relevante envolve apenas a interação do spin com o campo magnético, podendo ser escrito como<br/><br/>$$H = \\omega \\hat{S}_x \\space \\text{,}$$<br/><br/>em que $\\hat{S}_x$ é componente $x$ do operador de spin e $\\omega = Bgq/2m$, sendo $q$ a carga da partícula, $m$ a sua massa, $g$ o seu fator giromagnético e $B$ a intensidade do campo magnético aplicado. Se no tempo $t = 0$ o sistema está em um estado $\\ket{\\psi(0)}$ com spin para cima, ou seja $\\hat{S}_x \\ket{\\psi(0)} = \\hbar/2 \\ket{\\psi(0)}$, qual é o tempo mínimo para o sistema inverter o seu spin?'
+			text: 'Considere uma partícula de spin $1/2$ sob a ação de um campo magnético estático e uniforme, cuja orientação define a direção $x$. Os demais graus de liberdade podem ser considerados "congelados" em um estado quântico definido, de forma que o hamiltoniano relevante envolve apenas a interação do spin com o campo magnético, podendo ser escrito como<br/><br/>$$H = \\omega \\hat{S}_x \\space \\text{,}$$<br/>em que $\\hat{S}_x$ é componente $x$ do operador de spin e $\\omega = Bgq/2m$, sendo $q$ a carga da partícula, $m$ a sua massa, $g$ o seu fator giromagnético e $B$ a intensidade do campo magnético aplicado. Se no tempo $t = 0$ o sistema está em um estado $\\ket{\\psi(0)}$ com spin para cima, ou seja $\\hat{S}_x \\ket{\\psi(0)} = \\hbar/2 \\ket{\\psi(0)}$, qual é o tempo mínimo para o sistema inverter o seu spin?'
 		},
 		alternatives: [
 			{
@@ -2484,7 +2484,7 @@ export default <Question[]>[
 		area: Area.MecanicaQuantica,
 		questionNumber: 8,
 		statement: {
-			text: 'Considere uma partícula de spin $1/2$ sob a ação de um campo magnético estático e uniforme, cuja orientação define a direção $x$. Os demais graus de liberdade podem ser considerados "congelados" em um estado quântico definido, de forma que o hamiltoniano relevante envolve apenas a interação do spin com o campo magnético, podendo ser escrito como<br/><br/>$$H = \\omega \\hat{S}_x \\space \\text{,}$$<br/><br/>em que $\\hat{S}_x$ é componente $x$ do operador de spin e $\\omega = Bgq/2m$, sendo $q$ a carga da partícula, $m$ a sua massa, $g$ o seu fator giromagnético e $B$ a intensidade do campo magnético aplicado. Se no tempo $t = 0$ o sistema está em um estado $\\ket{\\psi(0)}$ com spin para baixo, ou seja $\\hat{S}_x \\ket{\\psi(0)} = -\\hbar/2 \\ket{\\psi(0)}$, qual é o tempo mínimo posterior para que o sistema volte a esse estado inicial?'
+			text: 'Considere uma partícula de spin $1/2$ sob a ação de um campo magnético estático e uniforme, cuja orientação define a direção $x$. Os demais graus de liberdade podem ser considerados "congelados" em um estado quântico definido, de forma que o hamiltoniano relevante envolve apenas a interação do spin com o campo magnético, podendo ser escrito como<br/><br/>$$H = \\omega \\hat{S}_x \\space \\text{,}$$<br/>em que $\\hat{S}_x$ é componente $x$ do operador de spin e $\\omega = Bgq/2m$, sendo $q$ a carga da partícula, $m$ a sua massa, $g$ o seu fator giromagnético e $B$ a intensidade do campo magnético aplicado. Se no tempo $t = 0$ o sistema está em um estado $\\ket{\\psi(0)}$ com spin para baixo, ou seja $\\hat{S}_x \\ket{\\psi(0)} = -\\hbar/2 \\ket{\\psi(0)}$, qual é o tempo mínimo posterior para que o sistema volte a esse estado inicial?'
 		},
 		alternatives: [
 			{

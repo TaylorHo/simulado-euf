@@ -6,7 +6,7 @@
 	import { imageInversionStore } from '$lib/stores/imageInversion';
 	import { themeStore } from '$lib/stores/theme';
 	import { getImagePath } from '$lib/utils/helpers';
-	import { Blend, Eye, EyeOff } from '@lucide/svelte';
+	import { Eye, EyeOff, PaintBucket } from '@lucide/svelte';
 
 	interface Props {
 		question: ExamQuestion;
@@ -93,7 +93,7 @@
 						onclick={() => imageInversionStore.toggle()}
 						title="Inverter cores da imagem"
 					>
-						<Blend size={16} />
+						<PaintBucket size={16} />
 					</button>
 				{/if}
 			</div>
@@ -196,6 +196,11 @@
 		color: var(--accent-primary);
 		border-radius: var(--radius-sm);
 		font-weight: 500;
+	}
+
+	:global([data-theme='dark']) .tag {
+		background-color: rgba(59, 130, 246, 0.15);
+		color: #60a5fa;
 	}
 
 	.statement {
@@ -306,14 +311,29 @@
 		background-color: var(--accent-light);
 	}
 
+	:global([data-theme='dark']) .alternative.selected {
+		background-color: rgba(59, 130, 246, 0.15);
+		border-color: #3b82f6;
+	}
+
 	.alternative.correct {
 		border-color: var(--success);
 		background-color: var(--success-light);
 	}
 
+	:global([data-theme='dark']) .alternative.correct {
+		background-color: rgba(16, 185, 129, 0.15);
+		border-color: #10b981;
+	}
+
 	.alternative.incorrect {
 		border-color: var(--error);
 		background-color: var(--error-light);
+	}
+
+	:global([data-theme='dark']) .alternative.incorrect {
+		background-color: rgba(239, 68, 68, 0.15);
+		border-color: #ef4444;
 	}
 
 	.alternative.discarded {
@@ -379,10 +399,22 @@
 		color: var(--accent-primary);
 	}
 
+	:global([data-theme='dark']) .discard-btn.active {
+		background-color: rgba(59, 130, 246, 0.15);
+		border-color: #3b82f6;
+		color: #60a5fa;
+	}
+
 	.discard-btn.active:hover {
 		background-color: var(--success-light);
 		border-color: var(--success);
 		color: var(--success);
+	}
+
+	:global([data-theme='dark']) .discard-btn.active:hover {
+		background-color: rgba(16, 185, 129, 0.15);
+		border-color: #10b981;
+		color: #34d399;
 	}
 
 	.ai-help-wrapper {
