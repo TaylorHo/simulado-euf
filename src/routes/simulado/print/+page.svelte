@@ -271,6 +271,11 @@
 		color: #000000 !important;
 	}
 
+	:global(.statement-text ul),
+	:global(.statement-text ol) {
+		padding-left: 20px;
+	}
+
 	.statement-image {
 		margin: 15px 0;
 		text-align: center;

@@ -274,6 +274,11 @@
 		line-height: 1.6;
 	}
 
+	:global(.statement-text ul),
+	:global(.statement-text ol) {
+		padding-left: 20px;
+	}
+
 	.alternatives {
 		display: flex;
 		flex-direction: column;
