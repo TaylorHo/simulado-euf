@@ -397,7 +397,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		questionNumber: 7,
 		statement: {
-			text: 'Um bloco de massa $M$ está em repouso sobre um plano inclinado sem atrito, de inclinação $\\theta$, sustentado por uma corda de massa $m$ e comprimento $L$, como mostrado na figura abaixo. A corda está presa nas duas extremidades. Dada essa configuração do sistema e sabendo que $m << M$, determine a menor frequência de oscilação $f_1$ de uma onda mecânica na corda. Expresse seu resultado como função de $m$, $M$, $g$, $\\theta$ e $L$. Trate a corda como unidimensional.',
+			text: 'Um bloco de massa $M$ está em repouso sobre um plano inclinado sem atrito, de inclinação $\\theta$, sustentado por uma corda de massa $m$ e comprimento $L$, como mostrado na figura abaixo. A corda está presa nas duas extremidades. Dada essa configuração do sistema e sabendo que $m \\ll M$, determine a menor frequência de oscilação $f_1$ de uma onda mecânica na corda. Expresse seu resultado como função de $m$, $M$, $g$, $\\theta$ e $L$. Trate a corda como unidimensional.',
 			image: '2024-1/mc-7a.webp'
 		},
 		alternatives: [
@@ -429,7 +429,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		questionNumber: 7,
 		statement: {
-			text: 'Um bloco de massa $M$ está em repouso sobre um plano inclinado sem atrito, de inclinação $\\theta$, sustentado por uma corda de massa $m$ e comprimento $L$, como mostrado na figura abaixo. A corda está presa ao bloco, porém está livre para se movimentar ao longo do eixo do suporte, na extremidade oposta. Dada essa configuração do sistema e sabendo que $m << M$, determine a menor frequência de oscilação $f_1$ de uma onda mecânica na corda. Expresse seu resultado como função de $m$, $M$, $g$, $\\theta$ e $L$. Trate a corda como unidimensional.',
+			text: 'Um bloco de massa $M$ está em repouso sobre um plano inclinado sem atrito, de inclinação $\\theta$, sustentado por uma corda de massa $m$ e comprimento $L$, como mostrado na figura abaixo. A corda está presa ao bloco, porém está livre para se movimentar ao longo do eixo do suporte, na extremidade oposta. Dada essa configuração do sistema e sabendo que $m \\ll M$, determine a menor frequência de oscilação $f_1$ de uma onda mecânica na corda. Expresse seu resultado como função de $m$, $M$, $g$, $\\theta$ e $L$. Trate a corda como unidimensional.',
 			image: '2024-1/mc-7b.webp'
 		},
 		alternatives: [
@@ -959,7 +959,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		questionNumber: 8,
 		statement: {
-			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\Epsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à metade da diferença de potencial entre os terminais do resistor?'
+			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à metade da diferença de potencial entre os terminais do resistor?'
 		},
 		alternatives: [
 			{
@@ -990,7 +990,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		questionNumber: 8,
 		statement: {
-			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\Epsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à diferença de potencial entre os terminais do resistor?'
+			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à diferença de potencial entre os terminais do resistor?'
 		},
 		alternatives: [
 			{
@@ -1207,7 +1207,7 @@ export default <Question[]>[
 		area: Area.FisicaEstatistica,
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\Sigma^N_{i=1}⟨S_i⟩/N$ vale $0,8\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $0,8\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
@@ -1238,7 +1238,7 @@ export default <Question[]>[
 		area: Area.FisicaEstatistica,
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\Sigma^N_{i=1}⟨S_i⟩/N$ vale $−0,2\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $−0,2\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
