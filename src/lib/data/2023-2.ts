@@ -5,7 +5,9 @@ import { QuestionAlternative, Version, type Question } from '$lib/models/questio
 const defaultData = {
 	year: 2023,
 	semester: 2,
-	correct: QuestionAlternative.A // Gabarito sempre coloca a alternativa A como correta
+	correct: QuestionAlternative.A, // Gabarito sempre coloca a alternativa A como correta
+	tags: [],
+	help: {}
 };
 
 export default <Question[]>[];

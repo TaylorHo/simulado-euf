@@ -39,10 +39,9 @@ export interface QuestionIdentifier {
 	questionNumber: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 }
 
-export interface AIHelpLink {
-	type: 'chatgpt' | 'youtube';
-	prompt?: string; // For ChatGPT
-	url?: string; // For YouTube
+export interface HelpTools {
+	imageDescription?: string;
+	youtubeUrl?: string;
 }
 
 export interface Question extends QuestionIdentifier {
@@ -57,6 +56,6 @@ export interface Question extends QuestionIdentifier {
 	/** Tags for categorizing questions (e.g., 'Ondas Eletromagnéticas', 'Lei de Gauss') */
 	tags: string[];
 
-	/** AI help links for this question (optional) */
-	aiHelp?: AIHelpLink[];
+	/** AI help and youtube links for this question */
+	help: HelpTools;
 }

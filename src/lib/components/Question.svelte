@@ -2,7 +2,7 @@
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { QuestionAlternative } from '$lib/models/question';
 	import LaTeX from './LaTeX.svelte';
-	import AIHelpSection from './AIHelpSection.svelte';
+	import HelpSection from './HelpSection.svelte';
 	import { imageInversionStore } from '$lib/stores/imageInversion';
 	import { themeStore } from '$lib/stores/theme';
 	import { getImagePath } from '$lib/utils/helpers';
@@ -35,7 +35,6 @@
 
 	// Determine if the answer is correct (only when showing results)
 	const isCorrect = $derived(showCorrect && question.selected === question.correct);
-	const hasAiHelp = $derived(question.aiHelp && question.aiHelp.length > 0);
 
 	function getAlternativeClass(alt: QuestionAlternative): string {
 		const classes = ['alternative'];
@@ -148,14 +147,10 @@
 		{/each}
 	</div>
 
-	<!-- AI Help Section - shown after alternatives when answer is revealed -->
-	{#if showCorrect && hasAiHelp}
-		<div class="ai-help-wrapper">
-			{#if !isCorrect}
-				<AIHelpSection aiHelp={question.aiHelp!} />
-			{:else}
-				<AIHelpSection aiHelp={question.aiHelp!} isCollapsible={true} />
-			{/if}
+	<!-- Help Section - shown after alternatives when answer is revealed -->
+	{#if showCorrect}
+		<div class="help-wrapper">
+			<HelpSection {question} {isCorrect} />
 		</div>
 	{/if}
 </div>
@@ -422,7 +417,7 @@
 		color: #34d399;
 	}
 
-	.ai-help-wrapper {
+	.help-wrapper {
 		margin-top: var(--space-xl);
 		padding-top: var(--space-xl);
 		border-top: 1px solid var(--border-light);

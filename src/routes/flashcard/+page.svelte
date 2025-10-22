@@ -29,7 +29,7 @@
 					tags: flashcardStore.currentQuestion.tags,
 					selected: flashcardStore.selectedAnswer,
 					discarded: flashcardStore.discardedAlternatives,
-					aiHelp: flashcardStore.currentQuestion.aiHelp
+					help: flashcardStore.currentQuestion.help
 				} as ExamQuestion)
 			: null
 	);

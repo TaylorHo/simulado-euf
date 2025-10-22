@@ -9,5 +9,6 @@ export { default as ExamQRCode } from './ExamQRCode.svelte';
 export { default as ScoreDisplay } from './ScoreDisplay.svelte';
 export { default as ExamNavigation } from './ExamNavigation.svelte';
 export { default as Landing } from './Landing.svelte';
-export { default as AIHelpSection } from './AIHelpSection.svelte';
+export { default as HelpSectionInner } from './HelpSectionInner.svelte';
+export { default as HelpSection } from './HelpSection.svelte';
 export { default as ConfirmDialog } from './ConfirmDialog.svelte';
