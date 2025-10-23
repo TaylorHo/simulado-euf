@@ -15,7 +15,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 1,
@@ -50,7 +49,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 1,
@@ -85,7 +83,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 2,
@@ -121,7 +119,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 2,
@@ -157,7 +155,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 3,
@@ -192,7 +189,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 3,
@@ -227,7 +223,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 4,
@@ -263,7 +259,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 4,
@@ -299,7 +295,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 5,
@@ -335,7 +331,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 5,
@@ -371,7 +367,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 6,
@@ -407,7 +403,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 6,
@@ -444,7 +440,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 8,
@@ -480,7 +476,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
 		},
 		questionNumber: 8,
@@ -516,7 +512,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 1,
@@ -551,7 +546,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 1,
@@ -586,7 +580,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 2,
@@ -621,7 +614,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 2,
@@ -656,7 +648,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 3,
@@ -691,7 +682,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 3,
@@ -726,7 +716,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 4,
@@ -761,7 +750,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 4,
@@ -796,7 +784,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 5,
@@ -832,7 +820,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 5,
@@ -868,7 +856,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 6,
@@ -903,7 +890,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 6,
@@ -938,7 +924,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 7,
@@ -973,7 +958,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 7,
@@ -1008,7 +992,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 8,
@@ -1043,7 +1026,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
 		},
 		questionNumber: 8,
@@ -1078,7 +1060,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 1,
@@ -1113,7 +1094,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 1,
@@ -1148,7 +1128,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 2,
@@ -1183,7 +1162,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 2,
@@ -1218,7 +1196,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 3,
@@ -1253,7 +1230,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 3,
@@ -1288,7 +1264,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 4,
@@ -1323,7 +1298,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 4,
@@ -1358,7 +1332,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 5,
@@ -1393,7 +1366,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 5,
@@ -1428,7 +1400,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 6,
@@ -1463,7 +1434,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 6,
@@ -1498,7 +1468,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 7,
@@ -1533,7 +1502,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 7,
@@ -1568,7 +1536,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 8,
@@ -1603,7 +1570,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
 		},
 		questionNumber: 8,
@@ -1638,7 +1604,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 1,
@@ -1674,7 +1640,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 1,
@@ -1710,7 +1676,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 2,
@@ -1745,7 +1710,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 2,
@@ -1780,7 +1744,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 3,
@@ -1815,7 +1778,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 3,
@@ -1850,7 +1812,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 4,
@@ -1885,7 +1846,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 4,
@@ -1920,7 +1880,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 5,
@@ -1955,7 +1914,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 5,
@@ -1990,7 +1948,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 6,
@@ -2025,7 +1982,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 6,
@@ -2060,7 +2016,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 7,
@@ -2095,7 +2050,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 7,
@@ -2130,7 +2084,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 8,
@@ -2165,7 +2118,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 8,
@@ -2200,7 +2152,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 1,
@@ -2235,7 +2186,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 1,
@@ -2270,7 +2220,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 2,
@@ -2305,7 +2254,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 2,
@@ -2340,7 +2288,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 3,
@@ -2376,7 +2324,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
+			imageDescription: undefined, // TODO: Adicionar descrição da imagem
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 3,
@@ -2412,7 +2360,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 4,
@@ -2447,7 +2394,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
 		},
 		questionNumber: 4,
@@ -2482,7 +2428,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 1,
@@ -2517,7 +2462,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 1,
@@ -2552,7 +2496,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 2,
@@ -2587,7 +2530,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 2,
@@ -2622,7 +2564,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 3,
@@ -2657,7 +2598,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 3,
@@ -2692,7 +2632,6 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 4,
@@ -2727,7 +2666,6 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			imageDescription: undefined,
 			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
 		},
 		questionNumber: 4,
