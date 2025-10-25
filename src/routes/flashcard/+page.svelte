@@ -3,12 +3,12 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { flashcardStore } from '$lib/stores/flashcard.svelte';
-	import { QuestionAlternative } from '$lib/models/question';
-	import { AreaLabels } from '$lib/models/area';
+	import { QuestionAlternative, Version } from '$lib/models/question';
 	import Footer from '$lib/components/Footer.svelte';
 	import Question from '$lib/components/Question.svelte';
 	import { buildExamUrl } from '$lib/utils/helpers';
 	import type { ExamQuestion } from '$lib/models/exam';
+	import { AreaLabels } from '$lib/models/area';
 
 	let isLoading = $state(true);
 
@@ -85,28 +85,16 @@
 				<div class="spinner"></div>
 			</div>
 		{:else}
-			<div class="flashcard">
-				<div class="flashcard-header">
-					<div class="flashcard-meta">
-						<span class="area-badge">{AreaLabels[flashcardStore.currentQuestion.area]}</span>
-					</div>
-					<div class="flashcard-info">
-						<span class="info-text">
-							{flashcardStore.currentQuestion.year}-{flashcardStore.currentQuestion.semester}
-						</span>
-					</div>
-				</div>
+			<Question
+				question={currentExamQuestion}
+				questionNumber={`de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`}
+				showCorrect={flashcardStore.showAnswer}
+				showDiscardButton={!flashcardStore.showAnswer}
+				onSelectAnswer={handleSelectAnswer}
+				onToggleDiscard={handleToggleDiscard}
+			/>
 
-				<div class="flashcard-body">
-					<Question
-						question={currentExamQuestion}
-						showCorrect={flashcardStore.showAnswer}
-						showDiscardButton={!flashcardStore.showAnswer}
-						onSelectAnswer={handleSelectAnswer}
-						onToggleDiscard={handleToggleDiscard}
-					/>
-				</div>
-
+			<div class="actions-container">
 				<div class="flashcard-actions">
 					{#if !flashcardStore.showAnswer}
 						<div class="action-buttons">
@@ -167,64 +155,12 @@
 		}
 	}
 
-	.flashcard {
+	.actions-container {
+		margin-top: var(--space-lg);
 		background-color: var(--bg-secondary);
 		border: 1px solid var(--border-light);
 		border-radius: var(--radius-lg);
-		overflow: hidden;
-		box-shadow: var(--shadow-md);
-	}
-
-	.flashcard-header {
 		padding: var(--space-lg);
-		background-color: var(--bg-primary);
-		border-bottom: 1px solid var(--border-light);
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		flex-wrap: wrap;
-		gap: var(--space-md);
-	}
-
-	.flashcard-meta {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-sm);
-	}
-
-	.area-badge {
-		font-size: var(--text-sm);
-		font-weight: 600;
-		padding: var(--space-xs) var(--space-md);
-		background-color: var(--accent-light);
-		color: var(--text-primary);
-		border-radius: var(--radius-sm);
-		display: inline-block;
-	}
-
-	.flashcard-info {
-		display: flex;
-		align-items: center;
-		gap: var(--space-sm);
-	}
-
-	.info-text {
-		font-size: var(--text-sm);
-		color: var(--text-muted);
-		font-weight: 500;
-	}
-
-	.flashcard-body {
-		padding: var(--space-lg);
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-xl);
-	}
-
-	.flashcard-actions {
-		padding: var(--space-lg);
-		background-color: var(--bg-primary);
-		border-top: 1px solid var(--border-light);
 	}
 
 	.action-buttons {
@@ -239,10 +175,6 @@
 	@media (max-width: 640px) {
 		.flashcard-content {
 			padding: var(--space-lg) var(--space-md);
-		}
-
-		.flashcard-body {
-			padding: var(--space-md);
 		}
 	}
 </style>

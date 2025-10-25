@@ -7,10 +7,11 @@
 	import { themeStore } from '$lib/stores/theme';
 	import { getImagePath } from '$lib/utils/helpers';
 	import { Eye, EyeOff, PaintBucket } from '@lucide/svelte';
+	import ReportError from './ReportError.svelte';
 
 	interface Props {
 		question: ExamQuestion;
-		questionNumber?: number;
+		questionNumber?: number | string;
 		showCorrect?: boolean;
 		showTags?: boolean;
 		showDiscardButton?: boolean;
@@ -70,6 +71,9 @@
 				{/each}
 			</div>
 		{/if}
+		<div class="question-actions">
+			<ReportError {question} />
+		</div>
 	</div>
 
 	<div class="statement">

@@ -9,7 +9,7 @@
 	let { question }: Props = $props();
 
 	let aiPrompt = $derived(
-		`Explique a seguinte questão de ${AreaLabels[question.area]}:\n\n${question.statement.text}.\n\nSaiba que o resultado correto é ${question.alternatives.find((alt) => alt.number === question.correct)?.text}.${question.statement.image && question.help.imageDescription && `\n\nA imagem citada pela questão mostra: ${question.help.imageDescription}`}.`
+		`Explique a seguinte questão de ${AreaLabels[question.area]}:\n\n${question.statement.text}.\n\nSaiba que o resultado correto é ${question.alternatives.find((alt) => alt.number === question.correct)?.text}.${(question.statement.image && question.help.imageDescription) ?? `\n\nA imagem citada pela questão mostra: ${question.help.imageDescription}`}.`
 	);
 </script>
 

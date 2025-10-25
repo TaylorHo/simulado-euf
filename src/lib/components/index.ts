@@ -12,3 +12,4 @@ export { default as Landing } from './Landing.svelte';
 export { default as HelpSectionInner } from './HelpSectionInner.svelte';
 export { default as HelpSection } from './HelpSection.svelte';
 export { default as ConfirmDialog } from './ConfirmDialog.svelte';
+export { default as ReportError } from './ReportError.svelte';

@@ -122,4 +122,12 @@
 			display: none;
 		}
 	}
+
+	:global([data-theme='dark']) .modal-content {
+		background-color: var(--bg-secondary);
+	}
+
+	:global([data-theme='dark']) .modal-overlay {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
 </style>
