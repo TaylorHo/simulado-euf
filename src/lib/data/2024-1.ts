@@ -5,8 +5,7 @@ const defaultData = {
 	year: 2024,
 	semester: 1,
 	correct: QuestionAlternative.A, // Gabarito sempre coloca a alternativa A como correta
-	tags: [],
-	help: {}
+	tags: []
 };
 
 export default <Question[]>[
@@ -1345,7 +1344,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $0,8\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $0,8\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
@@ -1379,7 +1378,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = ±1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $−0,2\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = -\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $-0,2\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
@@ -2241,27 +2240,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = b \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $b = −\\hbar\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
+			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$${\\cal H} = b \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $b = −\\hbar\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
 		},
 		alternatives: [
 			{
-				text: 'Os autovalores de energia são $±b$, correspondentes a autoestados de $\\cal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm b$, correspondentes a autoestados de ${\\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Os autovalores de energia são $±b/2$, correspondentes a autoestados de $\\cal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm b/2$, correspondentes a autoestados de ${\\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Os autovalores de energia são $±b$, com $−b$ correspondente ao autoestado de $\\cal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm b$, com $−b$ correspondente ao autoestado de ${\\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Os autovalores de energia são $±b/2$, com $−b/2$ correspondente ao autoestado de $\\cal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm b/2$, com $−b/2$ correspondente ao autoestado de ${\\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'Os dois autoestados de $\\cal{H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $b$.',
+				text: 'Os dois autoestados de ${\\cal H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $b$.',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2275,27 +2274,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\\cal{H} = \\hbar c \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $c = −\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
+			text: 'O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$${\\cal H} = \\hbar c \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix} \\text{,}$$<br/>onde $c = −\\gamma B/2$, $\\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:'
 		},
 		alternatives: [
 			{
-				text: 'Os autovalores de energia são $±\\hbar c$, correspondentes a autoestados de $\\cal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético',
+				text: 'Os autovalores de energia são $\\pm \\hbar c$, correspondentes a autoestados de ${\\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Os autovalores de energia são $±\\hbar c/2$, correspondentes a autoestados de $\\cal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm \\hbar c/2$, correspondentes a autoestados de ${\\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Os autovalores de energia são $±\\hbar c$, com $−\\hbar c$ correspondente ao autoestado de $\\cal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\\hbar c$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm \\hbar c$, com $−\\hbar c$ correspondente ao autoestado de ${\\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\\hbar c$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Os autovalores de energia são $±\\hbar c/2$, com $−\\hbar c/2$ correspondente ao autoestado de $\\cal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\\hbar c/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
+				text: 'Os autovalores de energia são $\\pm \\hbar c/2$, com $−\\hbar c/2$ correspondente ao autoestado de ${\\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\\hbar c/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.',
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'Os dois autoestados de $\\cal{H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $\\hbar c$.',
+				text: 'Os dois autoestados de ${\\cal H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $\\hbar c$.',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2377,7 +2376,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Re(z)$ a parte real do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $x$ são, respectivamente:'
+			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $\\pm \\hbar/2$, respectivamente. Sendo $Re(z)$ a parte real do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $x$ são, respectivamente:'
 		},
 		alternatives: [
 			{
@@ -2411,7 +2410,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $±\\hbar/2$, respectivamente. Sendo $Im(z)$ a parte imaginária do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $y$ são, respectivamente:'
+			text: 'As matrizes $S_x$, $S_y$ e $S_z$ que representam as componentes do spin de um elétron ao longo dos eixos $x$, $y$ e $z$ na representação em que $S_z$ é diagonal são, respectivamente,<br/><br/>$$S_x = \\frac{\\hbar}{2} \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\text{,} \\quad S_y = \\frac{\\hbar}{2} \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\text{,} \\quad S_z = \\frac{\\hbar}{2} \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}$$<br/>Considere um estado de spin de um elétron dado por $\\ket{\\chi} = a\\ket{\\uparrow} + b\\ket{\\downarrow}$, onde $a$ e $b$ são números complexos, e os vetores ortonormais que constituem a base de estados empregada,<br/><br/>$$\\ket{\\uparrow} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} \\quad \\text{e} \\quad \\ket{\\downarrow} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix} \\text{,}$$<br/>são os autoestados de $S_z$ com autovalores $\\pm \\hbar/2$, respectivamente. Sendo $Im(z)$ a parte imaginária do número complexo $z$, os valores esperados do spin do elétron no estado $\\ket{\\chi}$ ao longo dos eixos $z$ e $y$ são, respectivamente:'
 		},
 		alternatives: [
 			{

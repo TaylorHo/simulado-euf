@@ -5,8 +5,7 @@ const defaultData = {
 	year: 2024,
 	semester: 2,
 	correct: QuestionAlternative.A, // Gabarito sempre coloca a alternativa A como correta
-	tags: [],
-	help: {}
+	tags: []
 };
 
 export default <Question[]>[
@@ -445,7 +444,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana $\\cal{L}$ do sistema em termos de $(x, \\theta, \\dot{x}, \\dot{\\theta})$, encontre o momento canônico $p_{x} = \\frac{\\partial\\cal{L}}{\\partial\\dot{x}}$',
+			text: 'Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana ${\\cal L}$ do sistema em termos de $(x, \\theta, \\dot{x}, \\dot{\\theta})$, encontre o momento canônico $p_{x} = \\frac{\\partial{\\cal L}}{\\partial\\dot{x}}$',
 			image: '2024-2/mc-8.webp'
 		},
 		alternatives: [
@@ -481,7 +480,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana $\\cal{L}$ do sistema em termos de $(x, \\theta, \\dot{x}, \\dot{\\theta})$, encontre o momento canônico $p_{\\theta} = \\frac{\\partial\\cal{L}}{\\partial\\dot{\\theta}}$',
+			text: 'Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana ${\\cal L}$ do sistema em termos de $(x, \\theta, \\dot{x}, \\dot{\\theta})$, encontre o momento canônico $p_{\\theta} = \\frac{\\partial{\\cal L}}{\\partial\\dot{\\theta}}$',
 			image: '2024-2/mc-8.webp'
 		},
 		alternatives: [
@@ -1064,7 +1063,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Uma partícula quântica está submetida a um poço de potencial unidimensional $V(x)$ de largura $L$ e profundidade $-V$, representado na figura. O poço é suficientemente profundo para que existam estados ligados. Se $E$ representa um possível auto-valor da energia da partícula, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>(  ) $E > 0$ pertence à parte discreta do espectro de energias e $E < 0$ à parte contínua.</li><li>(  ) Se $E < 0$, a função de onda da partícula só pode ser nula para valores discretos de $x$ na região $|x| < L/2$, mas decai exponencialmente a zero com a distância às bordas do poco na região $|x| > L/2$.</li><li>(  ) Se $E < 0$, a função de onda da partícula é estritamente confinada à região $|x| < L/2$, isto é, ela é zero nas bordas e fora do poço.</li><li>(  ) Se $E > 0$, a função de onda da partícula é estendida ao longo de todo o eixo $x$.</li></ul>'
+			text: 'Uma partícula quântica está submetida a um poço de potencial unidimensional $V(x)$ de largura $L$ e profundidade $-V$, representado na figura. O poço é suficientemente profundo para que existam estados ligados. Se $E$ representa um possível auto-valor da energia da partícula, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) $E > 0$ pertence à parte discreta do espectro de energias e $E < 0$ à parte contínua.</li><li>( ) Se $E < 0$, a função de onda da partícula só pode ser nula para valores discretos de $x$ na região $|x| < L/2$, mas decai exponencialmente a zero com a distância às bordas do poco na região $|x| > L/2$.</li><li>( ) Se $E < 0$, a função de onda da partícula é estritamente confinada à região $|x| < L/2$, isto é, ela é zero nas bordas e fora do poço.</li><li>( ) Se $E > 0$, a função de onda da partícula é estendida ao longo de todo o eixo $x$.</li></ul>'
 		},
 		alternatives: [
 			{
@@ -1098,7 +1097,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Uma partícula quântica está submetida a um poço de potencial unidimensional $V(x)$ de largura $L$ e profundidade $-V$, representado na figura. O poço é suficientemente profundo para que existam estados ligados. Se $E$ representa um possível auto-valor da energia da partícula, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>(  ) $E < 0$ pertence à parte discreta do espectro de energias e $E > 0$ à parte contínua.</li><li>(  ) Se $E > 0$, a função de onda da partícula é estendida ao longo de todo o eixo $x$.</li><li>(  ) Se $E < 0$, a função de onda da partícula é estritamente confinada à região $|x| < L/2$, isto é, ela é zero nas bordas e fora do poço.</li><li>(  ) Se $E < 0$, a função de onda da partícula só pode ser nula para valores discretos de $x$ na região $|x| < L/2$, mas decai exponencialmente a zero com a distância às bordas do poço na região $|x| > L/2$</li></ul>'
+			text: 'Uma partícula quântica está submetida a um poço de potencial unidimensional $V(x)$ de largura $L$ e profundidade $-V$, representado na figura. O poço é suficientemente profundo para que existam estados ligados. Se $E$ representa um possível auto-valor da energia da partícula, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) $E < 0$ pertence à parte discreta do espectro de energias e $E > 0$ à parte contínua.</li><li>( ) Se $E > 0$, a função de onda da partícula é estendida ao longo de todo o eixo $x$.</li><li>( ) Se $E < 0$, a função de onda da partícula é estritamente confinada à região $|x| < L/2$, isto é, ela é zero nas bordas e fora do poço.</li><li>( ) Se $E < 0$, a função de onda da partícula só pode ser nula para valores discretos de $x$ na região $|x| < L/2$, mas decai exponencialmente a zero com a distância às bordas do poço na região $|x| > L/2$</li></ul>'
 		},
 		alternatives: [
 			{
@@ -1200,7 +1199,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>(  ) O oscilador pode estar no autoestado com $n = 1$.</li><li>(  ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>(  ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>(  ) O oscilador está no estado fundamental.</li></ul>'
+			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador está no estado fundamental.</li></ul>'
 		},
 		alternatives: [
 			{
@@ -1234,7 +1233,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>(  ) O oscilador não pode estar no autoestado com $n = 1$.</li><li>(  ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>(  ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>(  ) O oscilador não está no estado fundamental.</li></ul>'
+			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador não pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador não está no estado fundamental.</li></ul>'
 		},
 		alternatives: [
 			{
