@@ -6,7 +6,7 @@
 	import { imageInversionStore } from '$lib/stores/imageInversion';
 	import { themeStore } from '$lib/stores/theme';
 	import { getImagePath } from '$lib/utils/helpers';
-	import { Eye, EyeOff, PaintBucket } from '@lucide/svelte';
+	import { Eye, EyeOff, PaintBucket, ClipboardList } from '@lucide/svelte';
 	import ReportError from './ReportError.svelte';
 
 	interface Props {
@@ -72,6 +72,10 @@
 			</div>
 		{/if}
 		<div class="question-actions">
+			<a href="/assets/formulario.pdf" target="_blank" rel="noopener noreferrer" class="btn-form">
+				<ClipboardList size={14} />
+				<span>Formulário</span>
+			</a>
 			<ReportError {question} />
 		</div>
 	</div>
@@ -186,6 +190,34 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-sm);
+	}
+
+	.question-actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+	}
+
+	.btn-form {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-xs);
+		padding: 6px 10px;
+		font-size: var(--text-sm);
+		font-weight: 500;
+		color: var(--text-muted);
+		background-color: transparent;
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-md);
+		transition: all var(--transition-fast);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.btn-form:hover {
+		color: var(--text-primary);
+		background-color: var(--bg-tertiary);
+		border-color: var(--border-color);
 	}
 
 	.tag {
@@ -394,7 +426,7 @@
 		background-color: var(--bg-primary);
 		border-color: var(--accent-primary);
 		color: var(--accent-primary);
-		transform: scale(1.05);
+		transform: scale(1.01);
 	}
 
 	.discard-btn.active {

@@ -11,7 +11,7 @@
 	import ExamNavigation from '$lib/components/ExamNavigation.svelte';
 	import ScoreDisplay from '$lib/components/ScoreDisplay.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { Plus, Share2, Printer } from '@lucide/svelte';
+	import { Plus, Share2, Printer, ClipboardList } from '@lucide/svelte';
 	import { groupQuestionsByArea, buildExamUrl, tryLoadExam } from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
 
@@ -298,12 +298,21 @@
 					</button>
 
 					<button
-						class="compact-action-btn share"
+						class="compact-action-btn export"
 						onclick={() => (showShareModal = true)}
 						title="Compartilhar simulado"
 					>
 						<Share2 size={14} />
-						<span>Compartilhar</span>
+						<span>Enviar</span>
+					</button>
+
+					<button
+						class="compact-action-btn export"
+						onclick={() => window.open('/assets/formulario.pdf', '_blank')}
+						title="Acessar formulário"
+					>
+						<ClipboardList size={14} />
+						<span>Formulário</span>
 					</button>
 
 					<button
@@ -523,17 +532,6 @@
 
 	.compact-action-btn.new-exam:hover {
 		background-color: var(--success);
-		color: white;
-	}
-
-	.compact-action-btn.share {
-		background-color: var(--accent-light);
-		border-color: var(--accent-primary);
-		color: var(--accent-primary);
-	}
-
-	.compact-action-btn.share:hover {
-		background-color: var(--accent-primary);
 		color: white;
 	}
 
