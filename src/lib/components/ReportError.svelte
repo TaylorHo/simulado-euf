@@ -2,6 +2,7 @@
 	import { AreaLabels } from '$lib/models/area';
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { Version } from '$lib/models/question';
+	import { BUG_REPORT_API_URL } from '$lib/variables';
 	import Modal from './Modal.svelte';
 	import { Flag } from '@lucide/svelte';
 
@@ -30,15 +31,13 @@
 		try {
 			const report = {
 				questionId: `${question.year}-${question.semester} ${AreaLabels[question.area]} Q${question.questionNumber}-${question.version === Version.A ? 'A' : 'B'}`,
-				question,
 				url: window.location.href,
 				errorType,
-				comments,
-				timestamp: new Date().toISOString()
+				comments
 			};
 
-			// Fake fetch request
-			const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+			// Fetch request
+			const response = await fetch(BUG_REPORT_API_URL, {
 				method: 'POST',
 				body: JSON.stringify(report),
 				headers: {
@@ -91,10 +90,12 @@
 			<label for="error-type">Tipo de erro</label>
 			<select id="error-type" bind:value={errorType} required>
 				<option value="" disabled>Selecione...</option>
-				<option value="erro-de-digitacao">Erro de digitação ou formatação</option>
-				<option value="diferente-do-gabarito">Diferente do gabarito oficial</option>
-				<option value="erro-de-imagem">Problema com a imagem (não carrega, errada, etc.)</option>
-				<option value="outro">Outro</option>
+				<option value="Erro de digitação ou formatação">Erro de digitação ou formatação</option>
+				<option value="Diferente do gabarito oficial">Diferente do gabarito oficial</option>
+				<option value="Problema com a imagem"
+					>Problema com a imagem (não carrega, errada, etc.)</option
+				>
+				<option value="Outro">Outro</option>
 			</select>
 		</div>
 

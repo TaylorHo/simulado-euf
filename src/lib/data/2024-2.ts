@@ -1815,7 +1815,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Em uma sauna, a temperatura do ambiente é de $45°C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $2,1 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
+			text: 'Em uma sauna, a temperatura do ambiente é de $45^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $2,1 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
 		},
 		alternatives: [
 			{
@@ -1849,7 +1849,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Em uma sauna, a temperatura do ambiente é de $47°C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $1,9 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
+			text: 'Em uma sauna, a temperatura do ambiente é de $47^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $1,9 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
 		},
 		alternatives: [
 			{

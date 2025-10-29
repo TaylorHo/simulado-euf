@@ -422,23 +422,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m}} \\text{e (ii)} \\space \\Delta{L} = -\\frac{|q\\sigma|}{2k\\epsilon_0}$',
+				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m}} \\space\\text{e (ii)} \\space \\Delta{L} = -\\frac{|q\\sigma|}{2k\\epsilon_0}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m}} \\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{2k\\epsilon_0}$',
+				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m}} \\space\\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{2k\\epsilon_0}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} - \\frac{|q\\sigma|}{2k\\epsilon_0}} \\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{2k\\epsilon_0}$',
+				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} - \\frac{|q\\sigma|}{2k\\epsilon_0}} \\space\\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{2k\\epsilon_0}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} + \\frac{|q\\sigma|}{2k\\epsilon_0}} \\text{e (ii)} \\space \\Delta{L} = -\\frac{|q\\sigma|}{2k\\epsilon_0}$',
+				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} + \\frac{|q\\sigma|}{2k\\epsilon_0}} \\space\\text{e (ii)} \\space \\Delta{L} = -\\frac{|q\\sigma|}{2k\\epsilon_0}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} - \\frac{|q\\sigma|}{k\\epsilon_0}} \\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{k\\epsilon_0}$',
+				text: '$\\text{(i)} \\space \\omega = \\sqrt{\\frac{k}{m} - \\frac{|q\\sigma|}{k\\epsilon_0}} \\space\\text{e (ii)} \\space \\Delta{L} = \\frac{|q\\sigma|}{k\\epsilon_0}$',
 				number: QuestionAlternative.E
 			}
 		]

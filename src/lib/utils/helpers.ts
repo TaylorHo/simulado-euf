@@ -44,8 +44,8 @@ export function groupQuestionsByArea(questions: ExamQuestion[]): AreaGroup[] {
  * Get percentage color based on score
  */
 export function getPercentageColor(percentage: number): string {
-	if (percentage >= 70) return 'var(--success)';
-	if (percentage >= 50) return 'var(--warning)';
+	if (percentage >= 50) return 'var(--success)';
+	if (percentage >= 35) return 'var(--warning)';
 	return 'var(--error)';
 }
 

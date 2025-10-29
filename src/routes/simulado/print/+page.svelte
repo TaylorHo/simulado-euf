@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import { examStore } from '$lib/stores/exam.svelte';
 	import { AreaLabels } from '$lib/models/area';
@@ -13,7 +13,7 @@
 	let qrUrl = $state('');
 
 	onMount(async () => {
-		examId = $page.url.searchParams.get('id');
+		examId = page.url.searchParams.get('id');
 
 		if (examId) {
 			try {

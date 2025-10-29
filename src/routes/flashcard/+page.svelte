@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { flashcardStore } from '$lib/stores/flashcard.svelte';
@@ -37,7 +37,7 @@
 	let questionId = $state<string | null>(null);
 
 	onMount(() => {
-		questionId = $page.url.searchParams.get('id');
+		questionId = page.url.searchParams.get('id');
 
 		if (questionId) {
 			flashcardStore.loadQuestionById(questionId);

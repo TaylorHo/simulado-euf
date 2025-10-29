@@ -68,7 +68,7 @@
 	}
 
 	.latex-container :global(.katex) {
-		font-size: 1.1em;
+		font-size: 1.3em;
 	}
 
 	.latex-container :global(.katex-display) {

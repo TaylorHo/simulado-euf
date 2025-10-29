@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
+	import { GITHUB_REPO_URL } from '$lib/variables';
 	import { Moon, Sun, Github } from '@lucide/svelte';
 
-	const currentPath = $derived($page.url.pathname);
+	const currentPath = $derived(page.url.pathname);
 
 	interface Props {
 		isDark: boolean;
@@ -33,7 +34,7 @@
 				{/if}
 			</button>
 			<a
-				href="https://github.com/TaylorHo/simulado-euf"
+				href={GITHUB_REPO_URL}
 				target="_blank"
 				rel="noopener noreferrer"
 				class="nav-link github-link"

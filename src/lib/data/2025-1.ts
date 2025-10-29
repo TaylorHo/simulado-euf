@@ -18,7 +18,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Uma corda inicialmente em repouso sobre uma superfície horizontal é puxada para cima a partir do instante $t = 0$ por uma força $F(t)$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de densidade linear de massa $\\lambda$, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \\lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $\\lambda L gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = \\lambda v^2$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = \\lambda lg = \\lambda vgt$.</li></ul><br/><br/>Assinale a alternativa correta:',
+			text: 'Uma corda inicialmente em repouso sobre uma superfície horizontal é puxada para cima a partir do instante $t = 0$ por uma força $F(t)$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de densidade linear de massa $\\lambda$, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \\lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $\\lambda L gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = \\lambda v^2$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = \\lambda lg = \\lambda vgt$.</li></ul><br/>Assinale a alternativa correta:',
 			image: '2025-1/mc-1.webp'
 		},
 		alternatives: [
@@ -53,7 +53,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Uma corda de massa $M$, inicialmente em repouso sobre uma superfície horizontal, é puxada para cima a partir do instante $t = 0$ por uma força $F$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \\lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $M gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = M v^2/L$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = Mlg/L = Mvgt/L$.</li></ul><br/><br/>Assinale a alternativa correta:',
+			text: 'Uma corda de massa $M$, inicialmente em repouso sobre uma superfície horizontal, é puxada para cima a partir do instante $t = 0$ por uma força $F$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \\lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $M gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = M v^2/L$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = Mlg/L = Mvgt/L$.</li></ul><br/>Assinale a alternativa correta:',
 			image: '2025-1/mc-1.webp'
 		},
 		alternatives: [
@@ -1140,7 +1140,7 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$3(gamma - 1)E_0$, onde $\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}$ e $\\gamma E_0 v = pc^2$',
+				text: '$3(\\gamma - 1)E_0$, onde $\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}$ e $\\gamma E_0 v = pc^2$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1174,7 +1174,7 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$4(gamma - 1)E_0$, onde $\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}$ e $\\gamma E_0 v = pc^2$',
+				text: '$4(\\gamma - 1)E_0$, onde $\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}$ e $\\gamma E_0 v = pc^2$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1328,7 +1328,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 49 elétrons.</li><li>II. O estado fundamental da molécula tem 45 elétrons.</li><li>III. O estado fundamental da molécula tem 55 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 45 a 55 elétrons.</li></ul><br/><br/>Assinale a alternativa correta.',
+			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 49 elétrons.</li><li>II. O estado fundamental da molécula tem 45 elétrons.</li><li>III. O estado fundamental da molécula tem 55 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 45 a 55 elétrons.</li></ul><br/>Assinale a alternativa correta.',
 			image: '2025-1/fm-4a.webp'
 		},
 		alternatives: [
@@ -1363,7 +1363,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 56 elétrons.</li><li>II. O estado fundamental da molécula tem 50 elétrons.</li><li>III. O estado fundamental da molécula tem 60 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 50 a 60 elétrons.</li></ul><br/><br/>Assinale a alternativa correta.',
+			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 56 elétrons.</li><li>II. O estado fundamental da molécula tem 50 elétrons.</li><li>III. O estado fundamental da molécula tem 60 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 50 a 60 elétrons.</li></ul><br/>Assinale a alternativa correta.',
 			image: '2025-1/fm-4b.webp'
 		},
 		alternatives: [
@@ -1876,7 +1876,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Atribua $V$ para as afirmações verdadeiras e $F$ para as falsas.<br/><br/><ul><li>( ) Ao fazermos sucessivas medidas de duas quantidades físicas em um certo sistema quântico, descobrimos que existe um limite inferior para o produto das incertezas nessas medidas, não importando o cuidado com que sejam realizadas. Neste caso, é correto concluir que os operadores quânticos que representam as quantidades físicas medidas não comutam.</li><li>( ) Considere a seguinte sequência de três medidas em um sistema quântico: primeiro medimos uma quantidade física $A$, em seguida medimos uma quantidade física $B$, e depois medimos $A$ novamente. Para uma quantidade física $B$ qualquer, as duas medidas de $A$ necessariamente retornarão o mesmo resultado.</li><li>( ) No átomo de hidrogênio, a energia, o módulo quadrado do momento angular e a componente z do momento angular são quantidades físicas compatíveis, ou seja, os respectivos operadores quânticos comutam entre si. Sendo assim, idealmente, não existe limite intrínseco para a precisão com que as referidas quantidades físicas podem ser simultaneamente conhecidas em um átomo de hidrogênio.</li></ul><br/><br/>A sequência correta é:'
+			text: 'Atribua $V$ para as afirmações verdadeiras e $F$ para as falsas.<br/><br/><ul><li>( ) Ao fazermos sucessivas medidas de duas quantidades físicas em um certo sistema quântico, descobrimos que existe um limite inferior para o produto das incertezas nessas medidas, não importando o cuidado com que sejam realizadas. Neste caso, é correto concluir que os operadores quânticos que representam as quantidades físicas medidas não comutam.</li><li>( ) Considere a seguinte sequência de três medidas em um sistema quântico: primeiro medimos uma quantidade física $A$, em seguida medimos uma quantidade física $B$, e depois medimos $A$ novamente. Para uma quantidade física $B$ qualquer, as duas medidas de $A$ necessariamente retornarão o mesmo resultado.</li><li>( ) No átomo de hidrogênio, a energia, o módulo quadrado do momento angular e a componente z do momento angular são quantidades físicas compatíveis, ou seja, os respectivos operadores quânticos comutam entre si. Sendo assim, idealmente, não existe limite intrínseco para a precisão com que as referidas quantidades físicas podem ser simultaneamente conhecidas em um átomo de hidrogênio.</li></ul><br/>A sequência correta é:'
 		},
 		alternatives: [
 			{
@@ -1910,7 +1910,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Atribua V para as afirmações verdadeiras e F para as falsas.<br/><br/><ul><li>( ) Ao fazermos sucessivas medidas de duas quantidades físicas em um certo sistema quântico, descobrimos que o produto das incertezas nessas medidas pode ser arbitrariamente reduzido melhorando-se a qualidade das medidas. Neste caso, é correto concluir que os operadores quânticos que representam as quantidades físicas medidas não comutam.</li><li>( ) Considere a seguinte sequência de três medidas em um sistema quântico: primeiro medimos uma quantidade física $A$, em seguida medimos uma quantidade física $B$, e depois medimos $A$ novamente. Para uma quantidade física $B$ qualquer, as duas medidas de $A$ não necessariamente retornarão o mesmo resultado.</li><li>( ) No átomo de hidrogênio, a energia, o módulo quadrado do momento angular e a componente z do momento angular são quantidades físicas compatíveis, ou seja, os respectivos operadores quânticos comutam entre si. Sendo assim, existe um limite intrínseco para a precisão com que as referidas quantidades físicas podem ser simultaneamente conhecidas em um átomo de hidrogênio.</li></ul><br/><br/>A sequência correta é:'
+			text: 'Atribua V para as afirmações verdadeiras e F para as falsas.<br/><br/><ul><li>( ) Ao fazermos sucessivas medidas de duas quantidades físicas em um certo sistema quântico, descobrimos que o produto das incertezas nessas medidas pode ser arbitrariamente reduzido melhorando-se a qualidade das medidas. Neste caso, é correto concluir que os operadores quânticos que representam as quantidades físicas medidas não comutam.</li><li>( ) Considere a seguinte sequência de três medidas em um sistema quântico: primeiro medimos uma quantidade física $A$, em seguida medimos uma quantidade física $B$, e depois medimos $A$ novamente. Para uma quantidade física $B$ qualquer, as duas medidas de $A$ não necessariamente retornarão o mesmo resultado.</li><li>( ) No átomo de hidrogênio, a energia, o módulo quadrado do momento angular e a componente z do momento angular são quantidades físicas compatíveis, ou seja, os respectivos operadores quânticos comutam entre si. Sendo assim, existe um limite intrínseco para a precisão com que as referidas quantidades físicas podem ser simultaneamente conhecidas em um átomo de hidrogênio.</li></ul><br/>A sequência correta é:'
 		},
 		alternatives: [
 			{
@@ -2216,7 +2216,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \\rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \\rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \\rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \\rarr b} = 0$ para a expansão adiabática.</li><li>III. $W_{a \\rarr b} = 0$ para a expansão livre.</li><li>IV. $U_{a \\rarr b} = 0$ para as expansões isotérmica e livre.</li></ul><br/><br/>Somente são <strong>corretas</strong> as afirmações:'
+			text: 'Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \\rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \\rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \\rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \\rarr b} = 0$ para a expansão adiabática.</li><li>III. $W_{a \\rarr b} = 0$ para a expansão livre.</li><li>IV. $U_{a \\rarr b} = 0$ para as expansões isotérmica e livre.</li></ul><br/>Somente são <strong>corretas</strong> as afirmações:'
 		},
 		alternatives: [
 			{
@@ -2250,7 +2250,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \\rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \\rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \\rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \\rarr b} = 0$ para as expansões isotérmica e livre.</li><li>III. $U_{a \\rarr b} = 0$ para a expansão adiabática.</li><li>IV. $W_{a \\rarr b} = 0$ para a expansão livre.</li></ul><br/><br/>Somente são <strong>corretas</strong> as afirmações:'
+			text: 'Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \\rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \\rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \\rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \\rarr b} = 0$ para as expansões isotérmica e livre.</li><li>III. $U_{a \\rarr b} = 0$ para a expansão adiabática.</li><li>IV. $W_{a \\rarr b} = 0$ para a expansão livre.</li></ul><br/>Somente são <strong>corretas</strong> as afirmações:'
 		},
 		alternatives: [
 			{

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { examStore } from '$lib/stores/exam.svelte';
@@ -40,7 +40,7 @@
 	}
 
 	onMount(() => {
-		examId = $page.url.searchParams.get('id');
+		examId = page.url.searchParams.get('id');
 		const savedExamId = examStore.getSavedExamId();
 
 		if (examId) {
