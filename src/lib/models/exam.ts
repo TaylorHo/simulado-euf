@@ -15,3 +15,10 @@ export interface GeneratedExam {
 	/** Timestamp when the exam was generated */
 	generatedAt: number;
 }
+
+export interface SemesterMean {
+	year: number;
+	semester: 1 | 2;
+	mean?: number;
+	deviation?: number;
+}
