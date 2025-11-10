@@ -2,7 +2,7 @@
 	"name": "simulado-euf",
 	"version": "0.0.0",
 	"type": "module",
-	"author": "Taylor Hoffmann <taylor@hotay.dev>",
+	"author": "Taylor Hoffmann <taylor@hoffmann.io>",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/TaylorHo/simulado-euf"

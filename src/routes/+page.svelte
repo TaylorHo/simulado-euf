@@ -53,7 +53,7 @@
 	<section class="hero">
 		<div class="container">
 			<div class="hero-badge">
-				<span class="badge-text">100% Gratuito • Sem Anúncios • Open Source</span>
+				<span class="badge-text">100% Gratuito • Open Source</span>
 			</div>
 			<h1 class="hero-title">Prepare-se para o EUF</h1>
 			<p class="hero-subtitle">
@@ -260,14 +260,13 @@
 					</span>
 				</a>
 
-				<button class="contribution-card contribution-card-disabled" disabled>
+				<a class="contribution-card" href="/ads-page" target="_blank">
 					<div class="contribution-icon">
 						<ExternalLink size={32} />
 					</div>
 					<h3>Visualizar Anúncios</h3>
 					<p>Ajude apenas visualizando uma página</p>
-					<span class="contribution-badge">Em breve</span>
-				</button>
+				</a>
 			</div>
 
 			<div class="contribution-footer">
@@ -691,15 +690,10 @@
 		cursor: pointer;
 	}
 
-	.contribution-card:not(.contribution-card-disabled):hover {
+	.contribution-card:hover {
 		border-color: var(--accent-primary);
 		box-shadow: var(--shadow-lg);
 		transform: translateY(-4px);
-	}
-
-	.contribution-card-disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
 	}
 
 	.contribution-icon {
@@ -738,21 +732,6 @@
 		font-size: var(--text-xs);
 		color: var(--accent-primary);
 		font-weight: 500;
-	}
-
-	.contribution-badge {
-		display: inline-block;
-		padding: var(--space-xs) var(--space-md);
-		background-color: var(--warning-light);
-		border-radius: var(--radius-sm);
-		font-size: var(--text-xs);
-		color: var(--warning);
-		font-weight: 600;
-	}
-
-	:global([data-theme='dark']) .contribution-badge {
-		background-color: rgba(249, 115, 22, 0.15);
-		color: #fb923c;
 	}
 
 	.contribution-footer {
