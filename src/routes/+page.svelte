@@ -260,7 +260,7 @@
 					</span>
 				</a>
 
-				<a class="contribution-card" href="/ads-page" target="_blank">
+				<a class="contribution-card" href="/ads-page">
 					<div class="contribution-icon">
 						<ExternalLink size={32} />
 					</div>
