@@ -1,33 +1,17 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { ADSENSE_CLIENT_ID } from '$lib/variables';
-	import { onMount } from 'svelte';
-
-	const adSlots = ['1560831006', '1560831006', '1560831006', '1560831006'];
 
 	function handleGoBack() {
 		goto('/');
 	}
 
-	onMount(() => {
-		// Initialize AdSense ads
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const adsbygoogle = (window as any).adsbygoogle || [];
-		adSlots.forEach(() => {
-			adsbygoogle.push({});
-		});
-	});
+	const adsQuantity = 20;
 </script>
 
 <svelte:head>
 	<title>Anúncios - Simulado EUF</title>
 	<meta name="description" content="Veja anúncios para ajudar a manter o Simulado EUF gratuito" />
 	<meta name="robots" content="noindex, nofollow" />
-	<script
-		async
-		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4991464670829350"
-		crossorigin="anonymous"
-	></script>
 </svelte:head>
 
 <div class="ads-page">
@@ -38,18 +22,20 @@
 			<p class="message">Para ajudar ainda mais, que tal clicar em um anúncio?</p>
 		</div>
 
-		<div class="ads-container">
-			{#each adSlots as adSlot, index (index)}
-				<div class="ad-block">
-					<ins
-						class="adsbygoogle"
-						style="display:block"
-						data-ad-client={ADSENSE_CLIENT_ID}
-						data-ad-slot={adSlot}
-						data-ad-format="auto"
-						data-full-width-responsive="true"
-					></ins>
-				</div>
+		<div style="text-align: center;">
+			{#each Array.from({ length: adsQuantity }) as key (key)}
+				<script>
+					atOptions = {
+						key: '07eab4918d3fe61746a31105622da249',
+						format: 'iframe',
+						height: 60,
+						width: 468,
+						params: {}
+					};
+				</script>
+				<script
+					src="https://openairtowhardworking.com/07eab4918d3fe61746a31105622da249/invoke.js"
+				></script>
 			{/each}
 		</div>
 	</div>
@@ -93,23 +79,6 @@
 		margin-bottom: 0;
 	}
 
-	.ads-container {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2xl);
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-	.ad-block {
-		min-height: 250px;
-		width: 100%;
-		background-color: var(--bg-secondary);
-		border: 1px solid var(--border-light);
-		border-radius: var(--radius-lg);
-		padding: var(--space-md);
-	}
-
 	@media (max-width: 768px) {
 		h1 {
 			font-size: var(--text-2xl);
@@ -117,14 +86,6 @@
 
 		.message {
 			font-size: var(--text-base);
-		}
-
-		.ads-container {
-			gap: var(--space-xl);
-		}
-
-		.ad-block {
-			min-height: 200px;
 		}
 	}
 </style>

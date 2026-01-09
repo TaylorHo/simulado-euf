@@ -42,7 +42,7 @@ export default <Question[]>[
 			{
 				text: `$\\ddot{q} + \\gamma\\dot{q} + 4\\omega^2 q = 0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -77,7 +77,7 @@ export default <Question[]>[
 			{
 				text: `$\\ddot{q} + \\gamma\\dot{q} + \\frac{1}{3}\\omega^2 q$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -112,7 +112,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{qE}{b}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -147,7 +147,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{2qE}{b}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -182,7 +182,7 @@ export default <Question[]>[
 			{
 				text: `$1$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -217,7 +217,7 @@ export default <Question[]>[
 			{
 				text: `$1$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -252,7 +252,7 @@ export default <Question[]>[
 			{
 				text: `$\\nabla \\times \\vec{F} = 0$, e portanto $F$ é conservativa, obtida do potencial $U(x,y) = 10bx^4y^2 + bx^3y^2 + K$, sendo $K$ uma constante arbitrária.`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -287,7 +287,7 @@ export default <Question[]>[
 			{
 				text: `$\\nabla \\times \\vec{F} = 0$, e portanto $F$ é conservativa, obtida do potencial $U(x,y) = 3ax^3y + ax^3y + K$, sendo $K$ uma constante arbitrária.`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -323,7 +323,7 @@ export default <Question[]>[
 			{
 				text: `$\\Delta{x} = \\sqrt{\\frac{1}{2} \\frac{mRg}{k}}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -359,7 +359,7 @@ export default <Question[]>[
 			{
 				text: `$k = \\frac{1}{2} \\frac{mRg}{\\Delta{x}^2}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -395,7 +395,7 @@ export default <Question[]>[
 			{
 				text: `$v = \\frac{M}{m} \\sqrt{\\frac{4gl}{6}}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -431,7 +431,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{m}{M} = \\sqrt{\\frac{4gl}{6v^2}}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -466,7 +466,7 @@ export default <Question[]>[
 			{
 				text: `I, III e V`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -501,7 +501,7 @@ export default <Question[]>[
 			{
 				text: `II e IV`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -537,7 +537,7 @@ export default <Question[]>[
 			{
 				text: `$\\ddot{x}_2 + \\frac{k_2 + k_3}{m_2} x_2 = 0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -573,7 +573,7 @@ export default <Question[]>[
 			{
 				text: `$\\ddot{x}_3 + \\frac{k_3 + k_4}{m_3} x_3 = 0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -608,7 +608,7 @@ export default <Question[]>[
 			{
 				text: `$U = \\frac{q^2R^2}{2\\pi \\epsilon_0 d^3}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -643,7 +643,7 @@ export default <Question[]>[
 			{
 				text: `$u = \\frac{q^2d}{4 \\epsilon_0 R^5}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -678,7 +678,7 @@ export default <Question[]>[
 			{
 				text: `$B = \\frac{2\\mu_0 \\omega q}{\\pi R}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -713,7 +713,7 @@ export default <Question[]>[
 			{
 				text: `$B = \\frac{2\\mu_0 \\omega q}{\\pi D}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -748,7 +748,7 @@ export default <Question[]>[
 			{
 				text: `\${\\cal E} = A \\omega \\mu_0 i_0 n \\cos^2{(\\omega t)}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -783,7 +783,7 @@ export default <Question[]>[
 			{
 				text: `\${\\cal E} = -A \\omega \\mu_0 i_0 n \\cos^2{(\\omega t)}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -818,7 +818,7 @@ export default <Question[]>[
 			{
 				text: `$\\alpha = k/2\\pi$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -853,7 +853,7 @@ export default <Question[]>[
 			{
 				text: `$\\alpha = k/2\\pi$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -889,7 +889,7 @@ export default <Question[]>[
 			{
 				image: '2023-1/em-5a-e.webp',
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -925,7 +925,7 @@ export default <Question[]>[
 			{
 				image: '2023-1/em-5b-e.webp',
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -961,7 +961,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{\\pi Bv}{2} D_0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -997,7 +997,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{\\pi Bv}{2R} D_0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1032,7 +1032,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1067,7 +1067,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1103,7 +1103,7 @@ export default <Question[]>[
 			{
 				text: `5 e 6`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1139,7 +1139,7 @@ export default <Question[]>[
 			{
 				text: `2 e 3`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1174,7 +1174,7 @@ export default <Question[]>[
 			{
 				text: `$u = - 3c / 10$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1209,7 +1209,7 @@ export default <Question[]>[
 			{
 				text: `$u = - 4c / 10$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1244,7 +1244,7 @@ export default <Question[]>[
 			{
 				text: `$18 \\text{pm}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1279,7 +1279,7 @@ export default <Question[]>[
 			{
 				text: `$19 \\text{pm}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1314,7 +1314,7 @@ export default <Question[]>[
 			{
 				text: `$T = T_S$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1349,7 +1349,7 @@ export default <Question[]>[
 			{
 				text: `$R = R_S$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1384,7 +1384,7 @@ export default <Question[]>[
 			{
 				text: `$5,00 \\times 10^{-11} \\text{eV}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1419,7 +1419,7 @@ export default <Question[]>[
 			{
 				text: `$0,13 \\times 10^{-11} \\text{eV}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1454,7 +1454,7 @@ export default <Question[]>[
 			{
 				text: `$60 \\text{ms}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1489,7 +1489,7 @@ export default <Question[]>[
 			{
 				text: `$60 \\text{ms}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1524,7 +1524,7 @@ export default <Question[]>[
 			{
 				text: `$3,6 \\text{kg}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1559,7 +1559,7 @@ export default <Question[]>[
 			{
 				text: `$3,6 \\text{kg}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1594,7 +1594,7 @@ export default <Question[]>[
 			{
 				text: `III`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1629,7 +1629,7 @@ export default <Question[]>[
 			{
 				text: `III`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1664,7 +1664,7 @@ export default <Question[]>[
 			{
 				text: `I, II e III`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1699,7 +1699,7 @@ export default <Question[]>[
 			{
 				text: `I, II e III`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1734,7 +1734,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1769,7 +1769,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1804,7 +1804,7 @@ export default <Question[]>[
 			{
 				text: `Apenas as afirmações II e III estão corretas`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1839,7 +1839,7 @@ export default <Question[]>[
 			{
 				text: `Apenas as afirmações I e II estão corretas`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1874,7 +1874,7 @@ export default <Question[]>[
 			{
 				text: `Apenas as afirmações II e III estão corretas`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1909,7 +1909,7 @@ export default <Question[]>[
 			{
 				text: `Apenas as afirmações I e III estão corretas`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1944,7 +1944,7 @@ export default <Question[]>[
 			{
 				text: `Se nenhuma medição for feita, o valor médio da energia do sistema em um tempo $t \\gt 0$ pode ser diferente do valor médio em $t = 0$.`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -1979,7 +1979,7 @@ export default <Question[]>[
 			{
 				text: `Se nenhuma medição for feita, o valor médio da energia do sistema em um tempo $t \\gt 0$ pode ser diferente do valor médio em $t = 0$.`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2015,7 +2015,7 @@ export default <Question[]>[
 			{
 				text: `$\\sqrt{5/8}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2051,7 +2051,7 @@ export default <Question[]>[
 			{
 				text: `$\\sqrt{3/8}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2086,7 +2086,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2121,7 +2121,7 @@ export default <Question[]>[
 			{
 				text: `$0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2156,7 +2156,7 @@ export default <Question[]>[
 			{
 				text: `$-8E_0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2191,7 +2191,7 @@ export default <Question[]>[
 			{
 				text: `$-18E_0$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2226,7 +2226,7 @@ export default <Question[]>[
 			{
 				text: `$2\\sqrt{\\frac{\\hbar}{2m \\omega}} \\cos (\\omega t)$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2261,7 +2261,7 @@ export default <Question[]>[
 			{
 				text: `$-2\\sqrt{\\frac{m \\omega \\hbar}{2}} \\sin (\\omega t)$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2296,7 +2296,7 @@ export default <Question[]>[
 			{
 				text: `$600$ litros`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2331,7 +2331,7 @@ export default <Question[]>[
 			{
 				text: `$12,5$ kg`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2367,7 +2367,7 @@ export default <Question[]>[
 			{
 				text: `nos processos isobárico e isotérmico`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2403,7 +2403,7 @@ export default <Question[]>[
 			{
 				text: `nos processos isobárico e isotérmico`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2438,7 +2438,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{\\gamma P}{\\rho c_B \\Delta T}$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2473,7 +2473,7 @@ export default <Question[]>[
 			{
 				text: `$\\frac{\\rho c_B \\Delta T}{\\gamma P}$`,
 				number: QuestionAlternative.D
-			},
+			}
 		]
 	},
 	{
@@ -2508,7 +2508,7 @@ export default <Question[]>[
 			{
 				text: `$2,5 R$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2543,7 +2543,7 @@ export default <Question[]>[
 			{
 				text: `$1,5 R$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2578,7 +2578,7 @@ export default <Question[]>[
 			{
 				text: `$m(T, H, \\mu) = \\mu e^{-\\beta \\epsilon} \\tanh (\\beta \\mu H)$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2613,7 +2613,7 @@ export default <Question[]>[
 			{
 				text: `$m(T, H, \\mu) = \\mu H e^{-\\beta \\epsilon} \\tanh (\\beta \\mu H)$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2648,7 +2648,7 @@ export default <Question[]>[
 			{
 				text: `$u (\\beta, \\theta) = 1/\\beta$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2683,7 +2683,7 @@ export default <Question[]>[
 			{
 				text: `$u (\\beta, \\theta) = 1/\\beta$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2718,7 +2718,7 @@ export default <Question[]>[
 			{
 				text: `$U = (N_A + N_B) k_B T$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2753,7 +2753,7 @@ export default <Question[]>[
 			{
 				text: `$U = \\frac{1}{2}(N_A + N_B) k_B T$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2788,7 +2788,7 @@ export default <Question[]>[
 			{
 				text: `$4x^3 (1 - x)^2$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
 	},
 	{
@@ -2823,7 +2823,7 @@ export default <Question[]>[
 			{
 				text: `$3x^2 (1 - x)^3$`,
 				number: QuestionAlternative.E
-			},
+			}
 		]
-	},
+	}
 ];

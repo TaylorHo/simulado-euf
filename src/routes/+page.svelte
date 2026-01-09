@@ -288,6 +288,10 @@
 </Modal>
 
 <style>
+	:global(.footer) {
+		margin-top: 0 !important;
+	}
+
 	main {
 		min-height: 100vh;
 		background-color: var(--bg-primary);
