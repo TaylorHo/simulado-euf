@@ -9,8 +9,26 @@
 	let { question }: Props = $props();
 
 	let aiPrompt = $derived(
-		`Explique a seguinte questão de ${AreaLabels[question.area]}:\n\n${question.statement.text}.\n\nSaiba que o resultado correto é ${question.alternatives.find((alt) => alt.number === question.correct)?.text}.${(question.statement.image && question.help.imageDescription) ?? `\n\nA imagem citada pela questão mostra: ${question.help.imageDescription}`}.`
+		`Explique a seguinte questão de ${AreaLabels[question.area]}:\n\n${question.statement.text}\n\nSaiba que o resultado correto é ${question.alternatives.find((alt) => alt.number === question.correct)?.text}.${question.statement.image && question.help.imageDescription ? `\n\nA imagem citada pela questão mostra: ${question.help.imageDescription}` : ''}`
 	);
+
+	let copyButtonText = $state('Copiar Questão');
+
+	async function copyToClipboard() {
+		try {
+			await navigator.clipboard.writeText(aiPrompt);
+			copyButtonText = 'Copiado!';
+			setTimeout(() => {
+				copyButtonText = 'Copiar Questão';
+			}, 2000);
+		} catch (err) {
+			console.error('Failed to copy:', err);
+			copyButtonText = 'Erro ao copiar';
+			setTimeout(() => {
+				copyButtonText = 'Copiar Questão';
+			}, 2000);
+		}
+	}
 </script>
 
 <div class="help-buttons">
@@ -28,6 +46,33 @@
 			</svg>
 			ChatGPT
 		</a>
+		<button onclick={copyToClipboard} class="help-btn copy" type="button">
+			{#if copyButtonText === 'Copiado!'}
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<path d="M20 6L9 17l-5-5" />
+				</svg>
+			{:else}
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+					<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+				</svg>
+			{/if}
+			{copyButtonText}
+		</button>
 	{/if}
 	{#if question.help.youtubeUrl}
 		<a
@@ -65,6 +110,7 @@
 		text-decoration: none;
 		transition: all var(--transition-fast);
 		border: 2px solid;
+		cursor: pointer;
 	}
 
 	.help-btn.chatgpt {
@@ -89,6 +135,19 @@
 	.help-btn.youtube:hover {
 		background-color: #cc0000;
 		border-color: #cc0000;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.help-btn.copy {
+		background-color: #6366f1;
+		color: white;
+		border-color: #6366f1;
+	}
+
+	.help-btn.copy:hover {
+		background-color: #4f46e5;
+		border-color: #4f46e5;
 		transform: translateY(-2px);
 		box-shadow: var(--shadow-md);
 	}

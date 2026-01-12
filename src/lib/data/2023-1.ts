@@ -1572,7 +1572,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: `Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes nesse mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\\psi_1(x_1)\\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado <em>não</em> pode ser $\\psi_1(x_1)\\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser </li></ul><br/><br/>$$\\frac{1}{\\sqrt{2}} \\left[\\psi_1(x_1)\\psi_2(x_2) + \\psi_2(x_1)\\psi_1(x_2)\\right].$$<br/>Apenas estão corretas as afirmações`
+			text: `Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes nesse mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\\psi_1(x_1)\\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado <em>não</em> pode ser $\\psi_1(x_1)\\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser </li></ul><br/>$$\\frac{1}{\\sqrt{2}} \\left[\\psi_1(x_1)\\psi_2(x_2) + \\psi_2(x_1)\\psi_1(x_2)\\right].$$<br/>Apenas estão corretas as afirmações`
 		},
 		alternatives: [
 			{
@@ -1607,7 +1607,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: `Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes neste mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\\psi_1(x_1)\\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado pode ser $\\psi_1(x_1)\\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser</li></ul><br/><br/>$$\\frac{1}{\\sqrt{2}} \\left[\\psi_1(x_1)\\psi_2(x_2) + \\psi_2(x_1)\\psi_1(x_2)\\right].$$<br/>Apenas estão corretas as afirmações`
+			text: `Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes neste mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\\psi_1(x_1)\\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado pode ser $\\psi_1(x_1)\\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser</li></ul><br/>$$\\frac{1}{\\sqrt{2}} \\left[\\psi_1(x_1)\\psi_2(x_2) + \\psi_2(x_1)\\psi_1(x_2)\\right].$$<br/>Apenas estão corretas as afirmações`
 		},
 		alternatives: [
 			{
@@ -1642,7 +1642,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: `Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ dos elétrons é $\\langle J^2 \\rangle = 15\\hbar^2/4$, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li></ul><br/><br/>Apenas estão corretas as afirmações:`
+			text: `Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ dos elétrons é $\\langle J^2 \\rangle = 15\\hbar^2/4$, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li></ul><br/>Apenas estão corretas as afirmações:`
 		},
 		alternatives: [
 			{
@@ -1677,7 +1677,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: `Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ é $\\langle J^2 \\rangle = 15\\hbar^2/4$, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li></ul><br/><br/>Apenas estão corretas as afirmações:`
+			text: `Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ é $\\langle J^2 \\rangle = 15\\hbar^2/4$, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li></ul><br/>Apenas estão corretas as afirmações:`
 		},
 		alternatives: [
 			{
@@ -2344,7 +2344,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: `Considere um refrigerador baseado em um gás ideal monoatômico que opera de acordo com o seguinte ciclo termodinâmico:<br/><ul><li>a partir das condições iniciais $P_0$, $V_0$ e $T_0$, o gás sofre um processo isocórico que reduz sua pressão para $P_0/3$;</li><li>o gás passa então por um processo de expansão isobárica até que seu volume seja triplicado;</li><li>finalmente, o gás é comprimido isotermicamente até o ponto inicial.</li></ul><br/><br/>Em termos da primeira lei da termodinâmica, é correto afirmar que, ao longo do ciclo, o refrigerador transfere calor (positivo) para o ambiente externo (reservatório quente):`,
+			text: `Considere um refrigerador baseado em um gás ideal monoatômico que opera de acordo com o seguinte ciclo termodinâmico:<br/><ul><li>a partir das condições iniciais $P_0$, $V_0$ e $T_0$, o gás sofre um processo isocórico que reduz sua pressão para $P_0/3$;</li><li>o gás passa então por um processo de expansão isobárica até que seu volume seja triplicado;</li><li>finalmente, o gás é comprimido isotermicamente até o ponto inicial.</li></ul><br/>Em termos da primeira lei da termodinâmica, é correto afirmar que, ao longo do ciclo, o refrigerador transfere calor (positivo) para o ambiente externo (reservatório quente):`,
 			image: '2023-1/te-2.webp'
 		},
 		alternatives: [
@@ -2380,7 +2380,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: `Considere um refrigerador baseado em um gás ideal monoatômico que opera de acordo com o seguinte ciclo termodinâmico:<br/><ul><li>a partir das condições iniciais $P_0$, $V_0$ e $T_0$, o gás sofre um processo isocórico que reduz sua pressão para $P_0/3$;</li><li>o gás passa então por um processo de expansão isobárica até que seu volume seja triplicado;</li><li>finalmente, o gás é comprimido isotermicamente até o ponto inicial. </li></ul><br/><br/>Em termos da primeira lei da termodinâmica, é correto afirmar que, ao longo do ciclo, o refrigerador absorve calor (positivo) do ambiente interno (reservatório frio):`,
+			text: `Considere um refrigerador baseado em um gás ideal monoatômico que opera de acordo com o seguinte ciclo termodinâmico:<br/><ul><li>a partir das condições iniciais $P_0$, $V_0$ e $T_0$, o gás sofre um processo isocórico que reduz sua pressão para $P_0/3$;</li><li>o gás passa então por um processo de expansão isobárica até que seu volume seja triplicado;</li><li>finalmente, o gás é comprimido isotermicamente até o ponto inicial. </li></ul><br/>Em termos da primeira lei da termodinâmica, é correto afirmar que, ao longo do ciclo, o refrigerador absorve calor (positivo) do ambiente interno (reservatório frio):`,
 			image: '2023-1/te-2.webp'
 		},
 		alternatives: [
