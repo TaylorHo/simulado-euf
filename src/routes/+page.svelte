@@ -83,7 +83,7 @@
 						<QrCode size={56} strokeWidth={1.5} />
 					</div>
 					<div class="qr-banner-text">
-						<h3>Tem um simulado impresso?</h3>
+						<strong>Tem um simulado impresso?</strong>
 						<p>
 							Escaneie o QR Code do seu simulado para verificar as respostas e ver sua pontuação.
 						</p>
@@ -260,12 +260,15 @@
 					</span>
 				</a>
 
-				<a class="contribution-card" href="/ads-page">
+				<!-- <a class="contribution-card" href="/ads-page"> -->
+				<!-- svelte-ignore a11y_invalid_attribute -->
+				<a class="contribution-card" href="#">
 					<div class="contribution-icon">
 						<ExternalLink size={32} />
 					</div>
 					<h3>Visualizar Anúncios</h3>
 					<p>Ajude apenas visualizando uma página</p>
+					<span class="coming-soon-badge">Em breve</span>
 				</a>
 			</div>
 
@@ -410,7 +413,7 @@
 		color: white;
 	}
 
-	.qr-banner-text h3 {
+	.qr-banner-text strong {
 		margin: 0 0 var(--space-xs) 0;
 		font-size: var(--text-xl);
 		font-weight: 700;
@@ -736,6 +739,15 @@
 		font-size: var(--text-xs);
 		color: var(--accent-primary);
 		font-weight: 500;
+	}
+
+	.coming-soon-badge {
+		font-size: var(--text-xs);
+		padding: var(--space-xs) var(--space-md);
+		border-radius: var(--radius-md);
+		color: var(--warning);
+		font-weight: 500;
+		background-color: var(--warning-light);
 	}
 
 	.contribution-footer {
