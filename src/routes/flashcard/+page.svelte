@@ -172,9 +172,37 @@
 		flex: 1;
 	}
 
+	@media (max-width: 768px) {
+		.flashcard-page {
+			padding-top: var(--space-sm);
+		}
+
+		.flashcard-content {
+			padding: var(--space-md);
+		}
+
+		.actions-container {
+			padding: var(--space-md);
+			margin-top: var(--space-md);
+		}
+
+		.action-buttons {
+			gap: var(--space-sm);
+		}
+
+		.action-btn {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-md);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.flashcard-content {
-			padding: var(--space-lg) var(--space-md);
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.action-buttons {
+			flex-direction: column;
 		}
 	}
 </style>

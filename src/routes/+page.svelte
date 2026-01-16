@@ -112,7 +112,7 @@
 					<div class="feature-icon">
 						<Printer size={32} strokeWidth={1.5} />
 					</div>
-					<h3>Imprima & Pratique</h3>
+					<h3><span style="white-space: nowrap;">Imprima &</span> Pratique</h3>
 					<p>Gere simulados para imprimir e responder no papel, como na prova real</p>
 				</div>
 
@@ -260,15 +260,12 @@
 					</span>
 				</a>
 
-				<!-- <a class="contribution-card" href="/ads-page"> -->
-				<!-- svelte-ignore a11y_invalid_attribute -->
-				<a class="contribution-card" href="#">
+				<a class="contribution-card" href="/ads-page">
 					<div class="contribution-icon">
 						<ExternalLink size={32} />
 					</div>
 					<h3>Visualizar Anúncios</h3>
 					<p>Ajude apenas visualizando uma página</p>
-					<span class="coming-soon-badge">Em breve</span>
 				</a>
 			</div>
 
@@ -741,15 +738,6 @@
 		font-weight: 500;
 	}
 
-	.coming-soon-badge {
-		font-size: var(--text-xs);
-		padding: var(--space-xs) var(--space-md);
-		border-radius: var(--radius-md);
-		color: var(--warning);
-		font-weight: 500;
-		background-color: var(--warning-light);
-	}
-
 	.contribution-footer {
 		text-align: center;
 		padding: var(--space-xl);
@@ -770,58 +758,254 @@
 
 	/* Responsive Design */
 	@media (max-width: 768px) {
+		.container {
+			padding: 0 var(--space-md);
+		}
+
 		.hero {
-			padding: var(--space-xl) 0;
+			padding: var(--space-lg) 0;
 		}
 
 		.hero-title {
-			font-size: var(--text-3xl);
+			font-size: var(--text-2xl-mobile);
 		}
 
 		.hero-subtitle {
-			font-size: var(--text-base);
+			font-size: var(--text-sm-mobile);
+			line-height: 1.5;
+		}
+
+		.hero-badge {
+			font-size: 0.65rem;
+			padding: var(--space-xs) var(--space-md);
 		}
 
 		.hero-actions {
 			flex-direction: column;
 			align-items: stretch;
+			gap: var(--space-sm);
 		}
 
 		.btn-large {
 			width: 100%;
 			justify-content: center;
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-lg);
+		}
+
+		.qr-banner {
+			padding: var(--space-lg) 0;
 		}
 
 		.qr-banner-card {
 			flex-direction: column;
 			text-align: center;
-			padding: var(--space-xl);
+			padding: var(--space-lg);
+			gap: var(--space-lg);
 		}
 
 		.qr-banner-content {
 			flex-direction: column;
 			text-align: center;
+			min-width: auto;
+		}
+
+		.qr-banner-text strong {
+			font-size: var(--text-base-mobile);
+		}
+
+		.qr-banner-text p {
+			font-size: var(--text-xs-mobile);
 		}
 
 		.qr-banner-btn {
 			width: 100%;
 			justify-content: center;
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-lg);
+		}
+
+		.about-app,
+		.about-euf,
+		.contribution {
+			padding: var(--space-lg) 0;
+		}
+
+		.section-title {
+			font-size: var(--text-xl-mobile);
+		}
+
+		.section-description {
+			font-size: var(--text-sm-mobile);
 		}
 
 		.features-grid {
 			grid-template-columns: 1fr;
+			gap: var(--space-md);
+		}
+
+		.feature-card {
+			padding: var(--space-md);
+			flex-direction: row;
+			text-align: left;
+			align-items: center;
+			gap: var(--space-md);
+		}
+
+		.feature-card:hover {
+			transform: none;
+		}
+
+		.feature-icon {
+			margin-bottom: 0;
+			flex-shrink: 0;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.feature-icon :global(svg) {
+			width: 24px;
+			height: 24px;
+		}
+
+		.feature-card h3 {
+			font-size: var(--text-base-mobile);
+		}
+
+		.feature-card p {
+			font-size: var(--text-xs-mobile);
 		}
 
 		.euf-info-grid {
 			grid-template-columns: 1fr;
+			gap: var(--space-md);
+		}
+
+		.euf-info-card {
+			padding: var(--space-md);
+			flex-direction: row;
+			text-align: left;
+			align-items: center;
+			gap: var(--space-md);
+		}
+
+		.euf-info-icon {
+			margin-bottom: 0;
+			flex-shrink: 0;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.euf-info-icon :global(svg) {
+			width: 24px;
+			height: 24px;
+		}
+
+		.euf-info-card h4 {
+			font-size: var(--text-base-mobile);
+		}
+
+		.euf-info-card p {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.about-euf-description {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.areas-section {
+			padding: var(--space-lg);
+		}
+
+		.areas-section h3 {
+			font-size: var(--text-lg-mobile);
+		}
+
+		.areas-description {
+			font-size: var(--text-sm-mobile);
 		}
 
 		.areas-list {
 			grid-template-columns: 1fr;
+			gap: var(--space-sm);
+		}
+
+		.area-item {
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.area-item:hover {
+			transform: none;
+			box-shadow: none;
+		}
+
+		.area-name,
+		.area-count {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.contribution-header {
+			margin-bottom: var(--space-2xl);
+		}
+
+		.contribution-header .section-description {
+			margin-bottom: 0 !important;
 		}
 
 		.contribution-options {
 			grid-template-columns: 1fr;
+			gap: var(--space-md);
+		}
+
+		.contribution-card {
+			padding: var(--space-md);
+			flex-direction: row;
+			text-align: left;
+			align-items: center;
+			gap: var(--space-md);
+			overflow: hidden;
+		}
+
+		.contribution-card:hover {
+			transform: none;
+		}
+
+		.contribution-icon {
+			width: 48px;
+			height: 48px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.contribution-icon :global(svg) {
+			width: 24px;
+			height: 24px;
+		}
+
+		.contribution-card h3 {
+			font-size: var(--text-base-mobile);
+			margin-bottom: var(--space-xs);
+		}
+
+		.contribution-card p {
+			font-size: var(--text-xs-mobile);
+			margin-bottom: var(--space-xs);
+		}
+
+		.contribution-link {
+			display: none;
+		}
+
+		.contribution-footer p {
+			font-size: var(--text-xs-mobile);
 		}
 	}
 </style>

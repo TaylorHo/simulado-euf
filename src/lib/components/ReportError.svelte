@@ -212,4 +212,44 @@
 		color: var(--text-muted);
 		cursor: not-allowed;
 	}
+
+	@media (max-width: 768px) {
+		.report-form p {
+			font-size: var(--text-sm-mobile);
+		}
+
+		label {
+			font-size: var(--text-sm-mobile);
+		}
+
+		select,
+		textarea {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-xs) var(--space-sm);
+		}
+
+		.form-actions {
+			gap: var(--space-sm);
+		}
+
+		.form-actions button {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.status-message {
+			font-size: var(--text-xs-mobile);
+			padding: var(--space-sm);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.form-actions {
+			flex-direction: column-reverse;
+		}
+
+		.form-actions button {
+			width: 100%;
+		}
+	}
 </style>

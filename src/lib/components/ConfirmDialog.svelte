@@ -53,4 +53,29 @@
 		justify-content: flex-end;
 		flex-wrap: wrap;
 	}
+
+	@media (max-width: 768px) {
+		.confirm-content p {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.confirm-actions {
+			gap: var(--space-sm);
+		}
+
+		.confirm-actions button {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-md);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.confirm-actions {
+			flex-direction: column-reverse;
+		}
+
+		.confirm-actions button {
+			width: 100%;
+		}
+	}
 </style>

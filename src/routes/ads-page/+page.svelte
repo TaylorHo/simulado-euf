@@ -25,7 +25,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 	<script
 		async
-		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4991464670829350"
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT_ID}"
 		crossorigin="anonymous"
 	></script>
 </svelte:head>
@@ -36,6 +36,24 @@
 			<button class="btn-back btn-secondary" onclick={handleGoBack}> ← Voltar </button>
 			<h1>Apoie o Simulado EUF</h1>
 			<p class="message">Para ajudar ainda mais, que tal clicar em um anúncio?</p>
+		</div>
+
+		<div style="text-align: center; margin-bottom: var(--space-2xl);">
+			<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+			{#each Array.from({ length: 20 }) as _, index (`adsterra-${index}`)}
+				<script>
+					atOptions = {
+						key: '07eab4918d3fe61746a31105622da249',
+						format: 'iframe',
+						height: 60,
+						width: 468,
+						params: {}
+					};
+				</script>
+				<script
+					src="https://openairtowhardworking.com/07eab4918d3fe61746a31105622da249/invoke.js"
+				></script>
+			{/each}
 		</div>
 
 		<div class="ads-container">
@@ -111,6 +129,10 @@
 	}
 
 	@media (max-width: 768px) {
+		:global(iframe) {
+			width: 100% !important;
+		}
+
 		h1 {
 			font-size: var(--text-2xl);
 		}

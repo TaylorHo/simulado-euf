@@ -117,6 +117,42 @@
 		overflow-y: auto;
 	}
 
+	@media (max-width: 768px) {
+		.modal-overlay {
+			padding: var(--space-md);
+		}
+
+		.modal-content {
+			max-height: 95vh;
+		}
+
+		.modal-header {
+			padding: var(--space-md);
+		}
+
+		.modal-header h2 {
+			font-size: var(--text-lg-mobile);
+		}
+
+		.modal-body {
+			padding: var(--space-md);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.modal-overlay {
+			padding: var(--space-sm);
+		}
+
+		.modal-header {
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.modal-body {
+			padding: var(--space-sm) var(--space-md);
+		}
+	}
+
 	@media print {
 		.modal-overlay {
 			display: none;

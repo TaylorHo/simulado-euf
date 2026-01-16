@@ -142,10 +142,19 @@
 		transform: scale(0.95);
 	}
 
+	@media (max-width: 768px) {
+		.nav-link:not(.github-link):not(.theme-toggle) {
+			display: none;
+		}
+
+		.logo-text {
+			font-size: var(--text-xl);
+		}
+	}
+
 	@media (max-width: 640px) {
-		.nav-link:not(.github-link) {
-			padding: var(--space-sm) var(--space-md);
-			font-size: var(--text-xs);
+		.logo-text {
+			font-size: var(--text-lg);
 		}
 	}
 

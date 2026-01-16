@@ -80,6 +80,21 @@
 		margin: 0;
 	}
 
+	@media (max-width: 768px) {
+		.footer {
+			padding: var(--space-lg) 0;
+			margin-top: var(--space-lg);
+		}
+
+		.footer-text {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.footer-subtext {
+			font-size: 0.65rem;
+		}
+	}
+
 	@media print {
 		.footer {
 			display: none;

@@ -9,18 +9,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		csp: {
-			directives: {
-				'frame-ancestors': ['self'],
-				'default-src': ['self'],
-				'script-src': [
-					'self',
-					'https://pagead2.googlesyndication.com',
-					'https://insights.hoffmann.io',
-					'nonce-wLUOQjI0NQ/fKQUUkcFmzA=='
-				]
-			}
-		},
 		prerender: {
 			origin: 'https://euf.hoffmann.io'
 		}

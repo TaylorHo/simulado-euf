@@ -368,6 +368,72 @@
 		border-color: #f97316;
 	}
 
+	@media (max-width: 768px) {
+		.score-summary,
+		.score-details {
+			padding: var(--space-md);
+		}
+
+		.score-main {
+			gap: var(--space-lg);
+		}
+
+		.score-circle {
+			width: 100px;
+			height: 100px;
+		}
+
+		.score-value {
+			font-size: var(--text-xl-mobile);
+		}
+
+		.score-percentage {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.score-text h2 {
+			font-size: var(--text-xl-mobile);
+		}
+
+		.score-text p {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.grade-label {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.grade-value {
+			font-size: var(--text-lg-mobile);
+		}
+
+		.score-details h3 {
+			font-size: var(--text-lg-mobile);
+		}
+
+		.area-name {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.area-result {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.insight-section-title {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.insight-tag {
+			font-size: var(--text-xs-mobile);
+			padding: var(--space-xs) var(--space-sm);
+		}
+
+		.score-actions button {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-md);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.score-main {
 			flex-direction: column;
@@ -380,6 +446,11 @@
 
 		.score-actions button {
 			width: 100%;
+		}
+
+		.score-circle {
+			width: 90px;
+			height: 90px;
 		}
 	}
 </style>

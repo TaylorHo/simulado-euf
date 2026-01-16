@@ -55,6 +55,16 @@
 	--text-3xl: 1.875rem;
 	--text-4xl: 2.25rem;
 
+	/* Mobile Typography Overrides */
+	--text-xs-mobile: 0.6875rem;
+	--text-sm-mobile: 0.8125rem;
+	--text-base-mobile: 0.9375rem;
+	--text-lg-mobile: 1rem;
+	--text-xl-mobile: 1.125rem;
+	--text-2xl-mobile: 1.25rem;
+	--text-3xl-mobile: 1.5rem;
+	--text-4xl-mobile: 1.75rem;
+
 	/* Layout */
 	--radius-sm: 0.25rem;
 	--radius-md: 0.5rem;
@@ -134,6 +144,49 @@ html {
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile base font size adjustment */
+@media (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+
+	h1 {
+		font-size: var(--text-3xl-mobile);
+	}
+	h2 {
+		font-size: var(--text-2xl-mobile);
+	}
+	h3 {
+		font-size: var(--text-xl-mobile);
+	}
+	h4 {
+		font-size: var(--text-lg-mobile);
+	}
+	h5 {
+		font-size: var(--text-base-mobile);
+	}
+	h6 {
+		font-size: var(--text-sm-mobile);
+	}
+
+	p {
+		font-size: var(--text-sm-mobile);
+	}
+
+	button {
+		padding: var(--space-xs) var(--space-md);
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		font-size: var(--text-sm-mobile);
+	}
+
+	.container {
+		padding: 0 var(--space-md);
+	}
 }
 
 body {
@@ -270,6 +323,14 @@ textarea:focus {
 	border-radius: var(--radius-lg);
 	padding: var(--space-xl);
 	box-shadow: var(--shadow-sm);
+}
+
+/* Mobile card adjustments */
+@media (max-width: 768px) {
+	.card {
+		padding: var(--space-md);
+		border-radius: var(--radius-md);
+	}
 }
 
 /* KaTeX Support */

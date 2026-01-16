@@ -665,6 +665,8 @@
 	@media (max-width: 1024px) {
 		.exam-content {
 			grid-template-columns: 1fr;
+			gap: var(--space-md);
+			padding: var(--space-md);
 		}
 
 		.exam-sidebar {
@@ -673,13 +675,83 @@
 
 		.compact-sidebar-actions {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
+			gap: var(--space-xs);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.exam-page {
+			padding-top: var(--space-sm);
+		}
+
+		.exam-content {
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.exam-start {
+			padding: var(--space-lg) var(--space-md);
+		}
+
+		.start-card {
+			padding: var(--space-lg);
+		}
+
+		.start-card h2 {
+			font-size: var(--text-xl-mobile);
+		}
+
+		.start-card > p {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.exam-info h3 {
+			font-size: var(--text-base-mobile);
+		}
+
+		.exam-info li {
+			font-size: var(--text-xs-mobile);
+		}
+
+		.exam-results {
+			padding: var(--space-lg) var(--space-md);
+		}
+
+		.review-content {
+			padding: var(--space-lg) var(--space-md);
+		}
+
+		.review-header h2 {
+			font-size: var(--text-xl-mobile);
+		}
+
+		.review-area-title {
+			font-size: var(--text-lg-mobile);
+		}
+
+		.compact-sidebar-actions {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.compact-action-btn {
+			padding: var(--space-xs) var(--space-sm);
+			font-size: 0.65rem;
+		}
+
+		.compact-action-btn span {
+			font-size: 0.6rem;
 		}
 	}
 
 	@media (max-width: 640px) {
 		.exam-controls {
 			gap: var(--space-sm);
+			flex-wrap: wrap;
+		}
+
+		.exam-controls button {
+			font-size: var(--text-sm-mobile);
+			padding: var(--space-sm) var(--space-md);
 		}
 
 		.compact-sidebar-actions {
@@ -690,6 +762,7 @@
 			flex-direction: row;
 			gap: var(--space-xs);
 			padding: var(--space-sm) var(--space-md);
+			font-size: var(--text-xs);
 		}
 
 		.compact-action-btn span {

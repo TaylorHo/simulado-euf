@@ -76,4 +76,23 @@
 		color: var(--text-primary);
 		background-color: var(--bg-tertiary);
 	}
+
+	@media (max-width: 768px) {
+		.help-section {
+			padding: var(--space-md);
+		}
+
+		.help-section h4 {
+			font-size: var(--text-sm-mobile);
+		}
+
+		.help-collapsible {
+			padding: var(--space-sm) var(--space-md);
+		}
+
+		.help-collapsible summary {
+			font-size: var(--text-xs-mobile);
+			padding: var(--space-xs);
+		}
+	}
 </style>
