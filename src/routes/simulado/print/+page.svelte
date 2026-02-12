@@ -126,6 +126,26 @@
 			</div>
 		{/each}
 
+		<div class="answer-sheet">
+			<h2>Folha de Respostas</h2>
+			<p class="answer-sheet-subtitle">Preencha as alternativas escolhidas:</p>
+
+			<div class="answer-grid">
+				{#each examStore.currentExam.questions, index (index)}
+					<div class="answer-row">
+						<span class="answer-question-num">{index + 1}</span>
+						<div class="answer-options">
+							{#each alternativeLabels as label (label)}
+								<div class="answer-bubble">
+									<span class="bubble-label">{label}</span>
+								</div>
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
 		<div class="last-page">
 			<h2>Gabarito Online</h2>
 			<p>Acesse o gabarito e suas estatísticas:</p>
@@ -172,7 +192,7 @@
 		padding: 15mm;
 		background: #ffffff !important;
 		color: #000000 !important;
-		font-size: 10pt;
+		font-size: 12pt;
 		line-height: 1.4;
 	}
 
@@ -195,7 +215,7 @@
 
 	.subtitle {
 		margin: 0 0 40px 0;
-		font-size: 12pt;
+		font-size: 14pt;
 		color: #000000 !important;
 	}
 
@@ -218,7 +238,7 @@
 
 	.qr-text {
 		margin: 0;
-		font-size: 10pt;
+		font-size: 12pt;
 		font-weight: bold;
 		color: #000000 !important;
 	}
@@ -233,7 +253,7 @@
 
 	.instructions p {
 		margin: 8px 0;
-		font-size: 9pt;
+		font-size: 11pt;
 		color: #000000 !important;
 	}
 
@@ -254,12 +274,12 @@
 
 	.question-num {
 		font-weight: bold;
-		font-size: 11pt;
+		font-size: 13pt;
 		color: #000000 !important;
 	}
 
 	.question-area {
-		font-size: 9pt;
+		font-size: 11pt;
 		color: #000000 !important;
 		font-style: italic;
 	}
@@ -267,7 +287,7 @@
 	.statement-text {
 		margin: 12px 0;
 		line-height: 1.5;
-		font-size: 10pt;
+		font-size: 12pt;
 		color: #000000 !important;
 	}
 
@@ -308,7 +328,7 @@
 		border: 2px solid #000000 !important;
 		border-radius: 2px;
 		flex-shrink: 0;
-		font-size: 10pt;
+		font-size: 12pt;
 		color: #000000 !important;
 		background: #ffffff !important;
 	}
@@ -319,7 +339,7 @@
 
 	.alt-text {
 		line-height: 1.4;
-		font-size: 11pt;
+		font-size: 12pt;
 		color: #000000 !important;
 	}
 
@@ -328,6 +348,70 @@
 		max-height: 150px;
 		height: auto;
 		margin-top: 5px;
+	}
+
+	.answer-sheet {
+		page-break-before: always;
+		padding-top: 20mm;
+	}
+
+	.answer-sheet h2 {
+		margin: 0 0 10px 0;
+		font-size: 18pt;
+		text-align: center;
+		color: #000000 !important;
+	}
+
+	.answer-sheet-subtitle {
+		text-align: center;
+		margin: 0 0 60px 0;
+		font-size: 12pt;
+		color: #000000 !important;
+	}
+
+	.answer-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(20, auto);
+		grid-auto-flow: column;
+		gap: 12px 20px;
+		max-width: 180mm;
+		margin: 0 auto;
+	}
+
+	.answer-row {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.answer-question-num {
+		font-weight: bold;
+		font-size: 12pt;
+		min-width: 30px;
+		color: #000000 !important;
+	}
+
+	.answer-options {
+		display: flex;
+		gap: 8px;
+	}
+
+	.answer-bubble {
+		width: 24px;
+		height: 24px;
+		border: 2px solid #000000 !important;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #ffffff !important;
+	}
+
+	.bubble-label {
+		font-size: 11pt;
+		font-weight: bold;
+		color: #000000 !important;
 	}
 
 	.last-page {
@@ -347,7 +431,7 @@
 
 	.last-page p {
 		margin: 15px 0 25px 0;
-		font-size: 10pt;
+		font-size: 12pt;
 		color: #000000 !important;
 	}
 
@@ -385,6 +469,7 @@
 		}
 
 		.first-page,
+		.answer-sheet,
 		.last-page {
 			page-break-inside: avoid;
 		}
