@@ -14,6 +14,8 @@
 	import { Plus, Share2, Printer, ClipboardList } from '@lucide/svelte';
 	import { groupQuestionsByArea, buildExamUrl, tryLoadExam } from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
+	import { ADSENSE_CLIENT_ID, AD_SLOT, ADS_ENABLED } from '$lib/variables';
+	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
@@ -24,6 +26,7 @@
 	let showReview = $state(false);
 	let examId = $state<string | null>(null);
 	let pendingExamId = $state<string | null>(null);
+	let adsLoaded = $state(false);
 
 	function copyExamLink() {
 		if (examStore.currentExam) {
@@ -231,11 +234,42 @@
 	const questionsByAreaForReview = $derived(() =>
 		examStore.currentExam ? groupQuestionsByArea(examStore.currentExam.questions) : []
 	);
+
+	// Load ads when review is shown
+	$effect(() => {
+		if (showReview && !adsLoaded && ADS_ENABLED && adsPreferenceStore.enabled) {
+			setTimeout(() => {
+				try {
+					const ads = document.querySelectorAll('.review-ad-wrapper .adsbygoogle');
+					if (ads.length > 0) {
+						// eslint-disable-next-line @typescript-eslint/no-explicit-any
+						const adsbygoogle = (window as any).adsbygoogle || [];
+						ads.forEach(() => {
+							adsbygoogle.push({});
+						});
+						adsLoaded = true;
+					}
+				} catch (e) {
+					console.error('Ad loading error:', e);
+				}
+			}, 300);
+		} else if (!showReview) {
+			// Reset ads loaded flag when leaving review
+			adsLoaded = false;
+		}
+	});
 </script>
 
 <svelte:head>
 	<title>Simulado - Simulado EUF</title>
 	<meta name="description" content="Faça um simulado completo do EUF com 40 questões" />
+	{#if ADS_ENABLED}
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT_ID}"
+			crossorigin="anonymous"
+		></script>
+	{/if}
 </svelte:head>
 
 <div class="exam-page">
@@ -304,6 +338,25 @@
 											showTags={true}
 										/>
 									</div>
+
+									<!-- Show ad every 4 questions -->
+									{#if ADS_ENABLED && adsPreferenceStore.enabled && (index + 1) % 4 === 0}
+										<div class="review-ad-container">
+											<p class="review-ad-message">
+												Ajude a manter o projeto gratuito visualizando alguns anúncios
+											</p>
+											<div class="review-ad-wrapper">
+												<ins
+													class="adsbygoogle"
+													style="display:block"
+													data-ad-client={ADSENSE_CLIENT_ID}
+													data-ad-slot={AD_SLOT}
+													data-ad-format="auto"
+													data-full-width-responsive="true"
+												></ins>
+											</div>
+										</div>
+									{/if}
 								{/if}
 							{/each}
 						</div>
@@ -607,6 +660,39 @@
 		max-width: 900px;
 	}
 
+	.review-area-section {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2xl);
+	}
+
+	.review-ad-container {
+		margin: var(--space-2xl) 0;
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-lg);
+		padding: var(--space-lg);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+
+	.review-ad-message {
+		color: var(--text-secondary);
+		font-size: var(--text-sm);
+		line-height: 1.6;
+		text-align: center;
+		margin: 0;
+	}
+
+	.review-ad-wrapper {
+		min-height: 100px;
+	}
+
+	.review-ad-wrapper .adsbygoogle {
+		min-height: 80px;
+	}
+
 	.review-content {
 		padding: var(--space-2xl) var(--space-lg);
 		max-width: 1200px;
@@ -630,12 +716,6 @@
 	}
 
 	.review-questions {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2xl);
-	}
-
-	.review-area-section {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-2xl);
@@ -770,6 +850,19 @@
 
 		.exam-results {
 			padding: var(--space-lg) var(--space-md);
+		}
+
+		.review-ad-container {
+			padding: var(--space-md);
+			margin: var(--space-lg) 0;
+		}
+
+		.review-ad-message {
+			font-size: var(--text-xs);
+		}
+
+		.review-ad-wrapper .adsbygoogle {
+			min-height: 60px;
 		}
 
 		.review-content {

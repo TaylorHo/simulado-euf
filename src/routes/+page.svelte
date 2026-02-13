@@ -12,7 +12,6 @@
 		QrCode,
 		Printer,
 		ChartColumn,
-		WifiOff,
 		BookOpen,
 		Clock,
 		MapPin,
@@ -20,7 +19,8 @@
 		Github,
 		Heart,
 		ExternalLink,
-		ShieldOff
+		ShieldOff,
+		PiggyBank
 	} from '@lucide/svelte';
 	import { BUY_ME_A_COFFEE_URL, GITHUB_REPO_URL, GITHUB_SPONSORS_URL } from '$lib/variables';
 
@@ -120,7 +120,7 @@
 						<QrCode size={56} strokeWidth={1.5} />
 					</div>
 					<div class="qr-banner-text">
-						<strong>Tem um simulado impresso?</strong>
+						<strong>Já imprimiu seu simulado?</strong>
 						<p>
 							Escaneie o QR Code do seu simulado para verificar as respostas e ver sua pontuação.
 						</p>
@@ -150,7 +150,7 @@
 						<Printer size={32} strokeWidth={1.5} />
 					</div>
 					<h3><span style="white-space: nowrap;">Imprima &</span> Pratique</h3>
-					<p>Gere simulados para imprimir e responder no papel, como na prova real</p>
+					<p>Imprima simulados para responder no papel, como na prova real, ou faça online</p>
 				</div>
 
 				<div class="feature-card">
@@ -158,15 +158,15 @@
 						<ChartColumn size={32} strokeWidth={1.5} />
 					</div>
 					<h3>Análise Detalhada</h3>
-					<p>Feedback completo do seu desempenho por área de conhecimento e questão</p>
+					<p>Resultados detalhados do seu desempenho por área de conhecimento e questão</p>
 				</div>
 
 				<div class="feature-card">
 					<div class="feature-icon">
-						<WifiOff size={32} strokeWidth={1.5} />
+						<PiggyBank size={32} strokeWidth={1.5} />
 					</div>
-					<h3>100% Offline</h3>
-					<p>Estude sem internet após o primeiro acesso à plataforma</p>
+					<h3>100% Gratuito</h3>
+					<p>Tudo liberado gratuitamente para você estudar, aproveite!</p>
 				</div>
 			</div>
 		</div>

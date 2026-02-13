@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Github, Linkedin } from '@lucide/svelte';
+	import { Github, Linkedin, Heart, HeartCrack } from '@lucide/svelte';
+	import { ADS_ENABLED } from '$lib/variables';
+	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 </script>
 
 <div class="footer">
@@ -27,6 +29,24 @@
 			</a>
 		</p>
 		<p class="footer-subtext">Simulador baseado em questões reais do Exame Unificado de Física</p>
+
+		{#if ADS_ENABLED}
+			<div class="ads-toggle">
+				<button
+					class="ads-toggle-btn"
+					onclick={() => adsPreferenceStore.toggle()}
+					title={adsPreferenceStore.enabled ? 'Desativar anúncios' : 'Ativar anúncios'}
+				>
+					{#if adsPreferenceStore.enabled}
+						<Heart size={16} />
+						<span>Anúncios ativos</span>
+					{:else}
+						<HeartCrack size={16} />
+						<span>Anúncios desativados</span>
+					{/if}
+				</button>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -78,6 +98,34 @@
 		font-size: var(--text-xs);
 		color: var(--text-muted);
 		margin: 0;
+	}
+
+	.ads-toggle {
+		margin-top: var(--space-md);
+	}
+
+	.ads-toggle-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-xs);
+		padding: var(--space-xs) var(--space-sm);
+		font-size: var(--text-xs);
+		color: var(--text-secondary);
+		background-color: var(--bg-primary);
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+	}
+
+	.ads-toggle-btn:hover {
+		color: var(--accent-primary);
+		border-color: var(--accent-primary);
+		transform: translateY(-1px);
+	}
+
+	.ads-toggle-btn span {
+		font-weight: 500;
 	}
 
 	@media (max-width: 768px) {

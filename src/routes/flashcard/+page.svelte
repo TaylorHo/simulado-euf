@@ -10,6 +10,7 @@
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { AreaLabels } from '$lib/models/area';
 	import { ADSENSE_CLIENT_ID, AD_SLOT, ADS_ENABLED } from '$lib/variables';
+	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 
 	let isLoading = $state(true);
 	let showInterstitialAd = $state(false);
@@ -61,7 +62,7 @@
 
 	// Load ads when interstitial is shown
 	$effect(() => {
-		if (showInterstitialAd && !adsLoaded && ADS_ENABLED) {
+		if (showInterstitialAd && !adsLoaded && ADS_ENABLED && adsPreferenceStore.enabled) {
 			setTimeout(() => {
 				try {
 					const ads = document.querySelectorAll('.ads-wrapper .adsbygoogle');
@@ -103,7 +104,7 @@
 		}
 
 		// When clicking "Próxima Questão" after revealing answer, show interstitial ad if enabled
-		if (ADS_ENABLED) {
+		if (ADS_ENABLED && adsPreferenceStore.enabled) {
 			// Check if answer was correct
 			wasCorrectAnswer = flashcardStore.selectedAnswer === flashcardStore.currentQuestion?.correct;
 
