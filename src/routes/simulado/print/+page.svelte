@@ -127,6 +127,12 @@
 		{/each}
 
 		<div class="answer-sheet">
+			<!-- OMR Alignment Markers -->
+			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-top-left" />
+			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-top-right" />
+			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-bottom-left" />
+			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-bottom-right" />
+
 			<h2>Folha de Respostas</h2>
 			<p class="answer-sheet-subtitle">Preencha as alternativas escolhidas:</p>
 
@@ -353,6 +359,35 @@
 	.answer-sheet {
 		page-break-before: always;
 		padding-top: 20mm;
+		position: relative;
+	}
+
+	.omr-marker {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+
+	.marker-top-left {
+		top: 5mm;
+		left: 5mm;
+	}
+
+	.marker-top-right {
+		top: 5mm;
+		right: 5mm;
+	}
+
+	.marker-bottom-left {
+		top: 265mm;
+		left: 5mm;
+	}
+
+	.marker-bottom-right {
+		top: 265mm;
+		right: 5mm;
 	}
 
 	.answer-sheet h2 {

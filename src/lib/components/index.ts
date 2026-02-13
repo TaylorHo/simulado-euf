@@ -12,3 +12,5 @@ export { default as HelpSectionInner } from './HelpSectionInner.svelte';
 export { default as HelpSection } from './HelpSection.svelte';
 export { default as ConfirmDialog } from './ConfirmDialog.svelte';
 export { default as ReportError } from './ReportError.svelte';
+export { default as AnswerSheetScanner } from './AnswerSheetScanner.svelte';
+export { default as AnswerInputMethodModal } from './AnswerInputMethodModal.svelte';

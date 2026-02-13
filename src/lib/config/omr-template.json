@@ -1,0 +1,37 @@
+{
+	"pageDimensions": [2480, 3508],
+	"bubbleDimensions": [66, 66],
+	"preProcessors": [
+		{
+			"name": "CropPage",
+			"options": {
+				"morphKernel": [10, 10]
+			}
+		},
+		{
+			"name": "CropOnMarkers",
+			"options": {
+				"relativePath": "omr_marker.jpg",
+				"sheetToMarkerWidthRatio": 33,
+				"min_matching_threshold": 0.25,
+				"marker_rescale_range": [25, 50]
+			}
+		}
+	],
+	"fieldBlocks": {
+		"LeftColumn": {
+			"fieldType": "QTYPE_MCQ5",
+			"origin": [430, 778],
+			"fieldLabels": ["q1..20"],
+			"bubblesGap": 87,
+			"labelsGap": 97.5
+		},
+		"RightColumn": {
+			"fieldType": "QTYPE_MCQ5",
+			"origin": [1385, 778],
+			"fieldLabels": ["q21..40"],
+			"bubblesGap": 87,
+			"labelsGap": 97.5
+		}
+	}
+}

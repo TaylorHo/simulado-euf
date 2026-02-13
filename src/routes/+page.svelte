@@ -3,6 +3,9 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
+	import AnswerInputMethodModal from '$lib/components/AnswerInputMethodModal.svelte';
+	import AnswerSheetScanner from '$lib/components/AnswerSheetScanner.svelte';
+	import type { QuestionAlternative } from '$lib/models/question';
 	import {
 		FileText,
 		Target,
@@ -21,6 +24,9 @@
 	import { BUY_ME_A_COFFEE_URL, GITHUB_REPO_URL, GITHUB_SPONSORS_URL } from '$lib/variables';
 
 	let showQRModal = $state(false);
+	let showMethodModal = $state(false);
+	let showAnswerSheetModal = $state(false);
+	let scannedExamId = $state<string | null>(null);
 
 	function handleStartExam() {
 		goto('/simulado');
@@ -36,7 +42,33 @@
 
 	function handleQRScan(code: string) {
 		showQRModal = false;
-		goto(`/simulado?id=${code}`);
+		scannedExamId = code;
+		showMethodModal = true;
+	}
+
+	function handleSelectManual() {
+		showMethodModal = false;
+		if (scannedExamId) {
+			goto(`/simulado?id=${scannedExamId}`);
+		}
+	}
+
+	function handleSelectPhoto() {
+		showMethodModal = false;
+		showAnswerSheetModal = true;
+	}
+
+	function handleAnswersDetected(answers: Array<QuestionAlternative | null>) {
+		showAnswerSheetModal = false;
+		if (scannedExamId) {
+			localStorage.setItem('temp-scanned-answers', JSON.stringify(answers));
+			goto(`/simulado?id=${scannedExamId}&autofill=true`);
+		}
+	}
+
+	function handleCancelAnswerSheet() {
+		showAnswerSheetModal = false;
+		showMethodModal = true;
 	}
 </script>
 
@@ -285,6 +317,25 @@
 
 <Modal open={showQRModal} title="Escanear QR Code" onClose={() => (showQRModal = false)}>
 	<QRScanner onScan={handleQRScan} />
+</Modal>
+
+<Modal
+	open={showMethodModal}
+	title="Escolher Método de Preenchimento"
+	onClose={() => (showMethodModal = false)}
+>
+	<AnswerInputMethodModal onSelectManual={handleSelectManual} onSelectPhoto={handleSelectPhoto} />
+</Modal>
+
+<Modal
+	open={showAnswerSheetModal}
+	title="Escanear Folha de Respostas"
+	onClose={() => (showAnswerSheetModal = false)}
+>
+	<AnswerSheetScanner
+		onAnswersDetected={handleAnswersDetected}
+		onCancel={handleCancelAnswerSheet}
+	/>
 </Modal>
 
 <style>

@@ -38,6 +38,7 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
+		"@armghan3071/omrchecker": "^1.0.2",
 		"@lucide/svelte": "^0.563.1",
 		"jsqr": "^1.4.0",
 		"katex": "^0.16.27",

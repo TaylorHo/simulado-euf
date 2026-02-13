@@ -41,6 +41,7 @@
 
 	onMount(() => {
 		examId = page.url.searchParams.get('id');
+		const autofill = page.url.searchParams.get('autofill');
 		const savedExamId = examStore.getSavedExamId();
 
 		if (examId) {
@@ -54,6 +55,30 @@
 					(id) => {
 						examStore.loadExamFromIdentifier(id);
 						currentExamUrl = buildExamUrl(id);
+
+						// Handle auto-fill from scanned answer sheet
+						if (autofill === 'true') {
+							const storedAnswers = localStorage.getItem('temp-scanned-answers');
+							if (storedAnswers) {
+								try {
+									const answers = JSON.parse(storedAnswers) as Array<QuestionAlternative | null>;
+									// Apply answers to the exam
+									answers.forEach((answer: QuestionAlternative | null, index: number) => {
+										if (answer !== null && answer !== undefined) {
+											examStore.selectAnswer(index, answer);
+										}
+									});
+									// Clean up temporary storage
+									localStorage.removeItem('temp-scanned-answers');
+									// Automatically finalize the exam to show results immediately
+									examStore.finishExam();
+								} catch (error) {
+									console.error('Error loading scanned answers:', error);
+									alert('Erro ao carregar as respostas escaneadas.');
+								}
+							}
+						}
+
 						isLoading = false;
 					},
 					() => {
