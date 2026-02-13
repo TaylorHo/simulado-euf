@@ -23,20 +23,22 @@
 	let showNewExamConfirm = $state(false);
 	let showReview = $state(false);
 	let examId = $state<string | null>(null);
-	let currentExamUrl = $state('');
 	let pendingExamId = $state<string | null>(null);
 
 	function copyExamLink() {
 		if (examStore.currentExam) {
-			navigator.clipboard.writeText(currentExamUrl);
+			const url = buildExamUrl(examStore.currentExam.id, '/simulado', examStore.currentSeed);
+			navigator.clipboard.writeText(url);
 			alert('Link copiado para a área de transferência!');
 		}
 	}
 
 	function handleExport() {
 		if (examStore.currentExam) {
-			const seed = page.url.searchParams.get('seed') || undefined;
-			window.open(buildExamUrl(examStore.currentExam.id, '/simulado/print', seed), '_blank');
+			window.open(
+				buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed),
+				'_blank'
+			);
 		}
 	}
 
@@ -44,10 +46,10 @@
 		examId = page.url.searchParams.get('id');
 		const autofill = page.url.searchParams.get('autofill');
 		const seed = page.url.searchParams.get('seed') || undefined;
-		const savedExamId = examStore.getSavedExamId();
+		const savedExamData = examStore.getSavedExamData();
 
 		if (examId) {
-			if (savedExamId && savedExamId !== examId) {
+			if (savedExamData && savedExamData.examId !== examId) {
 				pendingExamId = examId;
 				showProgressWarning = true;
 				isLoading = false;
@@ -56,7 +58,6 @@
 					examId,
 					(id) => {
 						examStore.loadExamFromIdentifier(id, seed);
-						currentExamUrl = buildExamUrl(id, '/simulado', seed);
 
 						// Handle auto-fill from scanned answer sheet
 						if (autofill === 'true') {
@@ -103,13 +104,13 @@
 					}
 				);
 			}
-		} else if (savedExamId && examStore.currentExam?.id !== savedExamId) {
+		} else if (savedExamData && examStore.currentExam?.id !== savedExamData.examId) {
 			tryLoadExam(
-				savedExamId,
+				savedExamData.examId,
 				(id) => {
 					examStore.loadExamFromIdentifier(id);
-					goto(`/simulado?id=${id}`, { replaceState: true });
-					currentExamUrl = buildExamUrl(id);
+					const urlSeed = examStore.currentSeed ?? savedExamData.seed;
+					goto(`/simulado?id=${id}${urlSeed ? `&seed=${urlSeed}` : ''}`, { replaceState: true });
 					isLoading = false;
 				},
 				() => {
@@ -117,21 +118,31 @@
 					isLoading = false;
 				}
 			);
-		} else if (!savedExamId) {
+		} else if (!savedExamData) {
 			examStore.resetExam();
 			isLoading = false;
 		} else {
-			// Already loaded
+			// Already loaded - update URL if needed
+			if (examStore.currentExam && examStore.currentSeed !== undefined) {
+				// Update URL only if it doesn't have the seed parameter
+				if (!page.url.searchParams.get('seed')) {
+					goto(`/simulado?id=${examStore.currentExam.id}&seed=${examStore.currentSeed}`, {
+						replaceState: true
+					});
+				}
+			}
 			isLoading = false;
 		}
 	});
 
 	function continueWithSavedExam() {
-		const savedExamId = examStore.getSavedExamId();
-		if (savedExamId) {
-			examStore.loadExamFromIdentifier(savedExamId);
-			currentExamUrl = buildExamUrl(savedExamId);
-			goto(`/simulado?id=${savedExamId}`, { replaceState: true });
+		const savedExamData = examStore.getSavedExamData();
+		if (savedExamData) {
+			examStore.loadExamFromIdentifier(savedExamData.examId);
+			const seed = examStore.currentSeed ?? savedExamData.seed;
+			goto(`/simulado?id=${savedExamData.examId}${seed ? `&seed=${seed}` : ''}`, {
+				replaceState: true
+			});
 		}
 		showProgressWarning = false;
 		pendingExamId = null;
@@ -142,7 +153,6 @@
 			const seed = page.url.searchParams.get('seed') || undefined;
 			tryLoadExam(pendingExamId, (id) => {
 				examStore.loadExamFromIdentifier(id, seed, true);
-				currentExamUrl = buildExamUrl(id, '/simulado', seed);
 			});
 		}
 		showProgressWarning = false;
@@ -151,7 +161,6 @@
 
 	function handleGenerateExam() {
 		const result = examStore.generateNewExam();
-		currentExamUrl = buildExamUrl(result.exam.id, '/simulado', result.seed);
 		goto(`/simulado?id=${result.exam.id}&seed=${result.seed}`);
 	}
 
@@ -429,7 +438,7 @@
 			<p>Use o QR Code ou copie o link para compartilhar este simulado.</p>
 
 			<div class="qr-section">
-				<ExamQRCode examId={examStore.currentExam.id} size={220} />
+				<ExamQRCode examId={examStore.currentExam.id} seed={examStore.currentSeed} size={220} />
 			</div>
 
 			<button class="btn-primary copy-link-btn" onclick={copyExamLink}>

@@ -1,19 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import QRCode from 'qrcode';
+	import { buildExamUrl } from '$lib/utils/helpers';
 
 	interface Props {
 		examId: string;
+		seed?: number;
 		size?: number;
 	}
 
-	let { examId, size = 200 }: Props = $props();
+	let { examId, seed, size = 200 }: Props = $props();
 
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
 		if (canvas) {
-			QRCode.toCanvas(canvas, examId, {
+			const url = buildExamUrl(examId, '/simulado', seed);
+			QRCode.toCanvas(canvas, url, {
 				width: size,
 				margin: 1,
 				color: {

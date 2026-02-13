@@ -157,6 +157,7 @@
 		// We need to convert this to an array of 40 elements
 
 		const answers: Array<QuestionAlternative | null> = [];
+		let invalidAnswersCount = 0;
 
 		try {
 			// The results come as an object with q1, q2, ... q40 keys
@@ -168,8 +169,19 @@
 
 					// Convert letter to QuestionAlternative enum or null if empty
 					if (answer && typeof answer === 'string' && answer.trim() !== '') {
-						const mapped = mapAnswerToAlternative(answer.trim().toUpperCase());
-						answers.push(mapped);
+						const trimmedAnswer = answer.trim().toUpperCase();
+
+						// Check for invalid answers (multiple letters like "AB", "ABCDE", etc.)
+						if (trimmedAnswer.length > 1) {
+							invalidAnswersCount++;
+							answers.push(null);
+						} else {
+							const mapped = mapAnswerToAlternative(trimmedAnswer);
+							if (mapped === null && trimmedAnswer !== '') {
+								invalidAnswersCount++;
+							}
+							answers.push(mapped);
+						}
 					} else {
 						answers.push(null);
 					}
@@ -184,12 +196,43 @@
 			if (answers.length !== 40) {
 				throw new Error(`Esperado 40 respostas, mas ${answers.length} foram processadas.`);
 			}
+
+			// Validate the quality of the scan
+			validateAnswersQuality(answers, invalidAnswersCount);
 		} catch (error) {
 			console.error('Error parsing OMR results:', error);
 			throw error;
 		}
 
 		return answers;
+	}
+
+	function validateAnswersQuality(
+		answers: Array<QuestionAlternative | null>,
+		invalidAnswersCount: number
+	) {
+		// Check if all answers are empty (complete parsing failure)
+		const allEmpty = answers.every((answer) => answer === null);
+		if (allEmpty) {
+			throw new Error(
+				'Não foi possível processar a folha. Tente tirar uma nova foto com melhor iluminação ou preencha manualmente.'
+			);
+		}
+
+		// Check for excessive invalid or multiple selections
+		if (invalidAnswersCount > 10) {
+			throw new Error(
+				'Erro ao processar a folha. Tente uma nova foto com melhor enquadramento ou preencha manualmente.'
+			);
+		}
+
+		// Check if very few answers were detected (likely a bad scan)
+		const answeredCount = answers.filter((answer) => answer !== null).length;
+		if (answeredCount < 5) {
+			throw new Error(
+				`Apenas ${answeredCount} respostas detectadas. Tente uma nova foto com melhor qualidade ou preencha manualmente.`
+			);
+		}
 	}
 
 	function mapAnswerToAlternative(answer: string | undefined): QuestionAlternative | null {
@@ -228,10 +271,10 @@
 				<div class="error-icon">
 					<X size={48} strokeWidth={2} />
 				</div>
-				<h3>Erro</h3>
+				<h3>Folha não reconhecida</h3>
 				<p class="error-text">{errorMessage}</p>
 				<div class="error-actions">
-					<button class="btn-secondary" onclick={onCancel}> Voltar </button>
+					<button class="btn-secondary" onclick={onCancel}> Preencher Manualmente </button>
 					<button
 						class="btn-primary"
 						onclick={() => {
@@ -239,7 +282,7 @@
 							initCamera();
 						}}
 					>
-						Tentar Novamente
+						Tirar Nova Foto
 					</button>
 				</div>
 			</div>

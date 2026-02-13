@@ -7,6 +7,7 @@ import { parseSeed } from '$lib/services/alternativeSorting';
 
 interface ExamProgress {
 	examId: string;
+	seed?: number;
 	answers: Array<{ questionIndex: number; answer: number | null }>;
 	discarded: Array<{ questionIndex: number; alternatives: number[] }>;
 	currentQuestionIndex: number;
@@ -21,12 +22,14 @@ class ExamStore {
 	currentQuestionIndex = $state(0);
 	showResults = $state(false);
 	examScore = $state<ExamScore | null>(null);
+	currentSeed = $state<number | undefined>(undefined);
 
 	private saveProgress() {
 		if (!browser || !this.currentExam) return;
 
 		const progress: ExamProgress = {
 			examId: this.currentExam.id,
+			seed: this.currentSeed,
 			answers: this.currentExam.questions.map((q, index) => ({
 				questionIndex: index,
 				answer: q.selected
@@ -98,6 +101,20 @@ class ExamStore {
 		}
 	}
 
+	getSavedExamData(): { examId: string; seed?: number } | null {
+		if (!browser) return null;
+
+		const stored = localStorage.getItem(this.STORAGE_KEY);
+		if (!stored) return null;
+
+		try {
+			const progress: ExamProgress = JSON.parse(stored);
+			return { examId: progress.examId, seed: progress.seed };
+		} catch {
+			return null;
+		}
+	}
+
 	clearProgress() {
 		if (!browser) return;
 		localStorage.removeItem(this.STORAGE_KEY);
@@ -106,6 +123,7 @@ class ExamStore {
 	generateNewExam(): { exam: GeneratedExam; seed: number } {
 		const result = this.examService.generateExam();
 		this.currentExam = result.exam;
+		this.currentSeed = result.seed;
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;
@@ -119,12 +137,25 @@ class ExamStore {
 		const seed = seedStr ? (parseSeed(seedStr) ?? undefined) : undefined;
 
 		this.currentExam = this.examService.loadExamFromIdentifier(identifier, seed);
+		this.currentSeed = seed;
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;
 
 		if (!skipProgressLoad) {
-			this.loadProgress(identifier);
+			const progressLoaded = this.loadProgress(identifier);
+			// If progress was loaded and had a seed, use that seed
+			if (progressLoaded && this.currentSeed === undefined) {
+				// Reload with the saved seed
+				const stored = localStorage.getItem(this.STORAGE_KEY);
+				if (stored) {
+					const progress: ExamProgress = JSON.parse(stored);
+					if (progress.seed !== undefined) {
+						this.currentSeed = progress.seed;
+						this.currentExam = this.examService.loadExamFromIdentifier(identifier, progress.seed);
+					}
+				}
+			}
 		} else {
 			this.saveProgress();
 		}
@@ -137,12 +168,25 @@ class ExamStore {
 		const seed = seedStr ? (parseSeed(seedStr) ?? undefined) : undefined;
 
 		this.currentExam = this.examService.loadExamFromIdentifier(code, seed);
+		this.currentSeed = seed;
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;
 
 		if (!skipProgressLoad) {
-			this.loadProgress(code);
+			const progressLoaded = this.loadProgress(code);
+			// If progress was loaded and had a seed, use that seed
+			if (progressLoaded && this.currentSeed === undefined) {
+				// Reload with the saved seed
+				const stored = localStorage.getItem(this.STORAGE_KEY);
+				if (stored) {
+					const progress: ExamProgress = JSON.parse(stored);
+					if (progress.seed !== undefined) {
+						this.currentSeed = progress.seed;
+						this.currentExam = this.examService.loadExamFromIdentifier(code, progress.seed);
+					}
+				}
+			}
 		} else {
 			this.saveProgress();
 		}
@@ -209,6 +253,7 @@ class ExamStore {
 
 	resetExam() {
 		this.currentExam = null;
+		this.currentSeed = undefined;
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;

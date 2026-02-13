@@ -19,7 +19,8 @@
 		Coffee,
 		Github,
 		Heart,
-		ExternalLink
+		ExternalLink,
+		ShieldOff
 	} from '@lucide/svelte';
 	import { BUY_ME_A_COFFEE_URL, GITHUB_REPO_URL, GITHUB_SPONSORS_URL } from '$lib/variables';
 
@@ -89,7 +90,7 @@
 	<section class="hero">
 		<div class="container">
 			<div class="hero-badge">
-				<span class="badge-text">100% Gratuito • Open Source</span>
+				<span class="badge-text">100% Gratuito • Código Aberto</span>
 			</div>
 			<h1 class="hero-title">Prepare-se para o EUF</h1>
 			<p class="hero-subtitle">
@@ -296,13 +297,13 @@
 					</span>
 				</a>
 
-				<a class="contribution-card" href="/ads-page">
+				<div class="contribution-card">
 					<div class="contribution-icon">
-						<ExternalLink size={32} />
+						<ShieldOff size={32} />
 					</div>
-					<h3>Visualizar Anúncios</h3>
-					<p>Ajude apenas visualizando uma página</p>
-				</a>
+					<h3>Desative o bloqueador de anúncios</h3>
+					<p>Se você estiver usando um, considere desativá-lo neste site para apoiar o projeto.</p>
+				</div>
 			</div>
 
 			<div class="contribution-footer">
