@@ -3,6 +3,7 @@ import type { GeneratedExam } from '$lib/models/exam';
 import type { QuestionAlternative } from '$lib/models/question';
 import type { ExamScore } from '$lib/models/score';
 import { browser } from '$app/environment';
+import { parseSeed } from '$lib/services/alternativeSorting';
 
 interface ExamProgress {
 	examId: string;
@@ -102,18 +103,22 @@ class ExamStore {
 		localStorage.removeItem(this.STORAGE_KEY);
 	}
 
-	generateNewExam() {
-		this.currentExam = this.examService.generateExam();
+	generateNewExam(): { exam: GeneratedExam; seed: number } {
+		const result = this.examService.generateExam();
+		this.currentExam = result.exam;
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;
 		this.clearProgress();
 		this.saveProgress();
-		return this.currentExam;
+		return result;
 	}
 
-	loadExamFromIdentifier(identifier: string, skipProgressLoad = false) {
-		this.currentExam = this.examService.loadExamFromIdentifier(identifier);
+	loadExamFromIdentifier(identifier: string, seedStr?: string, skipProgressLoad = false) {
+		// Parse seed from string if provided
+		const seed = seedStr ? (parseSeed(seedStr) ?? undefined) : undefined;
+
+		this.currentExam = this.examService.loadExamFromIdentifier(identifier, seed);
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;
@@ -127,8 +132,11 @@ class ExamStore {
 		return this.currentExam;
 	}
 
-	loadExamFromCode(code: string, skipProgressLoad = false) {
-		this.currentExam = this.examService.loadExamFromIdentifier(code);
+	loadExamFromCode(code: string, seedStr?: string, skipProgressLoad = false) {
+		// Parse seed from string if provided
+		const seed = seedStr ? (parseSeed(seedStr) ?? undefined) : undefined;
+
+		this.currentExam = this.examService.loadExamFromIdentifier(code, seed);
 		this.currentQuestionIndex = 0;
 		this.showResults = false;
 		this.examScore = null;

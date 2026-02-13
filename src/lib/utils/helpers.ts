@@ -52,8 +52,20 @@ export function getPercentageColor(percentage: number): string {
 /**
  * Build exam URL for the given exam ID
  */
-export function buildExamUrl(examId: string, basePath: string = '/simulado'): string {
-	return `${typeof window !== 'undefined' ? window.location.origin : ''}${basePath}?id=${examId}`;
+export function buildExamUrl(
+	examId: string,
+	basePath: string = '/simulado',
+	seed?: number | string
+): string {
+	const base = `${typeof window !== 'undefined' ? window.location.origin : ''}${basePath}?id=${examId}`;
+
+	// Add seed parameter if provided
+	if (seed !== undefined && seed !== null) {
+		const seedStr = typeof seed === 'string' ? seed : String(seed);
+		return `${base}&seed=${seedStr}`;
+	}
+
+	return base;
 }
 
 /**

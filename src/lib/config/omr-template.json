@@ -1,6 +1,6 @@
 {
 	"pageDimensions": [2480, 3508],
-	"bubbleDimensions": [66, 66],
+	"bubbleDimensions": [72, 72],
 	"preProcessors": [
 		{
 			"name": "CropPage",
@@ -21,17 +21,17 @@
 	"fieldBlocks": {
 		"LeftColumn": {
 			"fieldType": "QTYPE_MCQ5",
-			"origin": [430, 778],
+			"origin": [548, 640],
 			"fieldLabels": ["q1..20"],
-			"bubblesGap": 87,
-			"labelsGap": 97.5
+			"bubblesGap": 98,
+			"labelsGap": 112
 		},
 		"RightColumn": {
 			"fieldType": "QTYPE_MCQ5",
-			"origin": [1385, 778],
+			"origin": [1545, 640],
 			"fieldLabels": ["q21..40"],
-			"bubblesGap": 87,
-			"labelsGap": 97.5
+			"bubblesGap": 98,
+			"labelsGap": 112
 		}
 	}
 }

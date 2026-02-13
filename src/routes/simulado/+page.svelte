@@ -35,13 +35,15 @@
 
 	function handleExport() {
 		if (examStore.currentExam) {
-			window.open(buildExamUrl(examStore.currentExam.id, '/simulado/print'), '_blank');
+			const seed = page.url.searchParams.get('seed') || undefined;
+			window.open(buildExamUrl(examStore.currentExam.id, '/simulado/print', seed), '_blank');
 		}
 	}
 
 	onMount(() => {
 		examId = page.url.searchParams.get('id');
 		const autofill = page.url.searchParams.get('autofill');
+		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamId = examStore.getSavedExamId();
 
 		if (examId) {
@@ -53,24 +55,36 @@
 				tryLoadExam(
 					examId,
 					(id) => {
-						examStore.loadExamFromIdentifier(id);
-						currentExamUrl = buildExamUrl(id);
+						examStore.loadExamFromIdentifier(id, seed);
+						currentExamUrl = buildExamUrl(id, '/simulado', seed);
 
 						// Handle auto-fill from scanned answer sheet
 						if (autofill === 'true') {
 							const storedAnswers = localStorage.getItem('temp-scanned-answers');
 							if (storedAnswers) {
 								try {
-									const answers = JSON.parse(storedAnswers) as Array<QuestionAlternative | null>;
-									// Apply answers to the exam
-									answers.forEach((answer: QuestionAlternative | null, index: number) => {
-										if (answer !== null && answer !== undefined) {
-											examStore.selectAnswer(index, answer);
+									const scannedAnswers = JSON.parse(
+										storedAnswers
+									) as Array<QuestionAlternative | null>;
+
+									scannedAnswers.forEach(
+										(printedPosition: QuestionAlternative | null, index: number) => {
+											if (printedPosition !== null && printedPosition !== undefined) {
+												const question = examStore.currentExam?.questions[index];
+												if (question) {
+													// Get the alternative at the printed position
+													const selectedAlternative = question.alternatives[printedPosition];
+													if (selectedAlternative) {
+														// Use the original alternative number (not the printed position)
+														const originalNumber = selectedAlternative.number;
+														examStore.selectAnswer(index, originalNumber);
+													}
+												}
+											}
 										}
-									});
-									// Clean up temporary storage
+									);
+
 									localStorage.removeItem('temp-scanned-answers');
-									// Automatically finalize the exam to show results immediately
 									examStore.finishExam();
 								} catch (error) {
 									console.error('Error loading scanned answers:', error);
@@ -125,9 +139,10 @@
 
 	function loadNewExam() {
 		if (pendingExamId) {
+			const seed = page.url.searchParams.get('seed') || undefined;
 			tryLoadExam(pendingExamId, (id) => {
-				examStore.loadExamFromIdentifier(id, true);
-				currentExamUrl = buildExamUrl(id);
+				examStore.loadExamFromIdentifier(id, seed, true);
+				currentExamUrl = buildExamUrl(id, '/simulado', seed);
 			});
 		}
 		showProgressWarning = false;
@@ -135,9 +150,9 @@
 	}
 
 	function handleGenerateExam() {
-		const newExam = examStore.generateNewExam();
-		currentExamUrl = buildExamUrl(newExam.id);
-		goto(`/simulado?id=${newExam.id}`);
+		const result = examStore.generateNewExam();
+		currentExamUrl = buildExamUrl(result.exam.id, '/simulado', result.seed);
+		goto(`/simulado?id=${result.exam.id}&seed=${result.seed}`);
 	}
 
 	function confirmNewExam() {
@@ -149,14 +164,20 @@
 		showLoadModal = true;
 	}
 
-	function handleQRScan(code: string) {
-		try {
-			examStore.loadExamFromIdentifier(code);
-			showLoadModal = false;
-			goto(`/simulado?id=${code}`, { replaceState: true });
-		} catch (error) {
+	function handleQRScan(url: URL) {
+		const id = url.searchParams.get('id');
+		const seed = url.searchParams.get('seed');
+		if (id && seed) {
+			try {
+				examStore.loadExamFromIdentifier(id, seed);
+				showLoadModal = false;
+				goto(`/simulado?id=${id}&seed=${seed}`, { replaceState: true });
+			} catch (error) {
+				alert('Código inválido. Por favor, tente novamente.');
+				console.error(error);
+			}
+		} else {
 			alert('Código inválido. Por favor, tente novamente.');
-			console.error(error);
 		}
 	}
 

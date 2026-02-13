@@ -119,8 +119,18 @@
 
 			const results = await omrChecker.process(files, omrTemplate, markerBlob, false);
 
-			// Parse the results - cast from unknown to expected type
-			const answers = parseOMRResults(results as Record<string, string>);
+			// The OMR library returns an array of results, we need the response from the first item
+			if (!Array.isArray(results) || results.length === 0) {
+				throw new Error('Nenhum resultado foi retornado pela biblioteca OMR.');
+			}
+
+			const firstResult = results[0];
+			if (!firstResult || !firstResult.response) {
+				throw new Error('Formato de resultado inválido. Propriedade "response" não encontrada.');
+			}
+
+			// Parse the results - now using the response property
+			const answers = parseOMRResults(firstResult.response);
 
 			if (answers.length !== 40) {
 				throw new Error(
@@ -158,7 +168,8 @@
 
 					// Convert letter to QuestionAlternative enum or null if empty
 					if (answer && typeof answer === 'string' && answer.trim() !== '') {
-						answers.push(mapAnswerToAlternative(answer.trim().toUpperCase()));
+						const mapped = mapAnswerToAlternative(answer.trim().toUpperCase());
+						answers.push(mapped);
 					} else {
 						answers.push(null);
 					}
@@ -187,15 +198,15 @@
 		const upperAnswer = answer.toUpperCase();
 		switch (upperAnswer) {
 			case 'A':
-				return 0;
+				return 0; // QuestionAlternative.A
 			case 'B':
-				return 1;
+				return 1; // QuestionAlternative.B
 			case 'C':
-				return 2;
+				return 2; // QuestionAlternative.C
 			case 'D':
-				return 3;
+				return 3; // QuestionAlternative.D
 			case 'E':
-				return 4;
+				return 4; // QuestionAlternative.E
 			default:
 				return null;
 		}

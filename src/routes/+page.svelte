@@ -27,6 +27,7 @@
 	let showMethodModal = $state(false);
 	let showAnswerSheetModal = $state(false);
 	let scannedExamId = $state<string | null>(null);
+	let scannedExamSeed = $state<string | null>(null);
 
 	function handleStartExam() {
 		goto('/simulado');
@@ -40,16 +41,19 @@
 		showQRModal = true;
 	}
 
-	function handleQRScan(code: string) {
+	function handleQRScan(url: URL) {
+		const id = url.searchParams.get('id');
+		const seed = url.searchParams.get('seed');
 		showQRModal = false;
-		scannedExamId = code;
+		scannedExamId = id;
+		scannedExamSeed = seed;
 		showMethodModal = true;
 	}
 
 	function handleSelectManual() {
 		showMethodModal = false;
-		if (scannedExamId) {
-			goto(`/simulado?id=${scannedExamId}`);
+		if (scannedExamId && scannedExamSeed) {
+			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}`);
 		}
 	}
 
@@ -60,9 +64,9 @@
 
 	function handleAnswersDetected(answers: Array<QuestionAlternative | null>) {
 		showAnswerSheetModal = false;
-		if (scannedExamId) {
+		if (scannedExamId && scannedExamSeed) {
 			localStorage.setItem('temp-scanned-answers', JSON.stringify(answers));
-			goto(`/simulado?id=${scannedExamId}&autofill=true`);
+			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}&autofill=true`);
 		}
 	}
 

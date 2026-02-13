@@ -3,7 +3,7 @@
 	import jsQR from 'jsqr';
 
 	interface Props {
-		onScan: (data: string) => void;
+		onScan: (data: URL) => void;
 		onError?: (error: string) => void;
 	}
 
@@ -76,16 +76,14 @@
 						const url = new URL(code.data);
 						const id = url.searchParams.get('id');
 						if (id) {
-							onScan(id);
+							onScan(url);
 							return; // Stop scanning after successful read
 						} else {
-							// If no ID parameter, try the whole code
-							onScan(code.data);
+							// TODO: trigger error message
 							return;
 						}
 					} catch {
-						// Not a URL, use the raw data
-						onScan(code.data);
+						// TODO: trigger error message
 						return;
 					}
 				}

@@ -4,6 +4,11 @@ import { QuestionAlternative, type Question, type QuestionIdentifier } from '$li
 import { generateIdentifier, parseIdentifier } from '$lib/services/identifiers';
 import { allQuestions } from '$lib/data';
 import type { AreaScore, ExamScore, TagScore } from '$lib/models/score';
+import {
+	shuffleAlternatives,
+	generateRandomSeed,
+	getDefaultSeed
+} from '$lib/services/alternativeSorting';
 
 export class ExamService {
 	private allQuestions: Question[];
@@ -17,10 +22,14 @@ export class ExamService {
 	 * Generate a new exam with random questions.
 	 * Ensures version exclusivity (if version A is selected, version B of the same question is excluded).
 	 * Questions are grouped by area according to AreaQuestionCounts.
+	 * Returns the exam and the seed used for shuffling.
 	 */
-	generateExam(): GeneratedExam {
+	generateExam(): { exam: GeneratedExam; seed: number } {
 		const selectedQuestions: Question[] = [];
 		const usedQuestionIds = new Set<string>();
+
+		// Generate a random seed for this exam
+		const seed = generateRandomSeed();
 
 		// Get all areas in order
 		const areas = Object.values(Area).filter((v) => typeof v === 'number') as Area[];
@@ -63,10 +72,10 @@ export class ExamService {
 			}
 		}
 
-		// Convert to ExamQuestion format with shuffled alternatives
+		// Convert to ExamQuestion format with deterministically shuffled alternatives
 		const examQuestions: ExamQuestion[] = selectedQuestions.map((q) => ({
 			...q,
-			alternatives: this.shuffleArray([...q.alternatives]),
+			alternatives: shuffleAlternatives([...q.alternatives], q, seed),
 			selected: null,
 			discarded: []
 		}));
@@ -80,15 +89,18 @@ export class ExamService {
 			generatedAt: Date.now()
 		};
 
-		return this.exam;
+		return { exam: this.exam, seed };
 	}
 
 	/**
 	 * Load an exam from an identifier string.
 	 * Questions are sorted by area to match the exam structure.
 	 */
-	loadExamFromIdentifier(identifier: string): GeneratedExam {
+	loadExamFromIdentifier(identifier: string, seed?: number): GeneratedExam {
 		const questionIdentifiers = parseIdentifier(identifier);
+
+		// Use provided seed or default
+		const shuffleSeed = seed ?? getDefaultSeed();
 
 		// Find the original questions based on identifiers
 		const questions: Question[] = questionIdentifiers.map((qId) => {
@@ -106,10 +118,10 @@ export class ExamService {
 		// Sort questions by area
 		const sortedQuestions = questions.sort((a, b) => a.area - b.area);
 
-		// Convert to ExamQuestion format with shuffled alternatives
+		// Convert to ExamQuestion format with deterministically shuffled alternatives
 		const examQuestions: ExamQuestion[] = sortedQuestions.map((q) => ({
 			...q,
-			alternatives: this.shuffleArray([...q.alternatives]),
+			alternatives: shuffleAlternatives([...q.alternatives], q, shuffleSeed),
 			selected: null,
 			discarded: []
 		}));

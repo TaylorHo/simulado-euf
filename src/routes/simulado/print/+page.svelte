@@ -7,6 +7,7 @@
 	import QRCode from 'qrcode';
 
 	let examId = $state<string | null>(null);
+	let examSeed = $state<string | null>(null);
 	let loaded = $state(false);
 	const alternativeLabels = ['A', 'B', 'C', 'D', 'E'];
 
@@ -14,10 +15,11 @@
 
 	onMount(async () => {
 		examId = page.url.searchParams.get('id');
+		examSeed = page.url.searchParams.get('seed');
 
-		if (examId) {
+		if (examId && examSeed) {
 			try {
-				examStore.loadExamFromIdentifier(examId);
+				examStore.loadExamFromIdentifier(examId, examSeed);
 				loaded = true;
 
 				// Generate QR code data URLs
@@ -134,7 +136,6 @@
 			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-bottom-right" />
 
 			<h2>Folha de Respostas</h2>
-			<p class="answer-sheet-subtitle">Preencha as alternativas escolhidas:</p>
 
 			<div class="answer-grid">
 				{#each examStore.currentExam.questions, index (index)}
@@ -358,8 +359,13 @@
 
 	.answer-sheet {
 		page-break-before: always;
+		page-break-inside: avoid;
+		page-break-after: always;
 		padding-top: 20mm;
+		padding-bottom: 20mm;
 		position: relative;
+		min-height: calc(297mm - 40mm);
+		box-sizing: border-box;
 	}
 
 	.omr-marker {
@@ -371,23 +377,23 @@
 	}
 
 	.marker-top-left {
-		top: 5mm;
-		left: 5mm;
+		top: 10mm;
+		left: 10mm;
 	}
 
 	.marker-top-right {
-		top: 5mm;
-		right: 5mm;
+		top: 10mm;
+		right: 10mm;
 	}
 
 	.marker-bottom-left {
-		top: 265mm;
-		left: 5mm;
+		bottom: 10mm;
+		left: 10mm;
 	}
 
 	.marker-bottom-right {
-		top: 265mm;
-		right: 5mm;
+		bottom: 10mm;
+		right: 10mm;
 	}
 
 	.answer-sheet h2 {
@@ -397,21 +403,14 @@
 		color: #000000 !important;
 	}
 
-	.answer-sheet-subtitle {
-		text-align: center;
-		margin: 0 0 60px 0;
-		font-size: 12pt;
-		color: #000000 !important;
-	}
-
 	.answer-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(20, auto);
 		grid-auto-flow: column;
-		gap: 12px 20px;
+		gap: 12px 15mm;
 		max-width: 180mm;
-		margin: 0 auto;
+		margin: 10mm auto 0 15mm;
 	}
 
 	.answer-row {
@@ -499,14 +498,23 @@
 			background: #ffffff !important;
 		}
 
+		.answer-sheet {
+			padding-top: 15mm;
+			padding-bottom: 15mm;
+		}
+
 		.question-item {
 			page-break-inside: avoid;
 		}
 
 		.first-page,
-		.answer-sheet,
 		.last-page {
 			page-break-inside: avoid;
+		}
+
+		.answer-sheet {
+			page-break-inside: avoid;
+			page-break-after: always;
 		}
 
 		img {
