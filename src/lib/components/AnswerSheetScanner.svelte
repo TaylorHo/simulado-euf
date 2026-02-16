@@ -21,6 +21,11 @@
 		terminate: () => void;
 	}
 
+	interface OMRResult {
+		response: Record<string, string>;
+		markedImage?: string; // Base64 image with grid overlay for debugging
+	}
+
 	let { onAnswersDetected, onCancel }: Props = $props();
 
 	let videoElement: HTMLVideoElement | undefined = $state();
@@ -31,6 +36,7 @@
 	let errorMessage = $state('');
 	let progressMessage = $state('');
 	let omrChecker: OMRCheckerInstance | null = null;
+	let debugImageUrl = $state<string | null>(null);
 
 	$effect(() => {
 		if (videoElement && !stream) {
@@ -61,6 +67,9 @@
 		}
 		if (omrChecker) {
 			omrChecker.terminate();
+		}
+		if (debugImageUrl) {
+			URL.revokeObjectURL(debugImageUrl);
 		}
 	});
 
@@ -95,10 +104,16 @@
 		errorMessage = '';
 		progressMessage = 'Inicializando processamento...';
 
+		// Clear any previous debug image
+		if (debugImageUrl) {
+			URL.revokeObjectURL(debugImageUrl);
+			debugImageUrl = null;
+		}
+
 		try {
-			// Initialize OMR Checker
+			// Initialize OMR Checker with debug output enabled
 			if (!omrChecker) {
-				omrChecker = new OMRChecker();
+				omrChecker = new OMRChecker({ includeOutputImages: true });
 			}
 
 			// Load the alignment marker for better accuracy
@@ -106,18 +121,27 @@
 			let markerBlob = null;
 			try {
 				markerBlob = await fetch('/assets/omr_marker.jpg').then((res) => res.blob());
+				console.log('[OMR] Marker loaded successfully:', markerBlob.size, 'bytes');
 			} catch (markerError) {
 				console.warn('Could not load marker image, proceeding without it:', markerError);
 			}
 
 			progressMessage = 'Processando imagem...';
 
+			// Log the template being used for debugging
+			console.log('[OMR] Using template configuration:', JSON.stringify(omrTemplate, null, 2));
+
 			// Process the image with the OMR template (false = normal detection mode)
 			if (!omrChecker) {
 				throw new Error('OMR Checker não foi inicializado corretamente');
 			}
 
-			const results = await omrChecker.process(files, omrTemplate, markerBlob, false);
+			const results = (await omrChecker.process(
+				files,
+				omrTemplate,
+				markerBlob,
+				false
+			)) as OMRResult[];
 
 			// The OMR library returns an array of results, we need the response from the first item
 			if (!Array.isArray(results) || results.length === 0) {
@@ -143,12 +167,58 @@
 				onAnswersDetected(answers);
 			}, 500);
 		} catch (error) {
-			console.error('Error processing answer sheet:', error);
+			// Generate debug image on error
+			try {
+				await generateDebugImage(files);
+			} catch (debugError) {
+				console.error('Failed to generate debug image:', debugError);
+			}
+
 			errorMessage =
 				error instanceof Error
 					? error.message
 					: 'Erro ao processar a folha de respostas. Tente novamente com uma imagem mais clara.';
 			isProcessing = false;
+		}
+	}
+
+	async function generateDebugImage(files: File[]) {
+		try {
+			// Initialize if needed
+			if (!omrChecker) {
+				omrChecker = new OMRChecker({ includeOutputImages: true });
+			}
+
+			// TypeScript guard - at this point omrChecker is definitely not null
+			const checker = omrChecker;
+			if (!checker) return;
+
+			let markerBlob = null;
+			try {
+				markerBlob = await fetch('/assets/omr_marker.jpg').then((res) => res.blob());
+			} catch {
+				// Marker is optional for debug mode
+			}
+
+			// Process with setLayout = true to get debug image
+			const debugResults = await checker.process(files, omrTemplate, markerBlob, true);
+
+			if (Array.isArray(debugResults) && debugResults.length > 0) {
+				const firstResult = debugResults[0];
+
+				// In setLayout mode, the result has layoutImage property
+				const imageData =
+					firstResult.layoutImage ||
+					firstResult.markedImage ||
+					firstResult.image ||
+					firstResult.layout;
+
+				if (imageData && typeof imageData === 'string') {
+					debugImageUrl = imageData;
+				}
+			}
+		} catch (error) {
+			console.error('Error generating debug image:', error);
 		}
 	}
 
@@ -159,50 +229,47 @@
 		const answers: Array<QuestionAlternative | null> = [];
 		let invalidAnswersCount = 0;
 
-		try {
-			// The results come as an object with q1, q2, ... q40 keys
-			if (results && typeof results === 'object') {
-				// Iterate through questions 1 to 40
-				for (let i = 1; i <= 40; i++) {
-					const questionKey = `q${i}`;
-					const answer = results[questionKey];
+		// The results come as an object with q1, q2, ... q40 keys
+		if (results && typeof results === 'object') {
+			console.log('OMR Results received:', results);
 
-					// Convert letter to QuestionAlternative enum or null if empty
-					if (answer && typeof answer === 'string' && answer.trim() !== '') {
-						const trimmedAnswer = answer.trim().toUpperCase();
+			// Iterate through questions 1 to 40
+			for (let i = 1; i <= 40; i++) {
+				const questionKey = `q${i}`;
+				const answer = results[questionKey];
 
-						// Check for invalid answers (multiple letters like "AB", "ABCDE", etc.)
-						if (trimmedAnswer.length > 1) {
-							invalidAnswersCount++;
-							answers.push(null);
-						} else {
-							const mapped = mapAnswerToAlternative(trimmedAnswer);
-							if (mapped === null && trimmedAnswer !== '') {
-								invalidAnswersCount++;
-							}
-							answers.push(mapped);
-						}
-					} else {
+				// Convert letter to QuestionAlternative enum or null if empty
+				if (answer && typeof answer === 'string' && answer.trim() !== '') {
+					const trimmedAnswer = answer.trim().toUpperCase();
+
+					// Check for invalid answers (multiple letters like "AB", "ABCDE", etc.)
+					if (trimmedAnswer.length > 1) {
+						invalidAnswersCount++;
 						answers.push(null);
+					} else {
+						const mapped = mapAnswerToAlternative(trimmedAnswer);
+						if (mapped === null && trimmedAnswer !== '') {
+							invalidAnswersCount++;
+						}
+						answers.push(mapped);
 					}
+				} else {
+					answers.push(null);
 				}
-			} else {
-				throw new Error(
-					'Formato de resultado OMR não reconhecido. Esperado: objeto com chaves q1, q2, ..., q40'
-				);
 			}
-
-			// Verify we have exactly 40 answers
-			if (answers.length !== 40) {
-				throw new Error(`Esperado 40 respostas, mas ${answers.length} foram processadas.`);
-			}
-
-			// Validate the quality of the scan
-			validateAnswersQuality(answers, invalidAnswersCount);
-		} catch (error) {
-			console.error('Error parsing OMR results:', error);
-			throw error;
+		} else {
+			throw new Error(
+				'Formato de resultado OMR não reconhecido. Esperado: objeto com chaves q1, q2, ..., q40'
+			);
 		}
+
+		// Verify we have exactly 40 answers
+		if (answers.length !== 40) {
+			throw new Error(`Esperado 40 respostas, mas ${answers.length} foram processadas.`);
+		}
+
+		// Validate the quality of the scan
+		validateAnswersQuality(answers, invalidAnswersCount);
 
 		return answers;
 	}
@@ -211,27 +278,22 @@
 		answers: Array<QuestionAlternative | null>,
 		invalidAnswersCount: number
 	) {
-		// Check if all answers are empty (complete parsing failure)
-		const allEmpty = answers.every((answer) => answer === null);
-		if (allEmpty) {
-			throw new Error(
-				'Não foi possível processar a folha. Tente tirar uma nova foto com melhor iluminação ou preencha manualmente.'
+		const errorMessage =
+			'Erro ao processar a folha de respostas. Tente tirar uma nova foto com melhor iluminação e enquadramento, ou preencha as respostas manualmente.';
+
+		// Check for any invalid answers (multiple selections detected)
+		if (invalidAnswersCount > 0) {
+			console.error(
+				`Validation failed: ${invalidAnswersCount} questions with multiple answers or invalid marks detected`
 			);
+			throw new Error(errorMessage);
 		}
 
-		// Check for excessive invalid or multiple selections
-		if (invalidAnswersCount > 10) {
-			throw new Error(
-				'Erro ao processar a folha. Tente uma nova foto com melhor enquadramento ou preencha manualmente.'
-			);
-		}
-
-		// Check if very few answers were detected (likely a bad scan)
-		const answeredCount = answers.filter((answer) => answer !== null).length;
-		if (answeredCount < 5) {
-			throw new Error(
-				`Apenas ${answeredCount} respostas detectadas. Tente uma nova foto com melhor qualidade ou preencha manualmente.`
-			);
+		// Check if any answer is null - this indicates parsing failure
+		const emptyCount = answers.filter((answer) => answer === null).length;
+		if (emptyCount > 0) {
+			console.error(`Validation failed: ${emptyCount} questions returned empty - invalid parse`);
+			throw new Error(errorMessage);
 		}
 	}
 
@@ -273,12 +335,20 @@
 				</div>
 				<h3>Folha não reconhecida</h3>
 				<p class="error-text">{errorMessage}</p>
+				{#if debugImageUrl}
+					<a href={debugImageUrl} download="debug-image-{Date.now()}.png" class="debug-link">
+						(baixar debug)
+					</a>
+				{:else}
+					<p class="debug-status">Gerando imagem de debug...</p>
+				{/if}
 				<div class="error-actions">
 					<button class="btn-secondary" onclick={onCancel}> Preencher Manualmente </button>
 					<button
 						class="btn-primary"
 						onclick={() => {
 							errorMessage = '';
+							debugImageUrl = null;
 							initCamera();
 						}}
 					>
@@ -287,29 +357,29 @@
 				</div>
 			</div>
 		</div>
-	{:else}
+	{/if}
+
+	<div class="camera-wrapper">
 		<video bind:this={videoElement} autoplay playsinline class="video-preview">
 			<track kind="captions" />
 		</video>
 		<canvas bind:this={canvasElement} class="capture-canvas"></canvas>
 
-		{#if isReady}
-			<div class="camera-overlay">
-				<div class="camera-frame"></div>
-				<p class="camera-hint">Posicione toda a folha de respostas dentro da moldura</p>
-				<div class="camera-controls">
-					<button class="btn-secondary cancel-btn" onclick={onCancel}> Cancelar </button>
-					<button class="btn-primary capture-btn" onclick={capturePhoto}>
-						<Camera size={24} />
-						Capturar Foto
-					</button>
-				</div>
-			</div>
-		{:else}
+		{#if !isReady && !isProcessing && !errorMessage}
 			<div class="loading-overlay">
 				<p>Iniciando câmera...</p>
 			</div>
 		{/if}
+	</div>
+
+	{#if isReady && !isProcessing && !errorMessage}
+		<div class="camera-controls">
+			<button class="btn-secondary cancel-btn" onclick={onCancel}> Cancelar </button>
+			<button class="btn-primary capture-btn" onclick={capturePhoto}>
+				<Camera size={24} />
+				Capturar Foto
+			</button>
+		</div>
 	{/if}
 </div>
 
@@ -317,75 +387,45 @@
 	.scanner-container {
 		position: relative;
 		width: 100%;
-		max-width: 600px;
+		max-width: 500px;
 		margin: 0 auto;
-		aspect-ratio: 3/4;
-		background-color: var(--bg-tertiary);
 		border-radius: var(--radius-lg);
 		overflow: hidden;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.camera-wrapper {
+		position: relative;
+		margin: 0 auto;
+		width: 75%;
+		aspect-ratio: 3/4;
+		max-height: 70vh;
+		background-color: #000;
+		margin-bottom: var(--space-md);
+		overflow: hidden;
+		border-radius: var(--radius-lg);
 	}
 
 	.video-preview {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		border-radius: var(--radius-lg);
 	}
 
 	.capture-canvas {
 		display: none;
 	}
 
-	.camera-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-		padding: var(--space-xl);
-		background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0.6) 0%,
-			rgba(0, 0, 0, 0.1) 20%,
-			rgba(0, 0, 0, 0.1) 80%,
-			rgba(0, 0, 0, 0.6) 100%
-		);
-	}
-
-	.camera-frame {
-		flex: 1;
-		width: 90%;
-		max-width: 500px;
-		margin: var(--space-lg) 0;
-		border: 3px solid var(--accent-primary);
-		border-radius: var(--radius-md);
-		box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
-	}
-
-	.camera-hint {
-		color: white;
-		font-size: var(--text-sm);
-		font-weight: 600;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-		text-align: center;
-		margin: var(--space-md) 0;
-		padding: 0 var(--space-lg);
-	}
-
 	.camera-controls {
 		display: flex;
 		gap: var(--space-md);
 		width: 100%;
-		max-width: 400px;
+		padding: 0 var(--space-md) var(--space-md);
+		background-color: var(--bg-primary);
+		flex-shrink: 0;
 	}
 
 	.cancel-btn {
@@ -414,6 +454,7 @@
 		align-items: center;
 		justify-content: center;
 		background-color: var(--bg-secondary);
+		border-radius: var(--radius-lg);
 		z-index: 10;
 	}
 
@@ -470,6 +511,27 @@
 		margin-top: var(--space-md);
 	}
 
+	.debug-status {
+		color: var(--text-secondary);
+		font-size: var(--text-xs);
+		text-align: center;
+		margin: 0;
+		font-style: italic;
+	}
+
+	.debug-link {
+		color: var(--text-secondary);
+		font-size: var(--text-xs);
+		text-decoration: underline;
+		cursor: pointer;
+		margin: var(--space-xs) 0;
+		display: inline-block;
+	}
+
+	.debug-link:hover {
+		color: var(--text-primary);
+	}
+
 	.loading-overlay p {
 		color: var(--text-secondary);
 		font-weight: 500;
@@ -491,16 +553,9 @@
 	}
 
 	@media (max-width: 640px) {
-		.scanner-container {
-			aspect-ratio: 3/4;
-		}
-
-		.camera-hint {
-			font-size: var(--text-xs);
-		}
-
 		.camera-controls {
 			flex-direction: column;
+			padding: 0 var(--space-md) var(--space-md);
 		}
 
 		.cancel-btn,
