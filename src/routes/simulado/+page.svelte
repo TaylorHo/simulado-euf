@@ -48,15 +48,24 @@
 	onMount(() => {
 		examId = page.url.searchParams.get('id');
 		const autofill = page.url.searchParams.get('autofill');
+		const mode = page.url.searchParams.get('mode');
 		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamData = examStore.getSavedExamData();
 
 		if (examId) {
-			if (savedExamData && savedExamData.examId !== examId) {
+			// If mode=fresh, ignore saved data and always load the specified exam fresh
+			const shouldCheckSaved = mode !== 'fresh';
+
+			if (shouldCheckSaved && savedExamData && savedExamData.examId !== examId) {
 				pendingExamId = examId;
 				showProgressWarning = true;
 				isLoading = false;
 			} else {
+				// If mode=fresh, reset the exam first to start clean
+				if (mode === 'fresh') {
+					examStore.resetExam();
+				}
+
 				tryLoadExam(
 					examId,
 					(id) => {

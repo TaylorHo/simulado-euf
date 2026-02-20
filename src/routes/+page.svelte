@@ -54,7 +54,9 @@
 	function handleSelectManual() {
 		showMethodModal = false;
 		if (scannedExamId && scannedExamSeed) {
-			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}`);
+			// Clear any temporary scanned answers since we're going manual
+			localStorage.removeItem('temp-scanned-answers');
+			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}&mode=fresh`);
 		}
 	}
 

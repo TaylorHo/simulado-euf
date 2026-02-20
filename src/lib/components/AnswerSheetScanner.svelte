@@ -278,8 +278,7 @@
 		answers: Array<QuestionAlternative | null>,
 		invalidAnswersCount: number
 	) {
-		const errorMessage =
-			'Erro ao processar a folha de respostas. Tente tirar uma nova foto com melhor iluminação e enquadramento, ou preencha as respostas manualmente.';
+		const errorMessage = 'Não foi possível processar a imagem da folha de respostas.';
 
 		// Check for any invalid answers (multiple selections detected)
 		if (invalidAnswersCount > 0) {
@@ -331,10 +330,20 @@
 		<div class="error-overlay">
 			<div class="error-content">
 				<div class="error-icon">
-					<X size={48} strokeWidth={2} />
+					<X size={36} strokeWidth={2} />
 				</div>
 				<h3>Folha não reconhecida</h3>
 				<p class="error-text">{errorMessage}</p>
+
+				<div class="tips-container">
+					<p class="tips-title">Dicas para melhorar:</p>
+					<ul class="tips-list">
+						<li>Tire a foto sobre uma superfície escura (ex: mesa)</li>
+						<li>Use um local bem iluminado</li>
+						<li>Certifique-se de não marcar mais de uma alternativa</li>
+					</ul>
+				</div>
+
 				{#if debugImageUrl}
 					<a href={debugImageUrl} download="debug-image-{Date.now()}.png" class="debug-link">
 						(baixar debug)
@@ -463,9 +472,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--space-lg);
-		padding: var(--space-xl);
+		gap: var(--space-md);
+		padding: var(--space-lg);
 		text-align: center;
+		max-height: 100%;
+		overflow-y: auto;
 	}
 
 	.error-icon {
@@ -473,14 +484,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 80px;
-		height: 80px;
+		width: 60px;
+		height: 60px;
 		background-color: var(--error-light);
 		border-radius: 50%;
+		flex-shrink: 0;
 	}
 
 	h3 {
-		font-size: var(--text-2xl);
+		font-size: var(--text-xl);
 		margin: 0;
 		color: var(--text-primary);
 	}
@@ -496,19 +508,59 @@
 		font-size: var(--text-sm);
 		font-weight: 500;
 		margin: 0;
-		padding: var(--space-md);
+		padding: var(--space-sm) var(--space-md);
 		background-color: var(--error-light);
 		border-radius: var(--radius-md);
 		max-width: 400px;
 	}
 
+	.tips-container {
+		background-color: var(--bg-primary);
+		border-radius: var(--radius-md);
+		padding: var(--space-sm) var(--space-md);
+		max-width: 400px;
+		text-align: left;
+	}
+
+	.tips-title {
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--text-primary);
+		margin: 0 0 var(--space-xs) 0;
+	}
+
+	.tips-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.tips-list li {
+		font-size: var(--text-xs);
+		color: var(--text-secondary);
+		padding-left: var(--space-md);
+		position: relative;
+		line-height: 1.4;
+	}
+
+	.tips-list li::before {
+		content: '•';
+		position: absolute;
+		left: 0;
+		color: var(--accent-primary);
+		font-weight: bold;
+	}
+
 	.error-actions {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-md);
+		gap: var(--space-sm);
 		width: 100%;
 		max-width: 300px;
-		margin-top: var(--space-md);
+		margin-top: var(--space-sm);
 	}
 
 	.debug-status {

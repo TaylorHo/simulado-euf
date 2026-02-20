@@ -12,26 +12,26 @@
 			"name": "CropOnMarkers",
 			"options": {
 				"relativePath": "omr_marker.jpg",
-				"sheetToMarkerWidthRatio": 33,
-				"min_matching_threshold": 0.25,
-				"marker_rescale_range": [25, 50]
+				"sheetToMarkerWidthRatio": 26,
+				"min_matching_threshold": 0.3,
+				"marker_rescale_range": [20, 50]
 			}
 		}
 	],
 	"fieldBlocks": {
 		"LeftColumn": {
 			"fieldType": "QTYPE_MCQ5",
-			"origin": [548, 640],
+			"origin": [570, 668],
 			"fieldLabels": ["q1..20"],
-			"bubblesGap": 98,
-			"labelsGap": 112
+			"bubblesGap": 97,
+			"labelsGap": 108
 		},
 		"RightColumn": {
 			"fieldType": "QTYPE_MCQ5",
-			"origin": [1545, 640],
+			"origin": [1538, 668],
 			"fieldLabels": ["q21..40"],
-			"bubblesGap": 98,
-			"labelsGap": 112
+			"bubblesGap": 97,
+			"labelsGap": 108
 		}
 	}
 }
