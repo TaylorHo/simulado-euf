@@ -1604,7 +1604,7 @@ export default <Question[]>[
 		area: Area.FisicaModerna,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 1,
 		statement: {
@@ -1640,7 +1640,7 @@ export default <Question[]>[
 		area: Area.FisicaModerna,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 1,
 		statement: {
@@ -1675,7 +1675,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 2,
 		statement: {
@@ -1709,7 +1709,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 2,
 		statement: {
@@ -1743,7 +1743,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 3,
 		statement: {
@@ -1777,7 +1777,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 3,
 		statement: {
@@ -1811,7 +1811,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 4,
 		statement: {
@@ -1845,7 +1845,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 4,
 		statement: {
@@ -1879,7 +1879,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 5,
 		statement: {
@@ -1913,7 +1913,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 5,
 		statement: {
@@ -1947,7 +1947,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 6,
 		statement: {
@@ -1981,7 +1981,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 6,
 		statement: {
@@ -2015,7 +2015,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 7,
 		statement: {
@@ -2049,7 +2049,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 7,
 		statement: {
@@ -2083,7 +2083,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 8,
 		statement: {
@@ -2117,7 +2117,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
 		},
 		questionNumber: 8,
 		statement: {
