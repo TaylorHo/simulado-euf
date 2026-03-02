@@ -1,11 +1,14 @@
 import { allQuestions } from '$lib/data';
 import type { Question, Alternative } from '$lib/models/question';
 import { QuestionAlternative } from '$lib/models/question';
+import { Area } from '$lib/models/area';
 
 interface FlashcardQuestion extends Question {
 	shuffledAlternatives: Alternative[];
 	originalCorrect: QuestionAlternative;
 }
+
+const SETTINGS_KEY = 'flashcard_settings';
 
 class FlashcardStore {
 	private allQuestions: Question[] = allQuestions;
@@ -15,6 +18,56 @@ class FlashcardStore {
 	selectedAnswer = $state<QuestionAlternative | null>(null);
 	showAnswer = $state(false);
 	discardedAlternatives = $state<QuestionAlternative[]>([]);
+
+	// Area weights (0-100)
+	areaWeights = $state<Record<Area, number>>({
+		[Area.MecanicaClassica]: 100,
+		[Area.Eletromagnetismo]: 100,
+		[Area.Termodinamica]: 100,
+		[Area.FisicaModerna]: 100,
+		[Area.MecanicaQuantica]: 100,
+		[Area.FisicaEstatistica]: 100
+	});
+
+	isConfigured = $derived(Object.values(this.areaWeights).some((weight) => weight !== 100));
+
+	constructor() {
+		this.loadSettings();
+	}
+
+	private loadSettings() {
+		if (typeof window === 'undefined') return;
+		const saved = localStorage.getItem(SETTINGS_KEY);
+		if (saved) {
+			try {
+				const settings = JSON.parse(saved);
+				if (settings.areaWeights) {
+					// Ensure we use numeric keys for the enum
+					for (const key in settings.areaWeights) {
+						const areaNum = Number.parseInt(key);
+						if (!isNaN(areaNum)) {
+							this.areaWeights[areaNum as Area] = settings.areaWeights[key];
+						}
+					}
+				}
+			} catch (e) {
+				console.error('Failed to load flashcard settings', e);
+			}
+		}
+	}
+
+	private saveSettings() {
+		if (typeof window === 'undefined') return;
+		localStorage.setItem(SETTINGS_KEY, JSON.stringify({ areaWeights: this.areaWeights }));
+	}
+
+	updateWeight(area: Area, weight: number) {
+		this.areaWeights[area] = weight;
+		this.saveSettings();
+		// Reset used questions if settings change significantly?
+		// For now, just reset if we might have filtered out all current questions
+		this.usedQuestionIndices.clear();
+	}
 
 	getQuestionId(question: Question): string {
 		// Generate a unique base36 ID for a question
@@ -59,19 +112,58 @@ class FlashcardStore {
 		}
 	}
 
-	getRandomQuestion(): FlashcardQuestion {
-		// If all questions have been used, reset
-		if (this.usedQuestionIndices.size >= this.allQuestions.length) {
-			this.usedQuestionIndices.clear();
-		}
+	getRandomQuestion(): FlashcardQuestion | null {
+		// Filter questions by active areas
+		const activeAreas = (Object.keys(this.areaWeights).map(Number) as unknown as Area[]).filter(
+			(area) => this.areaWeights[area] > 0
+		);
 
-		// Find available questions
-		const availableIndices = this.allQuestions
-			.map((_, index) => index)
+		if (activeAreas.length === 0) return null;
+
+		const filteredQuestions = this.allQuestions.filter((q) => activeAreas.includes(q.area));
+
+		if (filteredQuestions.length === 0) return null;
+
+		// If all questions in active areas have been used, reset
+		const availableIndices = filteredQuestions
+			.map((q) => this.allQuestions.indexOf(q))
 			.filter((index) => !this.usedQuestionIndices.has(index));
 
-		// Pick a random one
-		const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+		if (availableIndices.length === 0) {
+			// Clear only those that belong to active areas to keep things fair
+			filteredQuestions.forEach((q) => {
+				this.usedQuestionIndices.delete(this.allQuestions.indexOf(q));
+			});
+			return this.getRandomQuestion();
+		}
+
+		// Weighted random selection
+		// 1. Calculate total weight of areas that HAVE available questions
+		const areasWithQuestions = activeAreas.filter((area) =>
+			availableIndices.some((idx) => this.allQuestions[idx].area === area)
+		);
+
+		const totalWeight = areasWithQuestions.reduce((sum, area) => sum + this.areaWeights[area], 0);
+
+		// 2. Pick a random area based on weights
+		let random = Math.random() * totalWeight;
+		let selectedArea = areasWithQuestions[0];
+
+		for (const area of areasWithQuestions) {
+			random -= this.areaWeights[area];
+			if (random <= 0) {
+				selectedArea = area;
+				break;
+			}
+		}
+
+		// 3. Pick a random available question from that area
+		const areaAvailableIndices = availableIndices.filter(
+			(idx) => this.allQuestions[idx].area === selectedArea
+		);
+		const randomIndex =
+			areaAvailableIndices[Math.floor(Math.random() * areaAvailableIndices.length)];
+
 		this.usedQuestionIndices.add(randomIndex);
 
 		const question = this.allQuestions[randomIndex];
@@ -106,7 +198,7 @@ class FlashcardStore {
 		this.showAnswer = true;
 	}
 
-	nextQuestion(): FlashcardQuestion {
+	nextQuestion(): FlashcardQuestion | null {
 		this.discardedAlternatives = [];
 		return this.getRandomQuestion();
 	}

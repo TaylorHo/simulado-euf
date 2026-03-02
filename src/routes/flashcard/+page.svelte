@@ -6,11 +6,13 @@
 	import { QuestionAlternative, Version } from '$lib/models/question';
 	import Footer from '$lib/components/Footer.svelte';
 	import Question from '$lib/components/Question.svelte';
+	import Modal from '$lib/components/Modal.svelte';
 	import { buildExamUrl } from '$lib/utils/helpers';
 	import type { ExamQuestion } from '$lib/models/exam';
-	import { AreaLabels } from '$lib/models/area';
+	import { Area, AreaLabels } from '$lib/models/area';
 	import { ADSENSE_CLIENT_ID, AD_SLOT, ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	import { Settings } from '@lucide/svelte';
 
 	let isLoading = $state(true);
 	let showInterstitialAd = $state(false);
@@ -18,6 +20,7 @@
 	let canSkipAd = $state(false);
 	let remainingSeconds = $state(5);
 	let adsLoaded = $state(false);
+	let settingsOpen = $state(false);
 
 	// Convert flashcard question to ExamQuestion format for the Question component
 	const currentExamQuestion = $derived<ExamQuestion | null>(
@@ -147,6 +150,10 @@
 			proceedToNextQuestion();
 		}
 	}
+
+	function updateAreaWeight(area: Area, weight: number) {
+		flashcardStore.updateWeight(area, weight);
+	}
 </script>
 
 <svelte:head>
@@ -163,7 +170,7 @@
 
 <div class="flashcard-page">
 	<div class="container flashcard-content">
-		{#if isLoading || !flashcardStore.currentQuestion || !currentExamQuestion}
+		{#if isLoading}
 			<div class="loading">
 				<div class="spinner"></div>
 			</div>
@@ -219,49 +226,147 @@
 				</button>
 			</div>
 		{:else}
-			<Question
-				question={currentExamQuestion}
-				questionNumber={`de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`}
-				showCorrect={flashcardStore.showAnswer}
-				showDiscardButton={!flashcardStore.showAnswer}
-				onSelectAnswer={handleSelectAnswer}
-				onToggleDiscard={handleToggleDiscard}
-			/>
+			<button
+				class="settings-fab"
+				onclick={() => (settingsOpen = true)}
+				title="Configurações dos Flashcards"
+				aria-label="Configurações dos Flashcards"
+			>
+				<Settings size={28} />
+				{#if flashcardStore.isConfigured}
+					<span class="settings-indicator"></span>
+				{/if}
+			</button>
+			{#if currentExamQuestion}
+				<Question
+					question={currentExamQuestion}
+					questionNumber={`de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`}
+					showCorrect={flashcardStore.showAnswer}
+					showDiscardButton={!flashcardStore.showAnswer}
+					onSelectAnswer={handleSelectAnswer}
+					onToggleDiscard={handleToggleDiscard}
+				/>
 
-			<div class="actions-container">
-				<div class="flashcard-actions">
-					{#if !flashcardStore.showAnswer}
-						<div class="action-buttons">
-							<button class="btn-secondary action-btn" onclick={handleNext}>Pular questão</button>
-							<button
-								class="btn-primary action-btn"
-								onclick={handleReveal}
-								disabled={flashcardStore.selectedAnswer === null}
-							>
-								Confirmar resposta
-							</button>
-						</div>
-					{:else}
-						<button class="btn-primary action-btn" onclick={handleNext}> Próxima Questão </button>
-					{/if}
+				<div class="actions-container">
+					<div class="flashcard-actions">
+						{#if !flashcardStore.showAnswer}
+							<div class="action-buttons">
+								<button class="btn-secondary action-btn" onclick={handleNext}>Pular questão</button>
+								<button
+									class="btn-primary action-btn"
+									onclick={handleReveal}
+									disabled={flashcardStore.selectedAnswer === null}
+								>
+									Confirmar resposta
+								</button>
+							</div>
+						{:else}
+							<button class="btn-primary action-btn" onclick={handleNext}> Próxima Questão </button>
+						{/if}
+					</div>
 				</div>
-			</div>
+			{:else}
+				<div class="empty-state">
+					<p>Nenhuma questão encontrada para as áreas selecionadas.</p>
+					<button class="btn-primary" onclick={() => (settingsOpen = true)}>
+						Ajustar configurações
+					</button>
+				</div>
+			{/if}
 		{/if}
 	</div>
 
 	<Footer />
 </div>
 
+<Modal
+	open={settingsOpen}
+	title="Configurações dos Flashcards"
+	onClose={() => (settingsOpen = false)}
+>
+	<div class="settings-content">
+		<div class="area-settings-list">
+			{#each Object.entries(AreaLabels) as [areaStr, label] (areaStr)}
+				{@const area = Number(areaStr) as Area}
+				<div class="area-setting-item">
+					<div class="area-info">
+						<span class="area-name">{label}</span>
+						<span class="area-weight" class:disabled={flashcardStore.areaWeights[area] === 0}>
+							{#if flashcardStore.areaWeights[area] === 0}
+								Off
+							{:else}
+								{flashcardStore.areaWeights[area]}%
+							{/if}
+						</span>
+					</div>
+					<input
+						type="range"
+						min="0"
+						max="100"
+						step="5"
+						value={flashcardStore.areaWeights[area]}
+						oninput={(e) => updateAreaWeight(area, Number(e.currentTarget.value))}
+						class="weight-slider"
+					/>
+				</div>
+			{/each}
+		</div>
+
+		<div class="settings-footer">
+			<button class="btn-primary full-width" onclick={() => (settingsOpen = false)}>
+				Pronto
+			</button>
+		</div>
+	</div>
+</Modal>
+
 <style>
 	.flashcard-page {
 		min-height: 100vh;
 		background-color: var(--bg-primary);
 		padding-top: var(--space-lg);
+		position: relative;
 	}
 
 	.flashcard-content {
 		padding: var(--space-lg) var(--space-lg);
 		min-height: calc(100vh - var(--topbar-height));
+	}
+
+	.settings-fab {
+		position: fixed;
+		right: 0;
+		top: calc(var(--topbar-height) + var(--space-xl));
+		z-index: 90;
+		width: 48px;
+		height: 56px;
+		border-radius: var(--radius-md) 0 0 var(--radius-md);
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--border-color);
+		border-right: none;
+		color: var(--text-muted);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: var(--shadow-md);
+		padding: 5px 5px 5px 8px;
+		transition: all var(--transition-fast);
+	}
+
+	.settings-fab:hover {
+		background-color: var(--bg-tertiary);
+		color: var(--text-secondary);
+	}
+
+	.settings-indicator {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 8px;
+		height: 8px;
+		background-color: #3b82f6;
+		border-radius: 50%;
 	}
 
 	.loading {
@@ -304,6 +409,25 @@
 
 	.action-btn {
 		flex: 1;
+	}
+
+	.empty-state {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-2xl);
+		background-color: var(--bg-secondary);
+		border: 1px dashed var(--border-medium);
+		border-radius: var(--radius-lg);
+		gap: var(--space-lg);
+		text-align: center;
+	}
+
+	.empty-state p {
+		color: var(--text-secondary);
+		font-size: var(--text-lg);
+		margin: 0;
 	}
 
 	/* Interstitial Ad Styles */
@@ -373,6 +497,75 @@
 		cursor: not-allowed;
 	}
 
+	/* Settings Modal Styles */
+	.settings-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.area-settings-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		margin-bottom: var(--space-md);
+		margin-top: var(--space-sm);
+	}
+
+	.area-setting-item {
+		background-color: var(--bg-secondary);
+		padding: var(--space-xs) var(--space-md);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--border-light);
+		display: flex;
+		flex-direction: column;
+		gap: 0px;
+	}
+
+	.area-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: -2px;
+	}
+
+	.area-name {
+		font-weight: 600;
+		font-size: var(--text-xs);
+		color: var(--text-primary);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.area-weight {
+		font-size: 10px;
+		padding: 1px 6px;
+		background-color: var(--accent-primary);
+		color: white;
+		border-radius: var(--radius-full);
+		font-weight: 700;
+	}
+
+	.area-weight.disabled {
+		background-color: var(--text-muted);
+	}
+
+	.weight-slider {
+		width: 100%;
+		margin: 10px 0 4px;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.settings-footer {
+		margin-top: var(--space-xs);
+	}
+
+	.full-width {
+		width: 100%;
+	}
+
 	@media (max-width: 768px) {
 		.flashcard-page {
 			padding-top: var(--space-sm);
@@ -382,9 +575,24 @@
 			padding: var(--space-md);
 		}
 
+		.settings-fab {
+			right: 0;
+			top: auto;
+			bottom: var(--space-2xl);
+			width: 48px;
+			height: 56px;
+			border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+			box-shadow: var(--shadow-lg);
+		}
+
 		.actions-container {
 			padding: var(--space-md);
 			margin-top: var(--space-md);
+			margin-bottom: 80px; /* Space for FAB */
+		}
+
+		.area-settings-list {
+			grid-template-columns: 1fr;
 		}
 
 		.action-buttons {
