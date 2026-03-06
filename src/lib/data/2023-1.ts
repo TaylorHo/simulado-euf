@@ -1296,7 +1296,7 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: `$T = \\frac{T_S}{2}$`,
+				text: `$T = \\frac{T_S}{\\sqrt{2}}$`,
 				number: QuestionAlternative.A
 			},
 			{
