@@ -10,7 +10,7 @@
 	import { buildExamUrl } from '$lib/utils/helpers';
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { Area, AreaLabels } from '$lib/models/area';
-	import { ADSENSE_CLIENT_ID, AD_SLOT, ADS_ENABLED } from '$lib/variables';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { Settings } from '@lucide/svelte';
 
@@ -197,22 +197,16 @@
 				<div class="ads-section">
 					<!-- Ad Slots in Single Container -->
 					<div class="ads-wrapper">
-						<ins
-							class="adsbygoogle"
-							style="display:block"
-							data-ad-client={ADSENSE_CLIENT_ID}
-							data-ad-slot={AD_SLOT}
-							data-ad-format="auto"
-							data-full-width-responsive="true"
-						></ins>
-						<ins
-							class="adsbygoogle"
-							style="display:block"
-							data-ad-client={ADSENSE_CLIENT_ID}
-							data-ad-slot={AD_SLOT}
-							data-ad-format="auto"
-							data-full-width-responsive="true"
-						></ins>
+						{#each AD_SLOTS as slot (slot)}
+							<ins
+								class="adsbygoogle"
+								style="display:block"
+								data-ad-client={ADSENSE_CLIENT_ID}
+								data-ad-slot={slot}
+								data-ad-format="auto"
+								data-full-width-responsive="true"
+							></ins>
+						{/each}
 					</div>
 				</div>
 

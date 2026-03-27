@@ -14,7 +14,7 @@
 	import { Plus, Share2, Printer, ClipboardList } from '@lucide/svelte';
 	import { groupQuestionsByArea, buildExamUrl, tryLoadExam } from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
-	import { ADSENSE_CLIENT_ID, AD_SLOT, ADS_ENABLED } from '$lib/variables';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 
 	let isLoading = $state(true);
@@ -359,7 +359,7 @@
 													class="adsbygoogle"
 													style="display:block"
 													data-ad-client={ADSENSE_CLIENT_ID}
-													data-ad-slot={AD_SLOT}
+													data-ad-slot={(index + 1) % 8 === 0 ? AD_SLOTS[0] : AD_SLOTS[1]}
 													data-ad-format="auto"
 													data-full-width-responsive="true"
 												></ins>
