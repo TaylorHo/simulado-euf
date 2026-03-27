@@ -6,4 +6,4 @@ export const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/TaylorHo';
 // Ads section
 export const ADSENSE_CLIENT_ID = 'ca-pub-4991464670829350';
 export const AD_SLOT = '1560831006';
-export const ADS_ENABLED = false; // waiting for google adsense approval
+export const ADS_ENABLED = true;
