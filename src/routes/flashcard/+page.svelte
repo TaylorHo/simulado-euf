@@ -80,7 +80,7 @@
 				} catch (e) {
 					console.error('Ad loading error:', e);
 				}
-			}, 300);
+			}, 100);
 		}
 	});
 
