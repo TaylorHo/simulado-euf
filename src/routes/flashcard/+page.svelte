@@ -154,10 +154,16 @@
 	function updateAreaWeight(area: Area, weight: number) {
 		flashcardStore.updateWeight(area, weight);
 	}
+
+	let questionTitle = $derived(
+		currentExamQuestion
+			? `de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`
+			: ''
+	);
 </script>
 
 <svelte:head>
-	<title>Flashcard - Simulado EUF</title>
+	<title>Flashcard {`- Questão ` + questionTitle}</title>
 	<meta name="description" content="Pratique questões do EUF com flashcards aleatórios" />
 	{#if ADS_ENABLED}
 		<script
@@ -234,7 +240,7 @@
 			{#if currentExamQuestion}
 				<Question
 					question={currentExamQuestion}
-					questionNumber={`de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`}
+					questionNumber={questionTitle}
 					showCorrect={flashcardStore.showAnswer}
 					showDiscardButton={!flashcardStore.showAnswer}
 					onSelectAnswer={handleSelectAnswer}
