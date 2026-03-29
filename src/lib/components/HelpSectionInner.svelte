@@ -74,9 +74,9 @@
 			{copyButtonText}
 		</button>
 	{/if}
-	{#if question.help.youtubeUrl}
+	{#if question.help.youtubeVideoId}
 		<a
-			href={question.help.youtubeUrl}
+			href={`https://www.youtube.com/watch?v=${question.help.youtubeVideoId}${question.help.youtubeVideoStartAt ? `&t=${question.help.youtubeVideoStartAt}s` : ''}`}
 			target="_blank"
 			rel="noopener noreferrer"
 			class="help-btn youtube"

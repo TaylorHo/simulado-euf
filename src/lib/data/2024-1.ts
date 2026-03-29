@@ -8,6 +8,15 @@ const defaultData = {
 	tags: []
 };
 
+const videos = {
+	[Area.MecanicaClassica]: 'I8op3OdcnXg',
+	[Area.Eletromagnetismo]: '5YJ8ERMZgPU',
+	[Area.FisicaModerna]: 'acwDCHT_Um0',
+	[Area.MecanicaQuantica]: 'RPNahR9zotI',
+	[Area.Termodinamica]: 'o5k3FavEOKI',
+	[Area.FisicaEstatistica]: 'IXbpgypkPGs'
+};
+
 export default <Question[]>[
 	{
 		...defaultData,
@@ -16,7 +25,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Dois cones circulares retos, ambos com ângulo de abertura no vértice igual a alpha; o primeiro cone possui altura igual à metade da altura do segundo cone; ambos têm a base circular voltada para cima e o vértice voltado para baixo',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -53,7 +62,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Duas calotas esféricas com a face curva voltada para baixo; cada calota é obtida cortando uma esfera por um cone imaginário interno, cujo vértice está voltado para baixo e possui ângulo de abertura alpha; a esfera da esquerda tem raio igual à metade do raio da esfera da direita; portanto, sua calota resultante também é proporcionalmente menor',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -90,7 +99,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -127,7 +136,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -162,7 +171,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -196,7 +205,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -232,7 +241,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -269,7 +278,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -305,7 +314,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -341,7 +350,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -377,7 +386,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -413,7 +422,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -449,7 +458,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -485,7 +494,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // A descrição da questão já descreve muito bem a imagem auxiliar.
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -521,7 +530,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: 'Basicamente um ioiô com as informações já fornecidas',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -557,7 +566,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: 'Basicamente um ioiô com as informações já fornecidas',
-			youtubeUrl: 'https://www.youtube.com/watch?v=I8op3OdcnXg'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -592,7 +601,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 1,
 		statement: {
@@ -626,7 +635,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 1,
 		statement: {
@@ -660,7 +669,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 2,
 		statement: {
@@ -694,7 +703,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 2,
 		statement: {
@@ -728,7 +737,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 3,
 		statement: {
@@ -762,7 +771,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 3,
 		statement: {
@@ -796,7 +805,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 4,
 		statement: {
@@ -830,7 +839,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 4,
 		statement: {
@@ -864,7 +873,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 5,
 		statement: {
@@ -898,7 +907,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 5,
 		statement: {
@@ -932,7 +941,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 6,
 		statement: {
@@ -966,7 +975,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 6,
 		statement: {
@@ -1000,7 +1009,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 7,
 		statement: {
@@ -1034,7 +1043,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 7,
 		statement: {
@@ -1068,7 +1077,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1102,7 +1111,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=5YJ8ERMZgPU'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1136,7 +1145,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1170,7 +1179,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1204,7 +1213,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1238,7 +1247,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1272,7 +1281,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1306,7 +1315,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1340,7 +1349,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1374,7 +1383,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=IXbpgypkPGs'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1410,7 +1419,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Como complemento às informações fornecidas, considera-se uma barra cilíndrica de comprimento L e seção transversal de área A, conectando dois reservatórios; o comprimento x é medido ao longo do eixo da barra, na direção que vai do reservatório de maior pressão e volume para aquele de menor pressão e volume',
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1447,7 +1456,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Como complemento às informações fornecidas, considera-se uma barra cilíndrica de comprimento L e seção transversal de área A, conectando dois reservatórios; o comprimento x é medido ao longo do eixo da barra, na direção que vai do reservatório de maior pressão e volume para aquele de menor pressão e volume',
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1482,7 +1491,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1516,7 +1525,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1550,7 +1559,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1584,7 +1593,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1618,7 +1627,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1652,7 +1661,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=o5k3FavEOKI'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1686,7 +1695,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1720,7 +1729,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1754,7 +1763,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1788,7 +1797,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1824,7 +1833,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Gráfico de V(x)/V_0 em função de x/d, variando de -5 a 5 no eixo x e de 0 a 1 no eixo y; a curva tem formato de "U" invertido: inicia em 1 com x=-5, atinge o mínimo 0 em x=0 e retorna a 1 quando x=5, com a variação mais acentuada entre x=-2 e x=2',
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1861,7 +1870,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'Gráfico de V(x)/V_0 em função de x/d, variando de -5 a 5 no eixo x e de 0 a -1 no eixo y; a curva tem formato de "U" invertido: inicia em 0 com x=-5, atinge o mínimo -1 em x=0 e retorna a 0 quando x=5, com a variação mais acentuada entre x=-2.5 e x=2.5',
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1896,7 +1905,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1930,7 +1939,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1964,7 +1973,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 5,
 		statement: {
@@ -1998,7 +2007,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 5,
 		statement: {
@@ -2032,7 +2041,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 6,
 		statement: {
@@ -2066,7 +2075,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 6,
 		statement: {
@@ -2100,7 +2109,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2134,7 +2143,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2168,7 +2177,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 8,
 		statement: {
@@ -2202,7 +2211,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=acwDCHT_Um0'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 8,
 		statement: {
@@ -2236,7 +2245,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2270,7 +2279,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2304,7 +2313,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2338,7 +2347,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2372,7 +2381,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2406,7 +2415,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2440,7 +2449,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -2474,7 +2483,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -2508,7 +2517,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -2542,7 +2551,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -2576,7 +2585,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -2610,7 +2619,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -2646,7 +2655,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'A função ψ(x) apresenta comportamento oscilatório em torno do eixo y=0, iniciando para x<0 com valor nulo em ψ=0; a curva cruza o eixo das abscissas três vezes, passando pela origem no segundo cruzamento; observam-se dois máximos e dois mínimos alternados, com os extremos (mais afastados de x=0) apresentando amplitudes mais largas e oscilação mais suave, enquanto os picos e vales centrais, próximos à origem, são mais estreitos e correspondem a oscilações de maior frequência espacial',
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2683,7 +2692,7 @@ export default <Question[]>[
 		help: {
 			imageDescription:
 				'A função ψ(x) apresenta simetria par e comportamento oscilatório em torno do eixo y=0; a curva inicia e termina em valores positivos de ψ, cruzando o eixo das abscissas duas vezes; no ponto x=0, a função atinge seu valor mínimo, representando o único vale central; observam-se dois máximos simétricos em relação à origem, com as oscilações nas regiões mais afastadas de x=0 apresentando maior largura (ou menor frequência espacial) em comparação à região central.',
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2718,7 +2727,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -2752,7 +2761,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=RPNahR9zotI'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 8,
 		statement: {

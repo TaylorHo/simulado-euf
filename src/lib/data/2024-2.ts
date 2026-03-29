@@ -8,13 +8,22 @@ const defaultData = {
 	tags: []
 };
 
+const videos = {
+	[Area.MecanicaClassica]: '2aDOe8MfxqQ',
+	[Area.Eletromagnetismo]: 'kZEsh6R0PG4',
+	[Area.FisicaModerna]: '9MnLR30eFCo',
+	[Area.MecanicaQuantica]: '2e97Hjyvazs',
+	[Area.Termodinamica]: '4Q4b4BLyMAU',
+	[Area.FisicaEstatistica]: 'tZkx1x8ocro'
+};
+
 export default <Question[]>[
 	{
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -48,7 +57,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -83,7 +92,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -119,7 +128,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -154,7 +163,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -188,7 +197,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaClassica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -223,7 +232,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -259,7 +268,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -295,7 +304,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -331,7 +340,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -367,7 +376,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -403,7 +412,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -440,7 +449,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -476,7 +485,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=2aDOe8MfxqQ'
+			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -511,7 +520,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 1,
 		statement: {
@@ -545,7 +554,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 1,
 		statement: {
@@ -579,7 +588,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 2,
 		statement: {
@@ -613,7 +622,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 2,
 		statement: {
@@ -647,7 +656,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 3,
 		statement: {
@@ -681,7 +690,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 3,
 		statement: {
@@ -715,7 +724,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 4,
 		statement: {
@@ -749,7 +758,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 4,
 		statement: {
@@ -784,7 +793,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 5,
 		statement: {
@@ -820,7 +829,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 5,
 		statement: {
@@ -855,7 +864,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 6,
 		statement: {
@@ -889,7 +898,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 6,
 		statement: {
@@ -923,7 +932,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 7,
 		statement: {
@@ -957,7 +966,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 7,
 		statement: {
@@ -991,7 +1000,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1025,7 +1034,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Eletromagnetismo,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=kZEsh6R0PG4'
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1059,7 +1068,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1093,7 +1102,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1127,7 +1136,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1161,7 +1170,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1195,7 +1204,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1229,7 +1238,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1263,7 +1272,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1297,7 +1306,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1331,7 +1340,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -1365,7 +1374,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 5,
 		statement: {
@@ -1399,7 +1408,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -1433,7 +1442,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 6,
 		statement: {
@@ -1467,7 +1476,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -1501,7 +1510,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 7,
 		statement: {
@@ -1535,7 +1544,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1569,7 +1578,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.MecanicaQuantica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=2e97Hjyvazs'
+			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
 		questionNumber: 8,
 		statement: {
@@ -1604,7 +1613,7 @@ export default <Question[]>[
 		area: Area.FisicaModerna,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1640,7 +1649,7 @@ export default <Question[]>[
 		area: Area.FisicaModerna,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 1,
 		statement: {
@@ -1675,7 +1684,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1709,7 +1718,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
@@ -1743,7 +1752,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1777,7 +1786,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 3,
 		statement: {
@@ -1811,7 +1820,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1845,7 +1854,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 4,
 		statement: {
@@ -1879,7 +1888,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 5,
 		statement: {
@@ -1913,7 +1922,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 5,
 		statement: {
@@ -1947,7 +1956,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 6,
 		statement: {
@@ -1981,7 +1990,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 6,
 		statement: {
@@ -2015,7 +2024,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2049,7 +2058,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 7,
 		statement: {
@@ -2083,7 +2092,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 8,
 		statement: {
@@ -2117,7 +2126,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaModerna,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=9MnLR30eFCo'
+			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 8,
 		statement: {
@@ -2151,7 +2160,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2185,7 +2194,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2219,7 +2228,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2253,7 +2262,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2288,7 +2297,7 @@ export default <Question[]>[
 		area: Area.Termodinamica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2324,7 +2333,7 @@ export default <Question[]>[
 		area: Area.Termodinamica,
 		help: {
 			imageDescription: undefined, // TODO: Adicionar descrição da imagem
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2359,7 +2368,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -2393,7 +2402,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.Termodinamica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=4Q4b4BLyMAU'
+			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -2427,7 +2436,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2461,7 +2470,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 1,
 		statement: {
@@ -2495,7 +2504,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2529,7 +2538,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 2,
 		statement: {
@@ -2563,7 +2572,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2597,7 +2606,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 3,
 		statement: {
@@ -2631,7 +2640,7 @@ export default <Question[]>[
 		version: Version.A,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 4,
 		statement: {
@@ -2665,7 +2674,7 @@ export default <Question[]>[
 		version: Version.B,
 		area: Area.FisicaEstatistica,
 		help: {
-			youtubeUrl: 'https://www.youtube.com/watch?v=tZkx1x8ocro'
+			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
 		questionNumber: 4,
 		statement: {

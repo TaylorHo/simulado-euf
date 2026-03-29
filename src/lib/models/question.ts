@@ -41,7 +41,8 @@ export interface QuestionIdentifier {
 
 export interface HelpTools {
 	imageDescription?: string;
-	youtubeUrl?: string;
+	youtubeVideoId?: string;
+	youtubeVideoStartAt?: number;
 }
 
 export interface Question extends QuestionIdentifier {
