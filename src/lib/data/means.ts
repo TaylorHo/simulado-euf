@@ -16,7 +16,7 @@ export const SemesterMeans: SemesterMean[] = [
 	{
 		year: 2024,
 		semester: 2,
-		mean: undefined,
+		mean: 3.74,
 		deviation: undefined
 	},
 	{

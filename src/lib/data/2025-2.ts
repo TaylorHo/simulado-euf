@@ -12,7 +12,7 @@ const defaultData = {
 const videos = {
 	[Area.MecanicaClassica]: 'habeJ9uM30Y',
 	[Area.Eletromagnetismo]: 'hme4ZTf5clk',
-	[Area.FisicaModerna]: 'N0x-dm0omkk', // TODO: check if there's a free version of this video
+	[Area.FisicaModerna]: 'evA5reBnZhU',
 	[Area.MecanicaQuantica]: 'G3vVfbsBB5k',
 	[Area.Termodinamica]: '5MgMGpQWpxY',
 	[Area.FisicaEstatistica]: '6_hEefkaecI'
