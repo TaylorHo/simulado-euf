@@ -32,7 +32,7 @@
 				</p>
 				<a
 					class="btn-primary new-issue-cta"
-					href={`${GITHUB_REPO_URL}/issues/new`}
+					href={`${GITHUB_REPO_URL}/issues/new/choose`}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
