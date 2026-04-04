@@ -1,0 +1,95 @@
+name: Nova Funcionalidade (apenas para moderadores)
+description: 'Template para documentar novas funcionalidades planejadas'
+title: '[feature]: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **ATENÇÃO: Este template é apenas para uso interno da equipe de desenvolvimento.**
+
+        Se você é um usuário e tem uma ideia de funcionalidade, por favor use as [Discussões](https://github.com/TaylorHo/simulado-euf/discussions/new?category=ideias) em vez disso.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: Descreva a funcionalidade que será implementada
+      placeholder: '.Descreva a nova funcionalidade..'
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivação
+      description: Por que esta funcionalidade é necessária? Que problema ela resolve?
+      placeholder: 'Explique a motivação...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução Proposta
+      description: Como você planeja implementar esta funcionalidade?
+      placeholder: 'Descreva a solução técnica...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas Consideradas
+      description: Que outras soluções foram consideradas?
+      placeholder: 'Liste alternativas consideradas...'
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      description: Qual a prioridade desta funcionalidade?
+      options:
+        - Baixa
+        - Média
+        - Alta
+        - Crítica
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Complexidade Estimada
+      description: Qual a complexidade estimada de implementação?
+      options:
+        - Baixa (< 1 dia)
+        - Média (1-3 dias)
+        - Alta (3-7 dias)
+        - Muito Alta (> 1 semana)
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tarefas de Implementação
+      description: Liste as tarefas necessárias para implementar esta funcionalidade
+      placeholder: |
+        - [ ] Tarefa 1
+        - [ ] Tarefa 2
+        - [ ] Tarefa 3
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências
+      description: Esta funcionalidade depende de outras issues ou funcionalidades?
+      placeholder: 'Liste dependências (use #número para referenciar outras issues)...'
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações Adicionais
+      description: Qualquer outra informação relevante
+      placeholder: 'Contexto adicional...'

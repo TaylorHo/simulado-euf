@@ -1,0 +1,41 @@
+name: 🛠️ Erro em Questão do Simulado
+description: Relatar um problema em uma questão específica do simulado
+title: '[reported bug]: '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por relatar um erro! Isso nos ajuda a manter a qualidade do simulado.
+
+  - type: input
+    id: question-id
+    attributes:
+      label: Identificação da Questão
+      description: 'Exemplo: 2025-2 Física Clássica Q4-A'
+      placeholder: 'Ano-Semestre Área QNúmero-Versão'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error-type
+    attributes:
+      label: Tipo de Erro
+      options:
+        - Erro de digitação ou formatação
+        - Diferente do gabarito oficial
+        - Problema com a imagem
+        - Vídeo de explicação incorreto ou indisponível
+        - Alternativa errada marcada como correta
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: Descreva o erro de forma breve
+      placeholder: 'Ex: "A imagem não carrega" ou "Fórmula incorreta na descrição"'
+    validations:
+      required: false

@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 💡 Sugerir nova funcionalidade
+    url: https://github.com/TaylorHo/simulado-euf/discussions/new?category=ideias
+    about: Tem uma ideia de funcionalidade? Comece uma discussão em vez de abrir uma issue!
+
+  - name: ❓ Ajuda e Dúvidas
+    url: https://github.com/TaylorHo/simulado-euf/discussions/categories/perguntas-e-repostas
+    about: Peça ajuda à comunidade ou compartilhe suas dúvidas.

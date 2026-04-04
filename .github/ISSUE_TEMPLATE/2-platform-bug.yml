@@ -1,0 +1,43 @@
+name: 🛠️ Erro na Plataforma
+description: Relatar um erro ou problema técnico na plataforma do simulado
+title: '[bug]: '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por relatar um bug na plataforma!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: O que está acontecendo?
+      description: Descreva o problema de forma breve
+      placeholder: 'Ex: "O botão de próxima questão não funciona no mobile" ou "A página fica carregando infinitamente"'
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Onde acontece?
+      description: URL da página
+      placeholder: 'https://euf.hoffmann.io/...'
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Dispositivo
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações adicionais (opcional)
+      description: Capturas de tela, navegador usado, ou outros detalhes
+      placeholder: 'Cole capturas de tela ou informações extras aqui...'
