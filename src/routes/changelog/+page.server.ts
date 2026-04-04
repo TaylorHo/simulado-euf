@@ -9,7 +9,7 @@ type RawIssue = {
 };
 
 /** Titles from automated bug reports include this prefix; hide it in the UI. */
-const REPORTED_BUG_TITLE_PREFIX = /^\s*\[reported bug\]\s*-\s*/i;
+const REPORTED_BUG_TITLE_PREFIX = /^\s*\[reported bug\]:\s*/i;
 
 function displayIssueTitle(title: string): string {
 	return title.replace(REPORTED_BUG_TITLE_PREFIX, '').trim();
