@@ -239,7 +239,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: `Considere a força<br/><br/>$$\\vec{F}(x,y) = -20bx^3y^2 \\space \\vec{i} -10bx^4y \\space \\vec{j} \\space \\text{,}$$<br/>em que $b$ é uma constante. Sobre essa força, é correto afirmar que:`
+			text: `Considere a força<br/><br/>$$\\vec{F}(x,y) = -20bx^3y^2 \\vec{i} \\space - \\space 10bx^4y \\vec{j} \\text{,}$$<br/>em que $b$ é uma constante. Sobre essa força, é correto afirmar que:`
 		},
 		alternatives: [
 			{
@@ -274,7 +274,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: `Considere a força<br/><br/>$$\\vec{F}(x,y) = -3x^2y \\space \\vec{i} -ax^3 \\space \\vec{j} \\space \\text{,}$$<br/>em que $a$ é uma constante. Sobre essa força, é correto afirmar que:`
+			text: `Considere a força<br/><br/>$$\\vec{F}(x,y) = -3ax^2y \\vec{i} \\space - \\space ax^3 \\vec{j} \\text{,}$$<br/>em que $a$ é uma constante. Sobre essa força, é correto afirmar que:`
 		},
 		alternatives: [
 			{
