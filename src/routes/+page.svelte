@@ -16,13 +16,13 @@
 		Clock,
 		MapPin,
 		Coffee,
-		Github,
 		Heart,
 		ExternalLink,
 		ShieldOff,
 		PiggyBank
 	} from '@lucide/svelte';
 	import { BUY_ME_A_COFFEE_URL, GITHUB_REPO_URL, GITHUB_SPONSORS_URL } from '$lib/variables';
+	import GitHub from '$lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
 	let showMethodModal = $state(false);
@@ -91,13 +91,14 @@
 	<!-- Hero Section -->
 	<section class="hero">
 		<div class="container">
-			<div class="hero-badge">
-				<span class="badge-text">100% Gratuito • Código Aberto</span>
-			</div>
+			<a href="/changelog/" class="fixes-cta">
+				<span>Ver correções e melhorias recentes</span>
+				<ExternalLink size={14} aria-hidden="true" />
+			</a>
 			<h1 class="hero-title">Prepare-se para o EUF</h1>
 			<p class="hero-subtitle">
-				Simulados e flashcards completos com questões reais dos exames anteriores do Exame Unificado
-				de Física para Pós-Graduação
+				Plataforma 100% gratuita e de código aberto com simulados e flashcards completos baseados em
+				questões reais dos exames anteriores do Exame Unificado de Física
 			</p>
 
 			<div class="hero-actions">
@@ -289,7 +290,7 @@
 					class="contribution-card"
 				>
 					<div class="contribution-icon">
-						<Github size={32} />
+						<GitHub size={32} />
 					</div>
 					<h3>GitHub Sponsors</h3>
 					<p>Torne-se um patrocinador mensal</p>
@@ -368,24 +369,32 @@
 		text-align: center;
 	}
 
-	.hero-badge {
+	.fixes-cta {
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
 		gap: var(--space-sm);
-		padding: var(--space-xs) var(--space-lg);
-		background-color: var(--success-light);
-		border: 2px solid var(--success);
-		border-radius: var(--radius-lg);
+		margin: 0 0 var(--space-lg) 0;
+		padding: var(--space-xs) var(--space-md);
 		font-size: var(--text-xs);
 		font-weight: 600;
-		color: #22c55e;
-		margin-bottom: var(--space-lg);
+		color: var(--accent-primary);
+		text-decoration: none;
+		border-radius: var(--radius-md);
+		border: 1px solid var(--border-light);
+		background-color: var(--bg-secondary);
+		transition:
+			background-color var(--transition-fast),
+			border-color var(--transition-fast);
 	}
 
-	:global([data-theme='dark']) .hero-badge {
-		background-color: rgba(16, 185, 129, 0.15);
-		border-color: #10b981;
-		color: #34d399;
+	.fixes-cta:hover {
+		background-color: var(--bg-tertiary);
+		border-color: var(--accent-primary);
+	}
+
+	.fixes-cta :global(svg) {
+		flex-shrink: 0;
 	}
 
 	.hero-title {
@@ -833,9 +842,10 @@
 			line-height: 1.5;
 		}
 
-		.hero-badge {
+		.fixes-cta {
 			font-size: 0.65rem;
-			padding: var(--space-xs) var(--space-md);
+			padding: var(--space-xs) var(--space-sm);
+			margin-bottom: var(--space-md);
 		}
 
 		.hero-actions {

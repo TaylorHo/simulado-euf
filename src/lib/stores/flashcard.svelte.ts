@@ -2,6 +2,7 @@ import { allQuestions } from '$lib/data';
 import type { Question, Alternative } from '$lib/models/question';
 import { QuestionAlternative } from '$lib/models/question';
 import { Area } from '$lib/models/area';
+import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
 
 interface FlashcardQuestion extends Question {
 	shuffledAlternatives: Alternative[];
@@ -70,28 +71,21 @@ class FlashcardStore {
 	}
 
 	getQuestionId(question: Question): string {
-		// Generate a unique base36 ID for a question
-		const code = `${question.year % 100}${question.semester}${question.area}${question.version}${question.questionNumber}`;
-		return Number.parseInt(code).toString(36);
+		return generateQuestionId(question);
 	}
 
 	loadQuestionById(id: string): FlashcardQuestion | null {
 		try {
 			// Parse the base36 ID back to question identifier
-			const code = Number.parseInt(id, 36).toString(10).padStart(5, '0');
-			const year = Number.parseInt(code.slice(0, 2)) + 2000;
-			const semester = Number.parseInt(code.slice(2, 3)) as 1 | 2;
-			const area = Number.parseInt(code.slice(3, 4));
-			const version = Number.parseInt(code.slice(4, 5));
-			const questionNumber = Number.parseInt(code.slice(5, 6)) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+			const identifier = parseQuestionId(id);
 
 			const question = this.allQuestions.find(
 				(q) =>
-					q.year === year &&
-					q.semester === semester &&
-					q.area === area &&
-					q.version === version &&
-					q.questionNumber === questionNumber
+					q.year === identifier.year &&
+					q.semester === identifier.semester &&
+					q.area === identifier.area &&
+					q.version === identifier.version &&
+					q.questionNumber === identifier.questionNumber
 			);
 
 			if (question) {

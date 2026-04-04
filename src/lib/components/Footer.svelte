@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { Github, Linkedin, Heart, HeartCrack } from '@lucide/svelte';
+	import { Heart, HeartCrack } from '@lucide/svelte';
 	import { ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	import GitHub from './icons/GitHub.svelte';
+	import LinkedIn from './icons/LinkedIn.svelte';
 </script>
 
 <div class="footer">
@@ -14,7 +16,7 @@
 				rel="noopener noreferrer"
 				class="footer-link"
 			>
-				<Github size={16} />
+				<GitHub size={16} />
 				Taylor Hoffmann
 			</a>
 			<span class="separator">•</span>
@@ -24,7 +26,7 @@
 				rel="noopener noreferrer"
 				class="footer-link"
 			>
-				<Linkedin size={16} />
+				<LinkedIn size={16} />
 				LinkedIn
 			</a>
 		</p>

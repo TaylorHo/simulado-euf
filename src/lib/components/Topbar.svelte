@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { GITHUB_REPO_URL } from '$lib/variables';
-	import { Moon, Sun, Github } from '@lucide/svelte';
+	import { Moon, Sun } from '@lucide/svelte';
+	import GitHub from './icons/GitHub.svelte';
 
 	const currentPath = $derived(page.url.pathname);
 
@@ -40,7 +41,7 @@
 				class="nav-link github-link"
 				title="Ver no GitHub"
 			>
-				<Github size={20} />
+				<GitHub size={20} />
 			</a>
 		</div>
 	</div>
