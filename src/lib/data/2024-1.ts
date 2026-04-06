@@ -1353,27 +1353,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $0,8\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = −\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $0{,}8\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
-				text: '$\\beta\\mu_0h = \\tanh^{-1}(0,8)$',
+				text: '$\\beta\\mu_0h = \\tanh^{-1}(0{,}8)$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\beta\\mu_0h = \\sinh^{-1}(0,8)$',
+				text: '$\\beta\\mu_0h = \\sinh^{-1}(0{,}8)$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\beta\\mu_0h = \\cosh^{-1}(0,8)$',
+				text: '$\\beta\\mu_0h = \\cosh^{-1}(0{,}8)$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\beta\\mu_0h = -\\tanh^{-1}(0,8)$',
+				text: '$\\beta\\mu_0h = -\\tanh^{-1}(0{,}8)$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\beta\\mu_0h = -\\sinh^{-1}(0,8)$',
+				text: '$\\beta\\mu_0h = -\\sinh^{-1}(0{,}8)$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1387,27 +1387,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = -\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $-0,2\\mu_0$ é dado por:'
+			text: 'Um sistema é formado por $N$ íons magnéticos localizados e não interagentes entre si, em contato com um banho térmico de temperatura $T [\\beta = (k_B T)^{-1}]$. Cada íon tem energia dada por $\\epsilon = -\\mu_0 h S_i$, onde $\\mu_0$, $h$ e $S_i$ denotam, respectivamente, o magneton de Bohr, a intensidade do campo magnético e a variável de spin, esta última podendo assumir os valores $S_i = \\pm 1$. O valor de $\\beta \\mu_0 h$ em que a magnetização por íon $m = \\sum^N_{i=1}⟨S_i⟩/N$ vale $-0{,}2\\mu_0$ é dado por:'
 		},
 		alternatives: [
 			{
-				text: '$\\beta\\mu_0h = -\\tanh^{-1}(0,2)$',
+				text: '$\\beta\\mu_0h = -\\tanh^{-1}(0{,}2)$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\beta\\mu_0h = -\\sinh^{-1}(0,2)$',
+				text: '$\\beta\\mu_0h = -\\sinh^{-1}(0{,}2)$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\beta\\mu_0h = \\cosh^{-1}(0,2)$',
+				text: '$\\beta\\mu_0h = \\cosh^{-1}(0{,}2)$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\beta\\mu_0h = \\tanh^{-1}(0,2)$',
+				text: '$\\beta\\mu_0h = \\tanh^{-1}(0{,}2)$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\beta\\mu_0h = \\sinh^{-1}(0,2)$',
+				text: '$\\beta\\mu_0h = \\sinh^{-1}(0{,}2)$',
 				number: QuestionAlternative.E
 			}
 		]
