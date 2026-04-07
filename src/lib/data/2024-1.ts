@@ -1567,23 +1567,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$5,4 \\times 10^{5} J$',
+				text: '$5{,}4 \\times 10^{5} J$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$2,6 \\times 10^{7} J$',
+				text: '$2{,}6 \\times 10^{7} J$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$1,6 \\times 10^{5} J$',
+				text: '$1{,}6 \\times 10^{5} J$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$2,7 \\times 10^{5} J$',
+				text: '$2{,}7 \\times 10^{5} J$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$5,2 \\times 10^{6} J$',
+				text: '$5{,}2 \\times 10^{6} J$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1601,23 +1601,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$2,7 \\times 10^{5} J$',
+				text: '$2{,}7 \\times 10^{5} J$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$1,3 \\times 10^{7} J$',
+				text: '$1{,}3 \\times 10^{7} J$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$8,0 \\times 10^{6} J$',
+				text: '$8{,}0 \\times 10^{6} J$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$5,4 \\times 10^{5} J$',
+				text: '$5{,}4 \\times 10^{5} J$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$2,4 \\times 10^{6} J$',
+				text: '$2{,}4 \\times 10^{6} J$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1977,27 +1977,27 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Em um experimento de efeito fotoelétrico, uma superfície metálica é iluminada com luz verde ($\\lambda_1 = \\text{500 nm}$). Os elétrons ejetados são freados totalmente quando um potencial de $0,48 V$ é aplicado. Ao fazermos incidir luz violeta ($\\lambda_2 = \\text{400 nm}$), o potencial necessário para frear totamente os elétrons é:'
+			text: 'Em um experimento de efeito fotoelétrico, uma superfície metálica é iluminada com luz verde ($\\lambda_1 = \\text{500 nm}$). Os elétrons ejetados são freados totalmente quando um potencial de $0{,}48 V$ é aplicado. Ao fazermos incidir luz violeta ($\\lambda_2 = \\text{400 nm}$), o potencial necessário para frear totamente os elétrons é:'
 		},
 		alternatives: [
 			{
-				text: '$1,1 V$',
+				text: '$1{,}1 V$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$2,0 V$',
+				text: '$2{,}0 V$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$3,1 V$',
+				text: '$3{,}1 V$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,48 V$',
+				text: '$0{,}48 V$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,62 V$',
+				text: '$0{,}62 V$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2011,11 +2011,11 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Em um experimento de efeito fotoelétrico, uma superfície metálica é iluminada com luz verde ($\\lambda_1 = \\text{500 nm}$). Os elétrons ejetados são freados totalmente quando um potencial de $0,48 V$ é aplicado. Ao fazermos incidir luz laranja ($\\lambda_2 = \\text{600 nm}$), o potencial necessário para frear totamente os elétrons é, com um algarismo significativo:'
+			text: 'Em um experimento de efeito fotoelétrico, uma superfície metálica é iluminada com luz verde ($\\lambda_1 = \\text{500 nm}$). Os elétrons ejetados são freados totalmente quando um potencial de $0{,}48 V$ é aplicado. Ao fazermos incidir luz laranja ($\\lambda_2 = \\text{600 nm}$), o potencial necessário para frear totamente os elétrons é, com um algarismo significativo:'
 		},
 		alternatives: [
 			{
-				text: '$0,07 V$',
+				text: '$0{,}07 V$',
 				number: QuestionAlternative.A
 			},
 			{
@@ -2027,11 +2027,11 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,4 V$',
+				text: '$0{,}4 V$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,2 V$',
+				text: '$0{,}2 V$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2113,27 +2113,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Em um acelerador de partículas, estuda-se a colisão frontal de duas partículas idênticas. No referencial do laboratório, as partículas movem-se em sentidos opostos com velocidades de módulo $0,50c$. No referencial de uma das partículas, o módulo da velocidade com que a outra partícula se aproxima é:'
+			text: 'Em um acelerador de partículas, estuda-se a colisão frontal de duas partículas idênticas. No referencial do laboratório, as partículas movem-se em sentidos opostos com velocidades de módulo $0{,}50c$. No referencial de uma das partículas, o módulo da velocidade com que a outra partícula se aproxima é:'
 		},
 		alternatives: [
 			{
-				text: '$0,80 c$',
+				text: '$0{,}80 c$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0,69 c$',
+				text: '$0{,}69 c$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,55 c$',
+				text: '$0{,}55 c$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,38 c$',
+				text: '$0{,}38 c$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,88 c$',
+				text: '$0{,}88 c$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2147,27 +2147,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Em um acelerador de partículas, estuda-se a colisão frontal de duas partículas idênticas. No referencial do laboratório, as partículas movem-se em sentidos opostos com velocidades de módulo $0,30c$. No referencial de uma das partículas, o módulo da velocidade com que a outra partícula se aproxima é:'
+			text: 'Em um acelerador de partículas, estuda-se a colisão frontal de duas partículas idênticas. No referencial do laboratório, as partículas movem-se em sentidos opostos com velocidades de módulo $0{,}30c$. No referencial de uma das partículas, o módulo da velocidade com que a outra partícula se aproxima é:'
 		},
 		alternatives: [
 			{
-				text: '$0,55 c$',
+				text: '$0{,}55 c$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0,69 c$',
+				text: '$0{,}69 c$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,80 c$',
+				text: '$0{,}80 c$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,38 c$',
+				text: '$0{,}38 c$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,88 c$',
+				text: '$0{,}88 c$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2219,11 +2219,11 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$2,2 \\cdot 10^{-17} W$',
+				text: '$2{,}2 \\cdot 10^{-17} W$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$2,2 \\cdot 10^{-6} W$',
+				text: '$2{,}2 \\cdot 10^{-6} W$',
 				number: QuestionAlternative.B
 			},
 			{
@@ -2231,11 +2231,11 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$4,0 \\cdot 10^{-15} W$',
+				text: '$4{,}0 \\cdot 10^{-15} W$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$7,8 \\cdot 10^{-17} W$',
+				text: '$7{,}8 \\cdot 10^{-17} W$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2453,23 +2453,23 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O operador Hamiltoniano de um oscilador harmônico quântico é dado por $H = \\hbar\\omega(a^{\\dagger}a + 1/2)$, com $a^{\\dagger}a \\ket{n} = n\\ket{n}$ e $\\ket{n}$ o autoestado de $H$ referente ao $n$-ésimo nível de energia do oscilador. Seja $\\ket{\\psi} = \\sqrt{0,4}\\ket{2} + \\sqrt{0,6}\\ket{3}$ o estado de sobreposição normalizado de um dado oscilador em um dado instante de tempo. O valor esperado da energia desse oscilador é:'
+			text: 'O operador Hamiltoniano de um oscilador harmônico quântico é dado por $H = \\hbar\\omega(a^{\\dagger}a + 1/2)$, com $a^{\\dagger}a \\ket{n} = n\\ket{n}$ e $\\ket{n}$ o autoestado de $H$ referente ao $n$-ésimo nível de energia do oscilador. Seja $\\ket{\\psi} = \\sqrt{0{,}4}\\ket{2} + \\sqrt{0{,}6}\\ket{3}$ o estado de sobreposição normalizado de um dado oscilador em um dado instante de tempo. O valor esperado da energia desse oscilador é:'
 		},
 		alternatives: [
 			{
-				text: '$3,1 \\hbar\\omega$',
+				text: '$3{,}1 \\hbar\\omega$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3,1 \\hbar\\omega^2$',
+				text: '$3{,}1 \\hbar\\omega^2$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$2,0 \\hbar\\omega$',
+				text: '$2{,}0 \\hbar\\omega$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$2,0 \\hbar\\omega^2$',
+				text: '$2{,}0 \\hbar\\omega^2$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -2487,23 +2487,23 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O operador Hamiltoniano de um oscilador harmônico quântico é dado por $H = \\hbar\\omega(a^{\\dagger}a + 1/2)$, com $a^{\\dagger}a \\ket{n} = n\\ket{n}$ e $\\ket{n}$ o autoestado de $H$ referente ao $n$-ésimo nível de energia do oscilador. Seja $\\ket{\\psi} = \\sqrt{0,3}\\ket{2} + \\sqrt{0,7}\\ket{3}$ o estado de sobreposição normalizado de um dado oscilador em um dado instante de tempo. O valor esperado da energia desse oscilador é:'
+			text: 'O operador Hamiltoniano de um oscilador harmônico quântico é dado por $H = \\hbar\\omega(a^{\\dagger}a + 1/2)$, com $a^{\\dagger}a \\ket{n} = n\\ket{n}$ e $\\ket{n}$ o autoestado de $H$ referente ao $n$-ésimo nível de energia do oscilador. Seja $\\ket{\\psi} = \\sqrt{0{,}3}\\ket{2} + \\sqrt{0{,}7}\\ket{3}$ o estado de sobreposição normalizado de um dado oscilador em um dado instante de tempo. O valor esperado da energia desse oscilador é:'
 		},
 		alternatives: [
 			{
-				text: '$3,2 \\hbar\\omega$',
+				text: '$3{,}2 \\hbar\\omega$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3,2 \\hbar\\omega^2$',
+				text: '$3{,}2 \\hbar\\omega^2$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,5 \\hbar\\omega$',
+				text: '$0{,}5 \\hbar\\omega$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,5 \\hbar\\omega^2$',
+				text: '$0{,}5 \\hbar\\omega^2$',
 				number: QuestionAlternative.D
 			},
 			{

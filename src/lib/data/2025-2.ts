@@ -1264,7 +1264,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'De acordo com o modelo de Bohr, o raio da órbita $n = 1$ do átomo de hidrogênio é $a_0 \\approx 5,3 \\space \\text{\\AA}$ e a velocidade é $v_0 \\approx 2,2 \\times 10^6$ m/s. O raio e a velocidade da órbita $n = 3$ são, respectivamente,'
+			text: 'De acordo com o modelo de Bohr, o raio da órbita $n = 1$ do átomo de hidrogênio é $a_0 \\approx 5{,}3 \\space \\text{\\AA}$ e a velocidade é $v_0 \\approx 2{,}2 \\times 10^6$ m/s. O raio e a velocidade da órbita $n = 3$ são, respectivamente,'
 		},
 		alternatives: [
 			{
@@ -1298,7 +1298,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'De acordo com o modelo de Bohr, o raio da órbita $n = 1$ do átomo de hidrogênio é $a_0 \\approx 5,3 \\space \\text{\\AA}$ e a velocidade é $v_0 \\approx 2,2 \\times 10^6$ m/s. O raio e a velocidade da órbita $n = 2$ são, respectivamente,'
+			text: 'De acordo com o modelo de Bohr, o raio da órbita $n = 1$ do átomo de hidrogênio é $a_0 \\approx 5{,}3 \\space \\text{\\AA}$ e a velocidade é $v_0 \\approx 2{,}2 \\times 10^6$ m/s. O raio e a velocidade da órbita $n = 2$ são, respectivamente,'
 		},
 		alternatives: [
 			{
@@ -1604,7 +1604,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um feixe de luz de frequência $f = 1,0 \\times 10^{15}$ Hz incide sobre um metal cuja função trabalho é $\\phi = 3,0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 1,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 6,0 \\times 10^{14}$ Hz, haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?'
+			text: 'Um feixe de luz de frequência $f = 1{,}0 \\times 10^{15}$ Hz incide sobre um metal cuja função trabalho é $\\phi = 3{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 1,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 6{,}0 \\times 10^{14}$ Hz, haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?'
 		},
 		alternatives: [
 			{
@@ -1638,7 +1638,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um feixe de luz de frequência $f = 5,0 \\times 10^{14}$ Hz incide sobre um metal cuja função trabalho é $\\phi = 1,0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 2,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 2,0 \\times 10^{14}$ Hz, não haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?'
+			text: 'Um feixe de luz de frequência $f = 5{,}0 \\times 10^{14}$ Hz incide sobre um metal cuja função trabalho é $\\phi = 1{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 2,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 2{,}0 \\times 10^{14}$ Hz, não haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?'
 		},
 		alternatives: [
 			{

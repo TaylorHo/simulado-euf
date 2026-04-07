@@ -1231,7 +1231,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: `Um fóton de energia $50 \\space \\text{keV}$ colide com um elétron estacionário. Após a colisão, o fóton é espalhado no sentido oposto àquele do seu movimento antes da colisão. Adotando $h/mc = 2,4 \\space \\text{pm}$, sendo $m$ a massa do elétron, o comprimento de onda do fóton espalhado é:`
+			text: `Um fóton de energia $50 \\space \\text{keV}$ colide com um elétron estacionário. Após a colisão, o fóton é espalhado no sentido oposto àquele do seu movimento antes da colisão. Adotando $h/mc = 2{,}4 \\space \\text{pm}$, sendo $m$ a massa do elétron, o comprimento de onda do fóton espalhado é:`
 		},
 		alternatives: [
 			{
@@ -1266,7 +1266,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: `Um fóton de energia $60 \\space \\text{keV}$ colide com um elétron estacionário. Após a colisão, o fóton é espalhado no sentido oposto àquele do seu movimento antes da colisão. Adotando $h/mc = 2,4 \\space \\text{pm}$, sendo $m$ a massa do elétron, o comprimento de onda do fóton espalhado é:`
+			text: `Um fóton de energia $60 \\space \\text{keV}$ colide com um elétron estacionário. Após a colisão, o fóton é espalhado no sentido oposto àquele do seu movimento antes da colisão. Adotando $h/mc = 2{,}4 \\space \\text{pm}$, sendo $m$ a massa do elétron, o comprimento de onda do fóton espalhado é:`
 		},
 		alternatives: [
 			{
@@ -1371,27 +1371,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: `O tempo de vida de um estado excitado de um átomo é $3,29 \\times 10^{-3} \\space \\text{s}$. Qual a incerteza mínima na energia desse estado?`
+			text: `O tempo de vida de um estado excitado de um átomo é $3{,}29 \\times 10^{-3} \\space \\text{s}$. Qual a incerteza mínima na energia desse estado?`
 		},
 		alternatives: [
 			{
-				text: `$1,00 \\times 10^{-13} \\text{eV}$`,
+				text: `$1{,}00 \\times 10^{-13} \\text{eV}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: `$4,00 \\times 10^{-14} \\text{eV}$`,
+				text: `$4{,}00 \\times 10^{-14} \\text{eV}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$6,28 \\times 10^{-12} \\text{eV}$`,
+				text: `$6{,}28 \\times 10^{-12} \\text{eV}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$3,14 \\times 10^{-15} \\text{eV}$`,
+				text: `$3{,}14 \\times 10^{-15} \\text{eV}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$5,00 \\times 10^{-11} \\text{eV}$`,
+				text: `$5{,}00 \\times 10^{-11} \\text{eV}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1406,27 +1406,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: `O tempo de vida de um estado excitado de um átomo é $13,2 \\times 10^{-3} \\space \\text{s}$. Qual a incerteza mínima na energia desse estado?`
+			text: `O tempo de vida de um estado excitado de um átomo é $13{,}2 \\times 10^{-3} \\space \\text{s}$. Qual a incerteza mínima na energia desse estado?`
 		},
 		alternatives: [
 			{
-				text: `$0,25 \\times 10^{-13} \\text{eV}$`,
+				text: `$0{,}25 \\times 10^{-13} \\text{eV}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: `$2,00 \\times 10^{-14} \\text{eV}$`,
+				text: `$2{,}00 \\times 10^{-14} \\text{eV}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$1,57 \\times 10^{-12} \\text{eV}$`,
+				text: `$1{,}57 \\times 10^{-12} \\text{eV}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$0,79 \\times 10^{-15} \\text{eV}$`,
+				text: `$0{,}79 \\times 10^{-15} \\text{eV}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$0,13 \\times 10^{-11} \\text{eV}$`,
+				text: `$0{,}13 \\times 10^{-11} \\text{eV}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1511,7 +1511,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: `Um corpo de massa $M$ encontra-se em repouso no referencial do laboratório quando sofre uma explosão. Após explodir, ele se divide em duas partes idênticas, cada uma com massa de $3,0 \\space \\text{kg}$, que se movem com velocidade de módulo $v = 4c/5$. Qual o valor de $M$?`
+			text: `Um corpo de massa $M$ encontra-se em repouso no referencial do laboratório quando sofre uma explosão. Após explodir, ele se divide em duas partes idênticas, cada uma com massa de $3{,}0 \\space \\text{kg}$, que se movem com velocidade de módulo $v = 4c/5$. Qual o valor de $M$?`
 		},
 		alternatives: [
 			{
@@ -1531,7 +1531,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$3,6 \\text{kg}$`,
+				text: `$3{,}6 \\text{kg}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1546,7 +1546,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: `Um corpo de massa $M$ encontra-se em repouso no referencial do laboratório quando sofre uma explosão. Após explodir, ele se divide em duas partes idênticas, cada uma com massa de $8,0 \\space \\text{kg}$, que se movem com velocidade de módulo $v = 3c/5$. Qual o valor de $M$?`
+			text: `Um corpo de massa $M$ encontra-se em repouso no referencial do laboratório quando sofre uma explosão. Após explodir, ele se divide em duas partes idênticas, cada uma com massa de $8{,}0 \\space \\text{kg}$, que se movem com velocidade de módulo $v = 3c/5$. Qual o valor de $M$?`
 		},
 		alternatives: [
 			{
@@ -1566,7 +1566,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$3,6 \\text{kg}$`,
+				text: `$3{,}6 \\text{kg}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2283,7 +2283,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: `Os equipamentos médicos de ressonância magnética empregam como fonte de campo magnético bobinas construídas com uma liga Nb-Ti em seu estado supercondutor. Para atingir esse estado, elas operam em temperaturas tão baixas quanto a do hélio líquido. Quantos litros de hélio líquido são evaporados para resfriar uma bobina de $5,0$ kg em temperatura ambiente de $31 \\text{°C}$ até a temperatura de operação de aproximadamente $4,0 \\space \\text{K}$, que é praticamente sua temperatura de ebulição?<br/><br/>Dados:<br/>calor específico do Nb-Ti: $400 \\space \\text{J/kg °C}$;<br/>calor latente de vaporização do hélio: $2,00 \\times 10^4 \\space \\text{J/kg}$;<br/>densidade do hélio líquido $125 \\space \\text{kg/m}^3$<br/>`
+			text: `Os equipamentos médicos de ressonância magnética empregam como fonte de campo magnético bobinas construídas com uma liga Nb-Ti em seu estado supercondutor. Para atingir esse estado, elas operam em temperaturas tão baixas quanto a do hélio líquido. Quantos litros de hélio líquido são evaporados para resfriar uma bobina de $5{,}0$ kg em temperatura ambiente de $31 \\text{°C}$ até a temperatura de operação de aproximadamente $4{,}0 \\space \\text{K}$, que é praticamente sua temperatura de ebulição?<br/><br/>Dados:<br/>calor específico do Nb-Ti: $400 \\space \\text{J/kg °C}$;<br/>calor latente de vaporização do hélio: $2{,}00 \\times 10^4 \\space \\text{J/kg}$;<br/>densidade do hélio líquido $125 \\space \\text{kg/m}^3$<br/>`
 		},
 		alternatives: [
 			{
@@ -2291,15 +2291,15 @@ export default <Question[]>[
 				number: QuestionAlternative.A
 			},
 			{
-				text: `$0,24$ litros`,
+				text: `$0{,}24$ litros`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$21,6$ litros`,
+				text: `$21{,}6$ litros`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$2,16$ litros`,
+				text: `$2{,}16$ litros`,
 				number: QuestionAlternative.D
 			},
 			{
@@ -2318,11 +2318,11 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: `Os equipamentos médicos de ressonância magnética empregam como fonte de campo magnético bobinas construídas com uma liga Nb-Ti em seu estado supercondutor. Para atingir esse estado, elas operam em temperaturas tão baixas quanto a do hélio líquido. O processo de resfriamento de uma bobina em temperatura ambiente de $31 \\text{°C}$ até a temperatura de operação de aproximadamente $4,0 \\space \\text{K}$, que é praticamente a temperatura de ebulição do hélio líquido, demandou 240 litros de hélio. Qual é a massa da bobina?<br/><br/>Dados:<br/>calor específico do Nb-Ti: $400 \\space \\text{J/kg °C}$;<br/>calor latente de vaporização do hélio: $2,00 \\times 10^4 \\space \\text{J/kg}$;<br/>densidade do hélio líquido $125 \\space \\text{kg/m}^3$<br/>`
+			text: `Os equipamentos médicos de ressonância magnética empregam como fonte de campo magnético bobinas construídas com uma liga Nb-Ti em seu estado supercondutor. Para atingir esse estado, elas operam em temperaturas tão baixas quanto a do hélio líquido. O processo de resfriamento de uma bobina em temperatura ambiente de $31 \\text{°C}$ até a temperatura de operação de aproximadamente $4{,}0 \\space \\text{K}$, que é praticamente a temperatura de ebulição do hélio líquido, demandou 240 litros de hélio. Qual é a massa da bobina?<br/><br/>Dados:<br/>calor específico do Nb-Ti: $400 \\space \\text{J/kg °C}$;<br/>calor latente de vaporização do hélio: $2{,}00 \\times 10^4 \\space \\text{J/kg}$;<br/>densidade do hélio líquido $125 \\space \\text{kg/m}^3$<br/>`
 		},
 		alternatives: [
 			{
-				text: `$5,0$ kg`,
+				text: `$5{,}0$ kg`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2330,15 +2330,15 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$0,45$ kg`,
+				text: `$0{,}45$ kg`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$0,05$ kg`,
+				text: `$0{,}05$ kg`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$12,5$ kg`,
+				text: `$12{,}5$ kg`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2499,23 +2499,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: `$1,5 R \\ln (4)$`,
+				text: `$1{,}5 R \\ln (4)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: `$2,5 R \\ln (2)$`,
+				text: `$2{,}5 R \\ln (2)$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$3,5 R \\ln (4)$`,
+				text: `$3{,} R \\ln (4)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$4,0 R$`,
+				text: `$4{,}0 R$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$2,5 R$`,
+				text: `$2{,}5 R$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2534,23 +2534,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: `$1,5 R \\ln (2)$`,
+				text: `$1{,}5 R \\ln (2)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: `$2,5 R \\ln (2)$`,
+				text: `$2{,}5 R \\ln (2)$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: `$3,5 R \\ln (4)$`,
+				text: `$3{,}5 R \\ln (4)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: `$4,0 R$`,
+				text: `$4{,}0 R$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: `$1,5 R$`,
+				text: `$1{,}5 R$`,
 				number: QuestionAlternative.E
 			}
 		]

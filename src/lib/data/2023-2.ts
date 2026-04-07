@@ -1021,24 +1021,24 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Sangue fluindo em um artéria de diâmetro $d = 8,0$ mm pode atingir velocidades de até $v = 60$ cm/s em módulo (veja o desenho esquemático abaixo). Sabendo que há íons no plasma sanguíneo (como $Na^+$, $K^+$, $Mg^+$ e $Ca^{2+}$), estime a máxima diferença de potencial elétrico que pode surgir nas paredes dessa artéria quando sob a ação de um campo magnético de módulo $B = 0,20$ T como mostrado na figura?',
+			text: 'Sangue fluindo em um artéria de diâmetro $d = 8{,}0$ mm pode atingir velocidades de até $v = 60$ cm/s em módulo (veja o desenho esquemático abaixo). Sabendo que há íons no plasma sanguíneo (como $Na^+$, $K^+$, $Mg^+$ e $Ca^{2+}$), estime a máxima diferença de potencial elétrico que pode surgir nas paredes dessa artéria quando sob a ação de um campo magnético de módulo $B = 0{,}20$ T como mostrado na figura?',
 			image: '2023-2/em-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$0,96 \\space mV$',
+				text: '$0{,}96 \\space mV$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$9,6 \\space mV$',
+				text: '$9{,}6 \\space mV$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$9,6 \\space \\mu V$',
+				text: '$9{,}6 \\space \\mu V$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,96 \\space \\mu V$',
+				text: '$0{,}96 \\space \\mu V$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1057,12 +1057,12 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Sangue fluindo em um artéria de diâmetro $d = 9,0$ mm pode atingir velocidades de até $v = 70$ cm/s em módulo (veja o desenho esquemático abaixo). Sabendo que há íons no plasma sanguíneo (como $Na^+$, $K^+$, $Mg^+$ e $Ca^{2+}$), estime a máxima diferença de potencial elétrico que pode surgir nas paredes dessa artéria quando sob a ação de um campo magnético de módulo $B = 0,10$ T como mostrado na figura?',
+			text: 'Sangue fluindo em um artéria de diâmetro $d = 9{,}0$ mm pode atingir velocidades de até $v = 70$ cm/s em módulo (veja o desenho esquemático abaixo). Sabendo que há íons no plasma sanguíneo (como $Na^+$, $K^+$, $Mg^+$ e $Ca^{2+}$), estime a máxima diferença de potencial elétrico que pode surgir nas paredes dessa artéria quando sob a ação de um campo magnético de módulo $B = 0{,}10$ T como mostrado na figura?',
 			image: '2023-2/em-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$0,63 \\space mV$',
+				text: '$0{,}63 \\space mV$',
 				number: QuestionAlternative.A
 			},
 			{
@@ -1070,15 +1070,15 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$6,3 \\space \\mu V$',
+				text: '$6{,}3 \\space \\mu V$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,63 \\space \\mu V$',
+				text: '$0{,}63 \\space \\mu V$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$6,3 \\space mV$',
+				text: '$6{,}3 \\space mV$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1177,11 +1177,11 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$4,1$ eV',
+				text: '$4{,}1$ eV',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$4,1$ meV',
+				text: '$4{,}1$ meV',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1212,11 +1212,11 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$6,2$ eV',
+				text: '$6{,}2$ eV',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$6,2$ meV',
+				text: '$6{,}2$ meV',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1445,23 +1445,23 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'A astronauta Aline se encontra em repouso em um referencial inercial quando, às 08h00 de seu relógio, o astronauta Beto passa por ela viajando com velocidade constante $0,80c$. Coincidentemente, o relógio de Beto também marca 08h00. Às 09h00 em seu relógio, Beto chega ao seu destino. De acordo com Aline, o comprimento do percurso de Beto foi de:'
+			text: 'A astronauta Aline se encontra em repouso em um referencial inercial quando, às 08h00 de seu relógio, o astronauta Beto passa por ela viajando com velocidade constante $0{,}80c$. Coincidentemente, o relógio de Beto também marca 08h00. Às 09h00 em seu relógio, Beto chega ao seu destino. De acordo com Aline, o comprimento do percurso de Beto foi de:'
 		},
 		alternatives: [
 			{
-				text: '$1,4 \\times 10^9$ km',
+				text: '$1{,}4 \\times 10^9$ km',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$8,5 \\times 10^8$ km',
+				text: '$8{,}5 \\times 10^8$ km',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$1,0 \\times 10^9$ km',
+				text: '$1{,}0 \\times 10^9$ km',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$9,2 \\times 10^8$ km',
+				text: '$9{,}2 \\times 10^8$ km',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1480,23 +1480,23 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'A astronauta Aline se encontra em repouso em um referencial inercial quando, às 08h00 de seu relógio, o astronauta Beto passa por ela viajando com velocidade constante $0,60c$. Coincidentemente, o relógio de Beto também marca 08h00. Às 09h20 em seu relógio, Beto chega ao seu destino. De acordo com Aline, o comprimento do percurso de Beto foi de:'
+			text: 'A astronauta Aline se encontra em repouso em um referencial inercial quando, às 08h00 de seu relógio, o astronauta Beto passa por ela viajando com velocidade constante $0{,}60c$. Coincidentemente, o relógio de Beto também marca 08h00. Às 09h20 em seu relógio, Beto chega ao seu destino. De acordo com Aline, o comprimento do percurso de Beto foi de:'
 		},
 		alternatives: [
 			{
-				text: '$1,1 \\times 10^9$ km',
+				text: '$1{,}1 \\times 10^9$ km',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$8,4 \\times 10^8$ km',
+				text: '$8{,}4 \\times 10^8$ km',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$1,8 \\times 10^9$ km',
+				text: '$1{,}8 \\times 10^9$ km',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$9,7 \\times 10^8$ km',
+				text: '$9{,}7 \\times 10^8$ km',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1515,27 +1515,27 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Em um choque totalmente inelástico, uma partícula de massa de repouso $1,00 MeV/c^2$ e energia cinética $2,00 MeV$ colide com outra partícula em repouso de massa $2,00 MeV/c^2$. Qual a massa de repouso do sistema de duas partículas após a colisão?'
+			text: 'Em um choque totalmente inelástico, uma partícula de massa de repouso $1{,}00 MeV/c^2$ e energia cinética $2{,}00 MeV$ colide com outra partícula em repouso de massa $2{,}00 MeV/c^2$. Qual a massa de repouso do sistema de duas partículas após a colisão?'
 		},
 		alternatives: [
 			{
-				text: '$4,12 \\space MeV/c^2$',
+				text: '$4{,}12 \\space MeV/c^2$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3,00 \\space MeV/c^2$',
+				text: '$3{,}00 \\space MeV/c^2$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$3,67 \\space MeV/c^2$',
+				text: '$3{,}67 \\space MeV/c^2$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$4,67 \\space MeV/c^2$',
+				text: '$4{,}67 \\space MeV/c^2$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$5,00 \\space MeV/c^2$',
+				text: '$5{,}00 \\space MeV/c^2$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1550,27 +1550,27 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Em um choque totalmente inelástico, uma partícula de massa de repouso $2,00 MeV/c^2$ e energia cinética $1,00 MeV$ colide com outra partícula em repouso de massa $1,00 MeV/c^2$. Qual a massa de repouso do sistema de duas partículas após a colisão?'
+			text: 'Em um choque totalmente inelástico, uma partícula de massa de repouso $2{,}00 MeV/c^2$ e energia cinética $1{,}00 MeV$ colide com outra partícula em repouso de massa $1{,}00 MeV/c^2$. Qual a massa de repouso do sistema de duas partículas após a colisão?'
 		},
 		alternatives: [
 			{
-				text: '$3,32 \\space MeV/c^2$',
+				text: '$3{,}32 \\space MeV/c^2$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3,00 \\space MeV/c^2$',
+				text: '$3{,}00 \\space MeV/c^2$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$2,67 \\space MeV/c^2$',
+				text: '$2{,}67 \\space MeV/c^2$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$3,86 \\space MeV/c^2$',
+				text: '$3{,}86 \\space MeV/c^2$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$4,00 \\space MeV/c^2$',
+				text: '$4{,}00 \\space MeV/c^2$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1585,27 +1585,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma amostra é preparada contendo $1,0 \\times 10^{20}$ partículas radioativas de vida média igual a $1,0$ ano. Em cada decaimento, 10 fótons de comprimento de onda $1,0$ pm são emitidos. Qual a taxa de produção de energia eletromagnética após $1,0$ ano da amostra ter sido preparada?'
+			text: 'Uma amostra é preparada contendo $1{,}0 \\times 10^{20}$ partículas radioativas de vida média igual a $1{,}0$ ano. Em cada decaimento, 10 fótons de comprimento de onda $1{,}0$ pm são emitidos. Qual a taxa de produção de energia eletromagnética após $1{,}0$ ano da amostra ter sido preparada?'
 		},
 		alternatives: [
 			{
-				text: '$2,3$ W',
+				text: '$2{,}3$ W',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$4,4$ W',
+				text: '$4{,}4$ W',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,3$ W',
+				text: '$0{,}3$ W',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,9$ W',
+				text: '$0{,}9$ W',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$6,3$ W',
+				text: '$6{,}3$ W',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1620,27 +1620,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma amostra é preparada contendo $2,0 \\times 10^{20}$ partículas radioativas de vida média igual a $2,0$ anos. Em cada decaimento, 6 fótons de comprimento de onda $\\lambda$ são emitidos. Após $2,0$ anos da amostra ter sido preparada, a taxa de produção de energia eletromagnética é igual a $2,0 \\space W$. Qual o valor de $\\lambda$?'
+			text: 'Uma amostra é preparada contendo $2{,}0 \\times 10^{20}$ partículas radioativas de vida média igual a $2{,}0$ anos. Em cada decaimento, 6 fótons de comprimento de onda $\\lambda$ são emitidos. Após $2{,}0$ anos da amostra ter sido preparada, a taxa de produção de energia eletromagnética é igual a $2{,}0 \\space W$. Qual o valor de $\\lambda$?'
 		},
 		alternatives: [
 			{
-				text: '$0,70$ pm',
+				text: '$0{,}70$ pm',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0,56$ pm',
+				text: '$0{,}56$ pm',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,23$ pm',
+				text: '$0{,}23$ pm',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$1,1$ pm',
+				text: '$1{,}1$ pm',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$1,5$ pm',
+				text: '$1{,}5$ pm',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1660,19 +1660,19 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$8,3 \\times 10^3 \\space K$',
+				text: '$8{,}3 \\times 10^3 \\space K$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$4,1 \\times 10^3 \\space K$',
+				text: '$4{,}1 \\times 10^3 \\space K$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$7,2 \\times 10^3 \\space K$',
+				text: '$7{,}2 \\times 10^3 \\space K$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$3,0 \\times 10^3 \\space K$',
+				text: '$3{,}0 \\times 10^3 \\space K$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1696,19 +1696,19 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$7,2 \\times 10^3 \\space K$',
+				text: '$7{,}2 \\times 10^3 \\space K$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$4,8 \\times 10^3 \\space K$',
+				text: '$4{,}8 \\times 10^3 \\space K$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$6,2 \\times 10^3 \\space K$',
+				text: '$6{,}2 \\times 10^3 \\space K$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$3,0 \\times 10^3 \\space K$',
+				text: '$3{,}0 \\times 10^3 \\space K$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1804,23 +1804,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$0$, $0$, $\\frac{0,32 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0,57 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}32 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0{,}57 \\hbar$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,16 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0,40 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}16 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0{,}40 \\hbar$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,32 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0,40 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}32 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0{,}40 \\hbar$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,16 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0,57 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}16 L^2}{\\pi^2}$, $\\frac{\\pi^2\\hbar^2}{L^2}$, $0{,}57 \\hbar$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0$, $\\sqrt{0,1}\\frac{\\pi \\hbar}{L}$, $\\frac{0,32 L^2}{\\pi^2}$, $1,1 \\frac{\\pi^2\\hbar^2}{L^2}$, $0,57 \\hbar$',
+				text: '$0$, $\\sqrt{0{,}1}\\frac{\\pi \\hbar}{L}$, $\\frac{0{,}32 L^2}{\\pi^2}$, $1{,}1 \\frac{\\pi^2\\hbar^2}{L^2}$, $0{,}57 \\hbar$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1840,23 +1840,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$0$, $0$, $\\frac{0,75 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $2,6 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}75 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $2{,}6 \\hbar$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,010 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $0,30 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}010 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $0{,}30 \\hbar$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,010 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $2,6 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}010 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $2{,}6 \\hbar$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0$, $0$, $\\frac{0,75 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $0,30 \\hbar$',
+				text: '$0$, $0$, $\\frac{0{,}75 L^2}{\\pi^2}$, $\\frac{9\\pi^2\\hbar^2}{L^2}$, $0{,}30 \\hbar$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0$, $\\sqrt{0,1}\\frac{3\\pi \\hbar}{L}$, $\\frac{0,75 L^2}{\\pi^2}$, $1,1 \\frac{9\\pi^2\\hbar^2}{L^2}$, $2,6 \\hbar$',
+				text: '$0$, $\\sqrt{0{,}1}\\frac{3\\pi \\hbar}{L}$, $\\frac{0{,}75 L^2}{\\pi^2}$, $1{,}1 \\frac{9\\pi^2\\hbar^2}{L^2}$, $2{,}6 \\hbar$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1947,23 +1947,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\sqrt{0,2}$ e $1,2 \\hbar\\omega$',
+				text: '$\\sqrt{0{,}2}$ e $1{,}2 \\hbar\\omega$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0,2$ e $0,80 \\hbar\\omega$',
+				text: '$0{,}2$ e $0{,}80 \\hbar\\omega$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,2$ e $1,2 \\hbar\\omega$',
+				text: '$0{,}2$ e $1{,}2 \\hbar\\omega$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sqrt{0,2}$ e $0,80 \\hbar\\omega$',
+				text: '$\\sqrt{0{,}2}$ e $0{,}80 \\hbar\\omega$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,04$ e $0,70 \\hbar\\omega$',
+				text: '$0{,}04$ e $0{,}70 \\hbar\\omega$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1978,27 +1978,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'A equação de autovalores do Hamiltoniano de um oscilador harmônico unidimensional é dada por<br/><br/>$$H\\ket{n} = E_n\\ket{n} \\space \\text{,}$$<br/>onde $\\ket{n}$ são os autoestados ortonormais do hamiltoniano $H$, $E_n = \\hbar \\omega(n + 1/2)$ os autovalores de energia correspondentes, e $n = 0,1,...$ Seja $\\ket{\\psi} = \\sqrt{0,3} e^{iθ_0}\\ket{0} + \\sqrt{0,2} e^{iθ_1}\\ket{1} + R_2 e^{iθ_2}\\ket{2}$ o vetor de estado normalizado de um dado oscilador harmônico unidimensional, onde $θ_0$, $θ_1$ e $θ_2$ são constantes reais. A constante real $R_2 > 0$ e o valor esperado da energia desse oscilador valem, respectivamente:'
+			text: 'A equação de autovalores do Hamiltoniano de um oscilador harmônico unidimensional é dada por<br/><br/>$$H\\ket{n} = E_n\\ket{n} \\space \\text{,}$$<br/>onde $\\ket{n}$ são os autoestados ortonormais do hamiltoniano $H$, $E_n = \\hbar \\omega(n + 1/2)$ os autovalores de energia correspondentes, e $n = 0,1,...$ Seja $\\ket{\\psi} = \\sqrt{0{,}3} e^{iθ_0}\\ket{0} + \\sqrt{0{,}2} e^{iθ_1}\\ket{1} + R_2 e^{iθ_2}\\ket{2}$ o vetor de estado normalizado de um dado oscilador harmônico unidimensional, onde $θ_0$, $θ_1$ e $θ_2$ são constantes reais. A constante real $R_2 > 0$ e o valor esperado da energia desse oscilador valem, respectivamente:'
 		},
 		alternatives: [
 			{
-				text: '$\\sqrt{0,5}$ e $1,7 \\hbar\\omega$',
+				text: '$\\sqrt{0{,}5}$ e $1{,}7 \\hbar\\omega$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$0,5$ e $1,7 \\hbar\\omega$',
+				text: '$0{,}5$ e $1{,}7 \\hbar\\omega$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,5$ e $1,1 \\hbar\\omega$',
+				text: '$0{,}5$ e $1{,}1 \\hbar\\omega$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sqrt{0,5}$ e $1,1 \\hbar\\omega$',
+				text: '$\\sqrt{0{,}5}$ e $1{,}1 \\hbar\\omega$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,25$ e $0,61 \\hbar\\omega$',
+				text: '$0{,}25$ e $0{,}61 \\hbar\\omega$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -2435,7 +2435,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma quantidade de água com massa de $1,0$ kg a $0^\\circ$ C é aquecida até $100^\\circ$ C ao ser posta em contato com um reservatório térmico a $100^\\circ$ C em um processo irreversível. Considere que o calor específico da água é $c = 4 \\space J/g$, que $\\ln(\\frac{373}{273}) \\approx \\frac{3}{10}$ e que $\\frac{100}{373} \\approx \\frac{1}{4}$. Quais são as variações de entropia da água, do reservatório e do universo no processo, respectivamente, em unidades de $J/K$? Dica: considere um processo reversível com os mesmos estados inicial e final para calcular as variações de entropia.'
+			text: 'Uma quantidade de água com massa de $1{,}0$ kg a $0^\\circ$ C é aquecida até $100^\\circ$ C ao ser posta em contato com um reservatório térmico a $100^\\circ$ C em um processo irreversível. Considere que o calor específico da água é $c = 4 \\space J/g$, que $\\ln(\\frac{373}{273}) \\approx \\frac{3}{10}$ e que $\\frac{100}{373} \\approx \\frac{1}{4}$. Quais são as variações de entropia da água, do reservatório e do universo no processo, respectivamente, em unidades de $J/K$? Dica: considere um processo reversível com os mesmos estados inicial e final para calcular as variações de entropia.'
 		},
 		alternatives: [
 			{
@@ -2470,7 +2470,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma quantidade de água com massa de $2,0$ kg a $0^\\circ$ C é aquecida até $100^\\circ$ C ao ser posta em contato com um reservatório térmico a $100^\\circ$ C em um processo irreversível. Considere que o calor específico da água é $c = 4 \\space J/g$, que $\\ln(\\frac{373}{273}) \\approx \\frac{3}{10}$ e que $\\frac{100}{373} \\approx \\frac{1}{4}$. Quais são as variações de entropia da água, do reservatório e do universo no processo, respectivamente, em unidades de $J/K$? Dica: considere um processo reversível com os mesmos estados inicial e final para calcular as variações de entropia.'
+			text: 'Uma quantidade de água com massa de $2{,}0$ kg a $0^\\circ$ C é aquecida até $100^\\circ$ C ao ser posta em contato com um reservatório térmico a $100^\\circ$ C em um processo irreversível. Considere que o calor específico da água é $c = 4 \\space J/g$, que $\\ln(\\frac{373}{273}) \\approx \\frac{3}{10}$ e que $\\frac{100}{373} \\approx \\frac{1}{4}$. Quais são as variações de entropia da água, do reservatório e do universo no processo, respectivamente, em unidades de $J/K$? Dica: considere um processo reversível com os mesmos estados inicial e final para calcular as variações de entropia.'
 		},
 		alternatives: [
 			{

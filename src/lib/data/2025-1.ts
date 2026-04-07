@@ -855,28 +855,28 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −6,0 \\mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 18,0 \\mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>',
+			text: 'Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −6{,}0 \\mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 18{,}0 \\mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>',
 			image: '2025-1/em-5a.webp'
 		},
 		alternatives: [
 			{
-				text: '$q_C = 6,0 \\mu C; q_F = 2,0 \\mu C$',
+				text: '$q_C = 6{,}0 \\mu C; q_F = 2{,}0 \\mu C$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$q_C = -6,0 \\mu C; q_F = 3,0 \\mu C$',
+				text: '$q_C = -6{,}0 \\mu C; q_F = 3{,}0 \\mu C$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$q_C = 6,0 \\mu C; q_F = 3,0 \\mu C$',
+				text: '$q_C = 6{,}0 \\mu C; q_F = 3{,}0 \\mu C$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$q_C = -6,0 \\mu C; q_F = 2,0 \\mu C$',
+				text: '$q_C = -6{,}0 \\mu C; q_F = 2{,}0 \\mu C$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$q_C = 24,0 \\mu C; q_F = -1,0 \\mu C$',
+				text: '$q_C = 24{,}0 \\mu C; q_F = -1{,}0 \\mu C$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -890,28 +890,28 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −12,0 \\mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 36,0 \\mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>',
+			text: 'Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −12{,}0 \\mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 36{,}0 \\mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>',
 			image: '2025-1/em-5b.webp'
 		},
 		alternatives: [
 			{
-				text: '$q_C = 12,0 \\mu C; q_F = 4,0 \\mu C$',
+				text: '$q_C = 12{,}0 \\mu C; q_F = 4{,}0 \\mu C$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$q_C = -12,0 \\mu C; q_F = 4,0 \\mu C$',
+				text: '$q_C = -12{,}0 \\mu C; q_F = 4{,}0 \\mu C$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$q_C = 12,0 \\mu C; q_F = 6,0 \\mu C$',
+				text: '$q_C = 12{,}0 \\mu C; q_F = 6{,}0 \\mu C$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$q_C = -12,0 \\mu C; q_F = -4,0 \\mu C$',
+				text: '$q_C = -12{,}0 \\mu C; q_F = -4{,}0 \\mu C$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$q_C = 48,0 \\mu C; q_F = -2,0 \\mu C$',
+				text: '$q_C = 48{,}0 \\mu C; q_F = -2{,}0 \\mu C$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -925,28 +925,28 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Partículas de carga $q$ e massa $m$ são aceleradas a partir do repouso ($v_i = 0$) por uma diferença de potencial $\\phi$. Em seguida, as partículas entram numa região de campo magnético perpendicular à velocidade das mesmas, e passam a descrever uma trajetória circular de raio $r$ (veja a figura). O módulo do campo magnético é $B = 0,5 T$. O gráfico apresenta os resultados para os valores de $r^2$ obtidos com a repetição do experimento, para o mesmo tipo de partícula, variando-se a diferença de potencial $\\phi$. Qual é o valor da razão $q/m$ dessas partículas?',
+			text: 'Partículas de carga $q$ e massa $m$ são aceleradas a partir do repouso ($v_i = 0$) por uma diferença de potencial $\\phi$. Em seguida, as partículas entram numa região de campo magnético perpendicular à velocidade das mesmas, e passam a descrever uma trajetória circular de raio $r$ (veja a figura). O módulo do campo magnético é $B = 0{,}5 T$. O gráfico apresenta os resultados para os valores de $r^2$ obtidos com a repetição do experimento, para o mesmo tipo de partícula, variando-se a diferença de potencial $\\phi$. Qual é o valor da razão $q/m$ dessas partículas?',
 			image: '2025-1/em-6a.webp'
 		},
 		alternatives: [
 			{
-				text: '$q/m = 1,0 \\times 10^6 \\space \\text{C/kg}$',
+				text: '$q/m = 1{,}0 \\times 10^6 \\space \\text{C/kg}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$q/m = 1,0 \\times 10^{-6} \\space \\text{C/kg}$',
+				text: '$q/m = 1{,}0 \\times 10^{-6} \\space \\text{C/kg}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$q/m = 5,0 \\times 10^5 \\space \\text{C/kg}$',
+				text: '$q/m = 5{,}0 \\times 10^5 \\space \\text{C/kg}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$q/m = 1,0 \\times 10^2 \\space \\text{C/kg}$',
+				text: '$q/m = 1{,}0 \\times 10^2 \\space \\text{C/kg}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$q/m = 5,0 \\times 10^1 \\space \\text{C/kg}$',
+				text: '$q/m = 5{,}0 \\times 10^1 \\space \\text{C/kg}$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -960,28 +960,28 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Partículas de carga $q$ e massa $m$ são aceleradas a partir do repouso ($v_i = 0$) por uma diferença de potencial $\\phi$. Em seguida, as partículas entram numa região de campo magnético perpendicular à velocidade das mesmas, e passam a descrever uma trajetória circular de raio $r$ (veja a figura). O módulo do campo magnético é $B = 0,5 T$. O gráfico apresenta os resultados para os valores de $r^2$ obtidos com a repetição do experimento, para o mesmo tipo de partícula, variando-se a diferença de potencial $\\phi$. Qual é o valor da razão $q/m$ dessas partículas?',
+			text: 'Partículas de carga $q$ e massa $m$ são aceleradas a partir do repouso ($v_i = 0$) por uma diferença de potencial $\\phi$. Em seguida, as partículas entram numa região de campo magnético perpendicular à velocidade das mesmas, e passam a descrever uma trajetória circular de raio $r$ (veja a figura). O módulo do campo magnético é $B = 0{,}5 T$. O gráfico apresenta os resultados para os valores de $r^2$ obtidos com a repetição do experimento, para o mesmo tipo de partícula, variando-se a diferença de potencial $\\phi$. Qual é o valor da razão $q/m$ dessas partículas?',
 			image: '2025-1/em-6b.webp'
 		},
 		alternatives: [
 			{
-				text: '$q/m = 2,0 \\times 10^6 \\space \\text{C/kg}$',
+				text: '$q/m = 2{,}0 \\times 10^6 \\space \\text{C/kg}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$q/m = 5,0 \\times 10^{-7} \\space \\text{C/kg}$',
+				text: '$q/m = 5{,}0 \\times 10^{-7} \\space \\text{C/kg}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$q/m = 1,0 \\times 10^6 \\space \\text{C/kg}$',
+				text: '$q/m = 1{,}0 \\times 10^6 \\space \\text{C/kg}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$q/m = 2,0 \\times 10^2 \\space \\text{C/kg}$',
+				text: '$q/m = 2{,}0 \\times 10^2 \\space \\text{C/kg}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$q/m = 1,0 \\times 10^2 \\space \\text{C/kg}$',
+				text: '$q/m = 1{,}0 \\times 10^2 \\space \\text{C/kg}$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1069,23 +1069,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$F_{rad} = 0,9 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
+				text: '$F_{rad} = 0{,}9 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$F_{rad} = 0,6 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
+				text: '$F_{rad} = 0{,}6 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$F_{rad} = 0,5 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
+				text: '$F_{rad} = 0{,}5 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$F_{rad} = 0,7 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
+				text: '$F_{rad} = 0{,}7 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$F_{rad} = 0,2 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
+				text: '$F_{rad} = 0{,}2 \\frac{E_0^2}{\\mu_0 c^2} b^2 \\hat{z}$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1103,23 +1103,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$F_{rad} = 0,8 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
+				text: '$F_{rad} = 0{,}8 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$F_{rad} = 0,7 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
+				text: '$F_{rad} = 0{,}7 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$F_{rad} = 0,5 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
+				text: '$F_{rad} = 0{,}5 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$F_{rad} = 0,4 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
+				text: '$F_{rad} = 0{,}4 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$F_{rad} = 0,2 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
+				text: '$F_{rad} = 0{,}2 \\frac{E_0^2}{\\mu_0 c^2} (\\pi R^2) \\hat{z}$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1423,11 +1423,11 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,6c$',
+				text: '$0{,}6c$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0,8c$',
+				text: '$0{,}8c$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1453,11 +1453,11 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$0,6c$',
+				text: '$0{,}6c$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$0,8c$',
+				text: '$0{,}8c$',
 				number: QuestionAlternative.D
 			},
 			{
@@ -1475,7 +1475,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Um satélite se afasta da Terra com uma velocidade constante de $0,60c$. Em seu próprio referencial, o satélite emite um sinal de rádio a cada 2,0 s em direção a um observatório na Terra. Qual o período do sinal medido pelo observatório?'
+			text: 'Um satélite se afasta da Terra com uma velocidade constante de $0{,}60c$. Em seu próprio referencial, o satélite emite um sinal de rádio a cada 2,0 s em direção a um observatório na Terra. Qual o período do sinal medido pelo observatório?'
 		},
 		alternatives: [
 			{
@@ -1509,7 +1509,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Um satélite se afasta da Terra com uma velocidade constante de $0,80c$. Em seu próprio referencial, o satélite emite um sinal de rádio a cada 2,0 s em direção a um observatório na Terra. Qual o período do sinal medido pelo observatório?'
+			text: 'Um satélite se afasta da Terra com uma velocidade constante de $0{,}80c$. Em seu próprio referencial, o satélite emite um sinal de rádio a cada 2,0 s em direção a um observatório na Terra. Qual o período do sinal medido pelo observatório?'
 		},
 		alternatives: [
 			{
@@ -1611,19 +1611,19 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Em um experimento de efeito fotoelétrico, os elétrons são ejetados de um metal apenas se ele for iluminado com ondas eletromagnéticas de comprimentos de onda menores que $300 nm$. Se iluminarmos a mesma superfície metálica com fótons de energia $5,0 eV$, qual o potencial de corte da corrente fotoelétrica, ou seja, a menor diferença de potencial capaz de parar os fotoelétrons de maior energia cinética?'
+			text: 'Em um experimento de efeito fotoelétrico, os elétrons são ejetados de um metal apenas se ele for iluminado com ondas eletromagnéticas de comprimentos de onda menores que $300 nm$. Se iluminarmos a mesma superfície metálica com fótons de energia $5{,}0 eV$, qual o potencial de corte da corrente fotoelétrica, ou seja, a menor diferença de potencial capaz de parar os fotoelétrons de maior energia cinética?'
 		},
 		alternatives: [
 			{
-				text: '$0,90 V$',
+				text: '$0{,}90 V$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$6,0 V$',
+				text: '$6{,}0 V$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$8,0 V$',
+				text: '$8{,}0 V$',
 				number: QuestionAlternative.C
 			},
 			{
@@ -1631,7 +1631,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$5,0 V$',
+				text: '$5{,}0 V$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1645,19 +1645,19 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Em um experimento de efeito fotoelétrico, os elétrons são ejetados de um metal apenas se ele for iluminado com ondas eletromagnéticas de comprimentos de onda menores que $400 nm$. Se iluminarmos a mesma superfície metálica com fótons de energia $5,0 eV$, qual o potencial de corte da corrente fotoelétrica, ou seja, a menor diferença de potencial capaz de parar os fotoelétrons de maior energia cinética?'
+			text: 'Em um experimento de efeito fotoelétrico, os elétrons são ejetados de um metal apenas se ele for iluminado com ondas eletromagnéticas de comprimentos de onda menores que $400 nm$. Se iluminarmos a mesma superfície metálica com fótons de energia $5{,}0 eV$, qual o potencial de corte da corrente fotoelétrica, ou seja, a menor diferença de potencial capaz de parar os fotoelétrons de maior energia cinética?'
 		},
 		alternatives: [
 			{
-				text: '$1,9 V$',
+				text: '$1{,}9 V$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$8,0 V$',
+				text: '$8{,}0 V$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$9,0 V$',
+				text: '$9{,}0 V$',
 				number: QuestionAlternative.C
 			},
 			{
@@ -1665,7 +1665,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$5,0 V$',
+				text: '$5{,}0 V$',
 				number: QuestionAlternative.E
 			}
 		]

@@ -96,24 +96,24 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'A figura ilustra uma balança de braços de comprimento $L = 30 cm$, uma barra homogênea de densidade $\\rho = 5,0 g/cm^3$ e de massa $M = 5,0 kg$ e um balde grande para armazenar água (cuja densidade é $1,0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balança fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
+			text: 'A figura ilustra uma balança de braços de comprimento $L = 30 cm$, uma barra homogênea de densidade $\\rho = 5{,}0 g/cm^3$ e de massa $M = 5{,}0 kg$ e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balança fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
 			image: '2024-2/mc-2a.webp'
 		},
 		alternatives: [
 			{
-				text: 'Entre $4,0 kg$ e $5,0$ kg',
+				text: 'Entre $4{,}0 kg$ e $5{,}0$ kg',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Entre $0,0 kg$ e $5,0$ kg',
+				text: 'Entre $0{,}0 kg$ e $5{,}0$ kg',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Entre $0,0 kg$ e $15$ kg',
+				text: 'Entre $0{,}0 kg$ e $15$ kg',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Entre $1,0 kg$ e $5,0$ kg',
+				text: 'Entre $1{,}0 kg$ e $5{,}0$ kg',
 				number: QuestionAlternative.D
 			},
 			{
@@ -132,24 +132,24 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'A figura ilustra uma balança de braços de comprimento $L = 40 cm$, uma barra homogênea de densidade $\\rho = 3,0 g/cm^3$ e de massa $M = 6,0 kg$ e um balde grande para armazenar água (cuja densidade é $1,0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balanca fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
+			text: 'A figura ilustra uma balança de braços de comprimento $L = 40 cm$, uma barra homogênea de densidade $\\rho = 3{,}0 g/cm^3$ e de massa $M = 6{,}0 kg$ e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balanca fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
 			image: '2024-2/mc-2b.webp'
 		},
 		alternatives: [
 			{
-				text: 'Entre $4,0 kg$ e $6,0$ kg',
+				text: 'Entre $4{,}0 kg$ e $6{,}0$ kg',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Entre $0,0 kg$ e $6,0$ kg',
+				text: 'Entre $0{,}0 kg$ e $6{,}0$ kg',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Entre $0,0 kg$ e $2,4$ kg',
+				text: 'Entre $0{,}0 kg$ e $2{,}4$ kg',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Entre $2,0 kg$ e $6,0$ kg',
+				text: 'Entre $2{,}0 kg$ e $6{,}0$ kg',
 				number: QuestionAlternative.D
 			},
 			{
@@ -936,27 +936,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma onda eletromagnética plana propaga-se ao longo da direção $\\hat{z}$ num meio dielétrico, não magnético ($\\mu = \\mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \\exp{[i(kz - \\omega t)](\\hat{x} + 3\\hat{y})}$, com $k = 1,8 \\times 10^7 m^{-1}$, $\\omega = 3,6 \\times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3,0 \\times 10^8 m/s$.'
+			text: 'Uma onda eletromagnética plana propaga-se ao longo da direção $\\hat{z}$ num meio dielétrico, não magnético ($\\mu = \\mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \\exp{[i(kz - \\omega t)](\\hat{x} + 3\\hat{y})}$, com $k = 1{,}8 \\times 10^7 m^{-1}$, $\\omega = 3{,}6 \\times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3{,}0 \\times 10^8 m/s$.'
 		},
 		alternatives: [
 			{
-				text: '$v_f = 2,0 \\times 10^8 \\space m/s; \\space n = 1,5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} - \\hat{y})$',
+				text: '$v_f = 2{,}0 \\times 10^8 \\space m/s; \\space n = 1{,}5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} - \\hat{y})$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$v_f = 2,0 \\times 10^8 \\space m/s; \\space n = 1,5; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} + \\hat{y})$',
+				text: '$v_f = 2{,}0 \\times 10^8 \\space m/s; \\space n = 1{,}5; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} + \\hat{y})$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$v_f = 5,0 \\times 10^8 \\space m/s; \\space n = 6,0; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} - \\hat{y})$',
+				text: '$v_f = 5{,}0 \\times 10^8 \\space m/s; \\space n = 6{,}0; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} - \\hat{y})$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$v_f = 5,0 \\times 10^8 \\space m/s; \\space n = 6,0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} + \\hat{y})$',
+				text: '$v_f = 5{,}0 \\times 10^8 \\space m/s; \\space n = 6{,}0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (3\\hat{x} + \\hat{y})$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$v_f = 1,5 \\times 10^8 \\space m/s; \\space n = 2,0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 3\\hat{y})$',
+				text: '$v_f = 1{,}5 \\times 10^8 \\space m/s; \\space n = 2{,}0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 3\\hat{y})$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -970,27 +970,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma onda eletromagnética plana propaga-se ao longo da direção $\\hat{z}$ num meio dielétrico, não magnético ($\\mu = \\mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \\exp{[i(kz - \\omega t)](2\\hat{x} - \\hat{y})}$, com $k = 1,2 \\times 10^7 m^{-1}$, $\\omega = 3,0 \\times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3,0 \\times 10^8 m/s$.'
+			text: 'Uma onda eletromagnética plana propaga-se ao longo da direção $\\hat{z}$ num meio dielétrico, não magnético ($\\mu = \\mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \\exp{[i(kz - \\omega t)](2\\hat{x} - \\hat{y})}$, com $k = 1{,}2 \\times 10^7 m^{-1}$, $\\omega = 3{,}0 \\times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3{,}0 \\times 10^8 m/s$.'
 		},
 		alternatives: [
 			{
-				text: '$v_f = 2,5 \\times 10^8 \\space m/s; \\space n = 1,2; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} + 2\\hat{y})$',
+				text: '$v_f = 2{,}5 \\times 10^8 \\space m/s; \\space n = 1{,}2; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} + 2\\hat{y})$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$v_f = 2,5 \\times 10^8 \\space m/s; \\space n = 1,2; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 2\\hat{y})$',
+				text: '$v_f = 2{,}5 \\times 10^8 \\space m/s; \\space n = 1{,}2; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 2\\hat{y})$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$v_f = 4,0 \\times 10^8 \\space m/s; \\space n = 7,5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} + 2\\hat{y})$',
+				text: '$v_f = 4{,}0 \\times 10^8 \\space m/s; \\space n = 7{,}5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} + 2\\hat{y})$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$v_f = 4,0 \\times 10^8 \\space m/s; \\space n = 7,5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 2\\hat{y})$',
+				text: '$v_f = 4{,}0 \\times 10^8 \\space m/s; \\space n = 7{,}5; \\space B(z,t) = -\\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (\\hat{x} - 2\\hat{y})$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$v_f = 7,5 \\times 10^8 \\space m/s; \\space n = 4,0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (2\\hat{x} + \\hat{y})$',
+				text: '$v_f = 7{,}5 \\times 10^8 \\space m/s; \\space n = 4{,}0; \\space B(z,t) = \\frac{k E_0}{\\omega} \\exp{[i(kz - \\omega t)]} (2\\hat{x} + \\hat{y})$',
 				number: QuestionAlternative.E
 			}
 		]
@@ -1208,7 +1208,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador está no estado fundamental.</li></ul>'
+			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1{,}5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador está no estado fundamental.</li></ul>'
 		},
 		alternatives: [
 			{
@@ -1242,7 +1242,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1,5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador não pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador não está no estado fundamental.</li></ul>'
+			text: 'Seja $\\ket{n}$ $(n = 0, 1, 2, ...)$ o $n$-ésimo autoestado de energia de um oscilador harmônico e $H$ o respectivo operador Hamiltoniano, tal que $H\\ket{n} = \\hbar\\omega(n + 1/2)\\ket{n}$, onde $\\omega$ é a frequência característica do oscilador. Sabendo que o valor esperado da energia do oscilador é, num certo instante, $1{,}5\\hbar\\omega$, determine se cada afirmativa abaixo é verdadeira (V) ou falsa (F) e indique a alternativa que contém a sequência correta.<br/><br/><ul><li>( ) O oscilador não pode estar no autoestado com $n = 1$.</li><li>( ) O oscilador está, com certeza, no autoestado com $n = 1$.</li><li>( ) O oscilador pode estar no estado $(1/\\sqrt{2})\\ket{0} + (1/\\sqrt{2})\\ket{2}$.</li><li>( ) O oscilador não está no estado fundamental.</li></ul>'
 		},
 		alternatives: [
 			{
@@ -1824,7 +1824,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Em uma sauna, a temperatura do ambiente é de $45^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $2,1 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
+			text: 'Em uma sauna, a temperatura do ambiente é de $45^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $2{,}1 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
 		},
 		alternatives: [
 			{
@@ -1858,7 +1858,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Em uma sauna, a temperatura do ambiente é de $47^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $1,9 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
+			text: 'Em uma sauna, a temperatura do ambiente é de $47^\\circ C$. Qual é a ordem de grandeza da potência de calor absorvida por irradiação por uma pessoa cuja área superficial é de $1{,}9 m^2$? Considere o ambiente e a pessoa como corpos negros perfeitos.'
 		},
 		alternatives: [
 			{
@@ -2096,7 +2096,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um fóton de comprimento de onda de $121,6$ nm é emitido por um átomo de hidrogênio. As energias do átomo de hidrogênio são dadas por $E_n = -13,6 \\space eV/n^2$, onde $n$ é o número quântico principal do estado em que o elétron se encontra. Qual é o valor de $n$ do estado em que o elétron se encontrava antes da emissão do fóton?'
+			text: 'Um fóton de comprimento de onda de $121{,}6$ nm é emitido por um átomo de hidrogênio. As energias do átomo de hidrogênio são dadas por $E_n = -13{,}6 \\space eV/n^2$, onde $n$ é o número quântico principal do estado em que o elétron se encontra. Qual é o valor de $n$ do estado em que o elétron se encontrava antes da emissão do fóton?'
 		},
 		alternatives: [
 			{
@@ -2130,7 +2130,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um fóton com um comprimento de onda de $102,6$ nm é emitido por um átomo de hidrogênio. As energias do átomo de hidrogênio são dadas por $E_n = -13,6 \\space eV/n^2$, onde $n$ é o número quântico principal do estado em que o elétron se encontra. Qual é o valor de $n$ do estado em que o elétron se encontrava antes da emissão do fóton?'
+			text: 'Um fóton com um comprimento de onda de $102{,}6$ nm é emitido por um átomo de hidrogênio. As energias do átomo de hidrogênio são dadas por $E_n = -13{,}6 \\space eV/n^2$, onde $n$ é o número quântico principal do estado em que o elétron se encontra. Qual é o valor de $n$ do estado em que o elétron se encontrava antes da emissão do fóton?'
 		},
 		alternatives: [
 			{
