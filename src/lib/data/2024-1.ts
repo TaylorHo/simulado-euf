@@ -711,23 +711,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\frac{V_0 R}{4a} R \\cos{\\theta}$',
+				text: '$\\frac{V_0 R}{4a} \\cos{\\theta}$',
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{V_0 R}{4a} R$',
+				text: '$\\frac{V_0 R}{4a}$',
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{V_0 R^2}{4a^2} R \\cos{\\theta}$',
+				text: '$\\frac{V_0 R^2}{4a^2} \\cos{\\theta}$',
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{V_0 R^2}{4a^2} R$',
+				text: '$\\frac{V_0 R^2}{4a^2}$',
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{V_0 R^2}{2a^2} R \\sin{\\theta}$',
+				text: '$\\frac{V_0 R^2}{2a^2} \\sin{\\theta}$',
 				number: QuestionAlternative.E
 			}
 		]
