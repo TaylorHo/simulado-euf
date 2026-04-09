@@ -834,7 +834,7 @@ export default <Question[]>[
 		questionNumber: 5,
 		statement: {
 			text: 'Uma espira situa-se no plano $xy$ e é formada por dois arcos de circunferência centrados na origem $C$ de raios $R_1$ e $R_2 > R_1$ conectados por segmentos retos (ver figura). A corrente elétrica na espira é $I_0$ e tem sentido anti-horário no arco de maior raio ($R_2$) quando vista de cima ($z > 0$). O campo magnético $B$ na origem $C$ é dado por:',
-			image: '2024-2/mc-5b.webp'
+			image: '2024-2/em-5b.webp'
 		},
 		alternatives: [
 			{
