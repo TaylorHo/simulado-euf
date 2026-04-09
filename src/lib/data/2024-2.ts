@@ -96,24 +96,24 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'A figura ilustra uma balança de braços de comprimento $L = 30 cm$, uma barra homogênea de densidade $\\rho = 5{,}0 g/cm^3$ e de massa $M = 5{,}0 kg$ e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balança fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
-			image: '2024-2/mc-2a.webp'
+			text: 'A figura ilustra uma balança de braços de comprimento $L = 30 cm$, uma barra homogênea de densidade $\\rho = 5{,}0 g/cm^3$ e de massa $M = 5{,}0$ kg e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balança fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
+			image: '2024-2/mc-2.webp'
 		},
 		alternatives: [
 			{
-				text: 'Entre $4{,}0 kg$ e $5{,}0$ kg',
+				text: 'Entre $4{,}0$ kg e $5{,}0$ kg',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Entre $0{,}0 kg$ e $5{,}0$ kg',
+				text: 'Entre $0{,}0$ kg e $5{,}0$ kg',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Entre $0{,}0 kg$ e $15$ kg',
+				text: 'Entre $0{,}0$ kg e $15$ kg',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Entre $1{,}0 kg$ e $5{,}0$ kg',
+				text: 'Entre $1{,}0$ kg e $5{,}0$ kg',
 				number: QuestionAlternative.D
 			},
 			{
@@ -132,24 +132,24 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'A figura ilustra uma balança de braços de comprimento $L = 40 cm$, uma barra homogênea de densidade $\\rho = 3{,}0 g/cm^3$ e de massa $M = 6{,}0 kg$ e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balanca fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
-			image: '2024-2/mc-2b.webp'
+			text: 'A figura ilustra uma balança de braços de comprimento $L = 40 cm$, uma barra homogênea de densidade $\\rho = 3{,}0 g/cm^3$ e de massa $M = 6{,}0$ kg e um balde grande para armazenar água (cuja densidade é $1{,}0 g/cm^3$). Movendo-se o balde para cima ou para baixo até que os braços da balanca fiquem perfeitamente horizontais, e então medindo o comprimento emerso $h$ da barra, pode-se obter a massa da mercadoria. Qual o intervalo de massas que pode ser medido com essa balança?',
+			image: '2024-2/mc-2.webp'
 		},
 		alternatives: [
 			{
-				text: 'Entre $4{,}0 kg$ e $6{,}0$ kg',
+				text: 'Entre $4{,}0$ kg e $6{,}0$ kg',
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Entre $0{,}0 kg$ e $6{,}0$ kg',
+				text: 'Entre $0{,}0$ kg e $6{,}0$ kg',
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Entre $0{,}0 kg$ e $2{,}4$ kg',
+				text: 'Entre $0{,}0$ kg e $2{,}4$ kg',
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Entre $2{,}0 kg$ e $6{,}0$ kg',
+				text: 'Entre $2{,}0$ kg e $6{,}0$ kg',
 				number: QuestionAlternative.D
 			},
 			{
