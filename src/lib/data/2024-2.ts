@@ -662,7 +662,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Um cabo coaxial é constituído por um cilindro condutor interno de raio a envolto por uma casca cilíndrica externa condutora fina, coaxial ao cilindro interno e de raio $b > a$. O cilindro interno é percorrido por uma corrente $I$ uniformemente distribuída em sua seção reta. O cilindro externo é percorrido por uma corrente de mesma intensidade, uniformemente distribuída na sua superfície, mas que flui em sentido oposto à corrente no cilindro interno. Considerando que o eixo de simetria do cabo coaxial é o eixo $z$, qual é o campo magnético $B$ na região $0 < \\rho < a$, no interior do condutor interno?'
+			text: 'Um cabo coaxial é constituído por um cilindro condutor interno de raio $a$ envolto por uma casca cilíndrica externa condutora fina, coaxial ao cilindro interno e de raio $b > a$. O cilindro interno é percorrido por uma corrente $I$ uniformemente distribuída em sua seção reta. O cilindro externo é percorrido por uma corrente de mesma intensidade, uniformemente distribuída na sua superfície, mas que flui em sentido oposto à corrente no cilindro interno. Considerando que o eixo de simetria do cabo coaxial é o eixo $z$, qual é o campo magnético $B$ na região $0 < \\rho < a$, no interior do condutor interno?'
 		},
 		alternatives: [
 			{
@@ -696,7 +696,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Um cabo coaxial é constituído por um cilindro condutor interno de raio a envolto por uma casca cilíndrica externa condutora fina, coaxial ao cilindro interno e de raio $b > a$. O cilindro interno é percorrido por uma corrente $I$ uniformemente distribuída em sua seção reta. O cilindro externo é percorrido por uma corrente de mesma intensidade, uniformemente distribuída na sua superfície, mas que flui em sentido oposto à corrente no cilindro interno. Considerando que o eixo de simetria do cabo coaxial é o eixo $z$, qual é o campo magnético $B$ na região $a < \\rho < b$ entre os condutores?'
+			text: 'Um cabo coaxial é constituído por um cilindro condutor interno de raio $a$ envolto por uma casca cilíndrica externa condutora fina, coaxial ao cilindro interno e de raio $b > a$. O cilindro interno é percorrido por uma corrente $I$ uniformemente distribuída em sua seção reta. O cilindro externo é percorrido por uma corrente de mesma intensidade, uniformemente distribuída na sua superfície, mas que flui em sentido oposto à corrente no cilindro interno. Considerando que o eixo de simetria do cabo coaxial é o eixo $z$, qual é o campo magnético $B$ na região $a < \\rho < b$ entre os condutores?'
 		},
 		alternatives: [
 			{
