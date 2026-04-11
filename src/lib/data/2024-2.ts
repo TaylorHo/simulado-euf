@@ -167,7 +167,8 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma pessoa carregando uma barra com pesos encontra-se sobre os pratos de uma balança de precisão, como ilustrado na figura (a). No instante $t_0$, a pessoa inicia o levantamento do peso terminando de erguê-lo no instante $t_1$, como ilustra a figura (b). Qual das alternativas abaixo melhor representa a magnitude da força normal entre a pessoa e a balança?'
+			text: 'Uma pessoa carregando uma barra com pesos encontra-se sobre os pratos de uma balança de precisão, como ilustrado na figura (a). No instante $t_0$, a pessoa inicia o levantamento do peso terminando de erguê-lo no instante $t_1$, como ilustra a figura (b). Qual das alternativas abaixo melhor representa a magnitude da força normal entre a pessoa e a balança?',
+			image: '2024-2/mc-3a.webp'
 		},
 		alternatives: [
 			{
@@ -201,7 +202,8 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma pessoa carregando uma barra com pesos encontra-se sobre os pratos de uma balança de precisão, como ilustrado na figura (a). No instante $t_0$, a pessoa inicia o abaixamento do peso terminando de fazê-lo no instante $t_1$, como ilustra a figura (b). Qual das alternativas abaixo melhor representa a magnitude da força normal entre a pessoa e a balança?'
+			text: 'Uma pessoa carregando uma barra com pesos encontra-se sobre os pratos de uma balança de precisão, como ilustrado na figura (a). No instante $t_0$, a pessoa inicia o abaixamento do peso terminando de fazê-lo no instante $t_1$, como ilustra a figura (b). Qual das alternativas abaixo melhor representa a magnitude da força normal entre a pessoa e a balança?',
+			image: '2024-2/mc-3b.webp'
 		},
 		alternatives: [
 			{
