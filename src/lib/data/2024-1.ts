@@ -1081,7 +1081,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à metade da diferença de potencial entre os terminais do resistor?'
+			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\mathcal{E}(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à metade da diferença de potencial entre os terminais do resistor?'
 		},
 		alternatives: [
 			{
@@ -1115,7 +1115,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\Epsilon(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à diferença de potencial entre os terminais do resistor?'
+			text: 'Em um circuito $RC$, temos uma fonte com força eletromotriz $\\varepsilon$, um resistor de resistência $R$ e um capacitor de capacitância $C$. No instante $t = 0$, o circuito é fechado, fazendo com que o capacitor inicialmente descarregado comece a se carregar de acordo com a equação $q(t) = C\\mathcal{E}(1 − e^{-\\frac{t}{RC}})$. Em que instante de tempo a diferença de potencial entre os terminais do capacitor é igual à diferença de potencial entre os terminais do resistor?'
 		},
 		alternatives: [
 			{
