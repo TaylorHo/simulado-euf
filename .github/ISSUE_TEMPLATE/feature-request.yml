@@ -15,7 +15,7 @@ body:
     attributes:
       label: Descrição
       description: Descreva a funcionalidade que será implementada
-      placeholder: '.Descreva a nova funcionalidade..'
+      placeholder: 'Descreva a nova funcionalidade...'
     validations:
       required: true
 
