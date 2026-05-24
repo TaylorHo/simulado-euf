@@ -23,6 +23,19 @@ class ExamStore {
 	showResults = $state(false);
 	examScore = $state<ExamScore | null>(null);
 	currentSeed = $state<number | undefined>(undefined);
+	private qrLoad: { id: string; seed: string } | null = null;
+
+	prepareQrLoad(id: string, seed: string) {
+		this.qrLoad = { id, seed };
+	}
+
+	consumeQrLoad(examId: string): { seed: string } | null {
+		if (this.qrLoad?.id !== examId) return null;
+
+		const { seed } = this.qrLoad;
+		this.qrLoad = null;
+		return { seed };
+	}
 
 	private saveProgress() {
 		if (!browser || !this.currentExam) return;
@@ -130,6 +143,11 @@ class ExamStore {
 		this.clearProgress();
 		this.saveProgress();
 		return result;
+	}
+
+	loadFreshExamFromIdentifier(identifier: string, seedStr?: string) {
+		this.resetExam();
+		return this.loadExamFromIdentifier(identifier, seedStr, true);
 	}
 
 	loadExamFromIdentifier(identifier: string, seedStr?: string, skipProgressLoad = false) {

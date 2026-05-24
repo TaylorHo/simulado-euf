@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { buildExamPath } from '$lib/utils/helpers';
+	import { examStore } from '$lib/stores/exam.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
@@ -40,7 +42,8 @@
 		const seed = url.searchParams.get('seed');
 		showQRModal = false;
 		if (id && seed) {
-			goto(`/simulado?id=${id}&seed=${seed}&quickfill=true&mode=fresh`);
+			examStore.prepareQrLoad(id, seed);
+			goto(buildExamPath(id, '/simulado', seed));
 		} else {
 			alert('Código inválido. Por favor, tente novamente.');
 		}

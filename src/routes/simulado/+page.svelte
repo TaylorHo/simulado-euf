@@ -13,12 +13,15 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import QuickFillModal from '$lib/components/QuickFillModal.svelte';
 	import { Plus, Share2, Printer, ClipboardList, Grid3x3 } from '@lucide/svelte';
-	import { groupQuestionsByArea, buildExamUrl, tryLoadExam } from '$lib/utils/helpers';
+	import {
+		groupQuestionsByArea,
+		buildExamUrl,
+		buildExamPath,
+		tryLoadExam
+	} from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
-	import { SvelteURLSearchParams } from 'svelte/reactivity';
-
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
 	let showFinishConfirm = $state(false);
@@ -50,54 +53,40 @@
 
 	function closeQuickFillModal() {
 		showQuickFillModal = false;
-		if (page.url.searchParams.has('quickfill')) {
-			const params = new SvelteURLSearchParams(page.url.searchParams);
-			params.delete('quickfill');
-			const search = params.toString();
-			goto(`${page.url.pathname}${search ? `?${search}` : ''}`, { replaceState: true });
-		}
 	}
 
 	function openQuickFillModal() {
 		showQuickFillModal = true;
 	}
 
-	function maybeOpenQuickFill() {
-		if (
-			page.url.searchParams.get('quickfill') === 'true' &&
-			examStore.currentExam &&
-			!examStore.showResults
-		) {
-			showQuickFillModal = true;
-		}
-	}
-
 	onMount(() => {
 		examId = page.url.searchParams.get('id');
-		const mode = page.url.searchParams.get('mode');
 		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamData = examStore.getSavedExamData();
+		const qrLoad = examId ? examStore.consumeQrLoad(examId) : null;
 
 		if (examId) {
-			// If mode=fresh, ignore saved data and always load the specified exam fresh
-			const shouldCheckSaved = mode !== 'fresh';
+			const shouldCheckSaved = !qrLoad;
 
 			if (shouldCheckSaved && savedExamData && savedExamData.examId !== examId) {
 				pendingExamId = examId;
 				showProgressWarning = true;
 				isLoading = false;
 			} else {
-				// If mode=fresh, reset the exam first to start clean
-				if (mode === 'fresh') {
-					examStore.resetExam();
-				}
-
 				tryLoadExam(
 					examId,
 					(id) => {
-						examStore.loadExamFromIdentifier(id, seed);
+						if (qrLoad) {
+							examStore.loadFreshExamFromIdentifier(id, qrLoad.seed);
+						} else {
+							examStore.loadExamFromIdentifier(id, seed);
+						}
+
 						isLoading = false;
-						maybeOpenQuickFill();
+
+						if (qrLoad && examStore.currentExam && !examStore.showResults) {
+							showQuickFillModal = true;
+						}
 					},
 					() => {
 						alert('Erro ao carregar simulado. Código inválido.');
@@ -113,9 +102,8 @@
 				(id) => {
 					examStore.loadExamFromIdentifier(id);
 					const urlSeed = examStore.currentSeed ?? savedExamData.seed;
-					goto(`/simulado?id=${id}${urlSeed ? `&seed=${urlSeed}` : ''}`, { replaceState: true });
+					goto(buildExamPath(id, '/simulado', urlSeed), { replaceState: true });
 					isLoading = false;
-					maybeOpenQuickFill();
 				},
 				() => {
 					examStore.resetExam();
@@ -126,17 +114,14 @@
 			examStore.resetExam();
 			isLoading = false;
 		} else {
-			// Already loaded - update URL if needed
 			if (examStore.currentExam && examStore.currentSeed !== undefined) {
-				// Update URL only if it doesn't have the seed parameter
 				if (!page.url.searchParams.get('seed')) {
-					goto(`/simulado?id=${examStore.currentExam.id}&seed=${examStore.currentSeed}`, {
+					goto(buildExamPath(examStore.currentExam.id, '/simulado', examStore.currentSeed), {
 						replaceState: true
 					});
 				}
 			}
 			isLoading = false;
-			maybeOpenQuickFill();
 		}
 	});
 
@@ -145,7 +130,7 @@
 		if (savedExamData) {
 			examStore.loadExamFromIdentifier(savedExamData.examId);
 			const seed = examStore.currentSeed ?? savedExamData.seed;
-			goto(`/simulado?id=${savedExamData.examId}${seed ? `&seed=${seed}` : ''}`, {
+			goto(buildExamPath(savedExamData.examId, '/simulado', seed), {
 				replaceState: true
 			});
 		}
@@ -157,8 +142,7 @@
 		if (pendingExamId) {
 			const seed = page.url.searchParams.get('seed') || undefined;
 			tryLoadExam(pendingExamId, (id) => {
-				examStore.loadExamFromIdentifier(id, seed, true);
-				maybeOpenQuickFill();
+				examStore.loadFreshExamFromIdentifier(id, seed);
 			});
 		}
 		showProgressWarning = false;
@@ -167,7 +151,7 @@
 
 	function handleGenerateExam() {
 		const result = examStore.generateNewExam();
-		goto(`/simulado?id=${result.exam.id}&seed=${result.seed}`);
+		goto(buildExamPath(result.exam.id, '/simulado', result.seed));
 	}
 
 	function confirmNewExam() {
@@ -186,7 +170,7 @@
 			try {
 				examStore.loadExamFromIdentifier(id, seed);
 				showLoadModal = false;
-				goto(`/simulado?id=${id}&seed=${seed}`, { replaceState: true });
+				goto(buildExamPath(id, '/simulado', seed), { replaceState: true });
 			} catch (error) {
 				alert('Código inválido. Por favor, tente novamente.');
 				console.error(error);

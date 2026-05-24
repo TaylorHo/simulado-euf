@@ -50,6 +50,23 @@ export function getPercentageColor(percentage: number): string {
 }
 
 /**
+ * Build a relative exam path
+ */
+export function buildExamPath(
+	examId: string,
+	basePath: string = '/simulado',
+	seed?: number | string
+): string {
+	const params = new URLSearchParams({ id: examId });
+
+	if (seed !== undefined && seed !== null) {
+		params.set('seed', typeof seed === 'string' ? seed : String(seed));
+	}
+
+	return `${basePath}?${params.toString()}`;
+}
+
+/**
  * Build exam URL for the given exam ID
  */
 export function buildExamUrl(
@@ -57,15 +74,10 @@ export function buildExamUrl(
 	basePath: string = '/simulado',
 	seed?: number | string
 ): string {
-	const base = `${typeof window !== 'undefined' ? window.location.origin : ''}${basePath}?id=${examId}`;
+	const path = buildExamPath(examId, basePath, seed);
+	const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
-	// Add seed parameter if provided
-	if (seed !== undefined && seed !== null) {
-		const seedStr = typeof seed === 'string' ? seed : String(seed);
-		return `${base}&seed=${seedStr}`;
-	}
-
-	return base;
+	return `${origin}${path}`;
 }
 
 /**
