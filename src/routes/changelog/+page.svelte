@@ -59,7 +59,7 @@
 			<section class="section" aria-labelledby="bugs-heading">
 				<div class="section-header">
 					<Bug size={24} strokeWidth={1.8} />
-					<h2 id="bugs-heading">Problemas abertos ({data.openBugs?.length ?? 0})</h2>
+					<h2 id="bugs-heading">Problemas em aberto ({data.openBugs?.length ?? 0})</h2>
 				</div>
 				{#if (data.openBugs?.length ?? 0) === 0 && !data.error}
 					<p class="empty">Nenhum problema aberto no momento.</p>
