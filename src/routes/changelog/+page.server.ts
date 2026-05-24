@@ -1,23 +1,31 @@
-import type { GitHubBugIssue } from '$lib/models/githubIssue';
-import { GITHUB_BUG_ISSUES_API_URL } from '$lib/variables';
+import type { GitHubIssue } from '$lib/models/githubIssue';
+import { GITHUB_ISSUES_API_URL } from '$lib/variables';
 
 type RawIssue = {
 	title: string;
 	state: 'open' | 'closed';
 	html_url: string;
 	pull_request?: unknown;
+	labels: Array<{ name: string }>;
 };
 
 /** Titles from automated bug reports include this prefix; hide it in the UI. */
 const REPORTED_BUG_TITLE_PREFIX = /^\s*\[reported bug\]:\s*/i;
 
-function displayIssueTitle(title: string): string {
-	return title.replace(REPORTED_BUG_TITLE_PREFIX, '').trim();
+/** Enhancement titles often include this prefix; replace with Portuguese */
+const FEATURE_TITLE_PREFIX = /^\s*\[feature\]:\s*/i;
+
+function displayIssueTitle(title: string, type: 'bug' | 'enhancement'): string {
+	let cleanTitle = title.replace(REPORTED_BUG_TITLE_PREFIX, '').trim();
+	if (type === 'enhancement') {
+		cleanTitle = cleanTitle.replace(FEATURE_TITLE_PREFIX, '[funcionalidade]: ').trim();
+	}
+	return cleanTitle;
 }
 
 export const load = async () => {
 	try {
-		const res = await fetch(GITHUB_BUG_ISSUES_API_URL, {
+		const res = await fetch(GITHUB_ISSUES_API_URL, {
 			headers: {
 				Accept: 'application/vnd.github+json'
 			}
@@ -25,8 +33,9 @@ export const load = async () => {
 
 		if (!res.ok) {
 			return {
-				open: [] as GitHubBugIssue[],
-				closed: [] as GitHubBugIssue[],
+				closed: [] as GitHubIssue[],
+				openBugs: [] as GitHubIssue[],
+				openEnhancements: [] as GitHubIssue[],
 				error: `GitHub respondeu com ${res.status}.`
 			};
 		}
@@ -34,24 +43,42 @@ export const load = async () => {
 		const data = (await res.json()) as RawIssue[];
 		const issuesOnly = data.filter((item) => item.pull_request == null);
 
-		const open: GitHubBugIssue[] = [];
-		const closed: GitHubBugIssue[] = [];
+		const closed: GitHubIssue[] = [];
+		const openBugs: GitHubIssue[] = [];
+		const openEnhancements: GitHubIssue[] = [];
 
 		for (const item of issuesOnly) {
-			const row: GitHubBugIssue = {
-				title: displayIssueTitle(item.title),
+			const labels = item.labels.map((l) => l.name);
+			const isBug = labels.includes('bug');
+			const isEnhancement = labels.includes('enhancement');
+
+			// Only include issues that are either bugs or enhancements
+			if (!isBug && !isEnhancement) continue;
+
+			const type: 'bug' | 'enhancement' = isBug ? 'bug' : 'enhancement';
+
+			const row: GitHubIssue = {
+				title: displayIssueTitle(item.title, type),
 				state: item.state,
-				htmlUrl: item.html_url
+				htmlUrl: item.html_url,
+				type
 			};
-			if (item.state === 'open') open.push(row);
-			else closed.push(row);
+
+			if (item.state === 'closed') {
+				closed.push(row);
+			} else if (isBug) {
+				openBugs.push(row);
+			} else if (isEnhancement) {
+				openEnhancements.push(row);
+			}
 		}
 
-		return { open, closed, error: null as string | null };
+		return { closed, openBugs, openEnhancements, error: null as string | null };
 	} catch {
 		return {
-			open: [] as GitHubBugIssue[],
-			closed: [] as GitHubBugIssue[],
+			closed: [] as GitHubIssue[],
+			openBugs: [] as GitHubIssue[],
+			openEnhancements: [] as GitHubIssue[],
 			error: 'Não foi possível carregar as issues no momento.'
 		};
 	}

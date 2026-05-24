@@ -1,13 +1,24 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
-	import type { GitHubBugIssue } from '$lib/models/githubIssue';
+	import type { GitHubIssue } from '$lib/models/githubIssue';
 	import { GITHUB_REPO_URL } from '$lib/variables';
-	import { CirclePlus, ExternalLink, Wrench } from '@lucide/svelte';
+	import { Bug, CirclePlus, ExternalLink, Sparkles, Wrench } from '@lucide/svelte';
 
 	let {
-		data
-	}: { data: { open: GitHubBugIssue[]; closed: GitHubBugIssue[]; error: string | null } } =
-		$props();
+		data = {
+			closed: [],
+			openBugs: [],
+			openEnhancements: [],
+			error: null
+		}
+	}: {
+		data: {
+			closed: GitHubIssue[];
+			openBugs: GitHubIssue[];
+			openEnhancements: GitHubIssue[];
+			error: string | null;
+		};
+	} = $props();
 </script>
 
 <svelte:head>
@@ -45,17 +56,44 @@
 				<p class="error" role="alert">{data.error}</p>
 			{/if}
 
-			<section class="section" aria-labelledby="open-heading">
-				<h2 id="open-heading">Em aberto ({data.open.length})</h2>
-				{#if data.open.length === 0 && !data.error}
-					<p class="empty">Nenhuma pendência listada no momento.</p>
+			<section class="section" aria-labelledby="bugs-heading">
+				<div class="section-header">
+					<Bug size={24} strokeWidth={1.8} />
+					<h2 id="bugs-heading">Problemas abertos ({data.openBugs?.length ?? 0})</h2>
+				</div>
+				{#if (data.openBugs?.length ?? 0) === 0 && !data.error}
+					<p class="empty">Nenhum problema aberto no momento.</p>
 				{:else}
 					<ul class="list">
-						{#each data.open as item (item.htmlUrl)}
+						{#each data.openBugs ?? [] as item (item.htmlUrl)}
 							<li>
 								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
 									<span class="issue-title">{item.title}</span>
-									<span class="badge badge-open">Aberto</span>
+									<span class="badge badge-bug">Bug</span>
+									<ExternalLink class="external" size={18} aria-hidden="true" />
+								</a>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</section>
+
+			<section class="section" aria-labelledby="enhancements-heading">
+				<div class="section-header">
+					<Sparkles size={24} strokeWidth={1.8} />
+					<h2 id="enhancements-heading">
+						Funcionalidades em aberto ({data.openEnhancements?.length ?? 0})
+					</h2>
+				</div>
+				{#if (data.openEnhancements?.length ?? 0) === 0 && !data.error}
+					<p class="empty">Nenhuma funcionalidade pendente no momento.</p>
+				{:else}
+					<ul class="list">
+						{#each data.openEnhancements ?? [] as item (item.htmlUrl)}
+							<li>
+								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
+									<span class="issue-title">{item.title}</span>
+									<span class="badge badge-enhancement">Funcionalidade</span>
 									<ExternalLink class="external" size={18} aria-hidden="true" />
 								</a>
 							</li>
@@ -65,12 +103,14 @@
 			</section>
 
 			<section class="section" aria-labelledby="closed-heading">
-				<h2 id="closed-heading">Resolvidos ({data.closed.length})</h2>
-				{#if data.closed.length === 0 && !data.error}
+				<div class="section-header">
+					<h2 id="closed-heading">Resolvidos ({data.closed?.length ?? 0})</h2>
+				</div>
+				{#if (data.closed?.length ?? 0) === 0 && !data.error}
 					<p class="empty">Ainda não há itens resolvidos nesta lista.</p>
 				{:else}
 					<ul class="list">
-						{#each data.closed as item (item.htmlUrl)}
+						{#each data.closed ?? [] as item (item.htmlUrl)}
 							<li>
 								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
 									<span class="issue-title">{item.title}</span>
@@ -171,9 +211,17 @@
 		text-align: center;
 	}
 
+	.section-header {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		margin-bottom: var(--space-md);
+		color: var(--text-primary);
+	}
+
 	.section h2 {
 		font-size: var(--text-xl);
-		margin: 0 0 var(--space-md) 0;
+		margin: 0;
 		color: var(--text-primary);
 	}
 
@@ -239,14 +287,24 @@
 		border-radius: var(--radius-sm);
 	}
 
-	.badge-open {
-		background-color: rgba(234, 179, 8, 0.2);
-		color: #ca8a04;
+	.badge-bug {
+		background-color: rgba(239, 68, 68, 0.15);
+		color: #dc2626;
 	}
 
-	:global([data-theme='dark']) .badge-open {
-		background-color: rgba(234, 179, 8, 0.15);
-		color: #facc15;
+	:global([data-theme='dark']) .badge-bug {
+		background-color: rgba(239, 68, 68, 0.2);
+		color: #f87171;
+	}
+
+	.badge-enhancement {
+		background-color: rgba(59, 130, 246, 0.15);
+		color: #2563eb;
+	}
+
+	:global([data-theme='dark']) .badge-enhancement {
+		background-color: rgba(59, 130, 246, 0.2);
+		color: #60a5fa;
 	}
 
 	.badge-closed {
