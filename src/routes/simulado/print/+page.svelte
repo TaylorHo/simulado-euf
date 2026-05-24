@@ -129,12 +129,6 @@
 		{/each}
 
 		<div class="answer-sheet">
-			<!-- OMR Alignment Markers -->
-			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-top-left" />
-			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-top-right" />
-			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-bottom-left" />
-			<img src="/assets/omr_marker.jpg" alt="" class="omr-marker marker-bottom-right" />
-
 			<h2>Folha de Respostas</h2>
 
 			<div class="answer-grid">
@@ -366,34 +360,6 @@
 		position: relative;
 		min-height: calc(297mm - 40mm);
 		box-sizing: border-box;
-	}
-
-	.omr-marker {
-		position: absolute;
-		width: 30px;
-		height: 30px;
-		-webkit-print-color-adjust: exact !important;
-		print-color-adjust: exact !important;
-	}
-
-	.marker-top-left {
-		top: 10mm;
-		left: 10mm;
-	}
-
-	.marker-top-right {
-		top: 10mm;
-		right: 10mm;
-	}
-
-	.marker-bottom-left {
-		bottom: 10mm;
-		left: 10mm;
-	}
-
-	.marker-bottom-right {
-		bottom: 10mm;
-		right: 10mm;
 	}
 
 	.answer-sheet h2 {

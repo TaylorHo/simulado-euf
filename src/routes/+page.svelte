@@ -3,9 +3,6 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
-	import AnswerInputMethodModal from '$lib/components/AnswerInputMethodModal.svelte';
-	import AnswerSheetScanner from '$lib/components/AnswerSheetScanner.svelte';
-	import type { QuestionAlternative } from '$lib/models/question';
 	import {
 		FileText,
 		Target,
@@ -25,10 +22,6 @@
 	import GitHub from '$lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
-	let showMethodModal = $state(false);
-	let showAnswerSheetModal = $state(false);
-	let scannedExamId = $state<string | null>(null);
-	let scannedExamSeed = $state<string | null>(null);
 
 	function handleStartExam() {
 		goto('/simulado');
@@ -46,36 +39,11 @@
 		const id = url.searchParams.get('id');
 		const seed = url.searchParams.get('seed');
 		showQRModal = false;
-		scannedExamId = id;
-		scannedExamSeed = seed;
-		showMethodModal = true;
-	}
-
-	function handleSelectManual() {
-		showMethodModal = false;
-		if (scannedExamId && scannedExamSeed) {
-			// Clear any temporary scanned answers since we're going manual
-			localStorage.removeItem('temp-scanned-answers');
-			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}&mode=fresh`);
+		if (id && seed) {
+			goto(`/simulado?id=${id}&seed=${seed}&quickfill=true&mode=fresh`);
+		} else {
+			alert('Código inválido. Por favor, tente novamente.');
 		}
-	}
-
-	function handleSelectPhoto() {
-		showMethodModal = false;
-		showAnswerSheetModal = true;
-	}
-
-	function handleAnswersDetected(answers: Array<QuestionAlternative | null>) {
-		showAnswerSheetModal = false;
-		if (scannedExamId && scannedExamSeed) {
-			localStorage.setItem('temp-scanned-answers', JSON.stringify(answers));
-			goto(`/simulado?id=${scannedExamId}&seed=${scannedExamSeed}&autofill=true`);
-		}
-	}
-
-	function handleCancelAnswerSheet() {
-		showAnswerSheetModal = false;
-		showMethodModal = true;
 	}
 </script>
 
@@ -325,25 +293,6 @@
 
 <Modal open={showQRModal} title="Escanear QR Code" onClose={() => (showQRModal = false)}>
 	<QRScanner onScan={handleQRScan} />
-</Modal>
-
-<Modal
-	open={showMethodModal}
-	title="Escolher Método de Preenchimento"
-	onClose={() => (showMethodModal = false)}
->
-	<AnswerInputMethodModal onSelectManual={handleSelectManual} onSelectPhoto={handleSelectPhoto} />
-</Modal>
-
-<Modal
-	open={showAnswerSheetModal}
-	title="Escanear Folha de Respostas"
-	onClose={() => (showAnswerSheetModal = false)}
->
-	<AnswerSheetScanner
-		onAnswersDetected={handleAnswersDetected}
-		onCancel={handleCancelAnswerSheet}
-	/>
 </Modal>
 
 <style>

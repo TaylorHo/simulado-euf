@@ -37,7 +37,6 @@
 		"vite": "^8.0.12"
 	},
 	"dependencies": {
-		"@armghan3071/omrchecker": "^1.0.2",
 		"@lucide/svelte": "^1.14.0",
 		"jsqr": "^1.4.0",
 		"katex": "^0.16.45",

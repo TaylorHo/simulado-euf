@@ -344,11 +344,6 @@ textarea:focus {
 	overflow-y: hidden;
 }
 
-/* Utility Classes */
-.no-print {
-	/* Can be used to hide elements in print mode */
-}
-
 /* Print Styles */
 @media print {
 	:root {

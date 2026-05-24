@@ -11,11 +11,13 @@
 	import ExamNavigation from '$lib/components/ExamNavigation.svelte';
 	import ScoreDisplay from '$lib/components/ScoreDisplay.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { Plus, Share2, Printer, ClipboardList } from '@lucide/svelte';
+	import QuickFillModal from '$lib/components/QuickFillModal.svelte';
+	import { Plus, Share2, Printer, ClipboardList, Grid3x3 } from '@lucide/svelte';
 	import { groupQuestionsByArea, buildExamUrl, tryLoadExam } from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
 
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
@@ -24,6 +26,7 @@
 	let showProgressWarning = $state(false);
 	let showNewExamConfirm = $state(false);
 	let showReview = $state(false);
+	let showQuickFillModal = $state(false);
 	let examId = $state<string | null>(null);
 	let pendingExamId = $state<string | null>(null);
 	let adsLoaded = $state(false);
@@ -45,9 +48,32 @@
 		}
 	}
 
+	function closeQuickFillModal() {
+		showQuickFillModal = false;
+		if (page.url.searchParams.has('quickfill')) {
+			const params = new SvelteURLSearchParams(page.url.searchParams);
+			params.delete('quickfill');
+			const search = params.toString();
+			goto(`${page.url.pathname}${search ? `?${search}` : ''}`, { replaceState: true });
+		}
+	}
+
+	function openQuickFillModal() {
+		showQuickFillModal = true;
+	}
+
+	function maybeOpenQuickFill() {
+		if (
+			page.url.searchParams.get('quickfill') === 'true' &&
+			examStore.currentExam &&
+			!examStore.showResults
+		) {
+			showQuickFillModal = true;
+		}
+	}
+
 	onMount(() => {
 		examId = page.url.searchParams.get('id');
-		const autofill = page.url.searchParams.get('autofill');
 		const mode = page.url.searchParams.get('mode');
 		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamData = examStore.getSavedExamData();
@@ -70,43 +96,8 @@
 					examId,
 					(id) => {
 						examStore.loadExamFromIdentifier(id, seed);
-
-						// Handle auto-fill from scanned answer sheet
-						if (autofill === 'true') {
-							const storedAnswers = localStorage.getItem('temp-scanned-answers');
-							if (storedAnswers) {
-								try {
-									const scannedAnswers = JSON.parse(
-										storedAnswers
-									) as Array<QuestionAlternative | null>;
-
-									scannedAnswers.forEach(
-										(printedPosition: QuestionAlternative | null, index: number) => {
-											if (printedPosition !== null && printedPosition !== undefined) {
-												const question = examStore.currentExam?.questions[index];
-												if (question) {
-													// Get the alternative at the printed position
-													const selectedAlternative = question.alternatives[printedPosition];
-													if (selectedAlternative) {
-														// Use the original alternative number (not the printed position)
-														const originalNumber = selectedAlternative.number;
-														examStore.selectAnswer(index, originalNumber);
-													}
-												}
-											}
-										}
-									);
-
-									localStorage.removeItem('temp-scanned-answers');
-									examStore.finishExam();
-								} catch (error) {
-									console.error('Error loading scanned answers:', error);
-									alert('Erro ao carregar as respostas escaneadas.');
-								}
-							}
-						}
-
 						isLoading = false;
+						maybeOpenQuickFill();
 					},
 					() => {
 						alert('Erro ao carregar simulado. Código inválido.');
@@ -124,6 +115,7 @@
 					const urlSeed = examStore.currentSeed ?? savedExamData.seed;
 					goto(`/simulado?id=${id}${urlSeed ? `&seed=${urlSeed}` : ''}`, { replaceState: true });
 					isLoading = false;
+					maybeOpenQuickFill();
 				},
 				() => {
 					examStore.resetExam();
@@ -144,6 +136,7 @@
 				}
 			}
 			isLoading = false;
+			maybeOpenQuickFill();
 		}
 	});
 
@@ -165,6 +158,7 @@
 			const seed = page.url.searchParams.get('seed') || undefined;
 			tryLoadExam(pendingExamId, (id) => {
 				examStore.loadExamFromIdentifier(id, seed, true);
+				maybeOpenQuickFill();
 			});
 		}
 		showProgressWarning = false;
@@ -434,6 +428,15 @@
 
 					<button
 						class="compact-action-btn export"
+						onclick={openQuickFillModal}
+						title="Preenchimento rápido"
+					>
+						<Grid3x3 size={14} />
+						<span>Rápido</span>
+					</button>
+
+					<button
+						class="compact-action-btn export"
 						onclick={handleExport}
 						title="Exportar para impressão"
 					>
@@ -451,6 +454,10 @@
 		</div>
 	{/if}
 </div>
+
+{#if showQuickFillModal}
+	<QuickFillModal onClose={closeQuickFillModal} />
+{/if}
 
 <Modal open={showLoadModal} title="Carregar Simulado" onClose={() => (showLoadModal = false)}>
 	<QRScanner onScan={handleQRScan} />
