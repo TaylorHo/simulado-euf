@@ -8,7 +8,7 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { Area, AreaLabels } from '$lib/models/area';
-	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { Settings } from '@lucide/svelte';
 	import type { PageData } from './$types';
@@ -98,7 +98,7 @@
 		if (!flashcardStore.showAnswer) {
 			const question = flashcardStore.nextQuestion();
 			if (question) {
-				goto(`/flashcard/${flashcardStore.getQuestionId(question)}`);
+				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`);
 			}
 			return;
 		}
@@ -138,7 +138,7 @@
 		showInterstitialAd = false;
 		const question = flashcardStore.nextQuestion();
 		if (question) {
-			goto(`/flashcard/${flashcardStore.getQuestionId(question)}`);
+			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`);
 		}
 	}
 
@@ -162,6 +162,7 @@
 <svelte:head>
 	<title>Flashcard {`- Questão ` + questionTitle}</title>
 	<meta name="description" content="Pratique questões do EUF com flashcards aleatórios" />
+	<link rel="canonical" href={`${BASE_URL}/flashcard/${data.questionId}/`} />
 	{#if ADS_ENABLED}
 		<script
 			async

@@ -20,17 +20,22 @@
 		ShieldOff,
 		PiggyBank
 	} from '@lucide/svelte';
-	import { BUY_ME_A_COFFEE_URL, GITHUB_REPO_URL, GITHUB_SPONSORS_URL } from '$lib/variables';
+	import {
+		BASE_URL,
+		BUY_ME_A_COFFEE_URL,
+		GITHUB_REPO_URL,
+		GITHUB_SPONSORS_URL
+	} from '$lib/variables';
 	import GitHub from '$lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
 
 	function handleStartExam() {
-		goto('/simulado');
+		goto('/simulado/');
 	}
 
 	function handleStartFlashcard() {
-		goto('/flashcard');
+		goto('/flashcard/');
 	}
 
 	function handleScanQR() {
@@ -56,6 +61,7 @@
 		name="description"
 		content="Prepare-se para o EUF com simulados e flashcards baseados em provas anteriores do Exame Unificado de Física da Pós-Graduação."
 	/>
+	<link rel="canonical" href={`${BASE_URL}/`} />
 </svelte:head>
 
 <main>

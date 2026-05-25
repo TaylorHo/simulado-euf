@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { flashcardStore } from '$lib/stores/flashcard.svelte';
+	import { BASE_URL } from '$lib/variables';
 
 	onMount(() => {
 		// Check if there's an old-style query parameter
@@ -10,12 +11,12 @@
 
 		if (questionId) {
 			// Redirect to new path-based URL
-			goto(`/flashcard/${questionId}`, { replaceState: true });
+			goto(`/flashcard/${questionId}/`, { replaceState: true });
 		} else {
 			// No ID provided, get a random question and redirect
 			const question = flashcardStore.getRandomQuestion();
 			if (question) {
-				goto(`/flashcard/${flashcardStore.getQuestionId(question)}`, {
+				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, {
 					replaceState: true
 				});
 			}
@@ -26,6 +27,7 @@
 <svelte:head>
 	<title>Flashcard - Simulado EUF</title>
 	<meta name="description" content="Pratique questões do EUF com flashcards aleatórios" />
+	<link rel="canonical" href={`${BASE_URL}/flashcard/`} />
 </svelte:head>
 
 <div class="loading-page">

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import type { GitHubIssue } from '$lib/models/githubIssue';
-	import { GITHUB_REPO_URL } from '$lib/variables';
+	import { BASE_URL, GITHUB_REPO_URL } from '$lib/variables';
 	import { Bug, CirclePlus, ExternalLink, Sparkles, Wrench } from '@lucide/svelte';
 
 	let {
@@ -27,6 +27,7 @@
 		name="description"
 		content="Acompanhe os problemas reportados pela comunidade no Simulado EUF. Veja bugs abertos em processo de correção e problemas já resolvidos pela equipe."
 	/>
+	<link rel="canonical" href={`${BASE_URL}/changelog/`} />
 </svelte:head>
 
 <main class="page">

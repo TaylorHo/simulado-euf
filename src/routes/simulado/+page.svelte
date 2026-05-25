@@ -20,7 +20,7 @@
 		tryLoadExam
 	} from '$lib/utils/helpers';
 	import type { QuestionAlternative } from '$lib/models/question';
-	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED } from '$lib/variables';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
@@ -250,6 +250,7 @@
 <svelte:head>
 	<title>Simulado - Simulado EUF</title>
 	<meta name="description" content="Faça um simulado completo do EUF com 40 questões" />
+	<link rel="canonical" href={`${BASE_URL}/simulado/`} />
 	{#if ADS_ENABLED}
 		<script
 			async

@@ -6,7 +6,7 @@ export const load: PageLoad = ({ params }) => {
 
 	// Validate that the ID exists and has a reasonable format
 	if (!id || !/^[a-z0-9]+$/i.test(id)) {
-		throw redirect(302, '/flashcard');
+		throw redirect(302, '/flashcard/');
 	}
 
 	return {
@@ -16,3 +16,4 @@ export const load: PageLoad = ({ params }) => {
 
 // Enable prerendering for static generation
 export const prerender = true;
+export const trailingSlash = 'always';

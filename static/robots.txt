@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /.well-known/*
 Disallow: /simulado/
+Disallow: /simulado/print/
 Allow: /flashcard/*
 Allow: /changelog/
 Allow: /
