@@ -1,5 +1,6 @@
 export const prerender = true;
 export const trailingSlash = 'always';
+export const ssr = false;
 
 import posthog from 'posthog-js';
 import { browser } from '$app/environment';

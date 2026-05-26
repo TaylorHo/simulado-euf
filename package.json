@@ -8,20 +8,25 @@
 		"url": "https://github.com/TaylorHo/simulado-euf"
 	},
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
+		"dev": "pnpm run dev:web",
+		"dev:web": "ADAPTER=vercel vite dev",
+		"dev:mobile": "ADAPTER=static vite dev",
+		"build": "pnpm run build:web",
+		"build:web": "ADAPTER=vercel vite build",
+		"build:mobile": "ADAPTER=static vite build",
 		"prepare": "svelte-kit sync || echo '' && git config --local core.hooksPath .hooks/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write . && eslint --fix ."
+		"format": "prettier --write . && eslint --fix .",
+		"tauri": "tauri"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^2.1.0",
 		"@eslint/js": "^10.0.1",
+		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/adapter-vercel": "^6.3.3",
 		"@sveltejs/kit": "^2.61.1",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tauri-apps/cli": "^2.11.2",
 		"@types/katex": "^0.16.8",
 		"@types/node": "^25.9.1",
 		"@types/qrcode": "^1.5.6",
@@ -38,6 +43,8 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^1.16.0",
+		"@tauri-apps/api": "^2.11.0",
+		"@tauri-apps/plugin-opener": "~2.5.4",
 		"jsqr": "^1.4.0",
 		"katex": "^0.17.0",
 		"posthog-js": "^1.376.0",
