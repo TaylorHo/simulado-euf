@@ -122,6 +122,7 @@
 		padding-right: 0;
 		padding-top: 0;
 		cursor: default;
+		min-height: 48px;
 	}
 
 	.nav-header.clickable {
@@ -199,6 +200,8 @@
 		transition: all var(--transition-fast);
 		padding: 0;
 		height: 3rem;
+		min-width: 44px;
+		min-height: 44px;
 	}
 
 	.nav-item:hover {
@@ -251,6 +254,10 @@
 			padding: var(--space-md);
 		}
 
+		.nav-header {
+			min-height: 48px;
+		}
+
 		.nav-title {
 			font-size: var(--text-xs);
 		}
@@ -270,7 +277,7 @@
 
 		.nav-item {
 			font-size: var(--text-xs);
-			height: 2.5rem;
+			height: 2.75rem;
 			width: 100%;
 		}
 
@@ -286,7 +293,7 @@
 		}
 
 		.nav-item {
-			height: 2.25rem;
+			height: 2.75rem;
 			min-width: 0;
 		}
 	}

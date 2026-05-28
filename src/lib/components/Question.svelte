@@ -334,12 +334,17 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-md);
-		min-height: 48px;
+		min-height: 52px;
 	}
 
 	.alternative:hover:not(:disabled) {
 		border-color: var(--accent-primary);
 		box-shadow: var(--shadow-sm);
+	}
+
+	.alternative:active:not(:disabled) {
+		transform: scale(0.995);
+		background-color: var(--bg-tertiary);
 	}
 
 	.alternative.selected {
@@ -409,7 +414,8 @@
 
 	.discard-btn {
 		flex-shrink: 0;
-		width: 44px;
+		width: 48px;
+		min-height: 48px;
 		padding: var(--space-sm);
 		background-color: var(--bg-tertiary);
 		border: 1px solid var(--border-color);
@@ -491,8 +497,9 @@
 		}
 
 		.alternative {
-			padding: var(--space-xs) var(--space-sm);
+			padding: var(--space-sm);
 			gap: var(--space-sm);
+			min-height: 52px;
 		}
 
 		.alternative:hover:not(:disabled) {
@@ -511,19 +518,15 @@
 		}
 
 		.discard-btn {
-			width: 36px;
-			padding: var(--space-xs);
+			width: 48px;
+			min-height: 48px;
+			padding: var(--space-sm);
 		}
 	}
 
 	@media (max-width: 640px) {
 		.question-container {
 			padding: var(--space-md);
-		}
-
-		.discard-btn {
-			width: 32px;
-			padding: 4px;
 		}
 
 		.alternative-letter {

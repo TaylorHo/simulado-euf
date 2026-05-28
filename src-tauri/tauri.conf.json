@@ -1,13 +1,13 @@
 {
 	"$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-	"productName": "simulado-euf",
+	"productName": "Simulado EUF",
 	"version": "0.1.0",
 	"identifier": "io.hoffmann.euf",
 	"build": {
 		"frontendDist": "../build",
 		"devUrl": "http://localhost:5173",
-		"beforeDevCommand": "pnpm dev",
-		"beforeBuildCommand": "pnpm build"
+		"beforeDevCommand": "pnpm dev:mobile",
+		"beforeBuildCommand": "pnpm build:mobile"
 	},
 	"app": {
 		"windows": [

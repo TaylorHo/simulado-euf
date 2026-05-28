@@ -178,6 +178,7 @@
 
 	.score-actions button {
 		flex: 1;
+		min-height: 48px;
 	}
 
 	.score-circle {
@@ -374,6 +375,10 @@
 			padding: var(--space-md);
 		}
 
+		.score-container {
+			gap: var(--space-lg);
+		}
+
 		.score-main {
 			gap: var(--space-lg);
 		}
@@ -431,6 +436,7 @@
 		.score-actions button {
 			font-size: var(--text-sm-mobile);
 			padding: var(--space-sm) var(--space-md);
+			min-height: 48px;
 		}
 	}
 

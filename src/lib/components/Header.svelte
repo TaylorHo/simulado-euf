@@ -56,6 +56,8 @@
 
 	.back-btn {
 		padding: var(--space-sm);
+		min-width: 44px;
+		min-height: 44px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -66,6 +68,16 @@
 
 	.back-btn:hover {
 		background-color: var(--bg-tertiary);
+	}
+
+	@media (max-width: 768px) {
+		.header-content {
+			gap: var(--space-sm);
+		}
+
+		.header-title {
+			font-size: var(--text-lg);
+		}
 	}
 
 	@media print {

@@ -70,6 +70,7 @@
 		justify-content: center;
 		z-index: 1000;
 		padding: var(--space-lg);
+		padding-bottom: calc(var(--space-lg) + var(--safe-area-inset-bottom));
 	}
 
 	.modal-content {
@@ -99,6 +100,8 @@
 
 	.close-btn {
 		padding: var(--space-sm);
+		min-width: 44px;
+		min-height: 44px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -119,11 +122,14 @@
 
 	@media (max-width: 768px) {
 		.modal-overlay {
-			padding: var(--space-md);
+			padding: var(--space-sm);
+			align-items: flex-end;
 		}
 
 		.modal-content {
-			max-height: 95vh;
+			max-height: min(92vh, 760px);
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 
 		.modal-header {
@@ -141,7 +147,14 @@
 
 	@media (max-width: 640px) {
 		.modal-overlay {
-			padding: var(--space-sm);
+			padding: 0;
+			padding-top: var(--space-xl);
+			padding-bottom: 0;
+		}
+
+		.modal-content {
+			max-height: 96vh;
+			border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 		}
 
 		.modal-header {
@@ -149,7 +162,7 @@
 		}
 
 		.modal-body {
-			padding: var(--space-sm) var(--space-md);
+			padding: var(--space-sm) var(--space-md) calc(var(--space-md) + var(--safe-area-inset-bottom));
 		}
 	}
 

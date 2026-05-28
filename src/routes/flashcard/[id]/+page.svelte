@@ -10,6 +10,7 @@
 	import { Area, AreaLabels } from '$lib/models/area';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { Settings } from '@lucide/svelte';
 	import type { PageData } from './$types';
 
@@ -22,6 +23,7 @@
 	let remainingSeconds = $state(5);
 	let adsLoaded = $state(false);
 	let settingsOpen = $state(false);
+	let isTauriMobile = $state(false);
 
 	// Convert flashcard question to ExamQuestion format for the Question component
 	const currentExamQuestion = $derived<ExamQuestion | null>(
@@ -46,6 +48,8 @@
 	);
 
 	onMount(() => {
+		isTauriMobile = isTauriMobileApp();
+
 		if (data.questionId) {
 			flashcardStore.loadQuestionById(data.questionId);
 			isLoading = false;
@@ -172,7 +176,7 @@
 	{/if}
 </svelte:head>
 
-<div class="flashcard-page">
+<div class="flashcard-page" class:tauri-mobile={isTauriMobile}>
 	<div class="container flashcard-content">
 		{#if isLoading}
 			<div class="loading">
@@ -273,8 +277,9 @@
 			{/if}
 		{/if}
 	</div>
-
-	<Footer />
+	{#if !isTauriMobile}
+		<Footer />
+	{/if}
 </div>
 
 <Modal
@@ -331,13 +336,17 @@
 		min-height: calc(100vh - var(--topbar-height));
 	}
 
+	.flashcard-page.tauri-mobile .flashcard-content {
+		padding-bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-2xl));
+	}
+
 	.settings-fab {
 		position: fixed;
 		right: 0;
 		top: calc(var(--topbar-height) + var(--space-xl));
 		z-index: 90;
-		width: 48px;
-		height: 56px;
+		width: 52px;
+		height: 60px;
 		border-radius: var(--radius-md) 0 0 var(--radius-md);
 		background-color: var(--bg-secondary);
 		border: 1px solid var(--border-color);
@@ -400,6 +409,19 @@
 		padding: var(--space-lg);
 	}
 
+	.flashcard-page.tauri-mobile .actions-container {
+		position: fixed;
+		left: var(--space-md);
+		right: var(--space-md);
+		bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-sm));
+		z-index: 95;
+		margin-top: 0;
+		padding: var(--space-md);
+		background-color: color-mix(in srgb, var(--bg-secondary) 96%, transparent);
+		backdrop-filter: blur(8px);
+		box-shadow: var(--shadow-lg);
+	}
+
 	.action-buttons {
 		display: flex;
 		gap: var(--space-md);
@@ -407,6 +429,7 @@
 
 	.action-btn {
 		flex: 1;
+		min-height: 48px;
 	}
 
 	.empty-state {
@@ -491,6 +514,7 @@
 		width: 100%;
 		padding: var(--space-md);
 		font-size: var(--text-md);
+		min-height: 48px;
 		margin-top: var(--space-sm);
 		position: relative;
 		z-index: 10;
@@ -585,8 +609,8 @@
 			right: 0;
 			top: auto;
 			bottom: var(--space-2xl);
-			width: 48px;
-			height: 56px;
+			width: 52px;
+			height: 60px;
 			border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 			box-shadow: var(--shadow-lg);
 		}
@@ -595,6 +619,10 @@
 			padding: var(--space-md);
 			margin-top: var(--space-md);
 			margin-bottom: 80px; /* Space for FAB */
+		}
+
+		.flashcard-page.tauri-mobile .actions-container {
+			margin-bottom: 0;
 		}
 
 		.area-settings-list {
@@ -608,6 +636,7 @@
 		.action-btn {
 			font-size: var(--text-sm-mobile);
 			padding: var(--space-sm) var(--space-md);
+			min-height: 48px;
 		}
 
 		.interstitial-container {

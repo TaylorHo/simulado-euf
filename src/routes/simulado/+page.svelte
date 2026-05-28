@@ -19,9 +19,11 @@
 		buildExamPath,
 		tryLoadExam
 	} from '$lib/utils/helpers';
+	import { isTauriMobileApp } from '$lib/utils/platform';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	let isTauriMobile = $state(false);
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
 	let showFinishConfirm = $state(false);
@@ -60,6 +62,8 @@
 	}
 
 	onMount(() => {
+		isTauriMobile = isTauriMobileApp();
+
 		examId = page.url.searchParams.get('id');
 		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamData = examStore.getSavedExamData();
@@ -260,7 +264,7 @@
 	{/if}
 </svelte:head>
 
-<div class="exam-page">
+<div class="exam-page" class:tauri-mobile={isTauriMobile}>
 	{#if isLoading}
 		<div class="container loading-container">
 			<div class="loading-spinner">
@@ -301,7 +305,6 @@
 					onNewExam={handleGenerateExam}
 				/>
 			</div>
-			<Footer />
 		{:else}
 			<div class="container review-content">
 				<div class="review-header">
@@ -440,6 +443,10 @@
 	{/if}
 </div>
 
+{#if !isTauriMobile}
+	<Footer />
+{/if}
+
 {#if showQuickFillModal}
 	<QuickFillModal onClose={closeQuickFillModal} />
 {/if}
@@ -509,6 +516,10 @@
 		padding-top: var(--space-lg);
 	}
 
+	.exam-page.tauri-mobile {
+		padding-top: var(--space-md);
+	}
+
 	.exam-start {
 		padding: var(--space-2xl) var(--space-lg);
 		max-width: 700px;
@@ -546,6 +557,7 @@
 
 	.start-actions button {
 		width: 100%;
+		min-height: 48px;
 	}
 
 	.exam-info {
@@ -601,6 +613,10 @@
 		padding: var(--space-lg) 0;
 	}
 
+	.exam-controls button {
+		min-height: 48px;
+	}
+
 	.compact-sidebar-actions {
 		display: flex;
 		gap: var(--space-xs);
@@ -621,6 +637,7 @@
 		transition: all var(--transition-fast);
 		cursor: pointer;
 		border: 1px solid;
+		min-height: 44px;
 	}
 
 	.compact-action-btn span {
@@ -890,6 +907,24 @@
 		.compact-action-btn span {
 			font-size: 0.6rem;
 		}
+	}
+
+	.exam-page.tauri-mobile .exam-main {
+		padding-bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-2xl));
+	}
+
+	.exam-page.tauri-mobile .exam-controls {
+		position: fixed;
+		left: var(--space-md);
+		right: var(--space-md);
+		bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-sm));
+		z-index: 110;
+		padding: var(--space-sm);
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-lg);
+		background-color: color-mix(in srgb, var(--bg-primary) 96%, transparent);
+		backdrop-filter: blur(8px);
+		box-shadow: var(--shadow-lg);
 	}
 
 	@media (max-width: 640px) {

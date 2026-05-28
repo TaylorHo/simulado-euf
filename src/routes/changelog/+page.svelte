@@ -196,6 +196,7 @@
 		font-weight: 600;
 		text-decoration: none;
 		color: white;
+		min-height: 48px;
 	}
 
 	.new-issue-cta:hover {
@@ -250,6 +251,7 @@
 		align-items: center;
 		gap: var(--space-md);
 		padding: var(--space-md) var(--space-lg);
+		min-height: 56px;
 		background-color: var(--bg-secondary);
 		border: 1px solid var(--border-light);
 		border-radius: var(--radius-lg);
@@ -321,6 +323,15 @@
 	@media (max-width: 768px) {
 		.container {
 			padding: 0 var(--space-md);
+		}
+
+		.new-issue-cta {
+			width: 100%;
+		}
+
+		.issue-link {
+			padding: var(--space-md);
+			gap: var(--space-sm);
 		}
 	}
 </style>

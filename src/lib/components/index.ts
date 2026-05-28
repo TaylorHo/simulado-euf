@@ -1,6 +1,8 @@
 export { default as Topbar } from './Topbar.svelte';
+export { default as BottomNav } from './BottomNav.svelte';
 export { default as Footer } from './Footer.svelte';
 export { default as Header } from './Header.svelte';
+export { default as MobileLanding } from './MobileLanding.svelte';
 export { default as Modal } from './Modal.svelte';
 export { default as LaTeX } from './LaTeX.svelte';
 export { default as Question } from './Question.svelte';

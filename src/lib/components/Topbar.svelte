@@ -94,6 +94,7 @@
 
 	.nav-link {
 		padding: var(--space-sm) var(--space-lg);
+		min-height: 44px;
 		border-radius: var(--radius-md);
 		color: var(--text-secondary);
 		font-weight: 400;
@@ -118,10 +119,14 @@
 
 	.github-link {
 		padding: var(--space-sm);
+		min-width: 44px;
+		justify-content: center;
 	}
 
 	.theme-toggle {
 		padding: var(--space-sm);
+		min-width: 44px;
+		min-height: 44px;
 		border-radius: var(--radius-md);
 		background-color: transparent;
 		color: var(--text-secondary);
@@ -150,6 +155,10 @@
 
 		.logo-text {
 			font-size: var(--text-xl);
+		}
+
+		.nav-links {
+			gap: var(--space-xs);
 		}
 	}
 
