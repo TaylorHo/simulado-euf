@@ -336,8 +336,16 @@
 		min-height: calc(100vh - var(--topbar-height));
 	}
 
+	.flashcard-page.tauri-mobile {
+		padding-top: calc(var(--safe-area-inset-top) + var(--space-lg));
+	}
+
 	.flashcard-page.tauri-mobile .flashcard-content {
 		padding-bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-2xl));
+	}
+
+	.flashcard-page.tauri-mobile .settings-fab {
+		top: calc(var(--safe-area-inset-top) + var(--space-md));
 	}
 
 	.settings-fab {
@@ -420,6 +428,10 @@
 		background-color: color-mix(in srgb, var(--bg-secondary) 96%, transparent);
 		backdrop-filter: blur(8px);
 		box-shadow: var(--shadow-lg);
+	}
+
+	.flashcard-page.tauri-mobile .action-buttons {
+		flex-direction: row;
 	}
 
 	.action-buttons {
@@ -623,6 +635,11 @@
 
 		.flashcard-page.tauri-mobile .actions-container {
 			margin-bottom: 0;
+		}
+
+		.flashcard-page.tauri-mobile .settings-fab {
+			top: calc(var(--safe-area-inset-top) + var(--space-md));
+			bottom: auto;
 		}
 
 		.area-settings-list {

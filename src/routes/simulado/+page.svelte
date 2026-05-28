@@ -20,6 +20,7 @@
 		tryLoadExam
 	} from '$lib/utils/helpers';
 	import { isTauriMobileApp } from '$lib/utils/platform';
+	import { openUrl } from '@tauri-apps/plugin-opener';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
@@ -46,10 +47,17 @@
 
 	function handleExport() {
 		if (examStore.currentExam) {
-			window.open(
-				buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed),
-				'_blank'
-			);
+			const url = buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed);
+
+			if (isTauriMobile) {
+				// TODO: Implement print in mobile app
+				// const newUrl = url.split('tauri.localhost')[1];
+				// openUrl(`${BASE_URL}${newUrl}`);
+				alert('A impressão não está disponível no app mobile no momento.');
+				return;
+			}
+
+			window.open(url, '_blank');
 		}
 	}
 
@@ -407,7 +415,13 @@
 
 					<button
 						class="compact-action-btn export"
-						onclick={() => window.open('/assets/formulario.pdf', '_blank')}
+						onclick={() => {
+							if (isTauriMobile) {
+								openUrl(`${BASE_URL}/assets/formulario.pdf`);
+							} else {
+								window.open(`${BASE_URL}/assets/formulario.pdf`, '_blank');
+							}
+						}}
 						title="Acessar formulário"
 					>
 						<ClipboardList size={14} />
@@ -517,7 +531,7 @@
 	}
 
 	.exam-page.tauri-mobile {
-		padding-top: var(--space-md);
+		padding-top: calc(var(--safe-area-inset-top) + var(--space-lg));
 	}
 
 	.exam-start {
@@ -925,6 +939,24 @@
 		background-color: color-mix(in srgb, var(--bg-primary) 96%, transparent);
 		backdrop-filter: blur(8px);
 		box-shadow: var(--shadow-lg);
+	}
+
+	.exam-page.tauri-mobile .compact-sidebar-actions {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: var(--space-xs);
+	}
+
+	.exam-page.tauri-mobile .compact-action-btn {
+		flex: 1;
+		min-width: 0;
+		flex-direction: column;
+		padding: var(--space-xs);
+		font-size: 0.65rem;
+	}
+
+	.exam-page.tauri-mobile .compact-action-btn span {
+		font-size: 0.6rem;
 	}
 
 	@media (max-width: 640px) {

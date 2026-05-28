@@ -1,6 +1,6 @@
 {
 	"name": "simulado-euf",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"author": "Taylor Hoffmann <taylor@hoffmann.io>",
 	"repository": {
@@ -44,7 +44,7 @@
 	"dependencies": {
 		"@lucide/svelte": "^1.16.0",
 		"@tauri-apps/api": "^2.11.0",
-		"@tauri-apps/plugin-opener": "~2.5.4",
+		"@tauri-apps/plugin-opener": "~2",
 		"jsqr": "^1.4.0",
 		"katex": "^0.17.0",
 		"posthog-js": "^1.376.0",

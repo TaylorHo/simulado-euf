@@ -1,6 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { X } from '@lucide/svelte';
 	import { examStore } from '$lib/stores/exam.svelte';
+	import { isTauriMobileApp } from '$lib/utils/platform';
+
+	let isTauriMobile = $state(false);
+
+	onMount(() => {
+		isTauriMobile = isTauriMobileApp();
+	});
 
 	interface Props {
 		onClose: () => void;
@@ -44,7 +52,13 @@
 
 <svelte:window onkeydown={handleKeyDown} />
 
-<div class="quick-fill-overlay" role="dialog" aria-modal="true" aria-label="Preenchimento rápido">
+<div
+	class="quick-fill-overlay"
+	class:tauri-mobile={isTauriMobile}
+	role="dialog"
+	aria-modal="true"
+	aria-label="Preenchimento rápido"
+>
 	<header class="quick-fill-header">
 		<div class="bar-inner">
 			<div class="header-info">
@@ -332,5 +346,16 @@
 			width: 32px;
 			height: 32px;
 		}
+	}
+
+	.quick-fill-overlay.tauri-mobile .quick-fill-header {
+		padding-top: calc(var(--safe-area-inset-top) + var(--space-lg));
+	}
+
+	.quick-fill-overlay.tauri-mobile .answer-bubble {
+		min-height: unset;
+		min-width: unset;
+		aspect-ratio: 1;
+		flex-shrink: 0;
 	}
 </style>

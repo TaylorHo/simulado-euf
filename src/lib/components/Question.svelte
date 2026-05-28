@@ -8,6 +8,7 @@
 	import { getImagePath } from '$lib/utils/helpers';
 	import { Eye, EyeOff, PaintBucket, ClipboardList } from '@lucide/svelte';
 	import ReportError from './ReportError.svelte';
+	import { BASE_URL } from '$lib/variables';
 
 	interface Props {
 		question: ExamQuestion;
@@ -72,7 +73,12 @@
 			</div>
 		{/if}
 		<div class="question-actions">
-			<a href="/assets/formulario.pdf" target="_blank" rel="noopener noreferrer" class="btn-form">
+			<a
+				href={`${BASE_URL}/assets/formulario.pdf`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="btn-form"
+			>
 				<ClipboardList size={14} />
 				<span>Formulário</span>
 			</a>
