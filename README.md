@@ -15,14 +15,15 @@ Visite o site oficial: [euf.hoffmann.io](https://euf.hoffmann.io)
 
 ## 🛠️ Tecnologias
 
-Este projeto é uma aplicação web estática (SPA) moderna:
+Este projeto é uma aplicação web estática moderna:
 
 - **Framework:** [SvelteKit](https://kit.svelte.dev/) (Svelte 5)
 - **Linguagem:** TypeScript
 - **Estilização:** Vanilla CSS (com variáveis customizadas e suporte a Dark Mode)
 - **Bibliotecas Principais:**
   - `KaTeX` para fórmulas matemáticas.
-  - `jsQR` e `omrchecker` para processamento da folha de respostas.
+  - `Tauri` para o aplicativo mobile android.
+  - `jsQR` para processamento da folha de respostas.
   - `Lucide Svelte` para ícones.
 
 ## Desenvolvimento
