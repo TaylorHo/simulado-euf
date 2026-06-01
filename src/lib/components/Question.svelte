@@ -16,6 +16,7 @@
 		showCorrect?: boolean;
 		showTags?: boolean;
 		showDiscardButton?: boolean;
+		isIncorrect?: boolean;
 		onSelectAnswer?: (alt: QuestionAlternative) => void;
 		onToggleDiscard?: (alt: QuestionAlternative) => void;
 	}
@@ -26,6 +27,7 @@
 		showCorrect = false,
 		showTags = false,
 		showDiscardButton = false,
+		isIncorrect = false,
 		onSelectAnswer,
 		onToggleDiscard
 	}: Props = $props();
@@ -60,7 +62,7 @@
 	}
 </script>
 
-<div class="question-container">
+<div class="question-container" class:review-incorrect={isIncorrect}>
 	<div class="question-header">
 		{#if questionNumber !== undefined}
 			<span class="question-number">Questão {questionNumber}</span>
@@ -175,6 +177,16 @@
 		border: 1px solid var(--border-color);
 		border-radius: var(--radius-lg);
 		padding: var(--space-xl);
+	}
+
+	.question-container.review-incorrect {
+		background-color: var(--error-light);
+		border-color: var(--error);
+	}
+
+	:global([data-theme='dark']) .question-container.review-incorrect {
+		background-color: rgba(239, 68, 68, 0.08);
+		border-color: #ef4444;
 	}
 
 	.question-header {

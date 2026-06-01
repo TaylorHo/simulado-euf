@@ -25,6 +25,20 @@ function detectTauriRuntime(): boolean {
 	}
 }
 
+function detectMobileDevice(): boolean {
+	if (!browser) {
+		return false;
+	}
+
+	const userAgent = navigator.userAgent.toLowerCase();
+	const mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+
+	return (
+		mobileKeywords.some((keyword) => userAgent.includes(keyword)) ||
+		(window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
+	);
+}
+
 export function detectPlatform(): PlatformState {
 	if (platformCache) {
 		return platformCache;
@@ -50,6 +64,15 @@ export function detectPlatform(): PlatformState {
 export function isTauriMobileApp(): boolean {
 	const platform = detectPlatform();
 	return platform.isMobile;
+}
+
+export function isMobileWeb(): boolean {
+	if (!browser) {
+		return false;
+	}
+
+	const platform = detectPlatform();
+	return platform.isWeb && detectMobileDevice();
 }
 
 export { DEFAULT_PLATFORM_STATE };

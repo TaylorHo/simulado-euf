@@ -12,11 +12,14 @@
 	}
 
 	let { isDark, toggleTheme }: Props = $props();
+
+	const logoSrc = $derived(isDark ? '/assets/logo-dark.webp' : '/assets/logo-white.webp');
 </script>
 
 <nav class="topbar">
 	<div class="container topbar-content">
 		<a href="/" class="logo">
+			<img src={logoSrc} alt="Logo EUF" class="logo-image" />
 			<span class="logo-text">Simulado EUF</span>
 		</a>
 
@@ -80,6 +83,13 @@
 	.logo:hover {
 		background-color: var(--bg-tertiary);
 		color: var(--text-primary);
+	}
+
+	.logo-image {
+		height: 28px;
+		width: auto;
+		object-fit: contain;
+		flex-shrink: 0;
 	}
 
 	.logo-text {

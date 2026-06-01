@@ -5,15 +5,19 @@
 	import { AreaLabels } from '$lib/models/area';
 	import LaTeX from '$lib/components/LaTeX.svelte';
 	import QRCode from 'qrcode';
+	import { isMobileWeb, isTauriMobileApp } from '$lib/utils/platform';
 
 	let examId = $state<string | null>(null);
 	let examSeed = $state<string | null>(null);
 	let loaded = $state(false);
+	let isMobile = $state(false);
 	const alternativeLabels = ['A', 'B', 'C', 'D', 'E'];
 
 	let qrUrl = $state('');
 
 	onMount(async () => {
+		isMobile = isMobileWeb() || isTauriMobileApp();
+
 		examId = page.url.searchParams.get('id');
 		examSeed = page.url.searchParams.get('seed');
 
@@ -36,10 +40,12 @@
 					console.error('Error generating QR codes:', qrError);
 				}
 
-				// Auto-trigger print dialog - wait for everything to render
-				setTimeout(() => {
-					window.print();
-				}, 1500);
+				// Only auto-trigger print dialog on desktop
+				if (!isMobile) {
+					setTimeout(() => {
+						window.print();
+					}, 1500);
+				}
 			} catch (error) {
 				console.error('Error loading exam:', error);
 				alert('Erro ao carregar o simulado. Código inválido.');
@@ -47,7 +53,7 @@
 		}
 	});
 
-	// Close window when print dialog is closed
+	// Close window when print dialog is closed (desktop only)
 	if (typeof window !== 'undefined') {
 		window.onafterprint = () => {
 			window.close();
@@ -57,10 +63,30 @@
 
 <svelte:head>
 	<title>Impressão - Simulado EUF</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" />
 </svelte:head>
 
-{#if loaded && examStore.currentExam}
+{#if isMobile && loaded}
+	<div class="mobile-warning-page">
+		<div class="warning-card">
+			<h1>⚠️ Impressão Indisponível</h1>
+			<p>
+				Navegadores mobile não conseguem imprimir simulados corretamente. Você precisa acessar em um
+				computador para gerar o PDF.
+			</p>
+			<div class="warning-instructions">
+				<h2>Como imprimir este simulado:</h2>
+				<ol>
+					<li>Copie o link desta página</li>
+					<li>Abra em um computador desktop</li>
+					<li>A impressão será aberta automaticamente</li>
+				</ol>
+			</div>
+			<p class="warning-tip">Você também pode usar o QR Code da tela principal do simulado!</p>
+			<button class="btn-back" onclick={() => window.history.back()}> ← Voltar ao Simulado </button>
+		</div>
+	</div>
+{:else if loaded && examStore.currentExam}
 	<div class="print-page">
 		<div class="first-page">
 			<h1>Simulado EUF</h1>
@@ -446,6 +472,89 @@
 		align-items: center;
 		min-height: 100vh;
 		font-size: 14pt;
+	}
+
+	.mobile-warning-page {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	}
+
+	.warning-card {
+		background: white;
+		border-radius: 12px;
+		padding: 40px;
+		max-width: 600px;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+		text-align: center;
+	}
+
+	.warning-card h1 {
+		color: #e74c3c;
+		font-size: 28pt;
+		margin: 0 0 20px 0;
+	}
+
+	.warning-card > p {
+		color: #555;
+		font-size: 14pt;
+		line-height: 1.6;
+		margin: 15px 0;
+	}
+
+	.warning-instructions {
+		background: #f8f9fa;
+		border-radius: 8px;
+		padding: 25px;
+		margin: 30px 0;
+		text-align: left;
+	}
+
+	.warning-instructions h2 {
+		color: #333;
+		font-size: 16pt;
+		margin: 0 0 15px 0;
+	}
+
+	.warning-instructions ol {
+		color: #555;
+		font-size: 13pt;
+		line-height: 1.8;
+		margin: 0;
+		padding-left: 25px;
+	}
+
+	.warning-instructions li {
+		margin: 10px 0;
+	}
+
+	.warning-tip {
+		color: #666;
+		font-size: 11pt;
+		margin: 20px 0;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.btn-back {
+		background: #667eea;
+		color: white;
+		border: none;
+		border-radius: 8px;
+		padding: 15px 30px;
+		font-size: 14pt;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.btn-back:hover {
+		background: #5568d3;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 	}
 
 	@media print {

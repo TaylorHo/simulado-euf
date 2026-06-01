@@ -216,6 +216,8 @@
 	.answer-bubble {
 		width: 36px;
 		height: 36px;
+		min-width: 36px;
+		min-height: 36px;
 		border: 2px solid var(--border-light);
 		border-radius: 50%;
 		display: flex;
@@ -225,6 +227,8 @@
 		cursor: pointer;
 		transition: all var(--transition-fast);
 		padding: 0;
+		flex-shrink: 0;
+		aspect-ratio: 1;
 	}
 
 	.answer-bubble:hover {
@@ -295,6 +299,8 @@
 		.answer-bubble {
 			width: 40px;
 			height: 40px;
+			min-width: 40px;
+			min-height: 40px;
 		}
 	}
 
@@ -345,6 +351,8 @@
 		.answer-bubble {
 			width: 32px;
 			height: 32px;
+			min-width: 32px;
+			min-height: 32px;
 		}
 	}
 

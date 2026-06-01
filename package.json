@@ -14,6 +14,7 @@
 		"build": "pnpm run build:web",
 		"build:web": "ADAPTER=vercel vite build",
 		"build:mobile": "ADAPTER=static vite build",
+		"build:app": "tauri android build --apk",
 		"prepare": "svelte-kit sync || echo '' && git config --local core.hooksPath .hooks/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

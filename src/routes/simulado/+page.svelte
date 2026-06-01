@@ -19,12 +19,13 @@
 		buildExamPath,
 		tryLoadExam
 	} from '$lib/utils/helpers';
-	import { isTauriMobileApp } from '$lib/utils/platform';
+	import { isTauriMobileApp, isMobileWeb } from '$lib/utils/platform';
 	import { openUrl } from '@tauri-apps/plugin-opener';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	let isTauriMobile = $state(false);
+	let isMobileWebBrowser = $state(false);
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
 	let showFinishConfirm = $state(false);
@@ -33,6 +34,8 @@
 	let showNewExamConfirm = $state(false);
 	let showReview = $state(false);
 	let showQuickFillModal = $state(false);
+	let showMobileWebPrintWarning = $state(false);
+	let showTauriMobilePrintWarning = $state(false);
 	let examId = $state<string | null>(null);
 	let pendingExamId = $state<string | null>(null);
 	let adsLoaded = $state(false);
@@ -45,20 +48,33 @@
 		}
 	}
 
-	function handleExport() {
+	function copyPrintLink() {
 		if (examStore.currentExam) {
 			const url = buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed);
-
-			if (isTauriMobile) {
-				// TODO: Implement print in mobile app
-				// const newUrl = url.split('tauri.localhost')[1];
-				// openUrl(`${BASE_URL}${newUrl}`);
-				alert('A impressão não está disponível no app mobile no momento.');
-				return;
-			}
-
-			window.open(url, '_blank');
+			const webUrl = `${BASE_URL}${url.split('tauri.localhost')[1] || url}`;
+			navigator.clipboard.writeText(webUrl);
+			alert('Link copiado! Abra no computador para imprimir.');
 		}
+		showTauriMobilePrintWarning = false;
+	}
+
+	function handleExport() {
+		if (!examStore.currentExam) {
+			return;
+		}
+
+		if (isTauriMobile) {
+			showTauriMobilePrintWarning = true;
+			return;
+		}
+
+		if (isMobileWebBrowser) {
+			showMobileWebPrintWarning = true;
+			return;
+		}
+
+		const url = buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed);
+		window.open(url, '_blank');
 	}
 
 	function closeQuickFillModal() {
@@ -71,6 +87,7 @@
 
 	onMount(() => {
 		isTauriMobile = isTauriMobileApp();
+		isMobileWebBrowser = isMobileWeb();
 
 		examId = page.url.searchParams.get('id');
 		const seed = page.url.searchParams.get('seed') || undefined;
@@ -236,7 +253,7 @@
 
 	// Load ads when review is shown
 	$effect(() => {
-		if (showReview && !adsLoaded && ADS_ENABLED && adsPreferenceStore.enabled) {
+		if (showReview && !adsLoaded && ADS_ENABLED && !isTauriMobile && adsPreferenceStore.enabled) {
 			setTimeout(() => {
 				try {
 					const ads = document.querySelectorAll('.review-ad-wrapper .adsbygoogle');
@@ -263,7 +280,7 @@
 	<title>Simulado - Simulado EUF</title>
 	<meta name="description" content="Faça um simulado completo do EUF com 40 questões" />
 	<link rel="canonical" href={`${BASE_URL}/simulado/`} />
-	{#if ADS_ENABLED}
+	{#if ADS_ENABLED && !isTauriMobile}
 		<script
 			async
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT_ID}"
@@ -335,11 +352,12 @@
 											questionNumber={index + 1}
 											showCorrect={true}
 											showTags={true}
+											isIncorrect={!isCorrect}
 										/>
 									</div>
 
 									<!-- Show ad every 4 questions -->
-									{#if ADS_ENABLED && adsPreferenceStore.enabled && (index + 1) % 4 === 0}
+									{#if ADS_ENABLED && !isTauriMobile && adsPreferenceStore.enabled && (index + 1) % 4 === 0}
 										<div class="review-ad-container">
 											<p class="review-ad-message">
 												Ajude a manter o projeto gratuito visualizando alguns anúncios
@@ -502,6 +520,50 @@
 	onConfirm={confirmNewExam}
 	onCancel={() => (showNewExamConfirm = false)}
 />
+
+<Modal
+	open={showMobileWebPrintWarning}
+	title="Impressão Não Disponível"
+	onClose={() => (showMobileWebPrintWarning = false)}
+>
+	<div class="print-warning-content">
+		<p>
+			Infelizmente, navegadores mobile não conseguem imprimir simulados corretamente devido a
+			limitações técnicas.
+		</p>
+		<p><strong>Para imprimir:</strong></p>
+		<ul>
+			<li>Abra o site em um computador</li>
+			<li>Carregue este simulado usando o QR Code ou link</li>
+			<li>Clique em "Imprimir" no desktop</li>
+		</ul>
+		<button class="btn-primary" onclick={() => (showMobileWebPrintWarning = false)}>
+			Entendi
+		</button>
+	</div>
+</Modal>
+
+<Modal
+	open={showTauriMobilePrintWarning}
+	title="Imprimir no Desktop"
+	onClose={() => (showTauriMobilePrintWarning = false)}
+>
+	<div class="print-warning-content">
+		<p>A impressão funciona melhor no computador!</p>
+		<p><strong>Como fazer:</strong></p>
+		<ol>
+			<li>Copie o link do simulado</li>
+			<li>Abra no navegador do seu computador</li>
+			<li>A impressão será aberta automaticamente</li>
+		</ol>
+		<div class="print-warning-actions">
+			<button class="btn-primary" onclick={copyPrintLink}> Copiar Link para Desktop </button>
+			<button class="btn-secondary" onclick={() => (showTauriMobilePrintWarning = false)}>
+				Cancelar
+			</button>
+		</div>
+	</div>
+</Modal>
 
 {#if examStore.currentExam}
 	<Modal
@@ -767,10 +829,9 @@
 	}
 
 	.review-question.incorrect {
-		padding: var(--space-lg);
-		background-color: var(--error-light);
-		border-radius: var(--radius-lg);
-		border: 2px solid var(--error);
+		border-left: 4px solid var(--error);
+		padding-left: var(--space-md);
+		margin-left: 0;
 	}
 
 	.share-modal-content {
@@ -797,6 +858,48 @@
 	.copy-link-btn {
 		width: 100%;
 		max-width: 300px;
+	}
+
+	.print-warning-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		padding: var(--space-md);
+	}
+
+	.print-warning-content p {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--text-secondary);
+	}
+
+	.print-warning-content strong {
+		color: var(--text-primary);
+		display: block;
+		margin-top: var(--space-sm);
+	}
+
+	.print-warning-content ul,
+	.print-warning-content ol {
+		margin: var(--space-xs) 0 0 0;
+		padding-left: var(--space-xl);
+		color: var(--text-secondary);
+	}
+
+	.print-warning-content li {
+		margin: var(--space-xs) 0;
+		line-height: 1.5;
+	}
+
+	.print-warning-actions {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		margin-top: var(--space-md);
+	}
+
+	.print-warning-actions button {
+		width: 100%;
 	}
 
 	.loading-container {
