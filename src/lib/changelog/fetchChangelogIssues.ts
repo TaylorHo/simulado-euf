@@ -9,6 +9,20 @@ type RawIssue = {
 	labels: Array<{ name: string }>;
 };
 
+export type ChangelogLoadResult = {
+	closed: GitHubIssue[];
+	openBugs: GitHubIssue[];
+	openEnhancements: GitHubIssue[];
+	error: string | null;
+};
+
+const emptyResult = (): ChangelogLoadResult => ({
+	closed: [],
+	openBugs: [],
+	openEnhancements: [],
+	error: null
+});
+
 /** Titles from automated bug reports include this prefix; hide it in the UI. */
 const REPORTED_BUG_TITLE_PREFIX = /^\s*\[reported bug\]:\s*/i;
 
@@ -23,7 +37,7 @@ function displayIssueTitle(title: string, type: 'bug' | 'enhancement'): string {
 	return cleanTitle;
 }
 
-export const load = async () => {
+export async function fetchChangelogIssues(): Promise<ChangelogLoadResult> {
 	try {
 		const res = await fetch(GITHUB_ISSUES_API_URL, {
 			headers: {
@@ -33,9 +47,7 @@ export const load = async () => {
 
 		if (!res.ok) {
 			return {
-				closed: [] as GitHubIssue[],
-				openBugs: [] as GitHubIssue[],
-				openEnhancements: [] as GitHubIssue[],
+				...emptyResult(),
 				error: `GitHub respondeu com ${res.status}.`
 			};
 		}
@@ -52,7 +64,6 @@ export const load = async () => {
 			const isBug = labels.includes('bug');
 			const isEnhancement = labels.includes('enhancement');
 
-			// Only include issues that are either bugs or enhancements
 			if (!isBug && !isEnhancement) continue;
 
 			const type: 'bug' | 'enhancement' = isBug ? 'bug' : 'enhancement';
@@ -73,13 +84,11 @@ export const load = async () => {
 			}
 		}
 
-		return { closed, openBugs, openEnhancements, error: null as string | null };
+		return { closed, openBugs, openEnhancements, error: null };
 	} catch {
 		return {
-			closed: [] as GitHubIssue[],
-			openBugs: [] as GitHubIssue[],
-			openEnhancements: [] as GitHubIssue[],
+			...emptyResult(),
 			error: 'Não foi possível carregar as issues no momento.'
 		};
 	}
-};
+}

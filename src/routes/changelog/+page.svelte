@@ -1,24 +1,32 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
-	import type { GitHubIssue } from '$lib/models/githubIssue';
+	import {
+		fetchChangelogIssues,
+		type ChangelogLoadResult
+	} from '$lib/changelog/fetchChangelogIssues';
 	import { BASE_URL, GITHUB_REPO_URL } from '$lib/variables';
 	import { Bug, CirclePlus, ExternalLink, Sparkles, Wrench } from '@lucide/svelte';
+	import { onMount } from 'svelte';
 
-	let {
-		data = {
-			closed: [],
-			openBugs: [],
-			openEnhancements: [],
-			error: null
-		}
-	}: {
-		data: {
-			closed: GitHubIssue[];
-			openBugs: GitHubIssue[];
-			openEnhancements: GitHubIssue[];
-			error: string | null;
-		};
-	} = $props();
+	const emptyChangelog: ChangelogLoadResult = {
+		closed: [],
+		openBugs: [],
+		openEnhancements: [],
+		error: null
+	};
+
+	let isLoading = $state(false);
+	let mobileData = $state<ChangelogLoadResult>(emptyChangelog);
+
+	const changelogData = $derived(mobileData);
+
+	onMount(() => {
+		isLoading = true;
+		fetchChangelogIssues().then((result) => {
+			mobileData = result;
+			isLoading = false;
+		});
+	});
 </script>
 
 <svelte:head>
@@ -53,20 +61,22 @@
 				</a>
 			</header>
 
-			{#if data.error}
-				<p class="error" role="alert">{data.error}</p>
+			{#if isLoading}
+				<p class="loading" aria-live="polite">Carregando problemas reportados…</p>
+			{:else if changelogData.error}
+				<p class="error" role="alert">{changelogData.error}</p>
 			{/if}
 
 			<section class="section" aria-labelledby="bugs-heading">
 				<div class="section-header">
 					<Bug size={24} strokeWidth={1.8} />
-					<h2 id="bugs-heading">Problemas em aberto ({data.openBugs?.length ?? 0})</h2>
+					<h2 id="bugs-heading">Problemas em aberto ({changelogData.openBugs.length})</h2>
 				</div>
-				{#if (data.openBugs?.length ?? 0) === 0 && !data.error}
+				{#if !isLoading && changelogData.openBugs.length === 0 && !changelogData.error}
 					<p class="empty">Nenhum problema aberto no momento.</p>
-				{:else}
+				{:else if !isLoading}
 					<ul class="list">
-						{#each data.openBugs ?? [] as item (item.htmlUrl)}
+						{#each changelogData.openBugs as item (item.htmlUrl)}
 							<li>
 								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
 									<span class="issue-title">{item.title}</span>
@@ -83,14 +93,14 @@
 				<div class="section-header">
 					<Sparkles size={24} strokeWidth={1.8} />
 					<h2 id="enhancements-heading">
-						Funcionalidades em aberto ({data.openEnhancements?.length ?? 0})
+						Funcionalidades em aberto ({changelogData.openEnhancements.length})
 					</h2>
 				</div>
-				{#if (data.openEnhancements?.length ?? 0) === 0 && !data.error}
+				{#if !isLoading && changelogData.openEnhancements.length === 0 && !changelogData.error}
 					<p class="empty">Nenhuma funcionalidade pendente no momento.</p>
-				{:else}
+				{:else if !isLoading}
 					<ul class="list">
-						{#each data.openEnhancements ?? [] as item (item.htmlUrl)}
+						{#each changelogData.openEnhancements as item (item.htmlUrl)}
 							<li>
 								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
 									<span class="issue-title">{item.title}</span>
@@ -105,13 +115,13 @@
 
 			<section class="section" aria-labelledby="closed-heading">
 				<div class="section-header">
-					<h2 id="closed-heading">Resolvidos ({data.closed?.length ?? 0})</h2>
+					<h2 id="closed-heading">Resolvidos ({changelogData.closed.length})</h2>
 				</div>
-				{#if (data.closed?.length ?? 0) === 0 && !data.error}
+				{#if !isLoading && changelogData.closed.length === 0 && !changelogData.error}
 					<p class="empty">Ainda não há itens resolvidos nesta lista.</p>
-				{:else}
+				{:else if !isLoading}
 					<ul class="list">
-						{#each data.closed ?? [] as item (item.htmlUrl)}
+						{#each changelogData.closed as item (item.htmlUrl)}
 							<li>
 								<a class="issue-link" href={item.htmlUrl} target="_blank" rel="noopener noreferrer">
 									<span class="issue-title">{item.title}</span>
@@ -196,10 +206,17 @@
 		font-weight: 600;
 		text-decoration: none;
 		color: white;
+		min-height: 48px;
 	}
 
 	.new-issue-cta:hover {
 		color: white;
+	}
+
+	.loading {
+		color: var(--text-secondary);
+		text-align: center;
+		margin-bottom: var(--space-xl);
 	}
 
 	.error {
@@ -250,6 +267,7 @@
 		align-items: center;
 		gap: var(--space-md);
 		padding: var(--space-md) var(--space-lg);
+		min-height: 56px;
 		background-color: var(--bg-secondary);
 		border: 1px solid var(--border-light);
 		border-radius: var(--radius-lg);
@@ -321,6 +339,15 @@
 	@media (max-width: 768px) {
 		.container {
 			padding: 0 var(--space-md);
+		}
+
+		.new-issue-cta {
+			width: 100%;
+		}
+
+		.issue-link {
+			padding: var(--space-md);
+			gap: var(--space-sm);
 		}
 	}
 </style>

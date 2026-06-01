@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 	import { buildExamPath } from '$lib/utils/helpers';
+	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { examStore } from '$lib/stores/exam.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
+	import MobileLanding from '$lib/components/MobileLanding.svelte';
 	import {
 		FileText,
 		Target,
@@ -29,6 +32,11 @@
 	import GitHub from '$lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
+	let isTauriMobile = $state(false);
+
+	onMount(() => {
+		isTauriMobile = isTauriMobileApp();
+	});
 
 	function handleStartExam() {
 		goto('/simulado/');
@@ -64,251 +72,253 @@
 	<link rel="canonical" href={`${BASE_URL}/`} />
 </svelte:head>
 
-<main>
-	<!-- Hero Section -->
-	<section class="hero">
-		<div class="container">
-			<a href="/changelog/" class="fixes-cta">
-				<span>Ver correções e melhorias recentes</span>
-				<ExternalLink size={14} aria-hidden="true" />
-			</a>
-			<h1 class="hero-title">Prepare-se para o EUF</h1>
-			<p class="hero-subtitle">
-				Plataforma 100% gratuita e de código aberto com simulados e flashcards completos baseados em
-				questões reais dos exames anteriores do Exame Unificado de Física
-			</p>
+{#if isTauriMobile}
+	<MobileLanding />
+{:else}
+	<main>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<a href="/changelog/" class="fixes-cta">
+					<span>Ver correções e melhorias recentes</span>
+					<ExternalLink size={14} aria-hidden="true" />
+				</a>
+				<h1 class="hero-title">Prepare-se para o EUF</h1>
+				<p class="hero-subtitle">
+					Plataforma 100% gratuita e de código aberto com simulados e flashcards completos baseados
+					em questões reais dos exames anteriores do Exame Unificado de Física
+				</p>
 
-			<div class="hero-actions">
-				<button class="btn-primary btn-large" onclick={handleStartExam}>
-					<FileText size={24} />
-					Iniciar Simulado
-				</button>
-				<button class="btn-secondary btn-large" onclick={handleStartFlashcard}>
-					<Target size={24} />
-					Iniciar Flashcard
-				</button>
+				<div class="hero-actions">
+					<button class="btn-primary btn-large" onclick={handleStartExam}>
+						<FileText size={24} />
+						Iniciar Simulado
+					</button>
+					<button class="btn-secondary btn-large" onclick={handleStartFlashcard}>
+						<Target size={24} />
+						Iniciar Flashcard
+					</button>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- QR Code CTA Banner -->
-	<section class="qr-banner">
-		<div class="container">
-			<div class="qr-banner-card">
-				<div class="qr-banner-content">
-					<div class="qr-banner-icon">
-						<QrCode size={56} strokeWidth={1.5} />
+		<!-- QR Code CTA Banner -->
+		<section class="qr-banner">
+			<div class="container">
+				<div class="qr-banner-card">
+					<div class="qr-banner-content">
+						<div class="qr-banner-icon">
+							<QrCode size={56} strokeWidth={1.5} />
+						</div>
+						<div class="qr-banner-text">
+							<strong>Já imprimiu seu simulado?</strong>
+							<p>
+								Escaneie o QR Code do seu simulado para verificar as respostas e ver sua pontuação.
+							</p>
+						</div>
 					</div>
-					<div class="qr-banner-text">
-						<strong>Já imprimiu seu simulado?</strong>
+					<button class="btn-primary qr-banner-btn" onclick={handleScanQR}>
+						<QrCode size={20} />
+						Escanear QR Code
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- About the Application -->
+		<section class="about-app">
+			<div class="container">
+				<h2 class="section-title">Sobre o Simulado EUF</h2>
+				<p class="section-description">
+					O Simulado EUF é uma plataforma gratuita e de código aberto criada para ajudar estudantes
+					a se prepararem para o Exame Unificado de Física. Com questões reais de edições
+					anteriores, você pode praticar e avaliar seu desempenho de forma eficiente e realista.
+				</p>
+
+				<div class="features-grid">
+					<div class="feature-card">
+						<div class="feature-icon">
+							<Printer size={32} strokeWidth={1.5} />
+						</div>
+						<h3><span style="white-space: nowrap;">Imprima &</span> Pratique</h3>
+						<p>Imprima simulados para responder no papel, como na prova real, ou faça online</p>
+					</div>
+
+					<div class="feature-card">
+						<div class="feature-icon">
+							<ChartColumn size={32} strokeWidth={1.5} />
+						</div>
+						<h3>Análise Detalhada</h3>
+						<p>Resultados detalhados do seu desempenho por área de conhecimento e questão</p>
+					</div>
+
+					<div class="feature-card">
+						<div class="feature-icon">
+							<PiggyBank size={32} strokeWidth={1.5} />
+						</div>
+						<h3>100% Gratuito</h3>
+						<p>Tudo liberado gratuitamente para você estudar, aproveite!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About EUF -->
+		<section class="about-euf">
+			<div class="container">
+				<div class="about-euf-header">
+					<BookOpen size={48} strokeWidth={1.5} />
+					<h2 class="section-title">O que é o EUF?</h2>
+				</div>
+
+				<div class="about-euf-content">
+					<p class="about-euf-description">
+						O <strong>Exame Unificado de Física (EUF)</strong> é uma avaliação padronizada aplicada semestralmente
+						para ingresso em programas de pós-graduação em Física em diversas universidades brasileiras.
+						O exame é reconhecido nacionalmente e utilizado como critério de seleção por instituições
+						de ensino superior de prestígio.
+					</p>
+
+					<div class="euf-info-grid">
+						<div class="euf-info-card">
+							<div class="euf-info-icon">
+								<Clock size={32} />
+							</div>
+							<h4>Duração</h4>
+							<p>4 horas de prova</p>
+						</div>
+
+						<div class="euf-info-card">
+							<div class="euf-info-icon">
+								<MapPin size={32} />
+							</div>
+							<h4>Frequência</h4>
+							<p>2 vezes por ano</p>
+						</div>
+
+						<div class="euf-info-card">
+							<div class="euf-info-icon">
+								<FileText size={32} />
+							</div>
+							<h4>Questões</h4>
+							<p>40 questões objetivas</p>
+						</div>
+					</div>
+
+					<div class="areas-section">
+						<h3>Áreas Avaliadas</h3>
+						<p class="areas-description">
+							O exame é dividido em 6 áreas fundamentais da Física, com pesos diferentes:
+						</p>
+						<ul class="areas-list">
+							<li class="area-item">
+								<span class="area-name">Eletromagnetismo</span>
+								<span class="area-count">8 questões</span>
+							</li>
+							<li class="area-item">
+								<span class="area-name">Física Moderna</span>
+								<span class="area-count">8 questões</span>
+							</li>
+							<li class="area-item">
+								<span class="area-name">Mecânica Clássica</span>
+								<span class="area-count">8 questões</span>
+							</li>
+							<li class="area-item">
+								<span class="area-name">Mecânica Quântica</span>
+								<span class="area-count">8 questões</span>
+							</li>
+							<li class="area-item">
+								<span class="area-name">Física Estatística</span>
+								<span class="area-count">4 questões</span>
+							</li>
+							<li class="area-item">
+								<span class="area-name">Termodinâmica</span>
+								<span class="area-count">4 questões</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contribution Section -->
+		<section class="contribution">
+			<div class="container">
+				<div class="contribution-header">
+					<Heart size={48} strokeWidth={1.5} />
+					<h2 class="section-title">Apoie Este Projeto</h2>
+					<p class="section-description">
+						O Simulado EUF é gratuito e sempre será. Se este projeto te ajudou, considere apoiar o
+						desenvolvimento e manutenção da plataforma.
+					</p>
+				</div>
+
+				<div class="contribution-options">
+					<a
+						href={BUY_ME_A_COFFEE_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="contribution-card"
+					>
+						<div class="contribution-icon">
+							<Coffee size={32} />
+						</div>
+						<h3>Buy Me a Coffee</h3>
+						<p>Apoie com uma contribuição única</p>
+						<span class="contribution-link">
+							buymeacoffee.com/taylorho
+							<ExternalLink size={16} />
+						</span>
+					</a>
+
+					<a
+						href={GITHUB_SPONSORS_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="contribution-card"
+					>
+						<div class="contribution-icon">
+							<GitHub size={32} />
+						</div>
+						<h3>GitHub Sponsors</h3>
+						<p>Torne-se um patrocinador mensal</p>
+						<span class="contribution-link">
+							github.com/sponsors/TaylorHo
+							<ExternalLink size={16} />
+						</span>
+					</a>
+
+					<div class="contribution-card">
+						<div class="contribution-icon">
+							<ShieldOff size={32} />
+						</div>
+						<h3>Desative o bloqueador de anúncios</h3>
 						<p>
-							Escaneie o QR Code do seu simulado para verificar as respostas e ver sua pontuação.
+							Se você estiver usando um, considere desativá-lo neste site para apoiar o projeto.
 						</p>
 					</div>
 				</div>
-				<button class="btn-primary qr-banner-btn" onclick={handleScanQR}>
-					<QrCode size={20} />
-					Escanear QR Code
-				</button>
-			</div>
-		</div>
-	</section>
 
-	<!-- About the Application -->
-	<section class="about-app">
-		<div class="container">
-			<h2 class="section-title">Sobre o Simulado EUF</h2>
-			<p class="section-description">
-				O Simulado EUF é uma plataforma gratuita e de código aberto criada para ajudar estudantes a
-				se prepararem para o Exame Unificado de Física. Com questões reais de edições anteriores,
-				você pode praticar e avaliar seu desempenho de forma eficiente e realista.
-			</p>
-
-			<div class="features-grid">
-				<div class="feature-card">
-					<div class="feature-icon">
-						<Printer size={32} strokeWidth={1.5} />
-					</div>
-					<h3><span style="white-space: nowrap;">Imprima &</span> Pratique</h3>
-					<p>Imprima simulados para responder no papel, como na prova real, ou faça online</p>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-icon">
-						<ChartColumn size={32} strokeWidth={1.5} />
-					</div>
-					<h3>Análise Detalhada</h3>
-					<p>Resultados detalhados do seu desempenho por área de conhecimento e questão</p>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-icon">
-						<PiggyBank size={32} strokeWidth={1.5} />
-					</div>
-					<h3>100% Gratuito</h3>
-					<p>Tudo liberado gratuitamente para você estudar, aproveite!</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- About EUF -->
-	<section class="about-euf">
-		<div class="container">
-			<div class="about-euf-header">
-				<BookOpen size={48} strokeWidth={1.5} />
-				<h2 class="section-title">O que é o EUF?</h2>
-			</div>
-
-			<div class="about-euf-content">
-				<p class="about-euf-description">
-					O <strong>Exame Unificado de Física (EUF)</strong> é uma avaliação padronizada aplicada semestralmente
-					para ingresso em programas de pós-graduação em Física em diversas universidades brasileiras.
-					O exame é reconhecido nacionalmente e utilizado como critério de seleção por instituições de
-					ensino superior de prestígio.
-				</p>
-
-				<div class="euf-info-grid">
-					<div class="euf-info-card">
-						<div class="euf-info-icon">
-							<Clock size={32} />
-						</div>
-						<h4>Duração</h4>
-						<p>4 horas de prova</p>
-					</div>
-
-					<div class="euf-info-card">
-						<div class="euf-info-icon">
-							<MapPin size={32} />
-						</div>
-						<h4>Frequência</h4>
-						<p>2 vezes por ano</p>
-					</div>
-
-					<div class="euf-info-card">
-						<div class="euf-info-icon">
-							<FileText size={32} />
-						</div>
-						<h4>Questões</h4>
-						<p>40 questões objetivas</p>
-					</div>
-				</div>
-
-				<div class="areas-section">
-					<h3>Áreas Avaliadas</h3>
-					<p class="areas-description">
-						O exame é dividido em 6 áreas fundamentais da Física, com pesos diferentes:
+				<div class="contribution-footer">
+					<p>
+						Este projeto é de código aberto. Contribua com código, reportando bugs ou sugerindo
+						melhorias no
+						<a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer"
+							>repositório GitHub</a
+						>.
 					</p>
-					<ul class="areas-list">
-						<li class="area-item">
-							<span class="area-name">Eletromagnetismo</span>
-							<span class="area-count">8 questões</span>
-						</li>
-						<li class="area-item">
-							<span class="area-name">Física Moderna</span>
-							<span class="area-count">8 questões</span>
-						</li>
-						<li class="area-item">
-							<span class="area-name">Mecânica Clássica</span>
-							<span class="area-count">8 questões</span>
-						</li>
-						<li class="area-item">
-							<span class="area-name">Mecânica Quântica</span>
-							<span class="area-count">8 questões</span>
-						</li>
-						<li class="area-item">
-							<span class="area-name">Física Estatística</span>
-							<span class="area-count">4 questões</span>
-						</li>
-						<li class="area-item">
-							<span class="area-name">Termodinâmica</span>
-							<span class="area-count">4 questões</span>
-						</li>
-					</ul>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		<Footer />
+	</main>
 
-	<!-- Contribution Section -->
-	<section class="contribution">
-		<div class="container">
-			<div class="contribution-header">
-				<Heart size={48} strokeWidth={1.5} />
-				<h2 class="section-title">Apoie Este Projeto</h2>
-				<p class="section-description">
-					O Simulado EUF é gratuito e sempre será. Se este projeto te ajudou, considere apoiar o
-					desenvolvimento e manutenção da plataforma.
-				</p>
-			</div>
-
-			<div class="contribution-options">
-				<a
-					href={BUY_ME_A_COFFEE_URL}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="contribution-card"
-				>
-					<div class="contribution-icon">
-						<Coffee size={32} />
-					</div>
-					<h3>Buy Me a Coffee</h3>
-					<p>Apoie com uma contribuição única</p>
-					<span class="contribution-link">
-						buymeacoffee.com/taylorho
-						<ExternalLink size={16} />
-					</span>
-				</a>
-
-				<a
-					href={GITHUB_SPONSORS_URL}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="contribution-card"
-				>
-					<div class="contribution-icon">
-						<GitHub size={32} />
-					</div>
-					<h3>GitHub Sponsors</h3>
-					<p>Torne-se um patrocinador mensal</p>
-					<span class="contribution-link">
-						github.com/sponsors/TaylorHo
-						<ExternalLink size={16} />
-					</span>
-				</a>
-
-				<div class="contribution-card">
-					<div class="contribution-icon">
-						<ShieldOff size={32} />
-					</div>
-					<h3>Desative o bloqueador de anúncios</h3>
-					<p>Se você estiver usando um, considere desativá-lo neste site para apoiar o projeto.</p>
-				</div>
-			</div>
-
-			<div class="contribution-footer">
-				<p>
-					Este projeto é de código aberto. Contribua com código, reportando bugs ou sugerindo
-					melhorias no
-					<a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">repositório GitHub</a
-					>.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<Footer />
-</main>
-
-<Modal open={showQRModal} title="Escanear QR Code" onClose={() => (showQRModal = false)}>
-	<QRScanner onScan={handleQRScan} />
-</Modal>
+	<Modal open={showQRModal} title="Escanear QR Code" onClose={() => (showQRModal = false)}>
+		<QRScanner onScan={handleQRScan} />
+	</Modal>
+{/if}
 
 <style>
-	:global(.footer) {
-		margin-top: 0 !important;
-	}
-
 	main {
 		min-height: 100vh;
 		background-color: var(--bg-primary);

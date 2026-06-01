@@ -8,6 +8,7 @@
 	import { getImagePath } from '$lib/utils/helpers';
 	import { Eye, EyeOff, PaintBucket, ClipboardList } from '@lucide/svelte';
 	import ReportError from './ReportError.svelte';
+	import { BASE_URL } from '$lib/variables';
 
 	interface Props {
 		question: ExamQuestion;
@@ -15,6 +16,7 @@
 		showCorrect?: boolean;
 		showTags?: boolean;
 		showDiscardButton?: boolean;
+		isIncorrect?: boolean;
 		onSelectAnswer?: (alt: QuestionAlternative) => void;
 		onToggleDiscard?: (alt: QuestionAlternative) => void;
 	}
@@ -25,6 +27,7 @@
 		showCorrect = false,
 		showTags = false,
 		showDiscardButton = false,
+		isIncorrect = false,
 		onSelectAnswer,
 		onToggleDiscard
 	}: Props = $props();
@@ -59,7 +62,7 @@
 	}
 </script>
 
-<div class="question-container">
+<div class="question-container" class:review-incorrect={isIncorrect}>
 	<div class="question-header">
 		{#if questionNumber !== undefined}
 			<span class="question-number">Questão {questionNumber}</span>
@@ -72,7 +75,12 @@
 			</div>
 		{/if}
 		<div class="question-actions">
-			<a href="/assets/formulario.pdf" target="_blank" rel="noopener noreferrer" class="btn-form">
+			<a
+				href={`${BASE_URL}/assets/formulario.pdf`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="btn-form"
+			>
 				<ClipboardList size={14} />
 				<span>Formulário</span>
 			</a>
@@ -169,6 +177,16 @@
 		border: 1px solid var(--border-color);
 		border-radius: var(--radius-lg);
 		padding: var(--space-xl);
+	}
+
+	.question-container.review-incorrect {
+		background-color: var(--error-light);
+		border-color: var(--error);
+	}
+
+	:global([data-theme='dark']) .question-container.review-incorrect {
+		background-color: rgba(239, 68, 68, 0.08);
+		border-color: #ef4444;
 	}
 
 	.question-header {
@@ -334,12 +352,17 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-md);
-		min-height: 48px;
+		min-height: 52px;
 	}
 
 	.alternative:hover:not(:disabled) {
 		border-color: var(--accent-primary);
 		box-shadow: var(--shadow-sm);
+	}
+
+	.alternative:active:not(:disabled) {
+		transform: scale(0.995);
+		background-color: var(--bg-tertiary);
 	}
 
 	.alternative.selected {
@@ -409,7 +432,8 @@
 
 	.discard-btn {
 		flex-shrink: 0;
-		width: 44px;
+		width: 48px;
+		min-height: 48px;
 		padding: var(--space-sm);
 		background-color: var(--bg-tertiary);
 		border: 1px solid var(--border-color);
@@ -491,8 +515,9 @@
 		}
 
 		.alternative {
-			padding: var(--space-xs) var(--space-sm);
+			padding: var(--space-sm);
 			gap: var(--space-sm);
+			min-height: 52px;
 		}
 
 		.alternative:hover:not(:disabled) {
@@ -511,19 +536,15 @@
 		}
 
 		.discard-btn {
-			width: 36px;
-			padding: var(--space-xs);
+			width: 48px;
+			min-height: 48px;
+			padding: var(--space-sm);
 		}
 	}
 
 	@media (max-width: 640px) {
 		.question-container {
 			padding: var(--space-md);
-		}
-
-		.discard-btn {
-			width: 32px;
-			padding: 4px;
 		}
 
 		.alternative-letter {

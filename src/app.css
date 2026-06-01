@@ -73,6 +73,10 @@
 
 	--max-width-content: 1200px;
 	--topbar-height: 64px;
+	--safe-area-inset-top: env(safe-area-inset-top, 0px);
+	--safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+	--safe-area-inset-left: env(safe-area-inset-left, 0px);
+	--safe-area-inset-right: env(safe-area-inset-right, 0px);
 
 	/* Transitions */
 	--transition-fast: 150ms ease;
@@ -263,6 +267,7 @@ button {
 	border-radius: var(--radius-md);
 	font-weight: 500;
 	transition: all var(--transition-fast);
+	min-height: 44px;
 }
 
 button:disabled {
@@ -273,6 +278,7 @@ button:disabled {
 .btn-primary {
 	background-color: var(--accent-primary);
 	color: white;
+	min-height: 44px;
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -284,10 +290,26 @@ button:disabled {
 	background-color: var(--bg-tertiary);
 	color: var(--text-primary);
 	border: 1px solid var(--border-color);
+	min-height: 44px;
 }
 
 .btn-secondary:hover:not(:disabled) {
 	background-color: var(--bg-secondary);
+}
+
+.btn-primary:active:not(:disabled),
+.btn-secondary:active:not(:disabled) {
+	transform: scale(0.98);
+}
+
+.touch-target {
+	min-width: 44px;
+	min-height: 44px;
+}
+
+.mobile-safe-padding {
+	padding-left: max(var(--space-md), var(--safe-area-inset-left));
+	padding-right: max(var(--space-md), var(--safe-area-inset-right));
 }
 
 input,

@@ -19,9 +19,13 @@
 		buildExamPath,
 		tryLoadExam
 	} from '$lib/utils/helpers';
+	import { isTauriMobileApp, isMobileWeb } from '$lib/utils/platform';
+	import { openUrl } from '@tauri-apps/plugin-opener';
 	import type { QuestionAlternative } from '$lib/models/question';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	let isTauriMobile = $state(false);
+	let isMobileWebBrowser = $state(false);
 	let isLoading = $state(true);
 	let showLoadModal = $state(false);
 	let showFinishConfirm = $state(false);
@@ -30,6 +34,8 @@
 	let showNewExamConfirm = $state(false);
 	let showReview = $state(false);
 	let showQuickFillModal = $state(false);
+	let showMobileWebPrintWarning = $state(false);
+	let showTauriMobilePrintWarning = $state(false);
 	let examId = $state<string | null>(null);
 	let pendingExamId = $state<string | null>(null);
 	let adsLoaded = $state(false);
@@ -42,13 +48,33 @@
 		}
 	}
 
-	function handleExport() {
+	function copyPrintLink() {
 		if (examStore.currentExam) {
-			window.open(
-				buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed),
-				'_blank'
-			);
+			const url = buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed);
+			const webUrl = `${BASE_URL}${url.split('tauri.localhost')[1] || url}`;
+			navigator.clipboard.writeText(webUrl);
+			alert('Link copiado! Abra no computador para imprimir.');
 		}
+		showTauriMobilePrintWarning = false;
+	}
+
+	function handleExport() {
+		if (!examStore.currentExam) {
+			return;
+		}
+
+		if (isTauriMobile) {
+			showTauriMobilePrintWarning = true;
+			return;
+		}
+
+		if (isMobileWebBrowser) {
+			showMobileWebPrintWarning = true;
+			return;
+		}
+
+		const url = buildExamUrl(examStore.currentExam.id, '/simulado/print', examStore.currentSeed);
+		window.open(url, '_blank');
 	}
 
 	function closeQuickFillModal() {
@@ -60,6 +86,9 @@
 	}
 
 	onMount(() => {
+		isTauriMobile = isTauriMobileApp();
+		isMobileWebBrowser = isMobileWeb();
+
 		examId = page.url.searchParams.get('id');
 		const seed = page.url.searchParams.get('seed') || undefined;
 		const savedExamData = examStore.getSavedExamData();
@@ -224,7 +253,7 @@
 
 	// Load ads when review is shown
 	$effect(() => {
-		if (showReview && !adsLoaded && ADS_ENABLED && adsPreferenceStore.enabled) {
+		if (showReview && !adsLoaded && ADS_ENABLED && !isTauriMobile && adsPreferenceStore.enabled) {
 			setTimeout(() => {
 				try {
 					const ads = document.querySelectorAll('.review-ad-wrapper .adsbygoogle');
@@ -251,7 +280,7 @@
 	<title>Simulado - Simulado EUF</title>
 	<meta name="description" content="Faça um simulado completo do EUF com 40 questões" />
 	<link rel="canonical" href={`${BASE_URL}/simulado/`} />
-	{#if ADS_ENABLED}
+	{#if ADS_ENABLED && !isTauriMobile}
 		<script
 			async
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT_ID}"
@@ -260,7 +289,7 @@
 	{/if}
 </svelte:head>
 
-<div class="exam-page">
+<div class="exam-page" class:tauri-mobile={isTauriMobile}>
 	{#if isLoading}
 		<div class="container loading-container">
 			<div class="loading-spinner">
@@ -301,7 +330,6 @@
 					onNewExam={handleGenerateExam}
 				/>
 			</div>
-			<Footer />
 		{:else}
 			<div class="container review-content">
 				<div class="review-header">
@@ -324,11 +352,12 @@
 											questionNumber={index + 1}
 											showCorrect={true}
 											showTags={true}
+											isIncorrect={!isCorrect}
 										/>
 									</div>
 
 									<!-- Show ad every 4 questions -->
-									{#if ADS_ENABLED && adsPreferenceStore.enabled && (index + 1) % 4 === 0}
+									{#if ADS_ENABLED && !isTauriMobile && adsPreferenceStore.enabled && (index + 1) % 4 === 0}
 										<div class="review-ad-container">
 											<p class="review-ad-message">
 												Ajude a manter o projeto gratuito visualizando alguns anúncios
@@ -404,7 +433,13 @@
 
 					<button
 						class="compact-action-btn export"
-						onclick={() => window.open('/assets/formulario.pdf', '_blank')}
+						onclick={() => {
+							if (isTauriMobile) {
+								openUrl(`${BASE_URL}/assets/formulario.pdf`);
+							} else {
+								window.open(`${BASE_URL}/assets/formulario.pdf`, '_blank');
+							}
+						}}
 						title="Acessar formulário"
 					>
 						<ClipboardList size={14} />
@@ -439,6 +474,10 @@
 		</div>
 	{/if}
 </div>
+
+{#if !isTauriMobile}
+	<Footer />
+{/if}
 
 {#if showQuickFillModal}
 	<QuickFillModal onClose={closeQuickFillModal} />
@@ -482,6 +521,50 @@
 	onCancel={() => (showNewExamConfirm = false)}
 />
 
+<Modal
+	open={showMobileWebPrintWarning}
+	title="Impressão Não Disponível"
+	onClose={() => (showMobileWebPrintWarning = false)}
+>
+	<div class="print-warning-content">
+		<p>
+			Infelizmente, navegadores mobile não conseguem imprimir simulados corretamente devido a
+			limitações técnicas.
+		</p>
+		<p><strong>Para imprimir:</strong></p>
+		<ul>
+			<li>Abra o site em um computador</li>
+			<li>Carregue este simulado usando o QR Code ou link</li>
+			<li>Clique em "Imprimir" no desktop</li>
+		</ul>
+		<button class="btn-primary" onclick={() => (showMobileWebPrintWarning = false)}>
+			Entendi
+		</button>
+	</div>
+</Modal>
+
+<Modal
+	open={showTauriMobilePrintWarning}
+	title="Imprimir no Desktop"
+	onClose={() => (showTauriMobilePrintWarning = false)}
+>
+	<div class="print-warning-content">
+		<p>A impressão funciona melhor no computador!</p>
+		<p><strong>Como fazer:</strong></p>
+		<ol>
+			<li>Copie o link do simulado</li>
+			<li>Abra no navegador do seu computador</li>
+			<li>A impressão será aberta automaticamente</li>
+		</ol>
+		<div class="print-warning-actions">
+			<button class="btn-primary" onclick={copyPrintLink}> Copiar Link para Desktop </button>
+			<button class="btn-secondary" onclick={() => (showTauriMobilePrintWarning = false)}>
+				Cancelar
+			</button>
+		</div>
+	</div>
+</Modal>
+
 {#if examStore.currentExam}
 	<Modal
 		open={showShareModal}
@@ -507,6 +590,10 @@
 		min-height: 100vh;
 		background-color: var(--bg-primary);
 		padding-top: var(--space-lg);
+	}
+
+	.exam-page.tauri-mobile {
+		padding-top: calc(var(--safe-area-inset-top) + var(--space-lg));
 	}
 
 	.exam-start {
@@ -546,6 +633,7 @@
 
 	.start-actions button {
 		width: 100%;
+		min-height: 48px;
 	}
 
 	.exam-info {
@@ -601,6 +689,10 @@
 		padding: var(--space-lg) 0;
 	}
 
+	.exam-controls button {
+		min-height: 48px;
+	}
+
 	.compact-sidebar-actions {
 		display: flex;
 		gap: var(--space-xs);
@@ -621,6 +713,7 @@
 		transition: all var(--transition-fast);
 		cursor: pointer;
 		border: 1px solid;
+		min-height: 44px;
 	}
 
 	.compact-action-btn span {
@@ -736,10 +829,9 @@
 	}
 
 	.review-question.incorrect {
-		padding: var(--space-lg);
-		background-color: var(--error-light);
-		border-radius: var(--radius-lg);
-		border: 2px solid var(--error);
+		border-left: 4px solid var(--error);
+		padding-left: var(--space-md);
+		margin-left: 0;
 	}
 
 	.share-modal-content {
@@ -766,6 +858,48 @@
 	.copy-link-btn {
 		width: 100%;
 		max-width: 300px;
+	}
+
+	.print-warning-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		padding: var(--space-md);
+	}
+
+	.print-warning-content p {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--text-secondary);
+	}
+
+	.print-warning-content strong {
+		color: var(--text-primary);
+		display: block;
+		margin-top: var(--space-sm);
+	}
+
+	.print-warning-content ul,
+	.print-warning-content ol {
+		margin: var(--space-xs) 0 0 0;
+		padding-left: var(--space-xl);
+		color: var(--text-secondary);
+	}
+
+	.print-warning-content li {
+		margin: var(--space-xs) 0;
+		line-height: 1.5;
+	}
+
+	.print-warning-actions {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		margin-top: var(--space-md);
+	}
+
+	.print-warning-actions button {
+		width: 100%;
 	}
 
 	.loading-container {
@@ -890,6 +1024,42 @@
 		.compact-action-btn span {
 			font-size: 0.6rem;
 		}
+	}
+
+	.exam-page.tauri-mobile .exam-main {
+		padding-bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-2xl));
+	}
+
+	.exam-page.tauri-mobile .exam-controls {
+		position: fixed;
+		left: var(--space-md);
+		right: var(--space-md);
+		bottom: calc(72px + var(--safe-area-inset-bottom) + var(--space-sm));
+		z-index: 110;
+		padding: var(--space-sm);
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-lg);
+		background-color: color-mix(in srgb, var(--bg-primary) 96%, transparent);
+		backdrop-filter: blur(8px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.exam-page.tauri-mobile .compact-sidebar-actions {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: var(--space-xs);
+	}
+
+	.exam-page.tauri-mobile .compact-action-btn {
+		flex: 1;
+		min-width: 0;
+		flex-direction: column;
+		padding: var(--space-xs);
+		font-size: 0.65rem;
+	}
+
+	.exam-page.tauri-mobile .compact-action-btn span {
+		font-size: 0.6rem;
 	}
 
 	@media (max-width: 640px) {
