@@ -437,7 +437,7 @@
 							if (isTauriMobile) {
 								openUrl(`${BASE_URL}/assets/formulario.pdf`);
 							} else {
-								window.open(`${BASE_URL}/assets/formulario.pdf`, '_blank');
+								window.open(`/assets/formulario.pdf`, '_blank');
 							}
 						}}
 						title="Acessar formulário"

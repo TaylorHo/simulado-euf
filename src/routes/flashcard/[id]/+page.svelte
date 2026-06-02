@@ -108,7 +108,7 @@
 		}
 
 		// When clicking "Próxima Questão" after revealing answer, show interstitial ad if enabled
-		if (ADS_ENABLED && adsPreferenceStore.enabled) {
+		if (ADS_ENABLED && adsPreferenceStore.enabled && !isTauriMobile) {
 			// Check if answer was correct
 			wasCorrectAnswer = flashcardStore.selectedAnswer === flashcardStore.currentQuestion?.correct;
 

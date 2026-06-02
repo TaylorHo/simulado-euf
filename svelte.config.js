@@ -7,7 +7,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: getAdapter(process.env.ADAPTER),
+		adapter: getAdapter(process.env.TARGET),
 		prerender: {
 			origin: 'https://euf.hoffmann.io'
 		}
@@ -16,16 +16,12 @@ const config = {
 
 function getAdapter(adapter) {
 	switch (adapter) {
-		case 'vercel':
-			return vercelAdapter();
-		case 'static':
+		case 'mobile':
 			return staticAdapter({
 				fallback: 'index.html'
 			});
 		default:
-			return staticAdapter({
-				fallback: 'index.html'
-			});
+			return vercelAdapter();
 	}
 }
 
