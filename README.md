@@ -11,7 +11,7 @@ Visite o site oficial: [euf.hoffmann.io](https://euf.hoffmann.io)
 - **Gerador de simulados:** Monte provas personalizadas utilizando questões de edições anteriores do EUF.
 - **Flashcards de estudo:** Revise conceitos e fórmulas de forma rápida e iterativa.
 - **Simulados nnline ou impressos:** Resolva diretamente no navegador ou imprima para uma experiência mais próxima da prova real.
-- **Correção Automática via foto da folha de respostas:** Ao imprimir o simulado, uma folha de respostas com QR Code é gerada. Basta usar a câmera do celular/computador para ler a folha preenchida e obter o resultado instantaneamente (tecnologia OMR).
+- **Correção agilizada da folha de respostas:** Ao imprimir o simulado, uma folha de respostas com QR Code é gerada. A página web tem uma versão igual dessa página, para conseguir preencher rapidamente as respostas marcadas na versão impressa.
 
 ## 🛠️ Tecnologias
 

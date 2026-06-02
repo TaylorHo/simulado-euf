@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Heart, HeartCrack } from '@lucide/svelte';
-	import { ADS_ENABLED } from '$lib/variables';
+	import { ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import GitHub from './icons/GitHub.svelte';
@@ -39,6 +39,9 @@
 			</a>
 		</p>
 		<p class="footer-subtext">Simulador baseado em questões reais do Exame Unificado de Física</p>
+		<a class="footer-subtext" href={isTauriMobile ? `${BASE_URL}/privacy/` : '/privacy/'}
+			>Política de Privacidade</a
+		>
 
 		{#if ADS_ENABLED && !isTauriMobile}
 			<div class="ads-toggle">
