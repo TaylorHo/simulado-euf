@@ -174,12 +174,8 @@
 		min-height: unset;
 		padding: var(--space-md) var(--space-lg);
 		border-radius: var(--radius-lg);
-		background: linear-gradient(
-			135deg,
-			color-mix(in srgb, var(--accent-primary) 14%, var(--bg-secondary)),
-			var(--bg-secondary)
-		);
-		border: 1px solid color-mix(in srgb, var(--accent-primary) 28%, var(--border-light));
+		background-color: color-mix(in srgb, var(--accent-primary) 10%, var(--bg-primary));
+		border: 1px solid color-mix(in srgb, var(--accent-primary) 22%, var(--border-light));
 		color: var(--text-primary);
 		cursor: pointer;
 		text-align: left;
@@ -266,13 +262,5 @@
 
 	.landing-footer a:hover {
 		color: var(--accent-primary);
-	}
-
-	:global([data-theme='dark']) .qr-callout {
-		background: linear-gradient(
-			135deg,
-			color-mix(in srgb, var(--accent-primary) 18%, var(--bg-secondary)),
-			var(--bg-secondary)
-		);
 	}
 </style>
