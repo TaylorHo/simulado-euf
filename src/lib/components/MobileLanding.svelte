@@ -7,12 +7,23 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
 	import { BookOpen, ChevronRight, FileText, Moon, QrCode, Sun } from '@lucide/svelte';
+	import AnnouncementCallout from '$lib/components/AnnouncementCallout.svelte';
+	import { fetchLatestAnnouncement } from '$lib/announcements/fetchLatestAnnouncement';
+	import type { Announcement } from '$lib/models/announcement';
+	import { onMount } from 'svelte';
 
 	let showQRModal = $state(false);
 	let isDark = $state(false);
+	let latestAnnouncement = $state<Announcement | null>(null);
 
 	themeStore.subscribe((value) => {
 		isDark = value;
+	});
+
+	onMount(() => {
+		fetchLatestAnnouncement().then((result) => {
+			latestAnnouncement = result.latest;
+		});
 	});
 
 	function handleScanQR() {
@@ -53,6 +64,7 @@
 	</header>
 
 	<div class="landing-body">
+		<AnnouncementCallout announcement={latestAnnouncement} variant="mobile" />
 		<button class="qr-callout" onclick={handleScanQR}>
 			<div class="qr-callout-icon">
 				<QrCode size={22} strokeWidth={1.5} />

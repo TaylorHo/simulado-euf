@@ -8,6 +8,9 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import QRScanner from '$lib/components/QRScanner.svelte';
 	import MobileLanding from '$lib/components/MobileLanding.svelte';
+	import AnnouncementCallout from '$lib/components/AnnouncementCallout.svelte';
+	import { announcements } from '$lib/data/announcements';
+	import { getLatestActiveAnnouncement } from '$lib/announcements/helpers';
 	import {
 		FileText,
 		Target,
@@ -33,6 +36,8 @@
 
 	let showQRModal = $state(false);
 	let isTauriMobile = $state(false);
+
+	const latestAnnouncement = getLatestActiveAnnouncement(announcements);
 
 	onMount(() => {
 		isTauriMobile = isTauriMobileApp();
@@ -79,6 +84,7 @@
 		<!-- Hero Section -->
 		<section class="hero">
 			<div class="container">
+				<AnnouncementCallout announcement={latestAnnouncement} variant="web" />
 				<a href="/changelog/" class="fixes-cta">
 					<span>Ver correções e melhorias recentes</span>
 					<ExternalLink size={14} aria-hidden="true" />
