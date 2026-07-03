@@ -13,4 +13,4 @@ export const GET: RequestHandler = async () => {
 	});
 };
 
-export const prerender = true;
+export const prerender = false;

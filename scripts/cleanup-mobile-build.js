@@ -13,6 +13,7 @@ const itemsToRemove = [
 	'robots.txt',
 	'sitemap.xml',
 	'privacy/',
+	'announcements.json',
 	'simulado/print/'
 ];
 
