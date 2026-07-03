@@ -1,6 +1,6 @@
 {
 	"name": "simulado-euf",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"author": "Taylor Hoffmann <taylor@hoffmann.io>",
 	"repository": {
@@ -15,7 +15,7 @@
 		"build:web": "vite build",
 		"build:mobile": "TARGET=mobile vite build && node scripts/cleanup-mobile-build.js",
 		"build:app": "tauri android build --aab && pnpm get-native-libs",
-		"get-native-libs": "rm merged_native_libs.zip && cd ./src-tauri/gen/android/app/build/intermediates/merged_native_libs/universalRelease/mergeUniversalReleaseNativeLibs/out/lib/ && zip -r ./../../../../../../../../../../../merged_native_libs.zip ./",
+		"get-native-libs": "rm -f merged_native_libs.zip && cd ./src-tauri/gen/android/app/build/intermediates/merged_native_libs/universalRelease/mergeUniversalReleaseNativeLibs/out/lib/ && zip -r ./../../../../../../../../../../../merged_native_libs.zip ./",
 		"prepare": "svelte-kit sync || echo '' && git config --local core.hooksPath .hooks/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
