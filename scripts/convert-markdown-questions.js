@@ -52,8 +52,10 @@ const QUESTION_CODE_RE = /^([a-z]+)(PT)(\d+)([ab])$/i;
 const ALTERNATIVE_RE = /^- ([a-e])\) (.*)$/;
 
 /** @param {string} text */
-function escapeTsString(text) {
-	return text.replaceAll('\\', '\\\\').replaceAll("'", "\\'");
+function formatTsText(text) {
+	const escaped = text.replaceAll('`', '\\`').replaceAll('${', '\\${');
+
+	return `String.raw\`${escaped}\``;
 }
 
 /**
@@ -187,11 +189,11 @@ function generateTypeScriptFile(questions, edition) {
 			const alternativeBlocks = ['a', 'b', 'c', 'd', 'e']
 				.map((letter) => {
 					const altEnum = letter.toUpperCase();
-					return `\t\t\t{\n\t\t\t\ttext: '${escapeTsString(question.alternatives[letter])}',\n\t\t\t\tnumber: QuestionAlternative.${altEnum}\n\t\t\t}`;
+					return `\t\t\t{\n\t\t\t\ttext: ${formatTsText(question.alternatives[letter])},\n\t\t\t\tnumber: QuestionAlternative.${altEnum}\n\t\t\t}`;
 				})
 				.join(',\n');
 
-			return `\t{\n\t\t...defaultData,\n\t\tversion: Version.${question.version},\n\t\tarea: Area.${question.area},\n\t\thelp: {\n\t\t\tyoutubeVideoId: videos[Area.${question.area}]\n\t\t},\n\t\tquestionNumber: ${question.questionNumber},\n\t\tstatement: {\n\t\t\ttext: '${escapeTsString(question.statement)}'\n\t\t},\n\t\talternatives: [\n${alternativeBlocks}\n\t\t]\n\t}`;
+			return `\t{\n\t\t...defaultData,\n\t\tversion: Version.${question.version},\n\t\tarea: Area.${question.area},\n\t\thelp: {\n\t\t\tyoutubeVideoId: videos[Area.${question.area}]\n\t\t},\n\t\tquestionNumber: ${question.questionNumber},\n\t\tstatement: {\n\t\t\ttext: ${formatTsText(question.statement)}\n\t\t},\n\t\talternatives: [\n${alternativeBlocks}\n\t\t]\n\t}`;
 		})
 		.join(',\n');
 

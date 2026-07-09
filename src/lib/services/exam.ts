@@ -116,10 +116,10 @@ export class ExamService {
 		});
 
 		// Sort questions by area
-		const sortedQuestions = questions.sort((a, b) => a.area - b.area);
+		questions.sort((a, b) => a.area - b.area);
 
 		// Convert to ExamQuestion format with deterministically shuffled alternatives
-		const examQuestions: ExamQuestion[] = sortedQuestions.map((q) => ({
+		const examQuestions: ExamQuestion[] = questions.map((q) => ({
 			...q,
 			alternatives: shuffleAlternatives([...q.alternatives], q, shuffleSeed),
 			selected: null,

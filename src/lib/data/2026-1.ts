@@ -28,28 +28,28 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um recipiente muito longo de massa $m_0$ move-se sobre um plano horizontal sem atrito com velocidade constante $v_0$ quando, no instante $t = 0$, adentra uma região onde, sobre ele, é despejado verticalmente um líquido a uma taxa constante $\\gamma > 0$ (massa por unidade de tempo), como ilustra a figura. Considere que o choque do líquido com o recipiente é perfeitamente inelástico. Sendo $x$ a posição do recipiente e $\\dot{x}$ sua velocidade, indique a alternativa que contém a equação correta do movimento.',
+			text: String.raw`Um recipiente muito longo de massa $m_0$ move-se sobre um plano horizontal sem atrito com velocidade constante $v_0$ quando, no instante $t = 0$, adentra uma região onde, sobre ele, é despejado verticalmente um líquido a uma taxa constante $\gamma > 0$ (massa por unidade de tempo), como ilustra a figura. Considere que o choque do líquido com o recipiente é perfeitamente inelástico. Sendo $x$ a posição do recipiente e $\dot{x}$ sua velocidade, indique a alternativa que contém a equação correta do movimento.`,
 			image: '2026-1/mc-1a.webp'
 		},
 		alternatives: [
 			{
-				text: '$(m_0 + \\gamma t)\\ddot{x} + \\gamma\\dot{x} = 0$',
+				text: String.raw`$(m_0 + \gamma t)\ddot{x} + \gamma\dot{x} = 0$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$(m_0 - \\gamma t)\\ddot{x} - \\gamma v_0 = 0$',
+				text: String.raw`$(m_0 - \gamma t)\ddot{x} - \gamma v_0 = 0$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$m_0\\dot{v} = -\\gamma \\dot{x}$',
+				text: String.raw`$m_0\dot{v} = -\gamma \dot{x}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$m_0\\ddot{x} = \\gamma v_0$',
+				text: String.raw`$m_0\ddot{x} = \gamma v_0$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\gamma t \\dot{x} = -m_0 v_0$',
+				text: String.raw`$\gamma t \dot{x} = -m_0 v_0$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -63,28 +63,28 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um recipiente de massa $m_0$ move-se sobre um plano horizontal sem atrito com velocidade constante $v_0$ quando, no instante $t = 0$, o líquido nele contido começa a vazar, perdendo massa a uma taxa constante $-\\gamma < 0$ (massa por unidade de tempo), como ilustra a figura. Considere que o líquido sai do recipiente com velocidade puramente vertical no referencial do recipiente. Sendo $x$ a posição do recipiente e $\\dot{x}$ sua velocidade, indique a alternativa que contém a equação correta do movimento.',
+			text: String.raw`Um recipiente de massa $m_0$ move-se sobre um plano horizontal sem atrito com velocidade constante $v_0$ quando, no instante $t = 0$, o líquido nele contido começa a vazar, perdendo massa a uma taxa constante $-\gamma < 0$ (massa por unidade de tempo), como ilustra a figura. Considere que o líquido sai do recipiente com velocidade puramente vertical no referencial do recipiente. Sendo $x$ a posição do recipiente e $\dot{x}$ sua velocidade, indique a alternativa que contém a equação correta do movimento.`,
 			image: '2026-1/mc-1b.webp'
 		},
 		alternatives: [
 			{
-				text: '$(m_0 - \\gamma t)\\ddot{x} - \\gamma\\dot{x} = 0$',
+				text: String.raw`$(m_0 - \gamma t)\ddot{x} - \gamma\dot{x} = 0$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$(m_0 + \\gamma t)\\ddot{x} + \\gamma v_0 = 0$',
+				text: String.raw`$(m_0 + \gamma t)\ddot{x} + \gamma v_0 = 0$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$m_0\\dot{v} = -\\gamma v$',
+				text: String.raw`$m_0\dot{v} = -\gamma v$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$m_0\\ddot{x} = \\gamma v_0$',
+				text: String.raw`$m_0\ddot{x} = \gamma v_0$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\gamma t \\dot{x} = m_0 v_0$',
+				text: String.raw`$\gamma t \dot{x} = m_0 v_0$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -98,28 +98,28 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Um vagão de massa $M$ pode mover-se sem atrito ao longo de trilhos horizontais retilíneos. Dentro dele há um bloco de massa $m$ conectado às paredes por molas idênticas de constante $k$ e de massa desprezível (veja a figura). Considerando oscilações de pequenas amplitudes e desprezando o atrito entre o vagão e o bloco, a frequência angular $\\omega$ de oscilação do sistema é',
+			text: String.raw`Um vagão de massa $M$ pode mover-se sem atrito ao longo de trilhos horizontais retilíneos. Dentro dele há um bloco de massa $m$ conectado às paredes por molas idênticas de constante $k$ e de massa desprezível (veja a figura). Considerando oscilações de pequenas amplitudes e desprezando o atrito entre o vagão e o bloco, a frequência angular $\omega$ de oscilação do sistema é`,
 			image: '2026-1/mc-2a.webp'
 		},
 		alternatives: [
 			{
-				text: '$\\omega = \\sqrt{\\left(1 + \\frac{m}{M}\\right)\\frac{2k}{m}}$',
+				text: String.raw`$\omega = \sqrt{\left(1 + \frac{m}{M}\right)\frac{2k}{m}}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{M}\\right)\\sqrt{\\frac{2k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{M}\right)\sqrt{\frac{2k}{m}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{2M}\\right)\\sqrt{\\frac{2k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{2M}\right)\sqrt{\frac{2k}{m}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\omega = \\sqrt{\\left(1 + \\frac{m}{2M}\\right)\\frac{2k}{m}}$',
+				text: String.raw`$\omega = \sqrt{\left(1 + \frac{m}{2M}\right)\frac{2k}{m}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{M}\\right)^2 \\sqrt{\\frac{2k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{M}\right)^2 \sqrt{\frac{2k}{m}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -133,28 +133,28 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Um vagão de massa $M$ pode mover-se sem atrito ao longo de trilhos horizontais retilíneos. Dentro dele há um bloco de massa $m$ conectado a uma das paredes por uma mola de constante $k$ e de massa desprezível (veja a figura). Considerando oscilações de pequenas amplitudes e desprezando o atrito entre o vagão e o bloco, a frequência angular $\\omega$ de oscilação do sistema é',
+			text: String.raw`Um vagão de massa $M$ pode mover-se sem atrito ao longo de trilhos horizontais retilíneos. Dentro dele há um bloco de massa $m$ conectado a uma das paredes por uma mola de constante $k$ e de massa desprezível (veja a figura). Considerando oscilações de pequenas amplitudes e desprezando o atrito entre o vagão e o bloco, a frequência angular $\omega$ de oscilação do sistema é`,
 			image: '2026-1/mc-2b.webp'
 		},
 		alternatives: [
 			{
-				text: '$\\omega = \\sqrt{\\left(1 + \\frac{m}{M}\\right)\\frac{k}{m}}$',
+				text: String.raw`$\omega = \sqrt{\left(1 + \frac{m}{M}\right)\frac{k}{m}}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{M}\\right)\\sqrt{\\frac{k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{M}\right)\sqrt{\frac{k}{m}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{2M}\\right)\\sqrt{\\frac{k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{2M}\right)\sqrt{\frac{k}{m}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\omega = \\sqrt{\\left(1 + \\frac{m}{2M}\\right)\\frac{k}{m}}$',
+				text: String.raw`$\omega = \sqrt{\left(1 + \frac{m}{2M}\right)\frac{k}{m}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\omega = \\left(1 + \\frac{m}{M}\\right)^2 \\sqrt{\\frac{k}{m}}$',
+				text: String.raw`$\omega = \left(1 + \frac{m}{M}\right)^2 \sqrt{\frac{k}{m}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -168,7 +168,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma haste muito fina e homogênea de massa $m$ e comprimento $L$ está inicialmente na posição vertical sobre uma superfície horizontal. A haste é perturbada e começa a cair, descrevendo um movimento no plano $xy$, com o eixo $y$ orientado verticalmente para cima. Sendo $g$ a aceleração da gravidade, $\\mu$ o coeficiente de atrito cinético entre a haste e a superfície e $\\theta$ o ângulo que a haste faz com a superfície, e desprezando a resistência do ar, considere as afirmações a seguir.<br/><br/><ul><li>I. Genericamente quando confinada ao plano $xy$, a haste possui 3 graus de liberdade: $x_{\\text{cm}}$, $y_{\\text{cm}}$ e $\\theta$, onde $(x_{\\text{cm}}, y_{\\text{cm}})$ é a posição do centro de massa da haste.</li><li>II. Se haste não deslizar e mantiver o contato com a superfície, o sistema tem apenas 1 grau de liberdade independente e a lagrangiana correspondente é $\\mathcal{L} = \\frac{1}{6}mL^2\\dot{\\theta}^2 - \\frac{1}{2}mgL\\sin\\theta$.</li><li>III. Se a haste deslizar mantendo o contato com a superfície, o sistema tem apenas 2 graus de liberdade independentes e a lagrangiana correspondente é $\\mathcal{L} = \\frac{1}{6}mL^2\\dot{\\theta}^2 - mg\\left(\\frac{1}{2}L\\sin\\theta + \\mu x_{\\text{cm}}\\right)$.</li></ul><br/>Selecione a alternativa verdadeira.'
+			text: String.raw`Uma haste muito fina e homogênea de massa $m$ e comprimento $L$ está inicialmente na posição vertical sobre uma superfície horizontal. A haste é perturbada e começa a cair, descrevendo um movimento no plano $xy$, com o eixo $y$ orientado verticalmente para cima. Sendo $g$ a aceleração da gravidade, $\mu$ o coeficiente de atrito cinético entre a haste e a superfície e $\theta$ o ângulo que a haste faz com a superfície, e desprezando a resistência do ar, considere as afirmações a seguir.<br/><br/><ul><li>I. Genericamente quando confinada ao plano $xy$, a haste possui 3 graus de liberdade: $x_{\text{cm}}$, $y_{\text{cm}}$ e $\theta$, onde $(x_{\text{cm}}, y_{\text{cm}})$ é a posição do centro de massa da haste.</li><li>II. Se haste não deslizar e mantiver o contato com a superfície, o sistema tem apenas 1 grau de liberdade independente e a lagrangiana correspondente é $\mathcal{L} = \frac{1}{6}mL^2\dot{\theta}^2 - \frac{1}{2}mgL\sin\theta$.</li><li>III. Se a haste deslizar mantendo o contato com a superfície, o sistema tem apenas 2 graus de liberdade independentes e a lagrangiana correspondente é $\mathcal{L} = \frac{1}{6}mL^2\dot{\theta}^2 - mg\left(\frac{1}{2}L\sin\theta + \mu x_{\text{cm}}\right)$.</li></ul><br/>Selecione a alternativa verdadeira.`
 		},
 		alternatives: [
 			{
@@ -202,7 +202,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma haste muito fina e homogênea de massa $m$ e comprimento $L$ está inicialmente na posição vertical sobre uma superfície horizontal. A haste é perturbada e começa a cair, descrevendo um movimento no plano $xy$, sendo o eixo $y$ orientado verticalmente para cima. Sendo $g$ a aceleração da gravidade, $\\mu$ o coeficiente de atrito cinético entre a haste e a superfície e $\\theta$ o ângulo que a haste faz com a superfície, e desprezando a resistência do ar, considere as afirmações a seguir.<br/><br/><ul><li>I. Genericamente quando confinada ao plano $xy$, a haste possui 3 graus de liberdade: $x_A$, $y_A$ e $\\theta$, onde $(x_A, y_A)$ é a posição de uma das extremidades da haste.</li><li>II. Se a haste deslizar mantendo o contato com a superfície, o sistema tem apenas 2 graus de liberdade independentes e a lagrangiana correspondente é $\\mathcal{L} = \\frac{1}{6}mL^2\\dot{\\theta}^2 - mg\\left(\\frac{1}{2}L\\sin\\theta + \\mu x_A\\right)$.</li><li>III. Se a haste não deslizar e mantiver o contato com a superfície, o sistema tem apenas 1 grau de liberdade independente e a lagrangiana correspondente é $\\mathcal{L} = \\frac{1}{6}mL^2\\dot{\\theta}^2 - \\frac{1}{2}mgL\\sin\\theta$.</li></ul><br/>Selecione a alternativa verdadeira.'
+			text: String.raw`Uma haste muito fina e homogênea de massa $m$ e comprimento $L$ está inicialmente na posição vertical sobre uma superfície horizontal. A haste é perturbada e começa a cair, descrevendo um movimento no plano $xy$, sendo o eixo $y$ orientado verticalmente para cima. Sendo $g$ a aceleração da gravidade, $\mu$ o coeficiente de atrito cinético entre a haste e a superfície e $\theta$ o ângulo que a haste faz com a superfície, e desprezando a resistência do ar, considere as afirmações a seguir.<br/><br/><ul><li>I. Genericamente quando confinada ao plano $xy$, a haste possui 3 graus de liberdade: $x_A$, $y_A$ e $\theta$, onde $(x_A, y_A)$ é a posição de uma das extremidades da haste.</li><li>II. Se a haste deslizar mantendo o contato com a superfície, o sistema tem apenas 2 graus de liberdade independentes e a lagrangiana correspondente é $\mathcal{L} = \frac{1}{6}mL^2\dot{\theta}^2 - mg\left(\frac{1}{2}L\sin\theta + \mu x_A\right)$.</li><li>III. Se a haste não deslizar e mantiver o contato com a superfície, o sistema tem apenas 1 grau de liberdade independente e a lagrangiana correspondente é $\mathcal{L} = \frac{1}{6}mL^2\dot{\theta}^2 - \frac{1}{2}mgL\sin\theta$.</li></ul><br/>Selecione a alternativa verdadeira.`
 		},
 		alternatives: [
 			{
@@ -236,28 +236,28 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'A figura ilustra uma barra muito fina de comprimento $L$ e perfeitamente rígida que pode girar livremente no plano $xy$, em torno de um eixo que passa pelo ponto $O$. As extremidades da barra estão em contato com molas idênticas de constante $k$, como ilustra a figura. Uma força (de módulo muito pequeno) $F\\hat{y}$ atua sobre a barra, como ilustrado. A magnitude da força externa sobre a extremidade $A$ da barra é:',
+			text: String.raw`A figura ilustra uma barra muito fina de comprimento $L$ e perfeitamente rígida que pode girar livremente no plano $xy$, em torno de um eixo que passa pelo ponto $O$. As extremidades da barra estão em contato com molas idênticas de constante $k$, como ilustra a figura. Uma força (de módulo muito pequeno) $F\hat{y}$ atua sobre a barra, como ilustrado. A magnitude da força externa sobre a extremidade $A$ da barra é:`,
 			image: '2026-1/mc-4.webp'
 		},
 		alternatives: [
 			{
-				text: '$\\frac{2}{5}F$',
+				text: String.raw`$\frac{2}{5}F$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{1}{5}F$',
+				text: String.raw`$\frac{1}{5}F$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{1}{4}F$',
+				text: String.raw`$\frac{1}{4}F$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{3}{8}F$',
+				text: String.raw`$\frac{3}{8}F$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{4}{5}F$',
+				text: String.raw`$\frac{4}{5}F$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -271,28 +271,28 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'A figura ilustra uma barra muito fina de comprimento $L$ e perfeitamente rígida que pode girar livremente no plano $xy$, em torno de um eixo que passa pelo ponto $O$. As extremidades da barra estão em contato com molas idênticas de constante $k$, como ilustra a figura. Uma força (de módulo muito pequeno) $F\\hat{y}$ atua sobre a barra, como ilustrado. A magnitude da força externa sobre a extremidade $B$ da barra é',
+			text: String.raw`A figura ilustra uma barra muito fina de comprimento $L$ e perfeitamente rígida que pode girar livremente no plano $xy$, em torno de um eixo que passa pelo ponto $O$. As extremidades da barra estão em contato com molas idênticas de constante $k$, como ilustra a figura. Uma força (de módulo muito pequeno) $F\hat{y}$ atua sobre a barra, como ilustrado. A magnitude da força externa sobre a extremidade $B$ da barra é`,
 			image: '2026-1/mc-4.webp'
 		},
 		alternatives: [
 			{
-				text: '$\\frac{1}{5}F$',
+				text: String.raw`$\frac{1}{5}F$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{2}{5}F$',
+				text: String.raw`$\frac{2}{5}F$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{1}{4}F$',
+				text: String.raw`$\frac{1}{4}F$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{3}{8}F$',
+				text: String.raw`$\frac{3}{8}F$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{4}{5}F$',
+				text: String.raw`$\frac{4}{5}F$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -306,27 +306,27 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Considere uma partícula de massa $m$ movendo-se sob ação de um potencial central<br/><br/>$$V(r) = -\\frac{V_0}{r} + \\frac{V_1}{r^2},$$<br/>onde $V_0$ e $V_1$ são constantes positivas e $r = |\\mathbf{r}|$. Suponha que o movimento da partícula seja tal que seu momento angular tenha módulo $L$. Nessas condições, determine o raio $r_0$ de uma órbita circular da partícula.'
+			text: String.raw`Considere uma partícula de massa $m$ movendo-se sob ação de um potencial central<br/><br/>$$V(r) = -\frac{V_0}{r} + \frac{V_1}{r^2},$$<br/>onde $V_0$ e $V_1$ são constantes positivas e $r = |\mathbf{r}|$. Suponha que o movimento da partícula seja tal que seu momento angular tenha módulo $L$. Nessas condições, determine o raio $r_0$ de uma órbita circular da partícula.`
 		},
 		alternatives: [
 			{
-				text: '$r_0 = \\frac{1}{V_0}\\left(\\frac{L^2}{m} + 2V_1\\right)$',
+				text: String.raw`$r_0 = \frac{1}{V_0}\left(\frac{L^2}{m} + 2V_1\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$r_0 = \\frac{2V_1}{V_0}$',
+				text: String.raw`$r_0 = \frac{2V_1}{V_0}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$r_0 = \\frac{1}{V_0}\\left(\\frac{2L^2}{m} + V_1\\right)$',
+				text: String.raw`$r_0 = \frac{1}{V_0}\left(\frac{2L^2}{m} + V_1\right)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$r_0 = \\frac{1}{V_0}\\frac{L^2}{m}$',
+				text: String.raw`$r_0 = \frac{1}{V_0}\frac{L^2}{m}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$r_0 = \\frac{1}{V_0}\\left(\\frac{L^2}{m} + V_1\\right)$',
+				text: String.raw`$r_0 = \frac{1}{V_0}\left(\frac{L^2}{m} + V_1\right)$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -340,27 +340,27 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Considere uma partícula de massa $m$ movendo-se sob ação de um potencial central<br/><br/>$$V(r) = \\frac{1}{2}kr^2 + \\frac{1}{2}\\gamma r^{-2},$$<br/>onde $k$ e $\\gamma$ são constantes positivas e $r = |\\mathbf{r}|$. Suponha que o movimento da partícula seja tal que seu momento angular tenha módulo $L$. Nessas condições, determine o raio $r_0$ de uma órbita circular da partícula.'
+			text: String.raw`Considere uma partícula de massa $m$ movendo-se sob ação de um potencial central<br/><br/>$$V(r) = \frac{1}{2}kr^2 + \frac{1}{2}\gamma r^{-2},$$<br/>onde $k$ e $\gamma$ são constantes positivas e $r = |\mathbf{r}|$. Suponha que o movimento da partícula seja tal que seu momento angular tenha módulo $L$. Nessas condições, determine o raio $r_0$ de uma órbita circular da partícula.`
 		},
 		alternatives: [
 			{
-				text: '$r_0 = \\left[\\frac{1}{k} \\left(\\frac{L^2}{m} + \\gamma\\right)\\right]^{1/4}$',
+				text: String.raw`$r_0 = \left[\frac{1}{k} \left(\frac{L^2}{m} + \gamma\right)\right]^{1/4}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$r_0 = \\left[\\frac{1}{k} \\left(\\frac{L^2}{m} + \\gamma\\right)\\right]^{1/2}$',
+				text: String.raw`$r_0 = \left[\frac{1}{k} \left(\frac{L^2}{m} + \gamma\right)\right]^{1/2}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$r_0 = \\left(\\frac{\\gamma}{k}\\right)^{1/4}$',
+				text: String.raw`$r_0 = \left(\frac{\gamma}{k}\right)^{1/4}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$r_0 = \\left(\\frac{\\gamma}{k}\\right)^{1/2}$',
+				text: String.raw`$r_0 = \left(\frac{\gamma}{k}\right)^{1/2}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$r_0 = \\left(\\frac{L^2}{mk}\\right)^{1/4}$',
+				text: String.raw`$r_0 = \left(\frac{L^2}{mk}\right)^{1/4}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -374,28 +374,28 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma barra delgada e homogênea, de comprimento $L$ e massa $m$, está presa por uma de suas extremidades a um eixo fixo no teto, podendo girar livremente em torno desse eixo. Na outra extremidade da barra, está presa uma partícula de massa $M = m$, conforme ilustrado na figura. O sistema "barra + partícula" é solto a partir do repouso, com a barra formando um ângulo de $90^{\\circ}$ com a vertical. Determine a velocidade angular $\\omega$ do conjunto no instante em que a barra passa pela posição vertical ($0^{\\circ}$ com a vertical). Adote $g$ como a aceleração da gravidade e despreze as perdas de energia por atrito. Considere $I_b = \\frac{mL^2}{3}$ como o momento de inércia da barra em torno de um eixo que passa por uma de suas extremidades.',
+			text: String.raw`Uma barra delgada e homogênea, de comprimento $L$ e massa $m$, está presa por uma de suas extremidades a um eixo fixo no teto, podendo girar livremente em torno desse eixo. Na outra extremidade da barra, está presa uma partícula de massa $M = m$, conforme ilustrado na figura. O sistema "barra + partícula" é solto a partir do repouso, com a barra formando um ângulo de $90^{\circ}$ com a vertical. Determine a velocidade angular $\omega$ do conjunto no instante em que a barra passa pela posição vertical ($0^{\circ}$ com a vertical). Adote $g$ como a aceleração da gravidade e despreze as perdas de energia por atrito. Considere $I_b = \frac{mL^2}{3}$ como o momento de inércia da barra em torno de um eixo que passa por uma de suas extremidades.`,
 			image: '2026-1/mc-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$\\omega = \\frac{3}{2}\\sqrt{\\frac{g}{L}}$',
+				text: String.raw`$\omega = \frac{3}{2}\sqrt{\frac{g}{L}}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\omega = \\frac{1}{2}\\sqrt{\\frac{g}{L}}$',
+				text: String.raw`$\omega = \frac{1}{2}\sqrt{\frac{g}{L}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\omega = \\frac{2}{3}\\sqrt{\\frac{g}{L}}$',
+				text: String.raw`$\omega = \frac{2}{3}\sqrt{\frac{g}{L}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\omega = \\frac{5}{2}\\sqrt{\\frac{g}{L}}$',
+				text: String.raw`$\omega = \frac{5}{2}\sqrt{\frac{g}{L}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\omega = \\sqrt{\\frac{g}{L}}$',
+				text: String.raw`$\omega = \sqrt{\frac{g}{L}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -409,28 +409,28 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma barra delgada e homogênea, de comprimento $L$ e massa $m$, está presa por uma de suas extremidades a um eixo fixo no teto, podendo girar livremente em torno desse eixo. Na outra extremidade da barra, está presa uma partícula de massa $M = m$, conforme ilustrado na figura. O sistema "barra + partícula" é solto a partir do repouso, com a barra formando um ângulo de $90^{\\circ}$ com a vertical. Determine a velocidade linear $v$ da partícula no instante em que a barra passa pela posição vertical ($0^{\\circ}$ com a vertical). Adote $g$ como a aceleração da gravidade e despreze as perdas de energia por atrito. Considere $I_b = \\frac{mL^2}{3}$ como o momento de inércia da barra em torno de um eixo que passa por uma de suas extremidades.',
+			text: String.raw`Uma barra delgada e homogênea, de comprimento $L$ e massa $m$, está presa por uma de suas extremidades a um eixo fixo no teto, podendo girar livremente em torno desse eixo. Na outra extremidade da barra, está presa uma partícula de massa $M = m$, conforme ilustrado na figura. O sistema "barra + partícula" é solto a partir do repouso, com a barra formando um ângulo de $90^{\circ}$ com a vertical. Determine a velocidade linear $v$ da partícula no instante em que a barra passa pela posição vertical ($0^{\circ}$ com a vertical). Adote $g$ como a aceleração da gravidade e despreze as perdas de energia por atrito. Considere $I_b = \frac{mL^2}{3}$ como o momento de inércia da barra em torno de um eixo que passa por uma de suas extremidades.`,
 			image: '2026-1/mc-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$v = \\frac{3}{2}\\sqrt{gL}$',
+				text: String.raw`$v = \frac{3}{2}\sqrt{gL}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$v = \\frac{1}{2}\\sqrt{gL}$',
+				text: String.raw`$v = \frac{1}{2}\sqrt{gL}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$v = \\frac{2}{3}\\sqrt{gL}$',
+				text: String.raw`$v = \frac{2}{3}\sqrt{gL}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$v = \\frac{5}{2}\\sqrt{gL}$',
+				text: String.raw`$v = \frac{5}{2}\sqrt{gL}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$v = \\sqrt{gL}$',
+				text: String.raw`$v = \sqrt{gL}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -449,23 +449,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$v_0 = \\left(\\frac{m + M}{m}\\right)\\sqrt{5Lg}$',
+				text: String.raw`$v_0 = \left(\frac{m + M}{m}\right)\sqrt{5Lg}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$v_0 = \\left(\\frac{m + M}{m}\\right)\\sqrt{4Lg}$',
+				text: String.raw`$v_0 = \left(\frac{m + M}{m}\right)\sqrt{4Lg}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$v_0 = \\left(\\frac{m + M}{m}\\right)\\sqrt{3Lg}$',
+				text: String.raw`$v_0 = \left(\frac{m + M}{m}\right)\sqrt{3Lg}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$v_0 = \\left(\\frac{m + M}{m}\\right)\\sqrt{2Lg}$',
+				text: String.raw`$v_0 = \left(\frac{m + M}{m}\right)\sqrt{2Lg}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$v_0 = \\left(\\frac{m + M}{m}\\right)\\sqrt{Lg}$',
+				text: String.raw`$v_0 = \left(\frac{m + M}{m}\right)\sqrt{Lg}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -484,23 +484,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\frac{M}{m} = \\frac{v_0}{\\sqrt{5Lg}} - 1$',
+				text: String.raw`$\frac{M}{m} = \frac{v_0}{\sqrt{5Lg}} - 1$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{M}{m} = \\frac{v_0}{\\sqrt{4Lg}} - 1$',
+				text: String.raw`$\frac{M}{m} = \frac{v_0}{\sqrt{4Lg}} - 1$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{M}{m} = \\frac{v_0}{\\sqrt{4Lg}}$',
+				text: String.raw`$\frac{M}{m} = \frac{v_0}{\sqrt{4Lg}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{M}{m} = \\frac{v_0}{\\sqrt{5Lg}}$',
+				text: String.raw`$\frac{M}{m} = \frac{v_0}{\sqrt{5Lg}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{M}{m} = \\frac{v_0}{\\sqrt{Lg}}$',
+				text: String.raw`$\frac{M}{m} = \frac{v_0}{\sqrt{Lg}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -514,27 +514,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Considere um anel fino de raio $R$, uniformemente carregado com carga total $Q > 0$, fixo no plano $xy$ e centrado na origem do sistema de coordenadas. Uma partícula de massa $m$ e carga $q_0 > 0$ é colocada sobre o eixo $z$, ao longo do eixo de simetria do sistema, a uma altura $z$ acima do centro do anel. Além da força elétrica exercida pelo anel sobre a partícula, atua também a força peso, associada à aceleração da gravidade $\\mathbf{g}$, dirigida no sentido negativo do eixo $z$. Sabendo que a partícula está posicionada a uma altura igual ao raio do anel, isto é, $z = R$, qual é o valor da massa $m$ para que a partícula permaneça em equilíbrio nessa posição?'
+			text: String.raw`Considere um anel fino de raio $R$, uniformemente carregado com carga total $Q > 0$, fixo no plano $xy$ e centrado na origem do sistema de coordenadas. Uma partícula de massa $m$ e carga $q_0 > 0$ é colocada sobre o eixo $z$, ao longo do eixo de simetria do sistema, a uma altura $z$ acima do centro do anel. Além da força elétrica exercida pelo anel sobre a partícula, atua também a força peso, associada à aceleração da gravidade $\mathbf{g}$, dirigida no sentido negativo do eixo $z$. Sabendo que a partícula está posicionada a uma altura igual ao raio do anel, isto é, $z = R$, qual é o valor da massa $m$ para que a partícula permaneça em equilíbrio nessa posição?`
 		},
 		alternatives: [
 			{
-				text: '$m = \\frac{q_0Q}{8\\sqrt{2}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{8\sqrt{2}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$m = \\frac{q_0Q}{4\\sqrt{2}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{4\sqrt{2}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$m = \\frac{q_0Q}{8\\sqrt{3}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{8\sqrt{3}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$m = \\frac{q_0Q}{4\\sqrt{3}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{4\sqrt{3}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$m = \\frac{q_0Q}{4\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{4\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -548,27 +548,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Considere um anel fino de raio $R$, uniformemente carregado com carga total $Q > 0$, fixo no plano $xy$ e centrado na origem do sistema de coordenadas. Uma partícula de massa $m$ e carga $q_0 > 0$ é colocada sobre o eixo $z$, ao longo do eixo de simetria do sistema, a uma altura $z$ acima do centro do anel. Além da força elétrica exercida pelo anel sobre a partícula, atua também a força peso, associada à aceleração da gravidade $\\mathbf{g}$, dirigida no sentido negativo do eixo $z$. Sabendo que a partícula está posicionada a uma altura igual à metade do raio do anel, isto é, $z = R/2$, qual é o valor da massa $m$ para que a partícula permaneça em equilíbrio nessa posição?'
+			text: String.raw`Considere um anel fino de raio $R$, uniformemente carregado com carga total $Q > 0$, fixo no plano $xy$ e centrado na origem do sistema de coordenadas. Uma partícula de massa $m$ e carga $q_0 > 0$ é colocada sobre o eixo $z$, ao longo do eixo de simetria do sistema, a uma altura $z$ acima do centro do anel. Além da força elétrica exercida pelo anel sobre a partícula, atua também a força peso, associada à aceleração da gravidade $\mathbf{g}$, dirigida no sentido negativo do eixo $z$. Sabendo que a partícula está posicionada a uma altura igual à metade do raio do anel, isto é, $z = R/2$, qual é o valor da massa $m$ para que a partícula permaneça em equilíbrio nessa posição?`
 		},
 		alternatives: [
 			{
-				text: '$m = \\frac{q_0Q}{5\\sqrt{5}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{5\sqrt{5}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$m = \\frac{q_0Q}{4\\sqrt{3}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{4\sqrt{3}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$m = \\frac{q_0Q}{10\\sqrt{3}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{10\sqrt{3}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$m = \\frac{q_0Q}{8\\sqrt{5}\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{8\sqrt{5}\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$m = \\frac{q_0Q}{8\\pi\\epsilon_0 gR^2}$',
+				text: String.raw`$m = \frac{q_0Q}{8\pi\epsilon_0 gR^2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -582,27 +582,27 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Duas cascas cilíndricas longas e concêntricas possuem raios $a$ e $b$, sendo $b > a$. A casca interna possui uma densidade linear de carga igual a $\\lambda$, enquanto a casca externa possui uma densidade linear de carga igual a $-\\lambda$. Determine a diferença de potencial elétrico entre as cascas, definida por $\\Delta V = V(b) - V(a)$, no caso em que $b = 2a$.'
+			text: String.raw`Duas cascas cilíndricas longas e concêntricas possuem raios $a$ e $b$, sendo $b > a$. A casca interna possui uma densidade linear de carga igual a $\lambda$, enquanto a casca externa possui uma densidade linear de carga igual a $-\lambda$. Determine a diferença de potencial elétrico entre as cascas, definida por $\Delta V = V(b) - V(a)$, no caso em que $b = 2a$.`
 		},
 		alternatives: [
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\pi\\epsilon_0} \\ln 2$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\pi\epsilon_0} \ln 2$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\epsilon_0} \\ln 2$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\epsilon_0} \ln 2$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\pi\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\pi\epsilon_0}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\epsilon_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{4\\pi\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{4\pi\epsilon_0}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -616,27 +616,27 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Duas cascas cilíndricas longas e concêntricas possuem raios $a$ e $b$, sendo $b > a$. A casca interna possui uma densidade linear de carga igual a $\\lambda$, enquanto a casca externa possui uma densidade linear de carga igual a $-\\lambda$. Determine a diferença de potencial elétrico entre as cascas, definida por $\\Delta V = V(b) - V(a)$, no caso em que $b = 3a$.'
+			text: String.raw`Duas cascas cilíndricas longas e concêntricas possuem raios $a$ e $b$, sendo $b > a$. A casca interna possui uma densidade linear de carga igual a $\lambda$, enquanto a casca externa possui uma densidade linear de carga igual a $-\lambda$. Determine a diferença de potencial elétrico entre as cascas, definida por $\Delta V = V(b) - V(a)$, no caso em que $b = 3a$.`
 		},
 		alternatives: [
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\pi\\epsilon_0} \\ln 3$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\pi\epsilon_0} \ln 3$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\epsilon_0} \\ln 3$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\epsilon_0} \ln 3$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\pi\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\pi\epsilon_0}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{2\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{2\epsilon_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\Delta V = -\\frac{\\lambda}{6\\pi\\epsilon_0}$',
+				text: String.raw`$\Delta V = -\frac{\lambda}{6\pi\epsilon_0}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -650,27 +650,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma carga puntiforme $Q$ está fixa na origem de um sistema de coordenadas. Considere uma superfície esférica de raio $R$, também centrada na origem. Qual é o fluxo de campo elétrico, $\\Phi_E$, que atravessa a porção da superfície esférica que corresponde, em coordenadas esféricas $(r, \\theta, \\varphi)$, à região angular definida por $\\alpha \\leq \\theta \\leq \\beta$ e $0 \\leq \\varphi \\leq 2\\pi$, onde $\\alpha = 0$ e $\\beta = \\pi/4$?'
+			text: String.raw`Uma carga puntiforme $Q$ está fixa na origem de um sistema de coordenadas. Considere uma superfície esférica de raio $R$, também centrada na origem. Qual é o fluxo de campo elétrico, $\Phi_E$, que atravessa a porção da superfície esférica que corresponde, em coordenadas esféricas $(r, \theta, \varphi)$, à região angular definida por $\alpha \leq \theta \leq \beta$ e $0 \leq \varphi \leq 2\pi$, onde $\alpha = 0$ e $\beta = \pi/4$?`
 		},
 		alternatives: [
 			{
-				text: '$\\Phi_E = \\frac{Q}{2\\epsilon_0}\\left(1 - \\frac{\\sqrt{2}}{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{2\epsilon_0}\left(1 - \frac{\sqrt{2}}{2}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{2\\epsilon_0}$',
+				text: String.raw`$\Phi_E = \frac{Q}{2\epsilon_0}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\epsilon_0}\\left(1 - \\sqrt{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\epsilon_0}\left(1 - \sqrt{2}\right)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\pi\\epsilon_0}$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\pi\epsilon_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\pi\\epsilon_0}\\left(1 - \\frac{\\sqrt{3}}{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\pi\epsilon_0}\left(1 - \frac{\sqrt{3}}{2}\right)$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -684,27 +684,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Uma carga puntiforme $Q$ está fixa na origem de um sistema de coordenadas. Considere uma superfície esférica de raio $R$, também centrada na origem. Qual é o fluxo de campo elétrico, $\\Phi_E$, que atravessa a porção da superfície esférica que corresponde, em coordenadas esféricas $(r, \\theta, \\varphi)$, à região angular definida por $\\alpha \\leq \\theta \\leq \\beta$ e $0 \\leq \\varphi \\leq 2\\pi$, onde $\\alpha = 0$ e $\\beta = \\pi/6$?'
+			text: String.raw`Uma carga puntiforme $Q$ está fixa na origem de um sistema de coordenadas. Considere uma superfície esférica de raio $R$, também centrada na origem. Qual é o fluxo de campo elétrico, $\Phi_E$, que atravessa a porção da superfície esférica que corresponde, em coordenadas esféricas $(r, \theta, \varphi)$, à região angular definida por $\alpha \leq \theta \leq \beta$ e $0 \leq \varphi \leq 2\pi$, onde $\alpha = 0$ e $\beta = \pi/6$?`
 		},
 		alternatives: [
 			{
-				text: '$\\Phi_E = \\frac{Q}{2\\epsilon_0}\\left(1 - \\frac{\\sqrt{3}}{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{2\epsilon_0}\left(1 - \frac{\sqrt{3}}{2}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{2\\epsilon_0}$',
+				text: String.raw`$\Phi_E = \frac{Q}{2\epsilon_0}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\epsilon_0}\\left(1 - \\sqrt{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\epsilon_0}\left(1 - \sqrt{2}\right)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\pi\\epsilon_0}$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\pi\epsilon_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\Phi_E = \\frac{Q}{4\\pi\\epsilon_0}\\left(1 - \\frac{\\sqrt{2}}{2}\\right)$',
+				text: String.raw`$\Phi_E = \frac{Q}{4\pi\epsilon_0}\left(1 - \frac{\sqrt{2}}{2}\right)$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -718,27 +718,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O campo elétrico de uma onda eletromagnética plana, no vácuo, propagando-se na direção $+z$, é dado por<br/><br/>$$\\mathbf{E}(z,t) = E_0\\cos(\\omega t - \\beta z)\\hat{x}.$$<br/>Qual é o valor de $\\braket{S}$, a média temporal do módulo do vetor de Poynting?'
+			text: String.raw`O campo elétrico de uma onda eletromagnética plana, no vácuo, propagando-se na direção $+z$, é dado por<br/><br/>$$\mathbf{E}(z,t) = E_0\cos(\omega t - \beta z)\hat{x}.$$<br/>Qual é o valor de $\braket{S}$, a média temporal do módulo do vetor de Poynting?`
 		},
 		alternatives: [
 			{
-				text: '$\\braket{S} = \\frac{1}{2}\\frac{E_0^2}{c\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{2}\frac{E_0^2}{c\mu_0}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{2\\pi}\\frac{E_0^2}{c\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{2\pi}\frac{E_0^2}{c\mu_0}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{4}\\frac{E_0^2}{c\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{4}\frac{E_0^2}{c\mu_0}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{4\\pi}\\frac{E_0^2}{c\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{4\pi}\frac{E_0^2}{c\mu_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\braket{S} = \\frac{E_0^2}{c\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{E_0^2}{c\mu_0}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -752,27 +752,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O campo magnético de uma onda eletromagnética plana, no vácuo, propagando-se na direção $+z$, é dado por<br/><br/>$$\\mathbf{B}(z,t) = B_0\\cos(\\omega t - \\beta z)\\hat{x}.$$<br/>Qual é o valor de $\\braket{S}$, a média temporal do módulo do vetor de Poynting?'
+			text: String.raw`O campo magnético de uma onda eletromagnética plana, no vácuo, propagando-se na direção $+z$, é dado por<br/><br/>$$\mathbf{B}(z,t) = B_0\cos(\omega t - \beta z)\hat{x}.$$<br/>Qual é o valor de $\braket{S}$, a média temporal do módulo do vetor de Poynting?`
 		},
 		alternatives: [
 			{
-				text: '$\\braket{S} = \\frac{1}{2}\\frac{cB_0^2}{\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{2}\frac{cB_0^2}{\mu_0}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{2\\pi}\\frac{cB_0^2}{\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{2\pi}\frac{cB_0^2}{\mu_0}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{4}\\frac{cB_0^2}{\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{4}\frac{cB_0^2}{\mu_0}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\braket{S} = \\frac{1}{4\\pi}\\frac{cB_0^2}{\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{1}{4\pi}\frac{cB_0^2}{\mu_0}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\braket{S} = \\frac{cB_0^2}{\\mu_0}$',
+				text: String.raw`$\braket{S} = \frac{cB_0^2}{\mu_0}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -786,27 +786,27 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Considere um cilindro que carrega uma magnetização permanente paralela à direção de seu eixo de simetria. Denotando a direção deste eixo por $\\hat{z}$, podemos escrever $\\mathbf{M} = M_0\\hat{z}$. As densidades de correntes ligadas na superfície ($\\mathbf{K}_M$) e no volume ($\\mathbf{J}_M$) associadas a essa magnetização são dadas por:'
+			text: String.raw`Considere um cilindro que carrega uma magnetização permanente paralela à direção de seu eixo de simetria. Denotando a direção deste eixo por $\hat{z}$, podemos escrever $\mathbf{M} = M_0\hat{z}$. As densidades de correntes ligadas na superfície ($\mathbf{K}_M$) e no volume ($\mathbf{J}_M$) associadas a essa magnetização são dadas por:`
 		},
 		alternatives: [
 			{
-				text: '$\\mathbf{K}_M = M_0\\hat{\\varphi}$ na superfície lateral do cilindro e $\\mathbf{J}_M = 0$ em todo o volume do cilindro.',
+				text: String.raw`$\mathbf{K}_M = M_0\hat{\varphi}$ na superfície lateral do cilindro e $\mathbf{J}_M = 0$ em todo o volume do cilindro.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\mathbf{K}_M = -M_0\\hat{\\varphi}$ nas tampas inferior e superior do cilindro, e $\\mathbf{J}_M = 0$ em todo o volume do cilindro.',
+				text: String.raw`$\mathbf{K}_M = -M_0\hat{\varphi}$ nas tampas inferior e superior do cilindro, e $\mathbf{J}_M = 0$ em todo o volume do cilindro.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\\mathbf{J}_M = M_0\\hat{z}$ em todo volume do cilindro.',
+				text: String.raw`$\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\mathbf{J}_M = M_0\hat{z}$ em todo volume do cilindro.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\\mathbf{J}_M = M_0\\hat{\\varphi}$ em todo o volume do cilindro.',
+				text: String.raw`$\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\mathbf{J}_M = M_0\hat{\varphi}$ em todo o volume do cilindro.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\\mathbf{J}_M = 0$ em todo o volume do cilindro.',
+				text: String.raw`$\mathbf{K}_M = 0$ em toda a superfície do cilindro e $\mathbf{J}_M = 0$ em todo o volume do cilindro.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -820,27 +820,27 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Considere um cilindro que carrega uma magnetização permanente paralela à direção radial a partir de seu eixo de simetria. Em um sistema cilíndrico de coordenadas, podemos escrever $\\mathbf{M} = M_0\\hat{\\rho}$ para todos os pontos no interior do cilindro a uma distância $\\rho \\neq 0$ do eixo. As densidades de correntes ligadas na superfície ($\\mathbf{K}_M$) associadas a essa magnetização são dadas por:'
+			text: String.raw`Considere um cilindro que carrega uma magnetização permanente paralela à direção radial a partir de seu eixo de simetria. Em um sistema cilíndrico de coordenadas, podemos escrever $\mathbf{M} = M_0\hat{\rho}$ para todos os pontos no interior do cilindro a uma distância $\rho \neq 0$ do eixo. As densidades de correntes ligadas na superfície ($\mathbf{K}_M$) associadas a essa magnetização são dadas por:`
 		},
 		alternatives: [
 			{
-				text: '$\\mathbf{K}_M = \\mp M_0\\hat{\\varphi}$ nas tampas superior e inferior do cilindro, respectivamente, e $\\mathbf{K}_M = 0$ na superfície lateral do cilindro.',
+				text: String.raw`$\mathbf{K}_M = \mp M_0\hat{\varphi}$ nas tampas superior e inferior do cilindro, respectivamente, e $\mathbf{K}_M = 0$ na superfície lateral do cilindro.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\mathbf{K}_M = M_0\\hat{\\varphi}$ na superfície lateral do cilindro e $\\mathbf{K}_M = 0$ em suas tampas inferior e superior.',
+				text: String.raw`$\mathbf{K}_M = M_0\hat{\varphi}$ na superfície lateral do cilindro e $\mathbf{K}_M = 0$ em suas tampas inferior e superior.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\mathbf{K}_M = \\pm M_0\\hat{\\rho}$ nas tampas superior e inferior do cilindro, respectivamente, e $\\mathbf{K}_M = 0$ na superfície lateral do cilindro.',
+				text: String.raw`$\mathbf{K}_M = \pm M_0\hat{\rho}$ nas tampas superior e inferior do cilindro, respectivamente, e $\mathbf{K}_M = 0$ na superfície lateral do cilindro.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\mathbf{K}_M = \\pm M_0\\hat{z}$ nas tampas superior e inferior do cilindro, respectivamente, e $\\mathbf{K}_M = 0$ na superfície lateral do cilindro.',
+				text: String.raw`$\mathbf{K}_M = \pm M_0\hat{z}$ nas tampas superior e inferior do cilindro, respectivamente, e $\mathbf{K}_M = 0$ na superfície lateral do cilindro.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\mathbf{K}_M = 0$ em toda superfície do cilindro.',
+				text: String.raw`$\mathbf{K}_M = 0$ em toda superfície do cilindro.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -854,7 +854,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Considere um circuito constituído por um capacitor de capacitância $C$ e um indutor de indutância $L$. O capacitor encontra-se inicialmente carregado com carga total $Q_0$ e o circuito está aberto. Na figura abaixo, estão representados possíveis gráficos para a carga $Q(t)$ no capacitor (em unidades de $Q_0$), em função do tempo $t$ (em unidades de $2\\pi\\sqrt{LC}$). Em $t = 0$, a chave do circuito é fechada. O gráfico que melhor representa $Q(t)$ é dado por:',
+			text: String.raw`Considere um circuito constituído por um capacitor de capacitância $C$ e um indutor de indutância $L$. O capacitor encontra-se inicialmente carregado com carga total $Q_0$ e o circuito está aberto. Na figura abaixo, estão representados possíveis gráficos para a carga $Q(t)$ no capacitor (em unidades de $Q_0$), em função do tempo $t$ (em unidades de $2\pi\sqrt{LC}$). Em $t = 0$, a chave do circuito é fechada. O gráfico que melhor representa $Q(t)$ é dado por:`,
 			image: '2026-1/em-6a.webp'
 		},
 		alternatives: [
@@ -889,7 +889,7 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Considere um circuito constituído por um capacitor de capacitância $C$ e um indutor de indutância $L$. O capacitor encontra-se inicialmente carregado com carga total $Q_0$ e o circuito está aberto. Na figura abaixo, estão representados possíveis gráficos para a corrente $I(t)$ no circuito (em unidades de $Q_0/\\sqrt{LC}$), em função do tempo $t$ (em unidades de $2\\pi\\sqrt{LC}$). O gráfico que melhor representa $I(t)$ é dado por:',
+			text: String.raw`Considere um circuito constituído por um capacitor de capacitância $C$ e um indutor de indutância $L$. O capacitor encontra-se inicialmente carregado com carga total $Q_0$ e o circuito está aberto. Na figura abaixo, estão representados possíveis gráficos para a corrente $I(t)$ no circuito (em unidades de $Q_0/\sqrt{LC}$), em função do tempo $t$ (em unidades de $2\pi\sqrt{LC}$). O gráfico que melhor representa $I(t)$ é dado por:`,
 			image: '2026-1/em-6b.webp'
 		},
 		alternatives: [
@@ -924,24 +924,24 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'A figura representa um corte transversal, perpendicular ao eixo comum de dois cilindros condutores coaxiais de mesmo comprimento. Os raios internos e externos de cada um dos cilindros estão indicados na figura. Os cilindros estão em equilíbrio eletrostático. Sobre a superfície condutora de raio $\\rho = b$, existe uma densidade superficial de carga $\\sigma_0$. A densidade superficial de carga na superfície $\\rho = c$ é:',
+			text: String.raw`A figura representa um corte transversal, perpendicular ao eixo comum de dois cilindros condutores coaxiais de mesmo comprimento. Os raios internos e externos de cada um dos cilindros estão indicados na figura. Os cilindros estão em equilíbrio eletrostático. Sobre a superfície condutora de raio $\rho = b$, existe uma densidade superficial de carga $\sigma_0$. A densidade superficial de carga na superfície $\rho = c$ é:`,
 			image: '2026-1/em-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$-\\sigma_0\\frac{b}{c}$',
+				text: String.raw`$-\sigma_0\frac{b}{c}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\sigma_0\\frac{b}{c}$',
+				text: String.raw`$\sigma_0\frac{b}{c}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$-\\sigma_0\\frac{c}{b}$',
+				text: String.raw`$-\sigma_0\frac{c}{b}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sigma_0\\frac{c}{b}$',
+				text: String.raw`$\sigma_0\frac{c}{b}$`,
 				number: QuestionAlternative.D
 			},
 			{
@@ -959,24 +959,24 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'A figura representa um corte transversal, perpendicular ao eixo comum de dois cilindros condutores coaxiais de mesmo comprimento. Os raios internos e externos de cada um dos cilindros estão indicados na figura. Os cilindros estão em equilíbrio eletrostático. Sobre a superfície condutora de raio $\\rho = c$, existe uma densidade superficial de carga $\\sigma_0$. A densidade superficial de carga na superfície $\\rho = d$ é:',
+			text: String.raw`A figura representa um corte transversal, perpendicular ao eixo comum de dois cilindros condutores coaxiais de mesmo comprimento. Os raios internos e externos de cada um dos cilindros estão indicados na figura. Os cilindros estão em equilíbrio eletrostático. Sobre a superfície condutora de raio $\rho = c$, existe uma densidade superficial de carga $\sigma_0$. A densidade superficial de carga na superfície $\rho = d$ é:`,
 			image: '2026-1/em-7.webp'
 		},
 		alternatives: [
 			{
-				text: '$-\\sigma_0\\frac{c}{d}$',
+				text: String.raw`$-\sigma_0\frac{c}{d}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\sigma_0\\frac{c}{d}$',
+				text: String.raw`$\sigma_0\frac{c}{d}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$-\\sigma_0\\frac{d}{c}$',
+				text: String.raw`$-\sigma_0\frac{d}{c}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sigma_0\\frac{d}{c}$',
+				text: String.raw`$\sigma_0\frac{d}{c}$`,
 				number: QuestionAlternative.D
 			},
 			{
@@ -994,28 +994,28 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um feixe de luz não polarizada, correspondente a uma onda plana de intensidade $I_0$, viaja ao longo da direção $\\hat{z}$ e incide sobre um conjunto de dois polarizadores lineares. O eixo de transmissão do primeiro polarizador está ao longo do eixo $x$ enquanto que o eixo de transmissão do segundo polarizador faz um ângulo $\\theta$ com o eixo $x$. A intensidade final do feixe é $3I_0/8$. O ângulo $\\theta$ é:',
+			text: String.raw`Um feixe de luz não polarizada, correspondente a uma onda plana de intensidade $I_0$, viaja ao longo da direção $\hat{z}$ e incide sobre um conjunto de dois polarizadores lineares. O eixo de transmissão do primeiro polarizador está ao longo do eixo $x$ enquanto que o eixo de transmissão do segundo polarizador faz um ângulo $\theta$ com o eixo $x$. A intensidade final do feixe é $3I_0/8$. O ângulo $\theta$ é:`,
 			image: '2026-1/em-8.webp'
 		},
 		alternatives: [
 			{
-				text: '$30^{\\circ}$',
+				text: String.raw`$30^{\circ}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$90^{\\circ}$',
+				text: String.raw`$90^{\circ}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$45^{\\circ}$',
+				text: String.raw`$45^{\circ}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$60^{\\circ}$',
+				text: String.raw`$60^{\circ}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$15^{\\circ}$',
+				text: String.raw`$15^{\circ}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1029,28 +1029,28 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um feixe de luz não polarizada, correspondente a uma onda plana de intensidade $I_0$, viaja ao longo da direção $\\hat{z}$ e incide sobre um conjunto de dois polarizadores lineares. O eixo de transmissão do primeiro polarizador está ao longo do eixo $x$ enquanto que o eixo de transmissão do segundo polarizador faz um ângulo $\\theta$ com o eixo $x$. A intensidade final do feixe é $I_0/8$. O ângulo $\\theta$ é:',
+			text: String.raw`Um feixe de luz não polarizada, correspondente a uma onda plana de intensidade $I_0$, viaja ao longo da direção $\hat{z}$ e incide sobre um conjunto de dois polarizadores lineares. O eixo de transmissão do primeiro polarizador está ao longo do eixo $x$ enquanto que o eixo de transmissão do segundo polarizador faz um ângulo $\theta$ com o eixo $x$. A intensidade final do feixe é $I_0/8$. O ângulo $\theta$ é:`,
 			image: '2026-1/em-8.webp'
 		},
 		alternatives: [
 			{
-				text: '$60^{\\circ}$',
+				text: String.raw`$60^{\circ}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$90^{\\circ}$',
+				text: String.raw`$90^{\circ}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$45^{\\circ}$',
+				text: String.raw`$45^{\circ}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$30^{\\circ}$',
+				text: String.raw`$30^{\circ}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$15^{\\circ}$',
+				text: String.raw`$15^{\circ}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1064,7 +1064,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Um certo sistema termodinâmico é descrito pelas equações de estado<br/><br/>$$T = \\frac{1}{A} \\left(\\frac{U^2}{VN}\\right)^{1/3} \\quad \\text{e} \\quad p = AT \\left(\\frac{UN}{V^2}\\right)^{1/3},$$<br/>onde $T$, $p$, $U$, $V$ e $N$ denotam, respectivamente, a temperatura, a pressão, a energia interna, o volume e o número de moles, respectivamente, e $A$ é uma constante positiva. A função entropia $S(U,V,N)$ desse sistema é dada por'
+			text: String.raw`Um certo sistema termodinâmico é descrito pelas equações de estado<br/><br/>$$T = \frac{1}{A} \left(\frac{U^2}{VN}\right)^{1/3} \quad \text{e} \quad p = AT \left(\frac{UN}{V^2}\right)^{1/3},$$<br/>onde $T$, $p$, $U$, $V$ e $N$ denotam, respectivamente, a temperatura, a pressão, a energia interna, o volume e o número de moles, respectivamente, e $A$ é uma constante positiva. A função entropia $S(U,V,N)$ desse sistema é dada por`
 		},
 		alternatives: [
 			{
@@ -1098,7 +1098,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Um certo sistema termodinâmico é descrito pelas equações de estado<br/><br/>$$T = \\frac{1}{A}\\left(\\frac{U}{V}\\right)^{1/4} \\quad \\text{e} \\quad p = \\frac{AT}{3}\\left(\\frac{U}{V}\\right)^{3/4},$$<br/>onde $T$, $p$, $U$, $V$ e $N$ denotam, respectivamente, a temperatura, a pressão, a energia interna, o volume e o número de moles, respectivamente, e $A$ é uma constante positiva. A função entropia $S(U,V,N)$ desse sistema é dada por'
+			text: String.raw`Um certo sistema termodinâmico é descrito pelas equações de estado<br/><br/>$$T = \frac{1}{A}\left(\frac{U}{V}\right)^{1/4} \quad \text{e} \quad p = \frac{AT}{3}\left(\frac{U}{V}\right)^{3/4},$$<br/>onde $T$, $p$, $U$, $V$ e $N$ denotam, respectivamente, a temperatura, a pressão, a energia interna, o volume e o número de moles, respectivamente, e $A$ é uma constante positiva. A função entropia $S(U,V,N)$ desse sistema é dada por`
 		},
 		alternatives: [
 			{
@@ -1172,23 +1172,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: 'horário e $\\frac{13}{2} P_0V_0$',
+				text: String.raw`horário e $\frac{13}{2} P_0V_0$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'anti-horário e $\\frac{13}{2} P_0V_0$',
+				text: String.raw`anti-horário e $\frac{13}{2} P_0V_0$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'horário e $\\frac{5}{2} P_0V_0$',
+				text: String.raw`horário e $\frac{5}{2} P_0V_0$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'anti-horário e $\\frac{5}{2} P_0V_0$',
+				text: String.raw`anti-horário e $\frac{5}{2} P_0V_0$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'horário e $\\frac{7}{2} P_0V_0$',
+				text: String.raw`horário e $\frac{7}{2} P_0V_0$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1202,7 +1202,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Considere um sistema isolado, formado por duas partes 1 e 2 separadas inicialmente por uma parede adiabática, impermeável e fixa. As equações de estado que descrevem ambas as partes são<br/><br/>$$U_i = \\frac{3R}{2}n_iT_i \\quad \\text{e} \\quad p_i = \\frac{n_i RT_i}{V_i}$$<br/>onde $R$ é uma constante e $U_i$, $n_i$, $p_i$ e $T_i$ denotam, respectivamente, a energia interna, o número de mols, a pressão e a temperatura do subsistema $i \\in \\{1,2\\}$. A partir de um certo instante, a parede torna-se diatérmica e móvel, permitindo troca de calor e variação de volume entre os subsistemas até o sistema atingir o novo estado de equilíbrio. Sendo $n_1 = 2n_2$, assinale a alternativa que indica relações corretas envolvendo as novas temperaturas e os novos volumes dos subsistemas.'
+			text: String.raw`Considere um sistema isolado, formado por duas partes 1 e 2 separadas inicialmente por uma parede adiabática, impermeável e fixa. As equações de estado que descrevem ambas as partes são<br/><br/>$$U_i = \frac{3R}{2}n_iT_i \quad \text{e} \quad p_i = \frac{n_i RT_i}{V_i}$$<br/>onde $R$ é uma constante e $U_i$, $n_i$, $p_i$ e $T_i$ denotam, respectivamente, a energia interna, o número de mols, a pressão e a temperatura do subsistema $i \in \{1,2\}$. A partir de um certo instante, a parede torna-se diatérmica e móvel, permitindo troca de calor e variação de volume entre os subsistemas até o sistema atingir o novo estado de equilíbrio. Sendo $n_1 = 2n_2$, assinale a alternativa que indica relações corretas envolvendo as novas temperaturas e os novos volumes dos subsistemas.`
 		},
 		alternatives: [
 			{
@@ -1236,7 +1236,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Considere um sistema isolado, formado por duas partes 1 e 2 separadas inicialmente por uma parede adiabática, impermeável e fixa. As equações de estado que descrevem ambas as partes são<br/><br/>$$U_i = \\frac{3R}{2}n_iT_i \\quad \\text{e} \\quad p_i = \\frac{n_i RT_i}{V_i}$$<br/>onde $R$ é uma constante e $U_i$, $n_i$, $p_i$ e $T_i$ denotam, respectivamente, a energia interna, o número de mols, a pressão e a temperatura do subsistema $i \\in \\{1,2\\}$. A partir de um certo instante, a parede torna-se diatérmica e móvel, permitindo troca de calor e variação de volume entre os subsistemas até o sistema atingir o novo estado de equilíbrio. Sendo $n_1 = 3n_2$, assinale a alternativa que indica relações corretas envolvendo as novas temperaturas e os novos volumes dos subsistemas.'
+			text: String.raw`Considere um sistema isolado, formado por duas partes 1 e 2 separadas inicialmente por uma parede adiabática, impermeável e fixa. As equações de estado que descrevem ambas as partes são<br/><br/>$$U_i = \frac{3R}{2}n_iT_i \quad \text{e} \quad p_i = \frac{n_i RT_i}{V_i}$$<br/>onde $R$ é uma constante e $U_i$, $n_i$, $p_i$ e $T_i$ denotam, respectivamente, a energia interna, o número de mols, a pressão e a temperatura do subsistema $i \in \{1,2\}$. A partir de um certo instante, a parede torna-se diatérmica e móvel, permitindo troca de calor e variação de volume entre os subsistemas até o sistema atingir o novo estado de equilíbrio. Sendo $n_1 = 3n_2$, assinale a alternativa que indica relações corretas envolvendo as novas temperaturas e os novos volumes dos subsistemas.`
 		},
 		alternatives: [
 			{
@@ -1270,27 +1270,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($0 \\space K$), qual é o intervalo de tempo $\\Delta t$ necessário para que a temperatura do objeto caia para a metade do seu valor inicial?'
+			text: String.raw`Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($0 \space K$), qual é o intervalo de tempo $\Delta t$ necessário para que a temperatura do objeto caia para a metade do seu valor inicial?`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{7C}{3\\sigma AT^3}$',
+				text: String.raw`$\frac{7C}{3\sigma AT^3}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{CT}{2\\sigma A}$',
+				text: String.raw`$\frac{CT}{2\sigma A}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{C}{\\sigma AT^4}$',
+				text: String.raw`$\frac{C}{\sigma AT^4}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{C}{8\\sigma AT^3}$',
+				text: String.raw`$\frac{C}{8\sigma AT^3}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{2C}{5\\sigma AT^4}$',
+				text: String.raw`$\frac{2C}{5\sigma AT^4}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1304,27 +1304,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($ \\space$), qual é o intervalo de tempo $\\Delta t$ necessário para que a temperatura do objeto caia para $2/3$ do seu valor inicial?'
+			text: String.raw`Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($ \space$), qual é o intervalo de tempo $\Delta t$ necessário para que a temperatura do objeto caia para $2/3$ do seu valor inicial?`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{19C}{24\\sigma AT^3}$',
+				text: String.raw`$\frac{19C}{24\sigma AT^3}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{2CT}{3\\sigma A}$',
+				text: String.raw`$\frac{2CT}{3\sigma A}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{C}{\\sigma AT^4}$',
+				text: String.raw`$\frac{C}{\sigma AT^4}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{27C}{8\\sigma AT^3}$',
+				text: String.raw`$\frac{27C}{8\sigma AT^3}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{3C}{2\\sigma AT^4}$',
+				text: String.raw`$\frac{3C}{2\sigma AT^4}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1342,23 +1342,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$x = \\frac{(z+1)^2 - 1}{(z+1)^2 + 1} \\left(\\frac{c}{H}\\right)$',
+				text: String.raw`$x = \frac{(z+1)^2 - 1}{(z+1)^2 + 1} \left(\frac{c}{H}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$x = \\frac{zc}{H}$',
+				text: String.raw`$x = \frac{zc}{H}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$x = \\frac{z}{z+2} \\left(\\frac{c}{H}\\right)$',
+				text: String.raw`$x = \frac{z}{z+2} \left(\frac{c}{H}\right)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$x = \\frac{z}{z+2} \\left(\\frac{1}{H}\\right)$',
+				text: String.raw`$x = \frac{z}{z+2} \left(\frac{1}{H}\right)$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$x = \\frac{z}{H}$',
+				text: String.raw`$x = \frac{z}{H}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1376,23 +1376,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$H = \\frac{(z+1)^2 - 1}{(z+1)^2 + 1} \\left(\\frac{c}{x}\\right)$',
+				text: String.raw`$H = \frac{(z+1)^2 - 1}{(z+1)^2 + 1} \left(\frac{c}{x}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$H = \\frac{zc}{x}$',
+				text: String.raw`$H = \frac{zc}{x}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$H = \\frac{z}{z+2} \\left(\\frac{c}{x}\\right)$',
+				text: String.raw`$H = \frac{z}{z+2} \left(\frac{c}{x}\right)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$H = \\frac{z}{z+2} \\left(\\frac{1}{x}\\right)$',
+				text: String.raw`$H = \frac{z}{z+2} \left(\frac{1}{x}\right)$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$H = \\frac{z}{x}$',
+				text: String.raw`$H = \frac{z}{x}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1406,7 +1406,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'O gráfico ao lado é a medida do calor específico molar a volume constante de um gás ideal quântico como função da temperatura. Considere as afirmações a seguir, sendo $k_B$ a constante de Boltzmann.<br/><br/><ul><li>I. Entre 20 K e 100 K, o gás pode ser considerado como constituído por moléculas diatômicas rígidas.</li><li>II. Os níveis energéticos de rotação de uma molécula desse gás são $E_r \\ell(\\ell + 1)$, com $\\ell = 0,1,2,\\ldots$ e $E_r/k_B \\sim 10$ K.</li><li>III. Os níveis energéticos de vibração de uma molécula desse gás são $E_v(n + \\frac{1}{2})$, com $n = 0,1,2,\\ldots$ e $E_v/k_B \\sim 10^3$ K.</li></ul><br/>Qual das alternativas abaixo é a correta?',
+			text: String.raw`O gráfico ao lado é a medida do calor específico molar a volume constante de um gás ideal quântico como função da temperatura. Considere as afirmações a seguir, sendo $k_B$ a constante de Boltzmann.<br/><br/><ul><li>I. Entre 20 K e 100 K, o gás pode ser considerado como constituído por moléculas diatômicas rígidas.</li><li>II. Os níveis energéticos de rotação de uma molécula desse gás são $E_r \ell(\ell + 1)$, com $\ell = 0,1,2,\ldots$ e $E_r/k_B \sim 10$ K.</li><li>III. Os níveis energéticos de vibração de uma molécula desse gás são $E_v(n + \frac{1}{2})$, com $n = 0,1,2,\ldots$ e $E_v/k_B \sim 10^3$ K.</li></ul><br/>Qual das alternativas abaixo é a correta?`,
 			image: '2026-1/fm-3a.webp'
 		},
 		alternatives: [
@@ -1441,7 +1441,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'O gráfico ao lado é a medida do calor específico molar a volume constante de um gás ideal quântico como função da temperatura. Considere as afirmações a seguir, sendo $k_B$ a constante de Boltzmann.<br/><br/><ul><li>I. Entre 5 K e 200 K, o gás pode ser considerado como constituído por moléculas diatômicas rígidas.</li><li>II. Os níveis energéticos de rotação de uma molécula desse gás são $E_{0r} \\ell(\\ell + 1)$, com $\\ell = 0,1,2,\\ldots$ e $E_{0r}/k_B \\sim 2$ K.</li><li>III. Os níveis energéticos de vibração de uma molécula desse gás são $E_{0v}(n + \\frac{1}{2})$, com $n = 0,1,2,\\ldots$ e $E_{0v}/k_B \\sim 10$ K.</li></ul><br/>Qual das alternativas abaixo é a correta?',
+			text: String.raw`O gráfico ao lado é a medida do calor específico molar a volume constante de um gás ideal quântico como função da temperatura. Considere as afirmações a seguir, sendo $k_B$ a constante de Boltzmann.<br/><br/><ul><li>I. Entre 5 K e 200 K, o gás pode ser considerado como constituído por moléculas diatômicas rígidas.</li><li>II. Os níveis energéticos de rotação de uma molécula desse gás são $E_{0r} \ell(\ell + 1)$, com $\ell = 0,1,2,\ldots$ e $E_{0r}/k_B \sim 2$ K.</li><li>III. Os níveis energéticos de vibração de uma molécula desse gás são $E_{0v}(n + \frac{1}{2})$, com $n = 0,1,2,\ldots$ e $E_{0v}/k_B \sim 10$ K.</li></ul><br/>Qual das alternativas abaixo é a correta?`,
 			image: '2026-1/fm-3b.webp'
 		},
 		alternatives: [
@@ -1480,23 +1480,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\sqrt{\\frac{mc^2}{2k}}$',
+				text: String.raw`$\sqrt{\frac{mc^2}{2k}}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\sqrt{\\frac{9mc^2}{25k}}$',
+				text: String.raw`$\sqrt{\frac{9mc^2}{25k}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\sqrt{\\frac{25mc^2}{9k}}$',
+				text: String.raw`$\sqrt{\frac{25mc^2}{9k}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sqrt{\\frac{16mc^2}{25k}}$',
+				text: String.raw`$\sqrt{\frac{16mc^2}{25k}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\sqrt{\\frac{4mc^2}{3k}}$',
+				text: String.raw`$\sqrt{\frac{4mc^2}{3k}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1514,23 +1514,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: '$\\sqrt{\\frac{4mc^2}{3k}}$',
+				text: String.raw`$\sqrt{\frac{4mc^2}{3k}}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\sqrt{\\frac{16mc^2}{25k}}$',
+				text: String.raw`$\sqrt{\frac{16mc^2}{25k}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\sqrt{\\frac{25mc^2}{16k}}$',
+				text: String.raw`$\sqrt{\frac{25mc^2}{16k}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\sqrt{\\frac{9mc^2}{25k}}$',
+				text: String.raw`$\sqrt{\frac{9mc^2}{25k}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\sqrt{\\frac{mc^2}{2k}}$',
+				text: String.raw`$\sqrt{\frac{mc^2}{2k}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1544,27 +1544,27 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Uma superfície metálica é iluminada por radiação monocromática de frequência $f$, produzindo emissão de elétrons com energia cinética máxima $K_{\\max}$. Considere separadamente as seguintes modificações no experimento.<br/><br/><ul><li>I. A intensidade da radiação incidente é dobrada, mantendo-se a frequência constante.</li><li>II. A frequência da radiação é aumentada, mantendo-se a intensidade constante.</li><li>III. O metal é substituído por outro com uma função trabalho menor.</li></ul><br/>Assinale a alternativa correta quanto ao efeito dessas modificações sobre $K_{\\max}$ e sobre a corrente fotoelétrica.'
+			text: String.raw`Uma superfície metálica é iluminada por radiação monocromática de frequência $f$, produzindo emissão de elétrons com energia cinética máxima $K_{\max}$. Considere separadamente as seguintes modificações no experimento.<br/><br/><ul><li>I. A intensidade da radiação incidente é dobrada, mantendo-se a frequência constante.</li><li>II. A frequência da radiação é aumentada, mantendo-se a intensidade constante.</li><li>III. O metal é substituído por outro com uma função trabalho menor.</li></ul><br/>Assinale a alternativa correta quanto ao efeito dessas modificações sobre $K_{\max}$ e sobre a corrente fotoelétrica.`
 		},
 		alternatives: [
 			{
-				text: 'Apenas I altera a corrente, enquanto II e III alteram $K_{\\max}$.',
+				text: String.raw`Apenas I altera a corrente, enquanto II e III alteram $K_{\max}$.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Apenas II altera tanto $K_{\\max}$ quanto a corrente.',
+				text: String.raw`Apenas II altera tanto $K_{\max}$ quanto a corrente.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'I e II alteram $K_{\\max}$, enquanto III altera apenas a corrente.',
+				text: String.raw`I e II alteram $K_{\max}$, enquanto III altera apenas a corrente.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'Apenas III altera $K_{\\max}$, enquanto I altera apenas a corrente.',
+				text: String.raw`Apenas III altera $K_{\max}$, enquanto I altera apenas a corrente.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'Todas as modificações alteram tanto $K_{\\max}$ quanto a corrente.',
+				text: String.raw`Todas as modificações alteram tanto $K_{\max}$ quanto a corrente.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1578,27 +1578,27 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Em um experimento de efeito fotoelétrico, um metal é iluminado por luz monocromática de frequência $f$, ligeiramente maior que a frequência de corte do material. Observa-se a emissão de elétrons. Considere separadamente as seguintes modificações no experimento.<br/><br/><ul><li>I. A intensidade da radiação incidente é dobrada, mantendo-se a frequência constante.</li><li>II. A frequência da radiação é aumentada, mantendo-se a intensidade constante.</li><li>III. O metal é substituído por outro cuja função trabalho é maior que $hf$, onde $h$ é a constante de Planck.</li></ul><br/>Assinale a alternativa correta quanto ao efeito dessas modificações sobre a energia cinética máxima $K_{\\max}$ dos elétrons emitidos e sobre a corrente fotoelétrica.'
+			text: String.raw`Em um experimento de efeito fotoelétrico, um metal é iluminado por luz monocromática de frequência $f$, ligeiramente maior que a frequência de corte do material. Observa-se a emissão de elétrons. Considere separadamente as seguintes modificações no experimento.<br/><br/><ul><li>I. A intensidade da radiação incidente é dobrada, mantendo-se a frequência constante.</li><li>II. A frequência da radiação é aumentada, mantendo-se a intensidade constante.</li><li>III. O metal é substituído por outro cuja função trabalho é maior que $hf$, onde $h$ é a constante de Planck.</li></ul><br/>Assinale a alternativa correta quanto ao efeito dessas modificações sobre a energia cinética máxima $K_{\max}$ dos elétrons emitidos e sobre a corrente fotoelétrica.`
 		},
 		alternatives: [
 			{
-				text: 'II altera $K_{\\max}$, enquanto III altera tanto $K_{\\max}$ quanto a corrente.',
+				text: String.raw`II altera $K_{\max}$, enquanto III altera tanto $K_{\max}$ quanto a corrente.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'Apenas I altera a corrente, enquanto II altera $K_{\\max}$.',
+				text: String.raw`Apenas I altera a corrente, enquanto II altera $K_{\max}$.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'Apenas II altera tanto $K_{\\max}$ quanto a corrente.',
+				text: String.raw`Apenas II altera tanto $K_{\max}$ quanto a corrente.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'I e II alteram $K_{\\max}$.',
+				text: String.raw`I e II alteram $K_{\max}$.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'Todas as modificações alteram tanto $K_{\\max}$ quanto a corrente.',
+				text: String.raw`Todas as modificações alteram tanto $K_{\max}$ quanto a corrente.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1680,7 +1680,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: "Considere um referencial inercial $S$ associado aos eixos $x$ e $y$ e um outro referencial inercial $S'$ associado aos eixos $x'$ e $y'$, com $x$ paralelo a $x'$ e $y$ paralelo a $y'$. O referencial $S'$ move-se ao longo da direção $x$ crescente com velocidade $v = 0{,}6c$, onde $c$ é a velocidade da luz. Em um dado instante, um observador em repouso no referencial $S'$ emite um fóton na direção $y'$ crescente. Qual é o valor do cosseno do ângulo $\\theta$ entre a direção de propagação do fóton e a direção $x$ crescente, medido por um observador em repouso no referencial $S$?"
+			text: String.raw`Considere um referencial inercial $S$ associado aos eixos $x$ e $y$ e um outro referencial inercial $S'$ associado aos eixos $x'$ e $y'$, com $x$ paralelo a $x'$ e $y$ paralelo a $y'$. O referencial $S'$ move-se ao longo da direção $x$ crescente com velocidade $v = 0{,}6c$, onde $c$ é a velocidade da luz. Em um dado instante, um observador em repouso no referencial $S'$ emite um fóton na direção $y'$ crescente. Qual é o valor do cosseno do ângulo $\theta$ entre a direção de propagação do fóton e a direção $x$ crescente, medido por um observador em repouso no referencial $S$?`
 		},
 		alternatives: [
 			{
@@ -1700,7 +1700,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0{,}6/\\sqrt{1+0{,}6^2}$',
+				text: String.raw`$0{,}6/\sqrt{1+0{,}6^2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1714,7 +1714,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: "Considere um referencial inercial $S$ associado aos eixos $x$ e $y$ e um outro referencial inercial $S'$ associado aos eixos $x'$ e $y'$, com $x$ paralelo a $x'$ e $y$ paralelo a $y'$. O referencial $S'$ move-se ao longo da direção $x$ crescente com velocidade $v = 0{,}5c$, onde $c$ é a velocidade da luz. Em um dado instante, um observador em repouso no referencial $S'$ emite um fóton na direção $y'$ crescente. Qual é o valor do cosseno do ângulo $\\theta$ entre a direção de propagação do fóton e a direção $x$ crescente, medido por um observador em repouso no referencial $S$?"
+			text: String.raw`Considere um referencial inercial $S$ associado aos eixos $x$ e $y$ e um outro referencial inercial $S'$ associado aos eixos $x'$ e $y'$, com $x$ paralelo a $x'$ e $y$ paralelo a $y'$. O referencial $S'$ move-se ao longo da direção $x$ crescente com velocidade $v = 0{,}5c$, onde $c$ é a velocidade da luz. Em um dado instante, um observador em repouso no referencial $S'$ emite um fóton na direção $y'$ crescente. Qual é o valor do cosseno do ângulo $\theta$ entre a direção de propagação do fóton e a direção $x$ crescente, medido por um observador em repouso no referencial $S$?`
 		},
 		alternatives: [
 			{
@@ -1726,7 +1726,7 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\sqrt{1-0{,}5^2}$',
+				text: String.raw`$\sqrt{1-0{,}5^2}$`,
 				number: QuestionAlternative.C
 			},
 			{
@@ -1734,7 +1734,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$0{,}5/\\sqrt{1+0{,}5^2}$',
+				text: String.raw`$0{,}5/\sqrt{1+0{,}5^2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1748,27 +1748,27 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um elétron encontra-se no estado fundamental de um poço de potencial infinito unidimensional de largura $L$. A probabilidade de detecção do elétron por uma sonda de largura $a = 1{,}0$ nm, centrada em $x = L/2$, é igual a $1/20$. Considere $a \\ll L$, de modo que a função de onda pode ser tomada aproximadamente constante na região da sonda. Determine o valor de $L$.'
+			text: String.raw`Um elétron encontra-se no estado fundamental de um poço de potencial infinito unidimensional de largura $L$. A probabilidade de detecção do elétron por uma sonda de largura $a = 1{,}0$ nm, centrada em $x = L/2$, é igual a $1/20$. Considere $a \ll L$, de modo que a função de onda pode ser tomada aproximadamente constante na região da sonda. Determine o valor de $L$.`
 		},
 		alternatives: [
 			{
-				text: '$40 \\space \\text{nm}$',
+				text: String.raw`$40 \space \text{nm}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$80 \\space \\text{nm}$',
+				text: String.raw`$80 \space \text{nm}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$160 \\space \\text{nm}$',
+				text: String.raw`$160 \space \text{nm}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$1600 \\space \\text{nm}$',
+				text: String.raw`$1600 \space \text{nm}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$20 \\space \\text{nm}$',
+				text: String.raw`$20 \space \text{nm}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1782,27 +1782,27 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: 'Um elétron encontra-se no estado fundamental de um poço de potencial infinito unidimensional de largura $L$. A probabilidade de detecção do elétron por uma sonda de largura $a = 2{,}0$ nm, centrada em $x = L/2$, é igual a $1/25$. Considere $a \\ll L$, de modo que a função de onda pode ser tomada aproximadamente constante na região da sonda. Determine o valor de $L$.'
+			text: String.raw`Um elétron encontra-se no estado fundamental de um poço de potencial infinito unidimensional de largura $L$. A probabilidade de detecção do elétron por uma sonda de largura $a = 2{,}0$ nm, centrada em $x = L/2$, é igual a $1/25$. Considere $a \ll L$, de modo que a função de onda pode ser tomada aproximadamente constante na região da sonda. Determine o valor de $L$.`
 		},
 		alternatives: [
 			{
-				text: '$100 \\space \\text{nm}$',
+				text: String.raw`$100 \space \text{nm}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$50 \\space \\text{nm}$',
+				text: String.raw`$50 \space \text{nm}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$25 \\space \\text{nm}$',
+				text: String.raw`$25 \space \text{nm}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$400 \\space \\text{nm}$',
+				text: String.raw`$400 \space \text{nm}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$10 \\space \\text{nm}$',
+				text: String.raw`$10 \space \text{nm}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1816,7 +1816,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Considere as matrizes abaixo, que estão escritas em uma base ortonormal:<br/><br/>$$A = \\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 1 & i \\\\ 0 & i & -1 \\end{pmatrix}, \\quad B = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1 \\end{pmatrix}, \\quad C = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}.$$<br/>Analise as quatro afirmações abaixo, classifique-as como verdadeiras (V) ou falsas (F) e escolha a alternativa correta.<br/><br/><ul><li>I. Todas podem representar observáveis de um sistema quântico.</li><li>II. Existe uma base comum que diagonaliza $B$ e $C$.</li><li>III. $B$ e $C$ formam um conjunto completo de observáveis compatíveis.</li><li>IV. $B^2$ e $C$ formam um conjunto completo de observáveis compatíveis.</li></ul><br/>Observação: observáveis cujos operadores comutam são chamados compatíveis. Um conjunto de observáveis compatíveis é completo se cada um dos autoestados da base comum a eles puder ser unicamente identificado pela coleção dos autovalores correspondentes.'
+			text: String.raw`Considere as matrizes abaixo, que estão escritas em uma base ortonormal:<br/><br/>$$A = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 1 & i \\ 0 & i & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{pmatrix}, \quad C = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.$$<br/>Analise as quatro afirmações abaixo, classifique-as como verdadeiras (V) ou falsas (F) e escolha a alternativa correta.<br/><br/><ul><li>I. Todas podem representar observáveis de um sistema quântico.</li><li>II. Existe uma base comum que diagonaliza $B$ e $C$.</li><li>III. $B$ e $C$ formam um conjunto completo de observáveis compatíveis.</li><li>IV. $B^2$ e $C$ formam um conjunto completo de observáveis compatíveis.</li></ul><br/>Observação: observáveis cujos operadores comutam são chamados compatíveis. Um conjunto de observáveis compatíveis é completo se cada um dos autoestados da base comum a eles puder ser unicamente identificado pela coleção dos autovalores correspondentes.`
 		},
 		alternatives: [
 			{
@@ -1850,7 +1850,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Considere as matrizes abaixo, que estão escritas em uma base ortonormal:<br/><br/>$$A = \\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 1 & i \\\\ 0 & -i & -1 \\end{pmatrix}, \\quad B = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1 \\end{pmatrix}, \\quad C = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}.$$<br/>Analise as quatro afirmações abaixo, classifique-as como verdadeiras (V) ou falsas (F) e escolha a alternativa correta.<br/><br/><ul><li>I. Todas podem representar observáveis de um sistema quântico.</li><li>II. Existe uma base comum que diagonaliza $B$ e $C$.</li><li>III. $B$ e $C$ formam um conjunto completo de observáveis compatíveis.</li><li>IV. $B^2$ e $C$ formam um conjunto completo de observáveis compatíveis.</li></ul><br/>Observação: observáveis cujos operadores comutam são chamados compatíveis. Um conjunto de observáveis compatíveis é completo se cada um dos autoestados da base comum a eles puder ser unicamente identificado pela coleção formada pelos autovalores correspondentes.'
+			text: String.raw`Considere as matrizes abaixo, que estão escritas em uma base ortonormal:<br/><br/>$$A = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 1 & i \\ 0 & -i & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{pmatrix}, \quad C = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.$$<br/>Analise as quatro afirmações abaixo, classifique-as como verdadeiras (V) ou falsas (F) e escolha a alternativa correta.<br/><br/><ul><li>I. Todas podem representar observáveis de um sistema quântico.</li><li>II. Existe uma base comum que diagonaliza $B$ e $C$.</li><li>III. $B$ e $C$ formam um conjunto completo de observáveis compatíveis.</li><li>IV. $B^2$ e $C$ formam um conjunto completo de observáveis compatíveis.</li></ul><br/>Observação: observáveis cujos operadores comutam são chamados compatíveis. Um conjunto de observáveis compatíveis é completo se cada um dos autoestados da base comum a eles puder ser unicamente identificado pela coleção formada pelos autovalores correspondentes.`
 		},
 		alternatives: [
 			{
@@ -1884,15 +1884,15 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere um sistema de dois níveis com estados de base $\\ket{u_1}$ e $\\ket{u_2}$ e caracterizado pelo hamiltoniano<br/><br/>$$H = \\frac{\\hbar\\Omega}{2}\\sigma_x,$$<br/>onde $\\Omega$ é uma constante real com dimensão de inverso de tempo e<br/><br/>$$\\sigma_x = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$<br/>na base $\\{\\ket{u_1}, \\ket{u_2}\\}$. Sendo $U(t) = e^{-iHt/\\hbar}$ o operador de evolução temporal do sistema, determine a probabilidade $|\\bra{u_1}U(t)\\ket{u_1}|^2$ de o sistema, inicialmente preparado em $\\ket{u_1}$, permanecer nesse estado após um tempo $t$.'
+			text: String.raw`Considere um sistema de dois níveis com estados de base $\ket{u_1}$ e $\ket{u_2}$ e caracterizado pelo hamiltoniano<br/><br/>$$H = \frac{\hbar\Omega}{2}\sigma_x,$$<br/>onde $\Omega$ é uma constante real com dimensão de inverso de tempo e<br/><br/>$$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$<br/>na base $\{\ket{u_1}, \ket{u_2}\}$. Sendo $U(t) = e^{-iHt/\hbar}$ o operador de evolução temporal do sistema, determine a probabilidade $|\bra{u_1}U(t)\ket{u_1}|^2$ de o sistema, inicialmente preparado em $\ket{u_1}$, permanecer nesse estado após um tempo $t$.`
 		},
 		alternatives: [
 			{
-				text: '$\\cos^2\\left(\\frac{\\Omega t}{2}\\right)$',
+				text: String.raw`$\cos^2\left(\frac{\Omega t}{2}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\sin^2\\left(\\frac{\\Omega t}{2}\\right)$',
+				text: String.raw`$\sin^2\left(\frac{\Omega t}{2}\right)$`,
 				number: QuestionAlternative.B
 			},
 			{
@@ -1904,7 +1904,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{1}{2}$',
+				text: String.raw`$\frac{1}{2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1918,15 +1918,15 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere um sistema de dois níveis com estados de base $\\ket{u_1}$ e $\\ket{u_2}$ e caracterizado pelo hamiltoniano<br/><br/>$$H = \\frac{\\hbar\\Omega}{2}\\sigma_x,$$<br/>onde $\\Omega$ é uma constante real com dimensão de inverso de tempo e<br/><br/>$$\\sigma_x = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$<br/>na base $\\{\\ket{u_1}, \\ket{u_2}\\}$. Sendo $U(t) = e^{-iHt/\\hbar}$ o operador de evolução temporal do sistema, determine a probabilidade $|\\bra{u_2}U(t)\\ket{u_1}|^2$ de o sistema, inicialmente preparado em $\\ket{u_1}$, transicionar para o estado $\\ket{u_2}$ após um tempo $t$.'
+			text: String.raw`Considere um sistema de dois níveis com estados de base $\ket{u_1}$ e $\ket{u_2}$ e caracterizado pelo hamiltoniano<br/><br/>$$H = \frac{\hbar\Omega}{2}\sigma_x,$$<br/>onde $\Omega$ é uma constante real com dimensão de inverso de tempo e<br/><br/>$$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$<br/>na base $\{\ket{u_1}, \ket{u_2}\}$. Sendo $U(t) = e^{-iHt/\hbar}$ o operador de evolução temporal do sistema, determine a probabilidade $|\bra{u_2}U(t)\ket{u_1}|^2$ de o sistema, inicialmente preparado em $\ket{u_1}$, transicionar para o estado $\ket{u_2}$ após um tempo $t$.`
 		},
 		alternatives: [
 			{
-				text: '$\\sin^2\\left(\\frac{\\Omega t}{2}\\right)$',
+				text: String.raw`$\sin^2\left(\frac{\Omega t}{2}\right)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\cos^2\\left(\\frac{\\Omega t}{2}\\right)$',
+				text: String.raw`$\cos^2\left(\frac{\Omega t}{2}\right)$`,
 				number: QuestionAlternative.B
 			},
 			{
@@ -1938,7 +1938,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{1}{2}$',
+				text: String.raw`$\frac{1}{2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -1952,7 +1952,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Sejam duas partículas idênticas, cada uma delas com número quântico de spin $s = 1$ e momento angular orbital $\\ell = 0$. O estado angular total do sistema pode ser descrito na base de momento angular total $\\ket{j,m_j}$, formada por autoestados simultâneos de $J^2$ e $J_z$. Quais valores de $j$ podem ocorrer ao descrever estados físicos permitidos para esse sistema?<br/>Observação: considere que o operador de permutação $P_{12}$, que troca as duas partículas, atua sobre os estados segundo $P_{12}\\ket{j,m_j} = (-1)^{2s-j}\\ket{j,m_j}$ e que todos os demais números quânticos espaciais das duas partículas são idênticos.'
+			text: String.raw`Sejam duas partículas idênticas, cada uma delas com número quântico de spin $s = 1$ e momento angular orbital $\ell = 0$. O estado angular total do sistema pode ser descrito na base de momento angular total $\ket{j,m_j}$, formada por autoestados simultâneos de $J^2$ e $J_z$. Quais valores de $j$ podem ocorrer ao descrever estados físicos permitidos para esse sistema?<br/>Observação: considere que o operador de permutação $P_{12}$, que troca as duas partículas, atua sobre os estados segundo $P_{12}\ket{j,m_j} = (-1)^{2s-j}\ket{j,m_j}$ e que todos os demais números quânticos espaciais das duas partículas são idênticos.`
 		},
 		alternatives: [
 			{
@@ -1986,7 +1986,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Sejam duas partículas idênticas, cada uma delas com número quântico de spin $s = 1/2$ e momento angular orbital $\\ell = 0$. O estado angular total do sistema pode ser descrito na base de momento angular total $\\ket{j,m_j}$, formada por autoestados simultâneos de $J^2$ e $J_z$. Quais valores de $j$ e $m_j$ podem ocorrer ao descrever estados físicos permitidos para esse sistema?<br/>Observação: considere que o operador de permutação $P_{12}$, que troca as duas partículas, atua sobre os estados segundo $P_{12}\\ket{j,m_j} = (-1)^{2s-j}\\ket{j,m_j}$ e que todos os demais números quânticos espaciais das duas partículas são idênticos.'
+			text: String.raw`Sejam duas partículas idênticas, cada uma delas com número quântico de spin $s = 1/2$ e momento angular orbital $\ell = 0$. O estado angular total do sistema pode ser descrito na base de momento angular total $\ket{j,m_j}$, formada por autoestados simultâneos de $J^2$ e $J_z$. Quais valores de $j$ e $m_j$ podem ocorrer ao descrever estados físicos permitidos para esse sistema?<br/>Observação: considere que o operador de permutação $P_{12}$, que troca as duas partículas, atua sobre os estados segundo $P_{12}\ket{j,m_j} = (-1)^{2s-j}\ket{j,m_j}$ e que todos os demais números quânticos espaciais das duas partículas são idênticos.`
 		},
 		alternatives: [
 			{
@@ -2020,27 +2020,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Uma partícula sem spin, de massa $m$ e carga $q = e$, está sujeita a um potencial harmônico unidimensional, de modo que seu hamiltoniano é<br/><br/>$$H_0 = \\frac{P^2}{2m} + \\frac{1}{2}m\\omega^2X^2,$$<br/>onde $\\omega$ denota a frequência angular do oscilador. Aplica-se ao sistema um campo elétrico uniforme de intensidade $E$, que introduz no hamiltoniano a perturbação<br/><br/>$$H_1 = -qEX,$$<br/>onde $X$ denota o operador posição. Supondo que $E$ seja suficientemente pequeno para que a teoria de perturbações seja aplicável, calcule o módulo da correção na energia do estado fundamental do sistema em ordem mais baixa não nula em $E$.<br/>Observação: se necessário, use que os autoestados de energia e respectivos autovalores para o sistema não perturbado são $\\ket{n}$ e $E_n = \\hbar\\omega(n + \\frac{1}{2})$. No formalismo dos operadores de escada, o operador de abaixamento<br/><br/>$$a = \\sqrt{\\frac{m\\omega}{2\\hbar}}X + i\\sqrt{\\frac{1}{2\\hbar m\\omega}}P,$$<br/>escrito em termos dos operadores de posição $X$ e momento $P$, e seu hermitiano conjugado $a^\\dagger$, que é o operador de levantamento, atuam em $\\ket{n}$ segundo $a\\ket{n} = \\sqrt{n}\\ket{n-1}$ e $a^\\dagger\\ket{n} = \\sqrt{n+1}\\ket{n+1}$.'
+			text: String.raw`Uma partícula sem spin, de massa $m$ e carga $q = e$, está sujeita a um potencial harmônico unidimensional, de modo que seu hamiltoniano é<br/><br/>$$H_0 = \frac{P^2}{2m} + \frac{1}{2}m\omega^2X^2,$$<br/>onde $\omega$ denota a frequência angular do oscilador. Aplica-se ao sistema um campo elétrico uniforme de intensidade $E$, que introduz no hamiltoniano a perturbação<br/><br/>$$H_1 = -qEX,$$<br/>onde $X$ denota o operador posição. Supondo que $E$ seja suficientemente pequeno para que a teoria de perturbações seja aplicável, calcule o módulo da correção na energia do estado fundamental do sistema em ordem mais baixa não nula em $E$.<br/>Observação: se necessário, use que os autoestados de energia e respectivos autovalores para o sistema não perturbado são $\ket{n}$ e $E_n = \hbar\omega(n + \frac{1}{2})$. No formalismo dos operadores de escada, o operador de abaixamento<br/><br/>$$a = \sqrt{\frac{m\omega}{2\hbar}}X + i\sqrt{\frac{1}{2\hbar m\omega}}P,$$<br/>escrito em termos dos operadores de posição $X$ e momento $P$, e seu hermitiano conjugado $a^\dagger$, que é o operador de levantamento, atuam em $\ket{n}$ segundo $a\ket{n} = \sqrt{n}\ket{n-1}$ e $a^\dagger\ket{n} = \sqrt{n+1}\ket{n+1}$.`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{e^2E^2}{2m\\omega^2}$',
+				text: String.raw`$\frac{e^2E^2}{2m\omega^2}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\frac{e^2E^2}{m\\omega^2}$',
+				text: String.raw`$\frac{e^2E^2}{m\omega^2}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$eE\\sqrt{\\frac{\\hbar}{2m\\omega}}$',
+				text: String.raw`$eE\sqrt{\frac{\hbar}{2m\omega}}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$eE\\sqrt{\\frac{2\\hbar}{m\\omega}}$',
+				text: String.raw`$eE\sqrt{\frac{2\hbar}{m\omega}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{e^4E^4}{\\hbar m^2 \\omega^5}$',
+				text: String.raw`$\frac{e^4E^4}{\hbar m^2 \omega^5}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2054,27 +2054,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Uma partícula sem spin, de massa $m$ e carga $q = 2e$, está sujeita a um potencial harmônico unidimensional, de modo que seu hamiltoniano é<br/><br/>$$H_0 = \\frac{P^2}{2m} + \\frac{1}{2}m\\omega^2X^2,$$<br/>onde $\\omega$ denota a frequência angular do oscilador. Aplica-se ao sistema um campo elétrico uniforme de intensidade $E$, que introduz no hamiltoniano a perturbação<br/><br/>$$H_1 = -qEX,$$<br/>onde $X$ denota o operador posição. Supondo que $E$ seja suficientemente pequeno para que a teoria de perturbações seja aplicável, calcule o módulo da correção na energia do estado fundamental do sistema em ordem mais baixa não nula em $E$.<br/>Observação: se necessário, use que os autoestados de energia e respectivos autovalores para o sistema não perturbado são $\\ket{n}$ e $E_n = \\hbar\\omega(n + \\frac{1}{2})$. No formalismo dos operadores de escada, o operador de abaixamento<br/><br/>$$a = \\sqrt{\\frac{m\\omega}{2\\hbar}}X + i\\sqrt{\\frac{1}{2\\hbar m\\omega}}P,$$<br/>escrito em termos dos operadores de posição $X$ e momento $P$, e seu hermitiano conjugado $a^\\dagger$, que é o operador de levantamento, atuam em $\\ket{n}$ segundo $a\\ket{n} = \\sqrt{n}\\ket{n-1}$ e $a^\\dagger\\ket{n} = \\sqrt{n+1}\\ket{n+1}$.'
+			text: String.raw`Uma partícula sem spin, de massa $m$ e carga $q = 2e$, está sujeita a um potencial harmônico unidimensional, de modo que seu hamiltoniano é<br/><br/>$$H_0 = \frac{P^2}{2m} + \frac{1}{2}m\omega^2X^2,$$<br/>onde $\omega$ denota a frequência angular do oscilador. Aplica-se ao sistema um campo elétrico uniforme de intensidade $E$, que introduz no hamiltoniano a perturbação<br/><br/>$$H_1 = -qEX,$$<br/>onde $X$ denota o operador posição. Supondo que $E$ seja suficientemente pequeno para que a teoria de perturbações seja aplicável, calcule o módulo da correção na energia do estado fundamental do sistema em ordem mais baixa não nula em $E$.<br/>Observação: se necessário, use que os autoestados de energia e respectivos autovalores para o sistema não perturbado são $\ket{n}$ e $E_n = \hbar\omega(n + \frac{1}{2})$. No formalismo dos operadores de escada, o operador de abaixamento<br/><br/>$$a = \sqrt{\frac{m\omega}{2\hbar}}X + i\sqrt{\frac{1}{2\hbar m\omega}}P,$$<br/>escrito em termos dos operadores de posição $X$ e momento $P$, e seu hermitiano conjugado $a^\dagger$, que é o operador de levantamento, atuam em $\ket{n}$ segundo $a\ket{n} = \sqrt{n}\ket{n-1}$ e $a^\dagger\ket{n} = \sqrt{n+1}\ket{n+1}$.`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{2e^2E^2}{m\\omega^2}$',
+				text: String.raw`$\frac{2e^2E^2}{m\omega^2}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$2eE\\sqrt{\\frac{\\hbar}{m\\omega}}$',
+				text: String.raw`$2eE\sqrt{\frac{\hbar}{m\omega}}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{4e^2E^2}{m\\omega^2}$',
+				text: String.raw`$\frac{4e^2E^2}{m\omega^2}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$2eE\\sqrt{2\\frac{\\hbar}{m\\omega}}$',
+				text: String.raw`$2eE\sqrt{2\frac{\hbar}{m\omega}}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{16 e^4E^4}{\\hbar m^2 \\omega^5}$',
+				text: String.raw`$\frac{16 e^4E^4}{\hbar m^2 \omega^5}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2088,7 +2088,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Sejam $\\ket{a}$ e $\\ket{b}$ autoestados do operador momentum linear $\\hat{p}$ com autovalores $a$ e $b$, respectivamente, com $a \\neq b$. Qual é o valor de $\\bra{a}\\hat{p}\\ket{b}$?'
+			text: String.raw`Sejam $\ket{a}$ e $\ket{b}$ autoestados do operador momentum linear $\hat{p}$ com autovalores $a$ e $b$, respectivamente, com $a \neq b$. Qual é o valor de $\bra{a}\hat{p}\ket{b}$?`
 		},
 		alternatives: [
 			{
@@ -2122,7 +2122,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Sejam $\\ket{a}$ e $\\ket{b}$ autoestados do operador posição $\\hat{x}$ com autovalores $a$ e $b$, respectivamente, com $a \\neq b$. Qual é o valor de $\\bra{a}\\hat{x}\\ket{b}$?'
+			text: String.raw`Sejam $\ket{a}$ e $\ket{b}$ autoestados do operador posição $\hat{x}$ com autovalores $a$ e $b$, respectivamente, com $a \neq b$. Qual é o valor de $\bra{a}\hat{x}\ket{b}$?`
 		},
 		alternatives: [
 			{
@@ -2156,11 +2156,11 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Uma partícula de massa $m$ e energia $E$ move-se da esquerda para direita ao longo do eixo $x$ e incide sobre um potencial degrau definido por<br/><br/>$$V(x) = \\begin{cases} 0, & x \\leq 0, \\\\ V_0, & x > 0, \\end{cases}$$<br/>com $E > V_0$. A função de onda na região $x \\leq 0$ é dada por $\\psi_L(x) = Ae^{ik_Lx} + Be^{-ik_Lx}$, e a função de onda na região $x > 0$ é dada por $\\psi_R(x) = Ce^{ik_Rx}$. Qual das alternativas a seguir fornece a probabilidade de transmissão para que a partícula seja encontrada na região $x > 0$?'
+			text: String.raw`Uma partícula de massa $m$ e energia $E$ move-se da esquerda para direita ao longo do eixo $x$ e incide sobre um potencial degrau definido por<br/><br/>$$V(x) = \begin{cases} 0, & x \leq 0, \\ V_0, & x > 0, \end{cases}$$<br/>com $E > V_0$. A função de onda na região $x \leq 0$ é dada por $\psi_L(x) = Ae^{ik_Lx} + Be^{-ik_Lx}$, e a função de onda na região $x > 0$ é dada por $\psi_R(x) = Ce^{ik_Rx}$. Qual das alternativas a seguir fornece a probabilidade de transmissão para que a partícula seja encontrada na região $x > 0$?`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{4k_Lk_R}{(k_L + k_R)^2}$',
+				text: String.raw`$\frac{4k_Lk_R}{(k_L + k_R)^2}$`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2172,11 +2172,11 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{k_L}{k_R}$',
+				text: String.raw`$\frac{k_L}{k_R}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\left(\\frac{k_L - k_R}{k_L + k_R}\\right)^2$',
+				text: String.raw`$\left(\frac{k_L - k_R}{k_L + k_R}\right)^2$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2190,11 +2190,11 @@ export default <Question[]>[
 		},
 		questionNumber: 6,
 		statement: {
-			text: 'Uma partícula de massa $m$ e energia $E$ move-se da esquerda para direita ao longo do eixo $x$ e incide sobre um potencial degrau definido por<br/><br/>$$V(x) = \\begin{cases} 0, & x \\leq 0, \\\\ V_0, & x > 0, \\end{cases}$$<br/>com $E > V_0$. A função de onda na região $x \\leq 0$ é dada por $\\psi_L(x) = Ae^{ik_Lx} + Be^{-ik_Lx}$, e a função de onda na região $x > 0$ é dada por $\\psi_R(x) = Ce^{ik_Rx}$. Qual das alternativas a seguir fornece a probabilidade de reflexão para que a partícula seja encontrada na região $x < 0$?'
+			text: String.raw`Uma partícula de massa $m$ e energia $E$ move-se da esquerda para direita ao longo do eixo $x$ e incide sobre um potencial degrau definido por<br/><br/>$$V(x) = \begin{cases} 0, & x \leq 0, \\ V_0, & x > 0, \end{cases}$$<br/>com $E > V_0$. A função de onda na região $x \leq 0$ é dada por $\psi_L(x) = Ae^{ik_Lx} + Be^{-ik_Lx}$, e a função de onda na região $x > 0$ é dada por $\psi_R(x) = Ce^{ik_Rx}$. Qual das alternativas a seguir fornece a probabilidade de reflexão para que a partícula seja encontrada na região $x < 0$?`
 		},
 		alternatives: [
 			{
-				text: '$\\left(\\frac{k_L - k_R}{k_L + k_R}\\right)^2$',
+				text: String.raw`$\left(\frac{k_L - k_R}{k_L + k_R}\right)^2$`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2206,11 +2206,11 @@ export default <Question[]>[
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\frac{k_L}{k_R}$',
+				text: String.raw`$\frac{k_L}{k_R}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{4k_Lk_R}{(k_L + k_R)^2}$',
+				text: String.raw`$\frac{4k_Lk_R}{(k_L + k_R)^2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2224,27 +2224,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'A parte angular da função de onda de uma certa partícula movendo-se em um potencial central é dada por<br/><br/>$$\\psi(\\theta,\\varphi) = \\frac{1}{\\sqrt{2}}\\left[Y_{32}(\\theta,\\varphi) + Y_{21}(\\theta,\\varphi)\\right],$$<br/>em que $Y_{\\ell m}(\\theta,\\varphi)$ são os harmônicos esféricos, $\\theta$ e $\\varphi$ são os ângulos polares e azimutal, respectivamente, $\\ell$ é o número quântico correspondente ao módulo do momento angular e $m$ dá a projeção do momento angular ao longo do eixo $z$. Nesse estado, o valor esperado do quadrado do momento angular, $L^2$, é'
+			text: String.raw`A parte angular da função de onda de uma certa partícula movendo-se em um potencial central é dada por<br/><br/>$$\psi(\theta,\varphi) = \frac{1}{\sqrt{2}}\left[Y_{32}(\theta,\varphi) + Y_{21}(\theta,\varphi)\right],$$<br/>em que $Y_{\ell m}(\theta,\varphi)$ são os harmônicos esféricos, $\theta$ e $\varphi$ são os ângulos polares e azimutal, respectivamente, $\ell$ é o número quântico correspondente ao módulo do momento angular e $m$ dá a projeção do momento angular ao longo do eixo $z$. Nesse estado, o valor esperado do quadrado do momento angular, $L^2$, é`
 		},
 		alternatives: [
 			{
-				text: '$9\\hbar^2$',
+				text: String.raw`$9\hbar^2$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3\\hbar^2$',
+				text: String.raw`$3\hbar^2$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$18\\hbar^2$',
+				text: String.raw`$18\hbar^2$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$13\\hbar^2/2$',
+				text: String.raw`$13\hbar^2/2$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$5\\hbar^2/9$',
+				text: String.raw`$5\hbar^2/9$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2258,27 +2258,27 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'A parte angular da função de onda de uma certa partícula movendo-se em um potencial central é dada por<br/><br/>$$\\psi(\\theta,\\varphi) = \\frac{1}{\\sqrt{2}}\\left[Y_{42}(\\theta,\\varphi) + Y_{22}(\\theta,\\varphi)\\right],$$<br/>em que $Y_{\\ell m}(\\theta,\\varphi)$ são os harmônicos esféricos, $\\theta$ e $\\varphi$ são os ângulos polares e azimutal, respectivamente, $\\ell$ é o número quântico correspondente ao módulo do momento angular e $m$ dá a projeção do momento angular ao longo do eixo $z$. Nesse estado, o valor esperado do quadrado do momento angular, $L^2$, é'
+			text: String.raw`A parte angular da função de onda de uma certa partícula movendo-se em um potencial central é dada por<br/><br/>$$\psi(\theta,\varphi) = \frac{1}{\sqrt{2}}\left[Y_{42}(\theta,\varphi) + Y_{22}(\theta,\varphi)\right],$$<br/>em que $Y_{\ell m}(\theta,\varphi)$ são os harmônicos esféricos, $\theta$ e $\varphi$ são os ângulos polares e azimutal, respectivamente, $\ell$ é o número quântico correspondente ao módulo do momento angular e $m$ dá a projeção do momento angular ao longo do eixo $z$. Nesse estado, o valor esperado do quadrado do momento angular, $L^2$, é`
 		},
 		alternatives: [
 			{
-				text: '$13\\hbar^2$',
+				text: String.raw`$13\hbar^2$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$3\\hbar^2$',
+				text: String.raw`$3\hbar^2$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$26\\hbar^2$',
+				text: String.raw`$26\hbar^2$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$6\\hbar^2$',
+				text: String.raw`$6\hbar^2$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$10\\hbar^2$',
+				text: String.raw`$10\hbar^2$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2312,7 +2312,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$1/\\sqrt{2}$',
+				text: String.raw`$1/\sqrt{2}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2346,7 +2346,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$1/\\sqrt{3}$',
+				text: String.raw`$1/\sqrt{3}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2364,7 +2364,7 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: 'O valor médio de $n$ é $\\braket{n} = N/2$, e sua distribuição de probabilidades é binomial.',
+				text: String.raw`O valor médio de $n$ é $\braket{n} = N/2$, e sua distribuição de probabilidades é binomial.`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2428,11 +2428,11 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere uma superfície com $M$ sítios adsorvedores independentes. Cada sítio pode estar em um dos seguintes estados: vazio, ocupado por uma molécula do tipo 1 ou ocupado por uma molécula do tipo 2. Não é permitida dupla ocupação de um mesmo sítio. O sistema está em contato térmico com um reservatório à temperatura $T$ e, além disso, está em contato com dois reservatórios de partículas distintos, um contendo moléculas do tipo 1 e outro contendo moléculas do tipo 2, caracterizados respectivamente pelos potenciais químicos $\\mu_1$ e $\\mu_2$. O sistema encontra-se em equilíbrio térmico e químico com ambos os reservatórios. Quando adsorvidas em um sítio, as moléculas do tipo 1 e 2 possuem energias $-\\varepsilon_1$ e $-\\varepsilon_2$, respectivamente. Isto pode ser simplesmente traduzido por um hamiltoniano efetivo por sítio descrito por<br/><br/>$$\\mathcal{H}_i = -\\varepsilon_1 n_i^{(1)} - \\varepsilon_2 n_i^{(2)} - \\mu_1 n_i^{(1)} - \\mu_2 n_i^{(2)},$$<br/>onde $n_i^{(\\alpha)} \\in \\{0,1\\}$ indica a ocupação do sítio $i$ por uma molécula do tipo $\\alpha \\in \\{1,2\\}$, com $n_i^{(1)} + n_i^{(2)} \\leq 1$ e $i \\in \\{1,2,\\ldots,M\\}$. O número médio de moléculas do tipo 1 adsorvidas na superfície é'
+			text: String.raw`Considere uma superfície com $M$ sítios adsorvedores independentes. Cada sítio pode estar em um dos seguintes estados: vazio, ocupado por uma molécula do tipo 1 ou ocupado por uma molécula do tipo 2. Não é permitida dupla ocupação de um mesmo sítio. O sistema está em contato térmico com um reservatório à temperatura $T$ e, além disso, está em contato com dois reservatórios de partículas distintos, um contendo moléculas do tipo 1 e outro contendo moléculas do tipo 2, caracterizados respectivamente pelos potenciais químicos $\mu_1$ e $\mu_2$. O sistema encontra-se em equilíbrio térmico e químico com ambos os reservatórios. Quando adsorvidas em um sítio, as moléculas do tipo 1 e 2 possuem energias $-\varepsilon_1$ e $-\varepsilon_2$, respectivamente. Isto pode ser simplesmente traduzido por um hamiltoniano efetivo por sítio descrito por<br/><br/>$$\mathcal{H}_i = -\varepsilon_1 n_i^{(1)} - \varepsilon_2 n_i^{(2)} - \mu_1 n_i^{(1)} - \mu_2 n_i^{(2)},$$<br/>onde $n_i^{(\alpha)} \in \{0,1\}$ indica a ocupação do sítio $i$ por uma molécula do tipo $\alpha \in \{1,2\}$, com $n_i^{(1)} + n_i^{(2)} \leq 1$ e $i \in \{1,2,\ldots,M\}$. O número médio de moléculas do tipo 1 adsorvidas na superfície é`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{M e^{\\beta(\\mu_1+\\varepsilon_1)}}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M e^{\beta(\mu_1+\varepsilon_1)}}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2440,7 +2440,7 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{M e^{\\beta(\\mu_2+\\varepsilon_2)}}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M e^{\beta(\mu_2+\varepsilon_2)}}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.C
 			},
 			{
@@ -2448,7 +2448,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{M}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2462,11 +2462,11 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere uma superfície com $M$ sítios adsorvedores independentes. Cada sítio pode estar em um dos seguintes estados: vazio, ocupado por uma molécula do tipo 1 ou ocupado por uma molécula do tipo 2. Não é permitida dupla ocupação de um mesmo sítio. O sistema está em contato térmico com um reservatório à temperatura $T$ e, além disso, está em contato com dois reservatórios de partículas distintos, um contendo moléculas do tipo 1 e outro contendo moléculas do tipo 2, caracterizados respectivamente pelos potenciais químicos $\\mu_1$ e $\\mu_2$. O sistema encontra-se em equilíbrio térmico e químico com ambos os reservatórios. Quando adsorvidas em um sítio, as moléculas do tipo 1 e 2 possuem energias $-\\varepsilon_1$ e $-\\varepsilon_2$, respectivamente. Isto pode ser simplesmente traduzido por um hamiltoniano efetivo por sítio descrito por<br/><br/>$$\\mathcal{H}_i = -\\varepsilon_1 n_i^{(1)} - \\varepsilon_2 n_i^{(2)} - \\mu_1 n_i^{(1)} - \\mu_2 n_i^{(2)},$$<br/>onde $n_i^{(\\alpha)} \\in \\{0,1\\}$ indica a ocupação do sítio $i$ por uma molécula do tipo $\\alpha \\in \\{1,2\\}$, com $n_i^{(1)} + n_i^{(2)} \\leq 1$ e $i \\in \\{1,2,\\ldots,M\\}$. O número médio de moléculas do tipo 2 adsorvidas na superfície é'
+			text: String.raw`Considere uma superfície com $M$ sítios adsorvedores independentes. Cada sítio pode estar em um dos seguintes estados: vazio, ocupado por uma molécula do tipo 1 ou ocupado por uma molécula do tipo 2. Não é permitida dupla ocupação de um mesmo sítio. O sistema está em contato térmico com um reservatório à temperatura $T$ e, além disso, está em contato com dois reservatórios de partículas distintos, um contendo moléculas do tipo 1 e outro contendo moléculas do tipo 2, caracterizados respectivamente pelos potenciais químicos $\mu_1$ e $\mu_2$. O sistema encontra-se em equilíbrio térmico e químico com ambos os reservatórios. Quando adsorvidas em um sítio, as moléculas do tipo 1 e 2 possuem energias $-\varepsilon_1$ e $-\varepsilon_2$, respectivamente. Isto pode ser simplesmente traduzido por um hamiltoniano efetivo por sítio descrito por<br/><br/>$$\mathcal{H}_i = -\varepsilon_1 n_i^{(1)} - \varepsilon_2 n_i^{(2)} - \mu_1 n_i^{(1)} - \mu_2 n_i^{(2)},$$<br/>onde $n_i^{(\alpha)} \in \{0,1\}$ indica a ocupação do sítio $i$ por uma molécula do tipo $\alpha \in \{1,2\}$, com $n_i^{(1)} + n_i^{(2)} \leq 1$ e $i \in \{1,2,\ldots,M\}$. O número médio de moléculas do tipo 2 adsorvidas na superfície é`
 		},
 		alternatives: [
 			{
-				text: '$\\frac{M e^{\\beta(\\mu_2+\\varepsilon_2)}}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M e^{\beta(\mu_2+\varepsilon_2)}}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.A
 			},
 			{
@@ -2474,7 +2474,7 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\frac{M e^{\\beta(\\mu_1+\\varepsilon_1)}}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M e^{\beta(\mu_1+\varepsilon_1)}}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.C
 			},
 			{
@@ -2482,7 +2482,7 @@ export default <Question[]>[
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$\\frac{M}{1 + e^{\\beta(\\mu_1+\\varepsilon_1)} + e^{\\beta(\\mu_2+\\varepsilon_2)}}$',
+				text: String.raw`$\frac{M}{1 + e^{\beta(\mu_1+\varepsilon_1)} + e^{\beta(\mu_2+\varepsilon_2)}}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2496,27 +2496,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Considere um sistema isolado, descrito pelo ensemble microcanônico e constituído de dois subsistemas $A$ e $B$, fracamente acoplados entre si. A energia total, $E$, é fixa:<br/><br/>$$E = E_A + E_B,$$<br/>sendo $E_A$ e $E_B$ as energias dos subsistemas $A$ e $B$, respectivamente. O número de microestados acessíveis a cada subsistema é dado por<br/><br/>$$\\Omega_A(E_A) = C_A E_A^\\alpha \\quad \\text{e} \\quad \\Omega_B(E_B) = C_B E_B^\\beta,$$<br/>onde $C_A$, $C_B$, $\\alpha$ e $\\beta$ são constantes positivas. O sistema evolui espontaneamente até o equilíbrio. Nessa condição, determine a fração de energia em $A$, $E_A/E$.<br/>Sugestão: lembre-se de que a entropia total de um sistema isolado deve ser maximizada no equilíbrio.'
+			text: String.raw`Considere um sistema isolado, descrito pelo ensemble microcanônico e constituído de dois subsistemas $A$ e $B$, fracamente acoplados entre si. A energia total, $E$, é fixa:<br/><br/>$$E = E_A + E_B,$$<br/>sendo $E_A$ e $E_B$ as energias dos subsistemas $A$ e $B$, respectivamente. O número de microestados acessíveis a cada subsistema é dado por<br/><br/>$$\Omega_A(E_A) = C_A E_A^\alpha \quad \text{e} \quad \Omega_B(E_B) = C_B E_B^\beta,$$<br/>onde $C_A$, $C_B$, $\alpha$ e $\beta$ são constantes positivas. O sistema evolui espontaneamente até o equilíbrio. Nessa condição, determine a fração de energia em $A$, $E_A/E$.<br/>Sugestão: lembre-se de que a entropia total de um sistema isolado deve ser maximizada no equilíbrio.`
 		},
 		alternatives: [
 			{
-				text: '$\\alpha/(\\alpha + \\beta)$',
+				text: String.raw`$\alpha/(\alpha + \beta)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\alpha/\\beta$',
+				text: String.raw`$\alpha/\beta$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\beta/(\\alpha + \\beta)$',
+				text: String.raw`$\beta/(\alpha + \beta)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\beta/\\alpha$',
+				text: String.raw`$\beta/\alpha$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$2\\alpha/\\beta$',
+				text: String.raw`$2\alpha/\beta$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2530,27 +2530,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: 'Considere um sistema isolado, descrito pelo ensemble microcanônico, constituído de dois subsistemas $A$ e $B$, fracamente acoplados entre si. A energia total, $E$, é fixa:<br/><br/>$$E = E_A + E_B,$$<br/>sendo $E_A$ e $E_B$ as energias dos subsistemas $A$ e $B$, respectivamente. O número de microestados acessíveis a cada subsistema é dado por<br/><br/>$$\\Omega_A(E_A) = C_A E_A^\\alpha \\quad \\text{e} \\quad \\Omega_B(E_B) = C_B E_B^\\beta,$$<br/>onde $C_A$, $C_B$, $\\alpha$ e $\\beta$ são constantes positivas. O sistema evolui espontaneamente até o equilíbrio. Nessa condição, determine a fração de energia em $B$, $E_B/E$.<br/>Sugestão: lembre-se de que a entropia total de um sistema isolado deve ser maximizada no equilíbrio.'
+			text: String.raw`Considere um sistema isolado, descrito pelo ensemble microcanônico, constituído de dois subsistemas $A$ e $B$, fracamente acoplados entre si. A energia total, $E$, é fixa:<br/><br/>$$E = E_A + E_B,$$<br/>sendo $E_A$ e $E_B$ as energias dos subsistemas $A$ e $B$, respectivamente. O número de microestados acessíveis a cada subsistema é dado por<br/><br/>$$\Omega_A(E_A) = C_A E_A^\alpha \quad \text{e} \quad \Omega_B(E_B) = C_B E_B^\beta,$$<br/>onde $C_A$, $C_B$, $\alpha$ e $\beta$ são constantes positivas. O sistema evolui espontaneamente até o equilíbrio. Nessa condição, determine a fração de energia em $B$, $E_B/E$.<br/>Sugestão: lembre-se de que a entropia total de um sistema isolado deve ser maximizada no equilíbrio.`
 		},
 		alternatives: [
 			{
-				text: '$\\beta/(\\alpha + \\beta)$',
+				text: String.raw`$\beta/(\alpha + \beta)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: '$\\beta/\\alpha$',
+				text: String.raw`$\beta/\alpha$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: '$\\alpha/(\\alpha + \\beta)$',
+				text: String.raw`$\alpha/(\alpha + \beta)$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: '$\\alpha/\\beta$',
+				text: String.raw`$\alpha/\beta$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: '$2\\beta/\\alpha$',
+				text: String.raw`$2\beta/\alpha$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2564,27 +2564,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Considere um sistema em equilíbrio térmico com um reservatório à temperatura $T$, descrito pelo ensemble canônico. O sistema possui dois níveis de energia:<br/><br/><ul><li>um nível fundamental, de energia $E_0 = 0$, com degenerescência $g_0 = 1$;</li><li>um nível excitado, de energia $E_1 = \\varepsilon$, com degenerescência $g_1 = 3$.</li></ul><br/>Assinale a alternativa correta.'
+			text: String.raw`Considere um sistema em equilíbrio térmico com um reservatório à temperatura $T$, descrito pelo ensemble canônico. O sistema possui dois níveis de energia:<br/><br/><ul><li>um nível fundamental, de energia $E_0 = 0$, com degenerescência $g_0 = 1$;</li><li>um nível excitado, de energia $E_1 = \varepsilon$, com degenerescência $g_1 = 3$.</li></ul><br/>Assinale a alternativa correta.`
 		},
 		alternatives: [
 			{
-				text: 'A probabilidade de o sistema estar no nível excitado é $(3e^{-\\beta\\varepsilon})/(1 + 3e^{-\\beta\\varepsilon})$.',
+				text: String.raw`A probabilidade de o sistema estar no nível excitado é $(3e^{-\beta\varepsilon})/(1 + 3e^{-\beta\varepsilon})$.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'A função de partição é $Z = 3 + e^{-\\beta\\varepsilon}$.',
+				text: String.raw`A função de partição é $Z = 3 + e^{-\beta\varepsilon}$.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'No limite $T \\to 0$, as probabilidades de ocupação dos níveis são iguais, devido à degenerescência.',
+				text: String.raw`No limite $T \to 0$, as probabilidades de ocupação dos níveis são iguais, devido à degenerescência.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'No limite $T \\to \\infty$, a probabilidade de ocupação do nível excitado tende a $1/2$.',
+				text: String.raw`No limite $T \to \infty$, a probabilidade de ocupação do nível excitado tende a $1/2$.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'A energia média do sistema é sempre igual a $\\varepsilon/3$.',
+				text: String.raw`A energia média do sistema é sempre igual a $\varepsilon/3$.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2598,27 +2598,27 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'Considere um sistema em equilíbrio térmico com um reservatório à temperatura $T$, descrito pelo ensemble canônico. O sistema possui dois níveis de energia:<br/><br/><ul><li>um nível fundamental de energia $E_0 = 0$, com degenerescência $g_0 = 1$;</li><li>um nível excitado de energia $E_1 = \\varepsilon$, com degenerescência $g_1 = 2$.</li></ul><br/>Assinale a alternativa correta:'
+			text: String.raw`Considere um sistema em equilíbrio térmico com um reservatório à temperatura $T$, descrito pelo ensemble canônico. O sistema possui dois níveis de energia:<br/><br/><ul><li>um nível fundamental de energia $E_0 = 0$, com degenerescência $g_0 = 1$;</li><li>um nível excitado de energia $E_1 = \varepsilon$, com degenerescência $g_1 = 2$.</li></ul><br/>Assinale a alternativa correta:`
 		},
 		alternatives: [
 			{
-				text: 'A probabilidade de o sistema estar no nível excitado é $(2e^{-\\beta\\varepsilon})/(1 + 2e^{-\\beta\\varepsilon})$.',
+				text: String.raw`A probabilidade de o sistema estar no nível excitado é $(2e^{-\beta\varepsilon})/(1 + 2e^{-\beta\varepsilon})$.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: 'A função de partição é $Z = 2 + e^{-\\beta\\varepsilon}$.',
+				text: String.raw`A função de partição é $Z = 2 + e^{-\beta\varepsilon}$.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: 'No limite $T \\to 0$, as probabilidades de ocupação dos níveis são iguais, devido à degenerescência.',
+				text: String.raw`No limite $T \to 0$, as probabilidades de ocupação dos níveis são iguais, devido à degenerescência.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: 'No limite $T \\to \\infty$, a probabilidade de ocupação do nível excitado tende a $1/2$.',
+				text: String.raw`No limite $T \to \infty$, a probabilidade de ocupação do nível excitado tende a $1/2$.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: 'A energia média do sistema é sempre igual a $\\varepsilon/2$.',
+				text: String.raw`A energia média do sistema é sempre igual a $\varepsilon/2$.`,
 				number: QuestionAlternative.E
 			}
 		]

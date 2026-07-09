@@ -21,7 +21,7 @@ function createThemeStore() {
 	function applyTheme(isDark: boolean) {
 		if (browser) {
 			const theme = isDark ? 'dark' : 'light';
-			document.documentElement.setAttribute('data-theme', theme);
+			document.documentElement.dataset.theme = theme;
 			localStorage.setItem('theme', theme);
 		}
 	}

@@ -10,11 +10,11 @@
 			(function () {
 				const savedTheme = localStorage.getItem('theme');
 				if (savedTheme) {
-					document.documentElement.setAttribute('data-theme', savedTheme);
+					document.documentElement.dataset.theme = savedTheme;
 				} else {
 					// Optional: auto-detect system preference
 					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-					document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+					document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light';
 				}
 			})();
 		</script>
