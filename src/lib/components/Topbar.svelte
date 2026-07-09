@@ -30,6 +30,9 @@
 			<a href="/flashcard" class="nav-link {currentPath.startsWith('/flashcard') ? 'active' : ''}">
 				Flashcard
 			</a>
+			<a href="/all/" class="nav-link {currentPath.startsWith('/all') ? 'active' : ''}">
+				Banco de Questões
+			</a>
 			<button class="theme-toggle" title="Mudar tema" onclick={toggleTheme}>
 				{#if isDark}
 					<Sun size={18} />
@@ -158,7 +161,7 @@
 		transform: scale(0.95);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 800px) {
 		.nav-link:not(.github-link):not(.theme-toggle) {
 			display: none;
 		}

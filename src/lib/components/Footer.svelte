@@ -39,9 +39,15 @@
 			</a>
 		</p>
 		<p class="footer-subtext">Simulador baseado em questões reais do Exame Unificado de Física</p>
-		<a class="footer-subtext" href={isTauriMobile ? `${BASE_URL}/privacy/` : '/privacy/'}
-			>Política de Privacidade</a
-		>
+		<div class="footer-links">
+			{#if !isTauriMobile}
+				<a class="footer-subtext" href="/all/">Banco de Questões</a>
+				<span class="separator">•</span>
+			{/if}
+			<a class="footer-subtext" href={isTauriMobile ? `${BASE_URL}/privacy/` : '/privacy/'}
+				>Política de Privacidade</a
+			>
+		</div>
 
 		{#if ADS_ENABLED && !isTauriMobile}
 			<div class="ads-toggle">
@@ -111,6 +117,14 @@
 		font-size: var(--text-xs);
 		color: var(--text-muted);
 		margin: 0;
+	}
+
+	.footer-links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-sm);
+		flex-wrap: wrap;
 	}
 
 	.ads-toggle {
