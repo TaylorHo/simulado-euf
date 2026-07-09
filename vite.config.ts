@@ -37,5 +37,11 @@ export default defineConfig({
 		minify: !process.env.TAURI_ENV_DEBUG ? 'esbuild' : false,
 		// produce sourcemaps for debug builds
 		sourcemap: !!process.env.TAURI_ENV_DEBUG
+	},
+	esbuild: {
+		supported: {
+			// Needed because it wouldn't compile otherwise. It seems that Safari <14.1 doesn't support destructuring, so we would need to change our target from 'safari13' to 'safari14', but we want to support older versions of Safari.
+			destructuring: true
+		}
 	}
 });
