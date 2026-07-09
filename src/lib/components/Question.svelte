@@ -6,7 +6,7 @@
 	import { imageInversionStore } from '$lib/stores/imageInversion';
 	import { themeStore } from '$lib/stores/theme';
 	import { getImagePath } from '$lib/utils/helpers';
-	import { Eye, EyeOff, PaintBucket, ClipboardList } from '@lucide/svelte';
+	import { Eye, EyeOff, PaintBucket, ClipboardList, RefreshCw } from '@lucide/svelte';
 	import ReportError from './ReportError.svelte';
 	import { BASE_URL } from '$lib/variables';
 
@@ -19,6 +19,8 @@
 		isIncorrect?: boolean;
 		onSelectAnswer?: (alt: QuestionAlternative) => void;
 		onToggleDiscard?: (alt: QuestionAlternative) => void;
+		onSwitchVersion?: () => void;
+		versionSwitchTooltip?: string;
 	}
 
 	let {
@@ -29,7 +31,9 @@
 		showDiscardButton = false,
 		isIncorrect = false,
 		onSelectAnswer,
-		onToggleDiscard
+		onToggleDiscard,
+		onSwitchVersion,
+		versionSwitchTooltip
 	}: Props = $props();
 
 	const alternativeLabels = ['A', 'B', 'C', 'D', 'E'];
@@ -75,6 +79,16 @@
 			</div>
 		{/if}
 		<div class="question-actions">
+			{#if onSwitchVersion}
+				<button
+					class="version-switch-btn"
+					onclick={onSwitchVersion}
+					title={versionSwitchTooltip}
+					aria-label={versionSwitchTooltip}
+				>
+					<RefreshCw size={14} />
+				</button>
+			{/if}
 			<a
 				href={`${BASE_URL}/assets/formulario.pdf`}
 				target="_blank"
@@ -214,6 +228,26 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-sm);
+	}
+
+	.version-switch-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		color: var(--text-muted);
+		background-color: transparent;
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+		min-height: 0;
+	}
+
+	.version-switch-btn:hover {
+		color: var(--text-primary);
+		background-color: var(--bg-tertiary);
+		border-color: var(--border-color);
 	}
 
 	.btn-form {

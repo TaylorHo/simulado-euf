@@ -12,6 +12,7 @@
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { Settings } from '@lucide/svelte';
+	import { getAlternateVersionId } from '$lib/services/identifiers';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -161,6 +162,24 @@
 			? `de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`
 			: ''
 	);
+
+	const alternateVersionId = $derived(
+		data.questionId ? getAlternateVersionId(data.questionId) : null
+	);
+
+	const versionSwitchTooltip = $derived(
+		currentExamQuestion
+			? currentExamQuestion.version === Version.A
+				? 'Trocar para versão B'
+				: 'Trocar para versão A'
+			: ''
+	);
+
+	function handleSwitchVersion() {
+		if (!alternateVersionId) return;
+		flashcardStore.loadQuestionById(alternateVersionId);
+		goto(`/flashcard/${alternateVersionId}/`, { replaceState: true });
+	}
 </script>
 
 <svelte:head>
@@ -247,6 +266,8 @@
 					showDiscardButton={!flashcardStore.showAnswer}
 					onSelectAnswer={handleSelectAnswer}
 					onToggleDiscard={handleToggleDiscard}
+					onSwitchVersion={handleSwitchVersion}
+					{versionSwitchTooltip}
 				/>
 
 				<div class="actions-container">
