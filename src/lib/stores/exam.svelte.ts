@@ -71,13 +71,13 @@ class ExamStore {
 			// Apply saved answers and discarded using service methods
 			// Note: currentExam and service's exam are the same object reference
 			progress.answers.forEach(({ questionIndex, answer }) => {
-				if (this.currentExam && this.currentExam.questions[questionIndex]) {
+				if (this.currentExam?.questions[questionIndex]) {
 					this.examService.selectAnswer(questionIndex, answer);
 				}
 			});
 
 			progress.discarded.forEach(({ questionIndex, alternatives }) => {
-				if (this.currentExam && this.currentExam.questions[questionIndex]) {
+				if (this.currentExam?.questions[questionIndex]) {
 					// Toggle each discarded alternative (they start empty, so toggle adds them)
 					alternatives.forEach((alt) => {
 						this.examService.toggleDiscarded(questionIndex, alt);

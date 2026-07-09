@@ -46,7 +46,7 @@ class FlashcardStore {
 					// Ensure we use numeric keys for the enum
 					for (const key in settings.areaWeights) {
 						const areaNum = Number.parseInt(key);
-						if (!isNaN(areaNum)) {
+						if (!Number.isNaN(areaNum)) {
 							this.areaWeights[areaNum as Area] = settings.areaWeights[key];
 						}
 					}

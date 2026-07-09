@@ -53,7 +53,7 @@ const ALTERNATIVE_RE = /^- ([a-e])\) (.*)$/;
 
 /** @param {string} text */
 function escapeTsString(text) {
-	return text.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+	return text.replaceAll('\\', '\\\\').replaceAll("'", "\\'");
 }
 
 /**

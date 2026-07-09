@@ -24,3 +24,5 @@ vite.config.ts.timestamp-*
 
 # Other
 merged_native_libs.zip
+*.log
+.scannerwork/

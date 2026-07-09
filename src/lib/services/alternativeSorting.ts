@@ -13,8 +13,8 @@ export function generateRandomSeed(): number {
 export function parseSeed(seedStr: string | null | undefined): number | null {
 	if (!seedStr) return null;
 
-	const parsed = parseInt(seedStr, 10);
-	return isNaN(parsed) ? null : parsed;
+	const parsed = Number.parseInt(seedStr, 10);
+	return Number.isNaN(parsed) ? null : parsed;
 }
 
 /**

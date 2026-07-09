@@ -60,9 +60,9 @@ export async function fetchChangelogIssues(): Promise<ChangelogLoadResult> {
 		const openEnhancements: GitHubIssue[] = [];
 
 		for (const item of issuesOnly) {
-			const labels = item.labels.map((l) => l.name);
-			const isBug = labels.includes('bug');
-			const isEnhancement = labels.includes('enhancement');
+			const labels = new Set(item.labels.map((l) => l.name));
+			const isBug = labels.has('bug');
+			const isEnhancement = labels.has('enhancement');
 
 			if (!isBug && !isEnhancement) continue;
 

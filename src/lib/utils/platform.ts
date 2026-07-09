@@ -35,7 +35,7 @@ function detectMobileDevice(): boolean {
 
 	return (
 		mobileKeywords.some((keyword) => userAgent.includes(keyword)) ||
-		(window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
+		window.matchMedia?.('(max-width: 768px)').matches
 	);
 }
 
