@@ -74,6 +74,10 @@
 		name="description"
 		content="Prepare-se para o EUF com simulados e flashcards baseados em provas anteriores do Exame Unificado de Física da Pós-Graduação."
 	/>
+	<keywords
+		>simulado, euf, exame unificado de física, euf provas antigas, exame unificado de física provas
+		anteriores, pós-graduação, física, universidades brasileiras</keywords
+	>
 	<link rel="canonical" href={`${BASE_URL}/`} />
 </svelte:head>
 
