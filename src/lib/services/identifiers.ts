@@ -1,4 +1,4 @@
-import { Version, type Question, type QuestionIdentifier } from '$lib/models/question';
+import { type Question, type QuestionIdentifier } from '$lib/models/question';
 
 /**
  * Generate a unique identifier for a single question
@@ -49,22 +49,4 @@ export function parseQuestionId(id: string): QuestionIdentifier {
  */
 export function parseIdentifier(identifier: string): QuestionIdentifier[] {
 	return identifier.split('-').map((base36Code) => parseQuestionId(base36Code));
-}
-
-/**
- * Return the same question identifier with the opposite version (A ↔ B)
- */
-export function getAlternateVersionIdentifier(identifier: QuestionIdentifier): QuestionIdentifier {
-	return {
-		...identifier,
-		version: identifier.version === Version.A ? Version.B : Version.A
-	};
-}
-
-/**
- * Generate the ID for the alternate version of a question
- */
-export function getAlternateVersionId(id: string): string {
-	const identifier = parseQuestionId(id);
-	return generateQuestionId(getAlternateVersionIdentifier(identifier));
 }

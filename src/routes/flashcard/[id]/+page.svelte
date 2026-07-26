@@ -12,7 +12,7 @@
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { Settings } from '@lucide/svelte';
-	import { getAlternateVersionId } from '$lib/services/identifiers';
+	import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -85,6 +85,14 @@
 			}, 100);
 		}
 	});
+
+	function getAlternateVersionId(id: string): string {
+		const identifier = parseQuestionId(id);
+		return generateQuestionId({
+			...identifier,
+			version: identifier.version === Version.A ? Version.B : Version.A
+		});
+	}
 
 	function handleSelectAnswer(alt: QuestionAlternative) {
 		flashcardStore.selectAnswer(alt);
