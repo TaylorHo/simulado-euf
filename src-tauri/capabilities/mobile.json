@@ -7,5 +7,10 @@
   "windows": [
     "main"
   ],
-  "permissions": []
+  "permissions": [
+    {
+      "identifier": "http:default",
+      "allow": [{ "url": "https://euf.hoffmann.io/announcements.json" }, { "url": "https://n8n.hoffmann.io/webhook/euf-bug-report" }]
+    }
+  ]
 }

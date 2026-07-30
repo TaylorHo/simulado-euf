@@ -2,6 +2,7 @@
 	import { AreaLabels } from '$lib/models/area';
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { Version } from '$lib/models/question';
+	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { BUG_REPORT_API_URL } from '$lib/variables';
 	import Modal from './Modal.svelte';
 	import { Flag } from '@lucide/svelte';
@@ -37,13 +38,26 @@
 			};
 
 			// Fetch request
-			const response = await fetch(BUG_REPORT_API_URL, {
-				method: 'POST',
-				body: JSON.stringify(report),
-				headers: {
-					'Content-type': 'application/json; charset=UTF-8'
-				}
-			});
+			const isTauriMobile = isTauriMobileApp();
+			let response: Response;
+			if (isTauriMobile) {
+				const { fetch } = await import('@tauri-apps/plugin-http');
+				response = await fetch(BUG_REPORT_API_URL, {
+					method: 'POST',
+					body: JSON.stringify(report),
+					headers: {
+						'Content-type': 'application/json; charset=UTF-8'
+					}
+				});
+			} else {
+				response = await fetch(BUG_REPORT_API_URL, {
+					method: 'POST',
+					body: JSON.stringify(report),
+					headers: {
+						'Content-type': 'application/json; charset=UTF-8'
+					}
+				});
+			}
 
 			if (!response.ok) {
 				throw new Error('Falha ao enviar o relatório.');

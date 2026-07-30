@@ -12,10 +12,7 @@ export const announcements: Announcement[] = [
 			'A prova da edição 2026/2 será realizada em 30/09. Consulte o local de prova no site oficial.',
 		startDate: '2026-09-10',
 		endDate: '2026-09-30',
-		link: {
-			href: 'https://euf.ifi.unicamp.br/EUF/listarevento.aspx?22026EUF',
-			label: 'Ver local da prova'
-		}
+		href: 'https://euf.ifi.unicamp.br/EUF/listarevento.aspx?22026EUF'
 	},
 	{
 		id: '2026-2-registration-end',
@@ -23,10 +20,7 @@ export const announcements: Announcement[] = [
 		message: 'As inscrições para a edição 2026/2 encerram em breve. Não deixe para a última hora.',
 		startDate: '2026-09-02',
 		endDate: '2026-09-09',
-		link: {
-			href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/',
-			label: 'Inscrever-se'
-		}
+		href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/'
 	},
 	{
 		id: '2026-2-registration-start',
@@ -35,10 +29,7 @@ export const announcements: Announcement[] = [
 			'As inscrições para a edição 2026/2 do EUF já estão abertas. Garanta sua vaga antes do prazo.',
 		startDate: '2026-08-05',
 		endDate: '2026-09-01',
-		link: {
-			href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/',
-			label: 'Inscrever-se'
-		}
+		href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/'
 	},
 	{
 		id: '2026-2-edital',
@@ -47,10 +38,7 @@ export const announcements: Announcement[] = [
 			'O edital da segunda edição de 2026 já está disponível. Confira datas, regras e informações oficiais.',
 		startDate: '2026-07-01',
 		endDate: '2026-08-04',
-		link: {
-			href: 'https://www1.fisica.org.br/~euf/index.php/pt/',
-			label: 'Ver edital'
-		}
+		href: 'https://www1.fisica.org.br/~euf/index.php/pt/'
 	},
 	{
 		id: '2026-1-dataset',
@@ -58,9 +46,6 @@ export const announcements: Announcement[] = [
 		message: 'As questões da edição 2026/1 do EUF já estão disponíveis para praticar.',
 		startDate: '2026-06-01',
 		endDate: '2026-06-30',
-		link: {
-			href: '/simulado/',
-			label: 'Iniciar simulado'
-		}
+		href: '/simulado/'
 	}
 ];

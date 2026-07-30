@@ -4,10 +4,7 @@ export type Announcement = {
 	message: string;
 	startDate: string;
 	endDate: string | null;
-	link?: {
-		href: string;
-		label: string;
-	};
+	href?: string;
 };
 
 export type AnnouncementsResponse = {
