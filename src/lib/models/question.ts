@@ -1,4 +1,5 @@
 import type { Area } from '$lib/models/area';
+import type { Subarea } from '$lib/models/subareas';
 
 export interface Statement {
 	text?: string;
@@ -54,8 +55,8 @@ export interface Question extends QuestionIdentifier {
 
 	correct: QuestionAlternative;
 
-	/** Tags for categorizing questions (e.g., 'Ondas Eletromagnéticas', 'Lei de Gauss') */
-	tags: string[];
+	/** Subarea tags */
+	tags: Subarea[];
 
 	/** AI help and youtube links for this question */
 	help: HelpTools;

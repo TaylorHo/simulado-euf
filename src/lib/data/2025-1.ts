@@ -1,5 +1,6 @@
 import { Area } from '$lib/models/area';
 import { QuestionAlternative, Version, type Question } from '$lib/models/question';
+import { tagsForArea, TagEM, TagMC, TagFM, TagMQ, TagTD, TagFE } from '$lib/models/subareas';
 
 const defaultData = {
 	year: 2025,
@@ -22,6 +23,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.SistemasDeParticulas),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -57,6 +59,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.SistemasDeParticulas),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -92,6 +95,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoUnidimensional),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -127,6 +131,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoUnidimensional),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -162,6 +167,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.EquacoesLagrangeHamilton,
+			TagMC.CalculoVariacional
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -196,6 +205,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.EquacoesLagrangeHamilton,
+			TagMC.CalculoVariacional
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -230,6 +243,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.OscilacoesAcopladas,
+			TagMC.OscilacoesLineares,
+			TagMC.SistemasDeParticulas
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -264,6 +282,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.OscilacoesAcopladas,
+			TagMC.OscilacoesLineares,
+			TagMC.SistemasDeParticulas
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -298,6 +321,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.OscilacoesLineares,
+			TagMC.LeisDeNewton,
+			TagMC.MovimentoDuasTresDimensoes
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -333,6 +361,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.OscilacoesLineares,
+			TagMC.LeisDeNewton,
+			TagMC.MovimentoDuasTresDimensoes
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -368,6 +401,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.SistemasDeParticulas, TagMC.LeisDeNewton),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -403,6 +437,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.SistemasDeParticulas, TagMC.LeisDeNewton),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -438,6 +473,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.DinamicaCorposRigidos, TagMC.LeisDeNewton),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -473,6 +509,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(TagMC.DinamicaCorposRigidos, TagMC.LeisDeNewton),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -508,6 +545,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.DinamicaCorposRigidos,
+			TagMC.SistemasDeParticulas
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -543,6 +584,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaClassica,
+		tags: tagsForArea<Area.MecanicaClassica>(
+			TagMC.DinamicaCorposRigidos,
+			TagMC.SistemasDeParticulas
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
@@ -578,6 +623,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposMagneticosCorrentesEstacionarias),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -612,6 +658,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposMagneticosCorrentesEstacionarias),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -646,6 +693,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.EquacoesMaxwell,
+			TagEM.CamposMagneticosCorrentesEstacionarias
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -680,6 +731,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.EquacoesMaxwell,
+			TagEM.CamposMagneticosCorrentesEstacionarias
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -714,6 +769,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -748,6 +804,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -782,6 +839,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -816,6 +874,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -850,6 +909,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -885,6 +945,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -920,6 +981,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.CamposMagneticosCorrentesEstacionarias,
+			TagEM.CamposEletrostaticos
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -955,6 +1020,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.CamposMagneticosCorrentesEstacionarias,
+			TagEM.CamposEletrostaticos
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -990,6 +1059,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.ForcaEletromotrizInduzida,
+			TagEM.CamposMagneticosCorrentesEstacionarias
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -1025,6 +1098,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.ForcaEletromotrizInduzida,
+			TagEM.CamposMagneticosCorrentesEstacionarias
+		),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -1060,6 +1137,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.PropagacaoOndasEletromagneticas, TagEM.Radiacao),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -1094,6 +1172,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.PropagacaoOndasEletromagneticas, TagEM.Radiacao),
 		help: {
 			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
@@ -1128,6 +1207,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.MecanicaRelativisticaParticulas,
+			TagFM.EnergiaMomentoRelativisticos
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1162,6 +1245,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.MecanicaRelativisticaParticulas,
+			TagFM.EnergiaMomentoRelativisticos
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1196,6 +1283,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.AtomosMoleculasSolidos,
+			TagFM.ModeloRutherfordEstabilidadeAtomos
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1230,6 +1321,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.AtomosMoleculasSolidos,
+			TagFM.ModeloRutherfordEstabilidadeAtomos
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1264,6 +1359,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.AtomosMoleculasSolidos,
+			TagFM.FotonsPropriedadesCorpusculares
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1298,6 +1397,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.AtomosMoleculasSolidos,
+			TagFM.FotonsPropriedadesCorpusculares
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1332,6 +1435,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.AtomosMoleculasSolidos),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1367,6 +1471,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.AtomosMoleculasSolidos),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1402,6 +1507,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.TransformacoesLorentz,
+			TagFM.FundamentosRelatividadeRestrita
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1436,6 +1545,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.TransformacoesLorentz,
+			TagFM.FundamentosRelatividadeRestrita
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1470,6 +1583,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.TransformacoesLorentz,
+			TagFM.PropagacaoLuzRelatividadeNewtoniana
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1504,6 +1621,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(
+			TagFM.TransformacoesLorentz,
+			TagFM.PropagacaoLuzRelatividadeNewtoniana
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1538,6 +1659,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.ModeloBohr),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1572,6 +1694,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.ModeloBohr),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1606,6 +1729,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1640,6 +1764,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1674,6 +1799,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1709,6 +1838,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1744,6 +1877,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1778,6 +1915,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1812,6 +1953,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.Spinores,
+			TagMQ.FormalizacaoPostuladosHeisenberg
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1846,6 +1991,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.Spinores,
+			TagMQ.FormalizacaoPostuladosHeisenberg
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1880,6 +2029,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.FormalizacaoPostuladosHeisenberg,
+			TagMQ.IntroducaoIdeiasFundamentais,
+			TagMQ.ForcasCentraisAtomoHidrogenio
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1914,6 +2068,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.FormalizacaoPostuladosHeisenberg,
+			TagMQ.IntroducaoIdeiasFundamentais,
+			TagMQ.ForcasCentraisAtomoHidrogenio
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1948,6 +2107,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.IntroducaoIdeiasFundamentais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1982,6 +2145,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.IntroducaoIdeiasFundamentais,
+			TagMQ.AparatoMatematicoSchrodinger
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2016,6 +2183,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.IntroducaoIdeiasFundamentais
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2050,6 +2221,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.PotenciaisUnidimensionais,
+			TagMQ.IntroducaoIdeiasFundamentais
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2084,6 +2259,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.AparatoMatematicoSchrodinger,
+			TagMQ.FormalizacaoPostuladosHeisenberg
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2118,6 +2297,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.AparatoMatematicoSchrodinger,
+			TagMQ.FormalizacaoPostuladosHeisenberg
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2152,6 +2335,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.AparatoMatematicoSchrodinger,
+			TagMQ.IntroducaoIdeiasFundamentais
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2186,6 +2373,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.AparatoMatematicoSchrodinger,
+			TagMQ.IntroducaoIdeiasFundamentais
+		),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -2220,6 +2411,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.VariaveisEquacoesEstadoDiagramasPVT
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2254,6 +2449,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.VariaveisEquacoesEstadoDiagramasPVT
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2288,6 +2487,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.EnergiaInternaEntalpiaCicloCarnot
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2322,6 +2525,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.EnergiaInternaEntalpiaCicloCarnot
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2356,6 +2563,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.EnergiaInternaEntalpiaCicloCarnot,
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.VariaveisEquacoesEstadoDiagramasPVT
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2391,6 +2603,11 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.EnergiaInternaEntalpiaCicloCarnot,
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.VariaveisEquacoesEstadoDiagramasPVT
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2426,6 +2643,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.SegundaLeiEntropia, TagTD.SistemasTermodinamicos),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2460,6 +2678,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.SegundaLeiEntropia, TagTD.SistemasTermodinamicos),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -2494,6 +2713,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(
+			TagFE.EnsembleCanonico,
+			TagFE.DescricaoEstatisticaSistemaFisico
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2528,6 +2751,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(
+			TagFE.EnsembleCanonico,
+			TagFE.DescricaoEstatisticaSistemaFisico
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2562,6 +2789,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.DescricaoEstatisticaSistemaFisico),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2597,6 +2825,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.DescricaoEstatisticaSistemaFisico),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2632,6 +2861,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.EnsembleCanonico),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2666,6 +2896,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.EnsembleCanonico),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2700,6 +2931,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(
+			TagFE.EnsembleMicrocanonico,
+			TagFE.DescricaoEstatisticaSistemaFisico
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
@@ -2734,6 +2969,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.B,
 		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(
+			TagFE.EnsembleMicrocanonico,
+			TagFE.DescricaoEstatisticaSistemaFisico
+		),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
