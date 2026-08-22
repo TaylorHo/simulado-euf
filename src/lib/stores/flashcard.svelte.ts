@@ -2,6 +2,7 @@ import { allQuestions } from '$lib/data';
 import type { Question, Alternative } from '$lib/models/question';
 import { QuestionAlternative } from '$lib/models/question';
 import { Area } from '$lib/models/area';
+import { getSubareasForArea, type Subarea } from '$lib/models/subareas';
 import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
 
 interface FlashcardQuestion extends Question {
@@ -30,7 +31,21 @@ class FlashcardStore {
 		[Area.FisicaEstatistica]: 100
 	});
 
-	isConfigured = $derived(Object.values(this.areaWeights).some((weight) => weight !== 100));
+	disabledSubareas = $state<Record<Area, Subarea[]>>({
+		[Area.MecanicaClassica]: [],
+		[Area.Eletromagnetismo]: [],
+		[Area.Termodinamica]: [],
+		[Area.FisicaModerna]: [],
+		[Area.MecanicaQuantica]: [],
+		[Area.FisicaEstatistica]: []
+	});
+
+	isConfigured = $derived(
+		Object.values(this.areaWeights).some((weight) => weight !== 100) ||
+			(Object.values(Area).filter((v) => typeof v === 'number') as Area[]).some(
+				(area) => this.disabledSubareas[area].length > 0
+			)
+	);
 
 	constructor() {
 		this.loadSettings();
@@ -51,6 +66,14 @@ class FlashcardStore {
 						}
 					}
 				}
+				if (settings.disabledSubareas) {
+					for (const key in settings.disabledSubareas) {
+						const areaNum = Number.parseInt(key);
+						if (!Number.isNaN(areaNum) && Array.isArray(settings.disabledSubareas[key])) {
+							this.disabledSubareas[areaNum as Area] = settings.disabledSubareas[key] as Subarea[];
+						}
+					}
+				}
 			} catch (e) {
 				console.error('Failed to load flashcard settings', e);
 			}
@@ -59,15 +82,65 @@ class FlashcardStore {
 
 	private saveSettings() {
 		if (typeof window === 'undefined') return;
-		localStorage.setItem(SETTINGS_KEY, JSON.stringify({ areaWeights: this.areaWeights }));
+		localStorage.setItem(
+			SETTINGS_KEY,
+			JSON.stringify({
+				areaWeights: this.areaWeights,
+				disabledSubareas: this.disabledSubareas
+			})
+		);
 	}
 
 	updateWeight(area: Area, weight: number) {
 		this.areaWeights[area] = weight;
 		this.saveSettings();
-		// Reset used questions if settings change significantly?
-		// For now, just reset if we might have filtered out all current questions
 		this.usedQuestionIndices.clear();
+	}
+
+	isSubareaEnabled(area: Area, subarea: Subarea): boolean {
+		return !this.disabledSubareas[area].includes(subarea);
+	}
+
+	toggleSubarea(area: Area, subarea: Subarea) {
+		const disabled = this.disabledSubareas[area];
+		const index = disabled.indexOf(subarea);
+		if (index > -1) {
+			disabled.splice(index, 1);
+		} else {
+			disabled.push(subarea);
+		}
+		this.saveSettings();
+		this.usedQuestionIndices.clear();
+	}
+
+	getEnabledSubareaCount(area: Area): number {
+		return getSubareasForArea(area).length - this.disabledSubareas[area].length;
+	}
+
+	private matchesSubareaFilter(question: Question): boolean {
+		const disabled = this.disabledSubareas[question.area];
+		if (disabled.length === 0) return true;
+		if (question.tags.length === 0) return true;
+		return question.tags.some((tag) => !disabled.includes(tag));
+	}
+
+	hasAvailableQuestions = $derived.by(() => {
+		const activeAreas = (Object.keys(this.areaWeights).map(Number) as unknown as Area[]).filter(
+			(area) => this.areaWeights[area] > 0
+		);
+
+		if (activeAreas.length === 0) return false;
+
+		return this.allQuestions.some(
+			(q) => activeAreas.includes(q.area) && this.matchesSubareaFilter(q)
+		);
+	});
+
+	private clearCurrentQuestion() {
+		this.currentQuestion = null;
+		this.selectedAnswer = null;
+		this.showAnswer = false;
+		this.discardedAlternatives = [];
 	}
 
 	getQuestionId(question: Question): string {
@@ -98,10 +171,13 @@ class FlashcardStore {
 				};
 				this.selectedAnswer = null;
 				this.showAnswer = false;
+			} else {
+				this.clearCurrentQuestion();
 			}
 
 			return this.currentQuestion;
 		} catch {
+			this.clearCurrentQuestion();
 			return null;
 		}
 	}
@@ -112,11 +188,19 @@ class FlashcardStore {
 			(area) => this.areaWeights[area] > 0
 		);
 
-		if (activeAreas.length === 0) return null;
+		if (activeAreas.length === 0) {
+			this.clearCurrentQuestion();
+			return null;
+		}
 
-		const filteredQuestions = this.allQuestions.filter((q) => activeAreas.includes(q.area));
+		const filteredQuestions = this.allQuestions.filter(
+			(q) => activeAreas.includes(q.area) && this.matchesSubareaFilter(q)
+		);
 
-		if (filteredQuestions.length === 0) return null;
+		if (filteredQuestions.length === 0) {
+			this.clearCurrentQuestion();
+			return null;
+		}
 
 		// If all questions in active areas have been used, reset
 		const availableIndices = filteredQuestions

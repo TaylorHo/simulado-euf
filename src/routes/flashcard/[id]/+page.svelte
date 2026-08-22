@@ -8,6 +8,7 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import type { ExamQuestion } from '$lib/models/exam';
 	import { Area, AreaLabels } from '$lib/models/area';
+	import { getSubareasForArea, type Subarea as SubareaType } from '$lib/models/subareas';
 	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
 	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
 	import { isTauriMobileApp } from '$lib/utils/platform';
@@ -165,6 +166,20 @@
 		flashcardStore.updateWeight(area, weight);
 	}
 
+	function toggleSubarea(area: Area, subarea: SubareaType) {
+		flashcardStore.toggleSubarea(area, subarea);
+	}
+
+	function closeSettings() {
+		settingsOpen = false;
+		if (!currentExamQuestion && flashcardStore.hasAvailableQuestions) {
+			const question = flashcardStore.getRandomQuestion();
+			if (question) {
+				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replaceState: true });
+			}
+		}
+	}
+
 	let questionTitle = $derived(
 		currentExamQuestion
 			? `de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`
@@ -258,8 +273,8 @@
 			<button
 				class="settings-fab"
 				onclick={() => (settingsOpen = true)}
-				title="Configurações dos Flashcards"
-				aria-label="Configurações dos Flashcards"
+				title="Configurações dos flashcards"
+				aria-label="Configurações dos flashcards"
 			>
 				<Settings size={28} />
 				{#if flashcardStore.isConfigured}
@@ -298,7 +313,10 @@
 				</div>
 			{:else}
 				<div class="empty-state">
-					<p>Nenhuma questão encontrada para as áreas selecionadas.</p>
+					<p>Os filtros estão muito restritivos e nenhuma questão foi encontrada.</p>
+					<p class="empty-state-hint">
+						Tente aumentar o peso das áreas ou habilitar mais subáreas.
+					</p>
 					<button class="btn-primary" onclick={() => (settingsOpen = true)}>
 						Ajustar configurações
 					</button>
@@ -311,11 +329,7 @@
 	{/if}
 </div>
 
-<Modal
-	open={settingsOpen}
-	title="Configurações dos Flashcards"
-	onClose={() => (settingsOpen = false)}
->
+<Modal open={settingsOpen} title="Configurações dos flashcards" onClose={closeSettings}>
 	<div class="settings-content">
 		<div class="area-settings-list">
 			{#each Object.entries(AreaLabels) as [areaStr, label] (areaStr)}
@@ -340,14 +354,34 @@
 						oninput={(e) => updateAreaWeight(area, Number(e.currentTarget.value))}
 						class="weight-slider"
 					/>
+					<details class="subarea-collapsible">
+						<summary class="subarea-summary">
+							<span class="subarea-summary-label">
+								Filtrar subáreas ({flashcardStore.getEnabledSubareaCount(area)}/{getSubareasForArea(
+									area
+								).length})
+							</span>
+							<span class="subarea-hint">· toque para expandir</span>
+						</summary>
+						<div class="subarea-list">
+							{#each getSubareasForArea(area) as subarea (subarea)}
+								<label class="subarea-checkbox">
+									<input
+										type="checkbox"
+										checked={flashcardStore.isSubareaEnabled(area, subarea)}
+										onchange={() => toggleSubarea(area, subarea)}
+									/>
+									<span class="subarea-label">{subarea}</span>
+								</label>
+							{/each}
+						</div>
+					</details>
 				</div>
 			{/each}
 		</div>
 
 		<div class="settings-footer">
-			<button class="btn-primary full-width" onclick={() => (settingsOpen = false)}>
-				Pronto
-			</button>
+			<button class="btn-primary full-width" onclick={closeSettings}> Pronto </button>
 		</div>
 	</div>
 </Modal>
@@ -492,6 +526,11 @@
 		margin: 0;
 	}
 
+	.empty-state-hint {
+		font-size: var(--text-sm) !important;
+		color: var(--text-muted) !important;
+	}
+
 	/* Interstitial Ad Styles */
 	.interstitial-container {
 		display: flex;
@@ -627,6 +666,95 @@
 		margin: 10px 0 4px;
 		cursor: pointer;
 		padding: 0;
+	}
+
+	.subarea-collapsible {
+		margin-top: var(--space-xs);
+		border-top: 1px solid var(--border-light);
+		padding-top: 2px;
+	}
+
+	.subarea-summary {
+		cursor: pointer;
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+		padding: 2px 4px;
+		border-radius: var(--radius-sm);
+		transition: background-color var(--transition-fast);
+		user-select: none;
+		min-height: 0;
+		line-height: 1.2;
+	}
+
+	.subarea-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.subarea-summary::before {
+		content: '▶';
+		font-size: 0.6em;
+		color: var(--text-muted);
+		flex-shrink: 0;
+		transition: transform var(--transition-fast);
+	}
+
+	.subarea-collapsible[open] .subarea-summary::before {
+		transform: rotate(90deg);
+	}
+
+	.subarea-summary:hover {
+		background-color: var(--bg-tertiary);
+	}
+
+	.subarea-summary-label {
+		font-size: var(--text-xs);
+		font-weight: 600;
+		color: var(--text-secondary);
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	.subarea-hint {
+		font-size: 10px;
+		font-style: italic;
+		color: var(--text-muted);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		min-width: 0;
+	}
+
+	.subarea-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+		padding: var(--space-xs) 0 var(--space-xs) var(--space-sm);
+		max-height: 180px;
+		overflow-y: auto;
+	}
+
+	.subarea-checkbox {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-sm);
+		cursor: pointer;
+		font-size: 11px;
+		color: var(--text-secondary);
+		line-height: 1.3;
+	}
+
+	.subarea-checkbox input {
+		margin-top: 2px;
+		flex-shrink: 0;
+		cursor: pointer;
+		accent-color: var(--accent-primary);
+	}
+
+	.subarea-label {
+		flex: 1;
 	}
 
 	.settings-footer {

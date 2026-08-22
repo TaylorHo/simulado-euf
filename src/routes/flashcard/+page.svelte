@@ -19,6 +19,8 @@
 				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, {
 					replaceState: true
 				});
+			} else {
+				goto('/flashcard/sem-resultados/', { replaceState: true });
 			}
 		}
 	});
