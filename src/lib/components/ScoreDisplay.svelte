@@ -27,11 +27,15 @@
 	);
 
 	const strongTopics = $derived(
-		score.byTag.filter((tag) => tag.total >= 2 && tag.correct / tag.total >= 0.7).slice(0, 5)
+		score.byTag
+			.filter((tag) => tag.total >= 2 && tag.correct / tag.total >= 0.7)
+			.sort((a, b) => b.correct / b.total - a.correct / a.total) // strongest first
 	);
 
 	const weakTopics = $derived(
-		score.byTag.filter((tag) => tag.total >= 2 && tag.correct / tag.total < 0.5).slice(0, 5)
+		score.byTag
+			.filter((tag) => tag.total >= 2 && tag.correct / tag.total < 0.5)
+			.sort((a, b) => a.correct / a.total - b.correct / b.total) // weakest first
 	);
 </script>
 
@@ -43,7 +47,7 @@
 				<div class="score-percentage">{percentage.toFixed(1)}%</div>
 			</div>
 			<div class="score-text">
-				<h2>Resultado do Simulado</h2>
+				<h2>Resultado do simulado</h2>
 				<p>
 					Você acertou <strong>{score.totalCorrect}</strong> de
 					<strong>{score.totalQuestions}</strong> questões
@@ -59,17 +63,17 @@
 		{#if onReviewAnswers || onNewExam}
 			<div class="score-actions">
 				{#if onReviewAnswers}
-					<button class="btn-primary" onclick={onReviewAnswers}>Revisar Respostas</button>
+					<button class="btn-primary" onclick={onReviewAnswers}>Revisar respostas</button>
 				{/if}
 				{#if onNewExam}
-					<button class="btn-primary" onclick={onNewExam}>Iniciar Novo Simulado</button>
+					<button class="btn-primary" onclick={onNewExam}>Iniciar novo simulado</button>
 				{/if}
 			</div>
 		{/if}
 	</div>
 
 	<div class="score-details">
-		<h3>Desempenho por Área</h3>
+		<h3>Desempenho por área</h3>
 		<div class="area-scores">
 			{#each score.byArea as areaScore (areaScore.areaLabel)}
 				{@const areaPct = (areaScore.correct / areaScore.total) * 100}
@@ -90,11 +94,11 @@
 	</div>
 
 	<div class="score-details insights">
-		<h3>Análise do Desempenho</h3>
+		<h3>Análise do desempenho</h3>
 
 		{#if strongAreas.length > 0}
 			<div class="insight-section">
-				<h4 class="insight-section-title">Seus Pontos Fortes</h4>
+				<h4 class="insight-section-title">Seus pontos fortes</h4>
 				<div class="insight-tags">
 					{#each strongAreas as area (area.areaLabel)}
 						<span class="insight-tag strong">
@@ -107,7 +111,7 @@
 
 		{#if weakAreas.length > 0}
 			<div class="insight-section">
-				<h4 class="insight-section-title">Áreas para Melhorar</h4>
+				<h4 class="insight-section-title">Áreas para melhorar</h4>
 				<div class="insight-tags">
 					{#each weakAreas as area (area.areaLabel)}
 						<span class="insight-tag weak">
@@ -120,11 +124,11 @@
 
 		{#if strongTopics.length > 0}
 			<div class="insight-section">
-				<h4 class="insight-section-title">Tópicos Dominados</h4>
+				<h4 class="insight-section-title">Tópicos dominados</h4>
 				<div class="insight-tags">
 					{#each strongTopics as topic (topic.tag)}
 						<span class="insight-tag strong-topic">
-							{topic.tag}
+							{topic.tag} ({topic.correct}/{topic.total})
 						</span>
 					{/each}
 				</div>
@@ -133,11 +137,11 @@
 
 		{#if weakTopics.length > 0}
 			<div class="insight-section">
-				<h4 class="insight-section-title">Tópicos para Revisar</h4>
+				<h4 class="insight-section-title">Tópicos para revisar</h4>
 				<div class="insight-tags">
 					{#each weakTopics as topic (topic.tag)}
 						<span class="insight-tag weak-topic">
-							{topic.tag}
+							{topic.tag} ({topic.correct}/{topic.total})
 						</span>
 					{/each}
 				</div>
