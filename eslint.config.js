@@ -12,7 +12,8 @@ export default defineConfig(
 		'.svelte-kit/**',
 		'node_modules/**',
 		'.vercel/**',
-		'static/**'
+		'static/**',
+		'LICENSE'
 	]),
 	js.configs.recommended,
 	...ts.configs.recommended,

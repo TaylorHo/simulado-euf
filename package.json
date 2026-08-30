@@ -19,11 +19,25 @@
 		"prepare": "svelte-kit sync || echo '' && git config --local core.hooksPath .hooks/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write . && eslint --fix .",
+		"format": "prettier --write . && eslint --fix --no-warn-ignored .",
+		"release:dry-run": "semantic-release --dry-run",
+		"release": "semantic-release",
 		"tauri": "tauri"
+	},
+	"lint-staged": {
+		"*": [
+			"prettier --ignore-unknown --write",
+			"eslint --fix --cache --no-warn-ignored"
+		]
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@semantic-release/commit-analyzer": "^13.0.1",
+		"@semantic-release/exec": "^7.1.0",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^11.0.6",
+		"@semantic-release/npm": "^13.1.5",
+		"@semantic-release/release-notes-generator": "^14.1.1",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/adapter-vercel": "^6.3.4",
 		"@sveltejs/kit": "^2.70.2",
@@ -35,8 +49,10 @@
 		"eslint": "^10.8.1",
 		"eslint-plugin-svelte": "^3.23.0",
 		"globals": "^17.11.0",
+		"lint-staged": "^17.4.1",
 		"prettier": "^3.9.6",
 		"prettier-plugin-svelte": "^4.1.1",
+		"semantic-release": "^24.2.9",
 		"svelte": "^5.56.9",
 		"svelte-check": "^4.7.6",
 		"typescript": "^6.0.3",
