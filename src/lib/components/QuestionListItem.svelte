@@ -1,10 +1,30 @@
 <script lang="ts">
+	import { Area } from '$lib/models/area';
 	import type { Question } from '$lib/models/question';
+	import { Subarea } from '$lib/models/subareas';
 	import { generateQuestionId } from '$lib/services/identifiers';
 	import { getImagePath } from '$lib/utils/helpers';
 	import { getQuestionTitle } from '$lib/utils/questionBank';
 	import LaTeX from './LaTeX.svelte';
 	import { ExternalLink } from '@lucide/svelte';
+
+	const AREA_TAG_COLORS: Record<Area, { bg: string; color: string }> = {
+		[Area.MecanicaClassica]: { bg: 'rgba(37, 99, 235, 0.12)', color: '#2563eb' },
+		[Area.Eletromagnetismo]: { bg: 'rgba(124, 58, 237, 0.12)', color: '#7c3aed' },
+		[Area.Termodinamica]: { bg: 'rgba(234, 88, 12, 0.12)', color: '#ea580c' },
+		[Area.FisicaModerna]: { bg: 'rgba(219, 39, 119, 0.12)', color: '#db2777' },
+		[Area.MecanicaQuantica]: { bg: 'rgba(8, 145, 178, 0.12)', color: '#0891b2' },
+		[Area.FisicaEstatistica]: { bg: 'rgba(22, 163, 74, 0.12)', color: '#16a34a' }
+	};
+
+	function getTagLabel(area: Area, tag: string): string {
+		const entry = Object.entries(Subarea[area]).find(([, value]) => value === tag);
+		if (!entry) return tag;
+		return entry[0]
+			.replace(/([A-Z])/g, ' $1')
+			.replace(/^./, (char) => char.toUpperCase())
+			.trim();
+	}
 
 	interface Props {
 		question: Question;
@@ -15,6 +35,7 @@
 	const title = $derived(getQuestionTitle(question));
 	const href = $derived(`/flashcard/${generateQuestionId(question)}/`);
 	const imagePath = $derived(getImagePath(question.statement.image));
+	const tagColors = $derived(AREA_TAG_COLORS[question.area]);
 
 	let previewRef = $state<HTMLElement | null>(null);
 	let isOverflowing = $state(false);
@@ -53,6 +74,20 @@
 		{/if}
 	</div>
 
+	{#if question.tags.length > 0}
+		<div class="question-tags">
+			{#each question.tags as tag (tag)}
+				<span
+					class="question-tag"
+					style="background-color: {tagColors.bg}; color: {tagColors.color};"
+					title={tag}
+				>
+					{getTagLabel(question.area, tag)}
+				</span>
+			{/each}
+		</div>
+	{/if}
+
 	{#if imagePath}
 		<img class="question-thumbnail" src={imagePath} alt="" loading="lazy" decoding="async" />
 	{/if}
@@ -77,6 +112,10 @@
 			border-color var(--transition-fast),
 			box-shadow var(--transition-fast),
 			transform var(--transition-fast);
+	}
+
+	.question-list-item:has(.question-tags) {
+		padding-bottom: calc(var(--space-md) + 1.5rem);
 	}
 
 	.question-list-item:hover {
@@ -144,6 +183,30 @@
 	.question-preview :global(ol) {
 		padding-left: 1.25rem;
 		margin: var(--space-xs) 0;
+	}
+
+	.question-tags {
+		position: absolute;
+		bottom: var(--space-sm);
+		left: var(--space-lg);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+		max-width: calc(100% - 2 * var(--space-lg));
+	}
+
+	.question-tag {
+		display: inline-block;
+		padding: 2px var(--space-sm);
+		border-radius: var(--radius-md);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		line-height: 1.4;
+		white-space: nowrap;
+	}
+
+	:global([data-theme='dark']) .question-tag {
+		filter: brightness(1.15);
 	}
 
 	.question-thumbnail {
