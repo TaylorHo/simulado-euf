@@ -1,6 +1,8 @@
 # Simulador EUF - Exame Unificado de Física
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+![GitHub Release](https://img.shields.io/github/v/release/TaylorHo/simulado-euf)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22181101.svg)](https://doi.org/10.5281/zenodo.22181101)
 
 Uma plataforma web gratuita e de código aberto projetada para auxiliar estudantes na preparação para o **Exame Unificado de Física (EUF)**. O EUF é o principal exame de ingresso para programas de pós-graduação em Física no Brasil.
 
