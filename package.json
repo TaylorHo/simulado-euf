@@ -72,7 +72,7 @@
 	"license": "AGPL-3.0",
 	"engines": {
 		"npm": ">=11",
-		"pnpm": ">=10",
+		"pnpm": ">=11",
 		"node": ">=20"
 	}
 }
