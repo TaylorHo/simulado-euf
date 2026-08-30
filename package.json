@@ -19,7 +19,7 @@
 		"prepare": "svelte-kit sync || echo '' && git config --local core.hooksPath .hooks/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write . && eslint --fix --no-warn-ignored .",
+		"format": "prettier --write . && eslint --fix --no-warn-ignored --cache .",
 		"release:dry-run": "semantic-release --dry-run",
 		"release": "semantic-release",
 		"tauri": "tauri"
