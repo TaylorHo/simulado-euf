@@ -523,23 +523,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) + ar \sin{(\omega t)}$`,
+				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) + br \sin{(\omega t)}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) - ar \cos{(\omega t)}$`,
+				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) - br \cos{(\omega t)}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) - ar \sin{(\omega t)}$`,
+				text: String.raw`$L = \frac{1}{2}m (\dot{r}^2 + r^2\omega^2) - br \sin{(\omega t)}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`$L = \frac{1}{2}m \dot{r}^2 + ar \cos{(\omega t)}$`,
+				text: String.raw`$L = \frac{1}{2}m \dot{r}^2 + br \cos{(\omega t)}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`$L = \frac{1}{2}m \dot{r}^2 + ar \sin{(\omega t)}$`,
+				text: String.raw`$L = \frac{1}{2}m \dot{r}^2 + br \sin{(\omega t)}$`,
 				number: QuestionAlternative.E
 			}
 		]

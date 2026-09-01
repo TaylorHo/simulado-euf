@@ -33,7 +33,8 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Uma configuração central é aquela em que a atração gravitacional mútua de vários corpos resulta numa força total sobre cada um deles que aponta para o centro de massa do sistema. A configuração central ilustrada na figura, descrita por Lagrange, permite que três corpos de massas iguais a $M$ girem com velocidade angular $\omega$ em órbita circular de raio $R$ em torno do centro do triângulo equilátero de lado $a = \sqrt{3R}$. Qual deve ser a velocidade de revolução $\omega$ desses corpos para que eles permaneçam em órbita circular em torno do centro do triângulo?`
+			text: String.raw`Uma configuração central é aquela em que a atração gravitacional mútua de vários corpos resulta numa força total sobre cada um deles que aponta para o centro de massa do sistema. A configuração central ilustrada na figura, descrita por Lagrange, permite que três corpos de massas iguais a $M$ girem com velocidade angular $\omega$ em órbita circular de raio $R$ em torno do centro do triângulo equilátero de lado $a = \sqrt{3}R$. Qual deve ser a velocidade de revolução $\omega$ desses corpos para que eles permaneçam em órbita circular em torno do centro do triângulo?`,
+			image: '2024-2/mc-1.webp'
 		},
 		alternatives: [
 			{
@@ -72,7 +73,8 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Uma configuração central é aquela em que a atração gravitacional mútua de vários corpos resulta numa força total sobre cada um deles que aponta para o centro de massa do sistema. configuração central ilustrada na figura, descrita por Lagrange, permite que três corpos de massas iguais a $M$ girem com velocidade angular $\omega$ em órbita circular de raio $R$ em torno do centro do triângulo equilátero de lado $a = \sqrt{3R}$. Qual deve ser o comprimento a do lado do triângulo para que esses corpos permaneçam em órbita circular em torno do centro do triângulo?`
+			text: String.raw`Uma configuração central é aquela em que a atração gravitacional mútua de vários corpos resulta numa força total sobre cada um deles que aponta para o centro de massa do sistema. configuração central ilustrada na figura, descrita por Lagrange, permite que três corpos de massas iguais a $M$ girem com velocidade angular $\omega$ em órbita circular de raio $R$ em torno do centro do triângulo equilátero de lado $a = \sqrt{3}R$. Qual deve ser o comprimento a do lado do triângulo para que esses corpos permaneçam em órbita circular em torno do centro do triângulo?`,
+			image: '2024-2/mc-1.webp'
 		},
 		alternatives: [
 			{
