@@ -494,7 +494,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana \${\cal L}$ do sistema em termos de $(x, \theta, \dot{x}, \dot{\theta})$, encontre o momento canônico $p_{x} = \frac{\partial{\cal L}}{\partial\dot{x}}$`,
+			text: String.raw`Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana $\mathcal{L}$ do sistema em termos de $(x, \theta, \dot{x}, \dot{\theta})$, encontre o momento canônico $p_{x} = \frac{\partial{\mathcal{L}}}{\partial\dot{x}}$`,
 			image: '2024-2/mc-8.webp'
 		},
 		alternatives: [
@@ -534,7 +534,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana \${\cal L}$ do sistema em termos de $(x, \theta, \dot{x}, \dot{\theta})$, encontre o momento canônico $p_{\theta} = \frac{\partial{\cal L}}{\partial\dot{\theta}}$`,
+			text: String.raw`Um bloco de massa $M$ é confinado a se movimentar sobre um trilho de ar com atrito desprezível, sua posição sendo descrita pela coordenada $x (y = 0)$. Preso a esse bloco, há uma haste de massa desprezível e comprimento $L$, com uma partícula de massa $m$ presa na outra extremidade, sob a ação da força gravitacional. A massa $m$ pode oscilar no plano $xy$, fazendo um ângulo $\theta$ com a vertical, como ilustrado na figura. Expressando a lagrangiana $\mathcal{L}$ do sistema em termos de $(x, \theta, \dot{x}, \dot{\theta})$, encontre o momento canônico $p_{\theta} = \frac{\partial{\mathcal{L}}}{\partial\dot{\theta}}$`,
 			image: '2024-2/mc-8.webp'
 		},
 		alternatives: [
@@ -1235,7 +1235,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Sejam \${\ket{A},\ket{B}}$ e \${\ket{1},\ket{2}}$ duas bases ortonormais do espaço de estados bidimensional de um sistema quântico, com a seguinte transformação entre as bases: $\ket{A} = [\ket{1} + \ket{2}]/\sqrt{2}$ e $\ket{B} = [-\ket{1} + \ket{2}]/\sqrt{2}$. Supondo que, em um dado instante, o sistema esteja no estado <strong>normalizado</strong> $\ket{\Psi} = a\ket{A} + b\ket{B}$, onde $a$ e $b$ são números reais, as probabilidades de que o sistema se encontre nos estados $\ket{A}$, $\ket{B}$, $\ket{1}$ e $\ket{2}$ neste instante são, respectivamente:`
+			text: String.raw`Sejam $\{\ket{A},\ket{B}\}$ e $\{\ket{1},\ket{2}\}$ duas bases ortonormais do espaço de estados bidimensional de um sistema quântico, com a seguinte transformação entre as bases: $\ket{A} = [\ket{1} + \ket{2}]/\sqrt{2}$ e $\ket{B} = [-\ket{1} + \ket{2}]/\sqrt{2}$. Supondo que, em um dado instante, o sistema esteja no estado <strong>normalizado</strong> $\ket{\Psi} = a\ket{A} + b\ket{B}$, onde $a$ e $b$ são números reais, as probabilidades de que o sistema se encontre nos estados $\ket{A}$, $\ket{B}$, $\ket{1}$ e $\ket{2}$ neste instante são, respectivamente:`
 		},
 		alternatives: [
 			{
@@ -1273,7 +1273,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Sejam \${\ket{C},\ket{D}}$ e \${\ket{1},\ket{2}}$ duas bases ortonormais do espaço de estados bidimensional de um sistema quântico, com a seguinte transformação entre as bases: $\ket{C} = [\ket{1} + \ket{2}]/\sqrt{2}$ e $\ket{D} = [-\ket{1} + \ket{2}]/\sqrt{2}$. Supondo que, em um dado instante, o sistema esteja no estado <strong>normalizado</strong> $\ket{\Psi} = c\ket{C} + d\ket{D}$, onde $c$ e $d$ são números reais, as probabilidades de que o sistema se encontre nos estados $\ket{C}$, $\ket{D}$, $\ket{1}$ e $\ket{2}$ neste instante são, respectivamente:`
+			text: String.raw`Sejam $\{\ket{C},\ket{D}\}$ e $\{\ket{1},\ket{2}\}$ duas bases ortonormais do espaço de estados bidimensional de um sistema quântico, com a seguinte transformação entre as bases: $\ket{C} = [\ket{1} + \ket{2}]/\sqrt{2}$ e $\ket{D} = [-\ket{1} + \ket{2}]/\sqrt{2}$. Supondo que, em um dado instante, o sistema esteja no estado <strong>normalizado</strong> $\ket{\Psi} = c\ket{C} + d\ket{D}$, onde $c$ e $d$ são números reais, as probabilidades de que o sistema se encontre nos estados $\ket{C}$, $\ket{D}$, $\ket{1}$ e $\ket{2}$ neste instante são, respectivamente:`
 		},
 		alternatives: [
 			{
@@ -1463,7 +1463,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Considere um sistema quântico cujo espaço de estados é bidimensional. Seja \${\ket{1}, \ket{2}}$ uma base ortonormal nesse espaço, nessa ordem. Um observável $\hat{O}$ é representado nessa base pela matriz<br/><br/>$$O = s \left(\begin{matrix}0 & 2 \\ 2 & 0\end{matrix}\right)$$<br/>onde $s$ é uma constante. Se, em um certo instante, o sistema se encontra no estado $\ket{\psi} = \sqrt{\frac{1}{2}}(\ket{1} - \ket{2})$, os possíveis resultados de uma medida desse observável são:`
+			text: String.raw`Considere um sistema quântico cujo espaço de estados é bidimensional. Seja $\{\ket{1}, \ket{2}\}$ uma base ortonormal nesse espaço, nessa ordem. Um observável $\hat{O}$ é representado nessa base pela matriz<br/><br/>$$O = s \left(\begin{matrix}0 & 2 \\ 2 & 0\end{matrix}\right)$$<br/>onde $s$ é uma constante. Se, em um certo instante, o sistema se encontra no estado $\ket{\psi} = \sqrt{\frac{1}{2}}(\ket{1} - \ket{2})$, os possíveis resultados de uma medida desse observável são:`
 		},
 		alternatives: [
 			{
@@ -1501,7 +1501,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Considere um sistema quântico cujo espaço de estados é bidimensional. Seja \${\ket{1}, \ket{2}}$ uma base ortonormal nesse espaço, nessa ordem. Um observável $\hat{O}$ é representado nessa base pela matriz<br/><br/>$$O = s \left(\begin{matrix}0 & 2 \\ 2 & 0\end{matrix}\right)$$<br/>onde $s$ é uma constante. Se, em um certo instante, o sistema se encontra no estado $\ket{\psi} = \sqrt{\frac{1}{2}}(\ket{1} + \ket{2})$, os possíveis resultados de uma medida desse observável são:`
+			text: String.raw`Considere um sistema quântico cujo espaço de estados é bidimensional. Seja $\{\ket{1}, \ket{2}\}$ uma base ortonormal nesse espaço, nessa ordem. Um observável $\hat{O}$ é representado nessa base pela matriz<br/><br/>$$O = s \left(\begin{matrix}0 & 2 \\ 2 & 0\end{matrix}\right)$$<br/>onde $s$ é uma constante. Se, em um certo instante, o sistema se encontra no estado $\ket{\psi} = \sqrt{\frac{1}{2}}(\ket{1} + \ket{2})$, os possíveis resultados de uma medida desse observável são:`
 		},
 		alternatives: [
 			{
@@ -1691,7 +1691,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Considere um sistema quântico cujo espaço de estados é tridimensional. Seja \${\ket{a}, \ket{b}, \ket{c}}$ uma base ortonormal nesse espaço. O Hamiltoniano do sistema é<br/><br/>$$H = \hbar\omega (\ket{a}\bra{a} - \ket{b}\bra{b} + 2\ket{c}\bra{c}) \text{.}$$<br/>Suponha que, no tempo $t = 0$, o sistema se encontre no seguinte estado<br/><br/>$$\ket{\psi (0)} = \frac{1}{\sqrt{3}}\ket{a} + \frac{1}{\sqrt{3}}\ket{b} + \frac{1}{\sqrt{3}}\ket{c}$$<br/>O estado do sistema em um tempo $t \gt 0$ será:`
+			text: String.raw`Considere um sistema quântico cujo espaço de estados é tridimensional. Seja $\{\ket{a}, \ket{b}, \ket{c}\}$ uma base ortonormal nesse espaço. O Hamiltoniano do sistema é<br/><br/>$$H = \hbar\omega (\ket{a}\bra{a} - \ket{b}\bra{b} + 2\ket{c}\bra{c}) \text{.}$$<br/>Suponha que, no tempo $t = 0$, o sistema se encontre no seguinte estado<br/><br/>$$\ket{\psi (0)} = \frac{1}{\sqrt{3}}\ket{a} + \frac{1}{\sqrt{3}}\ket{b} + \frac{1}{\sqrt{3}}\ket{c}$$<br/>O estado do sistema em um tempo $t \gt 0$ será:`
 		},
 		alternatives: [
 			{
@@ -1729,7 +1729,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Considere um sistema quântico cujo espaço de estados é tridimensional. Seja \${\ket{a}, \ket{b}, \ket{c}}$ uma base ortonormal nesse espaço. O Hamiltoniano do sistema é<br/><br/>$$H = \hbar\omega (\ket{a}\bra{a} + 2\ket{b}\bra{b} - 2\ket{c}\bra{c}) \text{.}$$<br/>Suponha que, no tempo $t = 0$, o sistema se encontre no seguinte estado<br/><br/>$$\ket{\psi (0)} = \frac{1}{\sqrt{3}}\ket{a} + \frac{1}{\sqrt{3}}\ket{b} + \frac{1}{\sqrt{3}}\ket{c}$$<br/>O estado do sistema em um tempo $t \gt 0$ será:`
+			text: String.raw`Considere um sistema quântico cujo espaço de estados é tridimensional. Seja $\{\ket{a}, \ket{b}, \ket{c}\}$ uma base ortonormal nesse espaço. O Hamiltoniano do sistema é<br/><br/>$$H = \hbar\omega (\ket{a}\bra{a} + 2\ket{b}\bra{b} - 2\ket{c}\bra{c}) \text{.}$$<br/>Suponha que, no tempo $t = 0$, o sistema se encontre no seguinte estado<br/><br/>$$\ket{\psi (0)} = \frac{1}{\sqrt{3}}\ket{a} + \frac{1}{\sqrt{3}}\ket{b} + \frac{1}{\sqrt{3}}\ket{c}$$<br/>O estado do sistema em um tempo $t \gt 0$ será:`
 		},
 		alternatives: [
 			{

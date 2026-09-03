@@ -784,23 +784,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: String.raw`\${\cal E} = A \omega \mu_0 i_0 n \sin{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = A \omega \mu_0 i_0 n \sin{(\omega t)}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`\${\cal E} = A \omega \mu_0 i_0 n \cos{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = A \omega \mu_0 i_0 n \cos{(\omega t)}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`\${\cal E} = -A \omega \mu_0 i_0 n \sin^2{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = -A \omega \mu_0 i_0 n \sin^2{(\omega t)}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`\${\cal E} = -A \omega \mu_0 i_0 n^2 \cos{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = -A \omega \mu_0 i_0 n^2 \cos{(\omega t)}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`\${\cal E} = A \omega \mu_0 i_0 n \cos^2{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = A \omega \mu_0 i_0 n \cos^2{(\omega t)}$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -823,23 +823,23 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: String.raw`\${\cal E} = -A \omega \mu_0 i_0 n \cos{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = -A \omega \mu_0 i_0 n \cos{(\omega t)}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`\${\cal E} = A \omega \mu_0 i_0 n \sin{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = A \omega \mu_0 i_0 n \sin{(\omega t)}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`\${\cal E} = A \omega \mu_0 i_0 n \sin^2{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = A \omega \mu_0 i_0 n \sin^2{(\omega t)}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`\${\cal E} = -A \omega \mu_0 i_0 n^2 \cos{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = -A \omega \mu_0 i_0 n^2 \cos{(\omega t)}$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`\${\cal E} = -A \omega \mu_0 i_0 n \cos^2{(\omega t)}$`,
+				text: String.raw`$\mathcal{E} = -A \omega \mu_0 i_0 n \cos^2{(\omega t)}$`,
 				number: QuestionAlternative.E
 			}
 		]
