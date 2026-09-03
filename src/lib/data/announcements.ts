@@ -20,7 +20,7 @@ export const announcements: Announcement[] = [
 		message: 'As inscrições para a edição 2026/2 encerram em breve. Não deixe para a última hora.',
 		startDate: '2026-09-02',
 		endDate: '2026-09-09',
-		href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/'
+		href: 'https://www1.fisica.org.br/~euf/index.php/pt/'
 	},
 	{
 		id: '2026-2-registration-start',
@@ -29,7 +29,7 @@ export const announcements: Announcement[] = [
 			'As inscrições para a edição 2026/2 do EUF já estão abertas. Garanta sua vaga antes do prazo.',
 		startDate: '2026-08-05',
 		endDate: '2026-09-01',
-		href: 'https://www1.fisica.org.br/~euf/index.php/pt/inscricoes/'
+		href: 'https://www1.fisica.org.br/~euf/index.php/pt/'
 	},
 	{
 		id: '2026-2-edital',
