@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Se você mencionar este software em sua pesquisa, por favor, cite-o conforme abaixo."
+authors:
+  - family-names: Hoffmann
+    given-names: Taylor
+    orcid: https://orcid.org/0000-0002-8418-514X
+title: "Simulado EUF"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22181101
