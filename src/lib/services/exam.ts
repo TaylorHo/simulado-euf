@@ -55,8 +55,12 @@ export class ExamService {
 			for (const question of shuffled) {
 				if (selected >= questionsNeeded) break;
 
-				// Mark this question base as used (both versions)
+				// Skip if the other version of this question was already selected
+				// (both versions may appear in shuffled since the filter runs before any picks)
 				const baseId = `${question.year}-${question.semester}-${question.area}-${question.questionNumber}`;
+				if (usedQuestionIds.has(baseId)) continue;
+
+				// Mark this question base as used (excludes the other version too)
 				usedQuestionIds.add(baseId);
 
 				selectedQuestions.push(question);
