@@ -171,6 +171,7 @@ class FlashcardStore {
 				};
 				this.selectedAnswer = null;
 				this.showAnswer = false;
+				this.discardedAlternatives = [];
 			} else {
 				this.clearCurrentQuestion();
 			}
