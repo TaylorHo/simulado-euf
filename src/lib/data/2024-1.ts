@@ -2392,27 +2392,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$\${\cal H} = b \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix} \text{,}$$<br/>onde $b = −\hbar\gamma B/2$, $\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:`
+			text: String.raw`O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\mathcal{H} = b \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix} \text{,}$$<br/>onde $b = −\hbar\gamma B/2$, $\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:`
 		},
 		alternatives: [
 			{
-				text: String.raw`Os autovalores de energia são $\pm b$, correspondentes a autoestados de \${\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm b$, correspondentes a autoestados de $\mathcal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm b/2$, correspondentes a autoestados de \${\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm b/2$, correspondentes a autoestados de $\mathcal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm b$, com $−b$ correspondente ao autoestado de \${\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm b$, com $−b$ correspondente ao autoestado de $\mathcal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm b/2$, com $−b/2$ correspondente ao autoestado de \${\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm b/2$, com $−b/2$ correspondente ao autoestado de $\mathcal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+b/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`Os dois autoestados de \${\cal H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $b$.`,
+				text: String.raw`Os dois autoestados de $\mathcal{H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $b$.`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2430,27 +2430,27 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$\${\cal H} = \hbar c \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix} \text{,}$$<br/>onde $c = −\gamma B/2$, $\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:`
+			text: String.raw`O Hamiltoniano de um elétron em um campo magnético uniforme pode ter a seguinte representação matricial:<br/><br/>$$\mathcal{H} = \hbar c \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix} \text{,}$$<br/>onde $c = −\gamma B/2$, $\gamma$ é a razão giromagnética do elétron e $B$ é a intensidade do campo magnético. Das alternativas abaixo, indique a verdadeira:`
 		},
 		alternatives: [
 			{
-				text: String.raw`Os autovalores de energia são $\pm \hbar c$, correspondentes a autoestados de \${\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético`,
+				text: String.raw`Os autovalores de energia são $\pm \hbar c$, correspondentes a autoestados de $\mathcal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm \hbar c/2$, correspondentes a autoestados de \${\cal H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm \hbar c/2$, correspondentes a autoestados de $\mathcal{H}$ nos quais o spin do elétron está alinhado ou oposto ao campo magnético.`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm \hbar c$, com $−\hbar c$ correspondente ao autoestado de \${\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\hbar c$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm \hbar c$, com $−\hbar c$ correspondente ao autoestado de $\mathcal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\hbar c$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`Os autovalores de energia são $\pm \hbar c/2$, com $−\hbar c/2$ correspondente ao autoestado de \${\cal H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\hbar c/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
+				text: String.raw`Os autovalores de energia são $\pm \hbar c/2$, com $−\hbar c/2$ correspondente ao autoestado de $\mathcal{H}$ no qual o spin do elétron está perpendicular ao campo magnético e $+\hbar c/2$ àquele no qual o spin do elétron está paralelo ao campo magnético.`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`Os dois autoestados de \${\cal H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $\hbar c$.`,
+				text: String.raw`Os dois autoestados de $\mathcal{H}$, um no qual o spin do elétron está oposto ao campo magnético e o outro no qual o spin do elétron está alinhado com o campo magnético, possuem autovalores de energia degenerados, iguais a $\hbar c$.`,
 				number: QuestionAlternative.E
 			}
 		]

@@ -176,27 +176,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`A lagrangiana de um sistema descrito pela coordenada generalizada $q$ e por sua derivada temporal $\dot{q}$ é \${\cal L}(\dot{q},q) = (a\dot{q} + bq)^2$, onde $a$ e $b$ são constantes. Qual é a hamiltoniana correspondente?`
+			text: String.raw`A lagrangiana de um sistema descrito pela coordenada generalizada $q$ e por sua derivada temporal $\dot{q}$ é $\mathcal{L}(\dot{q},q) = (a\dot{q} + bq)^2$, onde $a$ e $b$ são constantes. Qual é a hamiltoniana correspondente?`
 		},
 		alternatives: [
 			{
-				text: String.raw`\${\cal H} = \frac{p^2}{4a^2} - \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{p^2}{4a^2} - \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 - \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 - \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{p^2}{4a^2} + \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{p^2}{4a^2} + \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} + bq)$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -214,27 +214,27 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`A lagrangiana de um sistema descrito pela coordenada generalizada $q$ e por sua derivada temporal $\dot{q}$ é \${\cal L}(\dot{q},q) = (a\dot{q} - bq)^2$, onde $a$ e $b$ são constantes. Qual é a hamiltoniana correspondente?`
+			text: String.raw`A lagrangiana de um sistema descrito pela coordenada generalizada $q$ e por sua derivada temporal $\dot{q}$ é $\mathcal{L}(\dot{q},q) = (a\dot{q} - bq)^2$, onde $a$ e $b$ são constantes. Qual é a hamiltoniana correspondente?`
 		},
 		alternatives: [
 			{
-				text: String.raw`\${\cal H} = \frac{p^2}{4a^2} + \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{p^2}{4a^2} + \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 - \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 - \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = \sqrt{a}\dot{q}$`,
 				number: QuestionAlternative.C
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{1}{2a^2}p^2 + \frac{1}{2}a^2b^4q^2$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
 				number: QuestionAlternative.D
 			},
 			{
-				text: String.raw`\${\cal H} = \frac{p^2}{4a^2} - \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
+				text: String.raw`$\mathcal{H} = \frac{p^2}{4a^2} - \frac{bpq}{a}$, onde o momento canônico é $p = 2a(a\dot{q} - bq)$`,
 				number: QuestionAlternative.E
 			}
 		]
@@ -2867,7 +2867,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$\${\cal H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, +1)$?`
+			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, +1)$?`
 		},
 		alternatives: [
 			{
@@ -2902,7 +2902,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$\${\cal H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, -1)$?`
+			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, -1)$?`
 		},
 		alternatives: [
 			{

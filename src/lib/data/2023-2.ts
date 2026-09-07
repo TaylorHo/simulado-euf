@@ -2910,7 +2910,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Considere um oscilador harmônico unidimensional em contato com um reservatório térmico à temperatura $T \left[\beta = (k_BT)^{-1}\right]$ descrito pela Hamiltoniana<br/><br/>$\${\cal H} = \frac{p^2}{2M} + V(q) \space \text{,}$$<br/>onde $V(q) = \frac{M\omega^2q^2}{2}$, se $q > 0$, e $V(q) = \epsilon + \frac{M\omega^2q^2}{2}$, se $q < 0$. A expressão para a função de partição canônica é dada por:`
+			text: String.raw`Considere um oscilador harmônico unidimensional em contato com um reservatório térmico à temperatura $T \left[\beta = (k_BT)^{-1}\right]$ descrito pela Hamiltoniana<br/><br/>$$\mathcal{H} = \frac{p^2}{2M} + V(q) \space \text{,}$$<br/>onde $V(q) = \frac{M\omega^2q^2}{2}$, se $q > 0$, e $V(q) = \epsilon + \frac{M\omega^2q^2}{2}$, se $q < 0$. A expressão para a função de partição canônica é dada por:`
 		},
 		alternatives: [
 			{
@@ -2949,7 +2949,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Considere um oscilador harmônico unidimensional em contato com um reservatório térmico à temperatura $T \left[\beta = (k_BT)^{-1}\right]$ descrito pela Hamiltoniana<br/><br/>$\${\cal H} = \frac{p^2}{2M} + V(q) \space \text{,}$$<br/>onde $V(q) = -\frac{\epsilon}{2} + \frac{M\omega^2q^2}{2}$, se $q > 0$, e $V(q) = \frac{\epsilon}{2} + \frac{M\omega^2q^2}{2}$, se $q < 0$. A expressão para a função de partição canônica é dada por:`
+			text: String.raw`Considere um oscilador harmônico unidimensional em contato com um reservatório térmico à temperatura $T \left[\beta = (k_BT)^{-1}\right]$ descrito pela Hamiltoniana<br/><br/>$$\mathcal{H} = \frac{p^2}{2M} + V(q) \space \text{,}$$<br/>onde $V(q) = -\frac{\epsilon}{2} + \frac{M\omega^2q^2}{2}$, se $q > 0$, e $V(q) = \frac{\epsilon}{2} + \frac{M\omega^2q^2}{2}$, se $q < 0$. A expressão para a função de partição canônica é dada por:`
 		},
 		alternatives: [
 			{

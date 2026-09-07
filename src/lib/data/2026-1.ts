@@ -11,12 +11,12 @@ const defaultData = {
 };
 
 const videos = {
-	[Area.MecanicaClassica]: undefined,
-	[Area.Eletromagnetismo]: undefined,
-	[Area.FisicaModerna]: undefined,
-	[Area.MecanicaQuantica]: undefined,
-	[Area.Termodinamica]: undefined,
-	[Area.FisicaEstatistica]: undefined
+	[Area.MecanicaClassica]: 'u8mmgGyXqlE',
+	[Area.Eletromagnetismo]: 'YSAA0OEQLfw',
+	[Area.FisicaModerna]: 'uDpLnM7LvCo',
+	[Area.MecanicaQuantica]: 'XvIdR_FGdvI',
+	[Area.Termodinamica]: 'oO2eSUQeAhk',
+	[Area.FisicaEstatistica]: 'MF9-NyqQso0'
 };
 
 export default <Question[]>[
