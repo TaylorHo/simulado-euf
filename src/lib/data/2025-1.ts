@@ -2867,7 +2867,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, +1)$?`
+			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J s_1 s_2\text{,}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, +1)$?`
 		},
 		alternatives: [
 			{
@@ -2902,7 +2902,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J_{s_1,s_2}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, -1)$?`
+			text: String.raw`O modelo de Ising é um modelo fundamental em física estatística, estudado inicialmente por E. Ising, sob a supervisão de W. Lenz, na década de 1920. Em sua versão ferromagnética, os ions magnéticos vizinhos, de spin $1/2$, interagem entre si de acordo com um acoplamento $J$ constante e positivo, e o estado do $i$-ésimo spin é representado pela variável adimensional $s_i = \pm 1$. Considere aqui a situação em que há apenas dois spins interagindo segundo o hamiltoniano<br/><br/>$$\mathcal{H} = -J s_1 s_2\text{,}$$<br/>em equilíbrio térmico com um reservatório à temperatura $T$. Nesta situação, sendo $\beta = 1/(k_BT)$ e $k_B$ a constante de Boltzmann, qual é a probabilidade de observarmos o par de spins no estado $(s_1,s_2) = (+1, -1)$?`
 		},
 		alternatives: [
 			{
