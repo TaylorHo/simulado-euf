@@ -2704,7 +2704,7 @@ export default <Question[]>[
 				number: QuestionAlternative.B
 			},
 			{
-				text: String.raw`$3{,} R \ln (4)$`,
+				text: String.raw`$3{,}5 R \ln (4)$`,
 				number: QuestionAlternative.C
 			},
 			{
