@@ -1,5 +1,6 @@
 import { Area, AreaLabels } from '$lib/models/area';
 import type { ExamQuestion } from '$lib/models/exam';
+import { BASE_URL } from '$lib/variables';
 
 /**
  * Get the full path for an image asset
@@ -63,7 +64,7 @@ export function buildExamPath(
 		params.set('seed', typeof seed === 'string' ? seed : String(seed));
 	}
 
-	return `${basePath}?${params.toString()}`;
+	return `${basePath}/?${params.toString()}`;
 }
 
 /**
@@ -75,7 +76,8 @@ export function buildExamUrl(
 	seed?: number | string
 ): string {
 	const path = buildExamPath(examId, basePath, seed);
-	const origin = typeof window !== 'undefined' ? window.location.origin : '';
+	let origin = typeof window !== 'undefined' ? window.location.origin : '';
+	origin = origin.replace('http://tauri.localhost', BASE_URL); // Still works on dev (localhost) but ensures the app generated link also works on production
 
 	return `${origin}${path}`;
 }
