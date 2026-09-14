@@ -2674,7 +2674,7 @@ export default <Question[]>[
 			},
 			{
 				text: String.raw`$\frac{\rho c_B \Delta T}{\gamma P}$`,
-				number: QuestionAlternative.D
+				number: QuestionAlternative.E
 			}
 		]
 	},
