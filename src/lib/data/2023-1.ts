@@ -2807,11 +2807,11 @@ export default <Question[]>[
 		},
 		alternatives: [
 			{
-				text: String.raw`$u(T, H, \mu) = \frac{2e^{-\beta \epsilon} \left[ \epsilon \cosh (\beta \mu H) - \mu H \sinh (\beta \mu H) \right]}{1 + 2e^{-\beta \epsilon} + 2 \cosh \beta \mu H}$`,
+				text: String.raw`$u(T, H, \mu) = \frac{2e^{-\beta \epsilon} \left[ \epsilon \cosh (\beta \mu H) - \mu H \sinh (\beta \mu H) \right]}{1 + 2e^{-\beta \epsilon} \cosh \beta \mu H}$`,
 				number: QuestionAlternative.A
 			},
 			{
-				text: String.raw`$u(T, H, \mu) = \frac{2e^{-\beta \epsilon} \left[ \epsilon \sinh (\beta \mu H) - \mu H \cosh (\beta \mu H) \right]}{1 + 2e^{-\beta \epsilon} + 2 \sinh \beta \mu H}$`,
+				text: String.raw`$u(T, H, \mu) = \frac{2e^{-\beta \epsilon} \left[ \epsilon \sinh (\beta \mu H) - \mu H \cosh (\beta \mu H) \right]}{1 + 2e^{-\beta \epsilon} \sinh \beta \mu H}$`,
 				number: QuestionAlternative.B
 			},
 			{
