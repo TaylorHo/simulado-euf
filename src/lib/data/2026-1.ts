@@ -1391,7 +1391,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($ \space$), qual é o intervalo de tempo $\Delta t$ necessário para que a temperatura do objeto caia para $2/3$ do seu valor inicial?`
+			text: String.raw`Um objeto (que pode ser considerado um corpo negro perfeito) de área superficial total $A$ e capacidade térmica $C$ constantes encontra-se isolado no vácuo, inicialmente a uma temperatura absoluta $T$. Sendo $\sigma$ a constante de Stefan-Boltzmann e considerando que o ambiente circundante é o vácuo, à temperatura correspondente ao zero absoluto ($0 \space K$), qual é o intervalo de tempo $\Delta t$ necessário para que a temperatura do objeto caia para $2/3$ do seu valor inicial?`
 		},
 		alternatives: [
 			{
