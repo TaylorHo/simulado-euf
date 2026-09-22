@@ -54,17 +54,18 @@
 			<section class="section">
 				<h2>Cookies e Armazenamento Local</h2>
 				<p>
-					O aplicativo pode utilizar <strong>cookies</strong> e armazenamento local do dispositivo para
+					O aplicativo pode utilizar <strong>cookies e armazenamento local do dispositivo</strong> para
 					salvar suas preferências, como:
 				</p>
 				<ul>
 					<li>Tema do aplicativo (claro ou escuro)</li>
 					<li>Configurações de interface</li>
 					<li>Preferências de exibição</li>
+					<li>Histórico de flashcards, para evitar repetições (possível desativar)</li>
 				</ul>
 				<p>
-					Esses dados ficam armazenados apenas no seu dispositivo e não são compartilhados com
-					terceiros.
+					Esses dados ficam <strong>armazenados apenas no seu dispositivo</strong> e não são compartilhados
+					com terceiros.
 				</p>
 			</section>
 
@@ -90,7 +91,7 @@
 					Esta política de privacidade pode ser atualizada periodicamente. Recomendamos revisar esta
 					página ocasionalmente para se manter informado sobre como protegemos sua privacidade.
 				</p>
-				<p class="last-updated">Última atualização: 2 de junho de 2026</p>
+				<p class="last-updated">Última atualização: 22 de setembro de 2026</p>
 			</section>
 		</div>
 	</div>
