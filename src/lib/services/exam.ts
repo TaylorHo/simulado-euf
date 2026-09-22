@@ -1,6 +1,11 @@
 import { Area, AreaLabels, AreaQuestionCounts } from '$lib/models/area';
 import type { ExamQuestion, GeneratedExam } from '$lib/models/exam';
-import { QuestionAlternative, type Question, type QuestionIdentifier } from '$lib/models/question';
+import {
+	QuestionAlternative,
+	Version,
+	type Question,
+	type QuestionIdentifier
+} from '$lib/models/question';
 import { generateIdentifier, parseIdentifier } from '$lib/services/identifiers';
 import { allQuestions } from '$lib/data';
 import type { AreaScore, ExamScore, TagScore } from '$lib/models/score';
@@ -10,6 +15,11 @@ import {
 	getDefaultSeed
 } from '$lib/services/alternativeSorting';
 
+export interface ExamConfig {
+	yearSemesters?: string[];
+	version?: 'A' | 'B' | 'both';
+}
+
 export class ExamService {
 	private allQuestions: Question[];
 	private exam: GeneratedExam | null = null;
@@ -18,15 +28,34 @@ export class ExamService {
 		this.allQuestions = allQuestions;
 	}
 
+	private getFilteredQuestions(config?: ExamConfig): Question[] {
+		let questions = this.allQuestions;
+
+		if (config?.yearSemesters && config.yearSemesters.length > 0) {
+			const allowed = new Set(config.yearSemesters);
+			questions = questions.filter((q) => allowed.has(`${q.year}-${q.semester}`));
+		}
+
+		if (config?.version === 'A') {
+			questions = questions.filter((q) => q.version === Version.A);
+		} else if (config?.version === 'B') {
+			questions = questions.filter((q) => q.version === Version.B);
+		}
+
+		return questions;
+	}
+
 	/**
 	 * Generate a new exam with random questions.
 	 * Ensures version exclusivity (if version A is selected, version B of the same question is excluded).
 	 * Questions are grouped by area according to AreaQuestionCounts.
 	 * Returns the exam and the seed used for shuffling.
 	 */
-	generateExam(): { exam: GeneratedExam; seed: number } {
+	generateExam(config?: ExamConfig): { exam: GeneratedExam; seed: number } {
 		const selectedQuestions: Question[] = [];
 		const usedQuestionIds = new Set<string>();
+		const pool = this.getFilteredQuestions(config);
+		const useVersionExclusivity = !config?.version || config.version === 'both';
 
 		// Generate a random seed for this exam
 		const seed = generateRandomSeed();
@@ -39,8 +68,10 @@ export class ExamService {
 			const questionsNeeded = AreaQuestionCounts[area];
 
 			// Get all questions for this area that haven't had their counterpart used
-			const availableQuestions = this.allQuestions.filter((q) => {
+			const availableQuestions = pool.filter((q) => {
 				if (q.area !== area) return false;
+
+				if (!useVersionExclusivity) return true;
 
 				// Create a unique ID for the question base (without version)
 				const baseId = `${q.year}-${q.semester}-${q.area}-${q.questionNumber}`;
@@ -55,13 +86,16 @@ export class ExamService {
 			for (const question of shuffled) {
 				if (selected >= questionsNeeded) break;
 
-				// Skip if the other version of this question was already selected
-				// (both versions may appear in shuffled since the filter runs before any picks)
 				const baseId = `${question.year}-${question.semester}-${question.area}-${question.questionNumber}`;
-				if (usedQuestionIds.has(baseId)) continue;
 
-				// Mark this question base as used (excludes the other version too)
-				usedQuestionIds.add(baseId);
+				if (useVersionExclusivity) {
+					// Skip if the other version of this question was already selected
+					// (both versions may appear in shuffled since the filter runs before any picks)
+					if (usedQuestionIds.has(baseId)) continue;
+
+					// Mark this question base as used (excludes the other version too)
+					usedQuestionIds.add(baseId);
+				}
 
 				selectedQuestions.push(question);
 				selected++;

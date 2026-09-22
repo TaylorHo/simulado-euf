@@ -11,10 +11,12 @@ interface FlashcardQuestion extends Question {
 }
 
 const SETTINGS_KEY = 'flashcard_settings';
+const HISTORY_KEY = 'flashcard_history';
 
 class FlashcardStore {
 	private allQuestions: Question[] = allQuestions;
 	private usedQuestionIndices = new Set<number>();
+	private seenQuestionIds = new Set<string>();
 
 	currentQuestion = $state<FlashcardQuestion | null>(null);
 	selectedAnswer = $state<QuestionAlternative | null>(null);
@@ -40,15 +42,21 @@ class FlashcardStore {
 		[Area.FisicaEstatistica]: []
 	});
 
+	trackHistory = $state(true);
+	includeSkipped = $state(false);
+
 	isConfigured = $derived(
 		Object.values(this.areaWeights).some((weight) => weight !== 100) ||
 			(Object.values(Area).filter((v) => typeof v === 'number') as Area[]).some(
 				(area) => this.disabledSubareas[area].length > 0
-			)
+			) ||
+			!this.trackHistory ||
+			this.includeSkipped
 	);
 
 	constructor() {
 		this.loadSettings();
+		this.loadHistory();
 	}
 
 	private loadSettings() {
@@ -74,8 +82,27 @@ class FlashcardStore {
 						}
 					}
 				}
+				if (typeof settings.trackHistory === 'boolean') {
+					this.trackHistory = settings.trackHistory;
+				}
+				if (typeof settings.includeSkipped === 'boolean') {
+					this.includeSkipped = settings.includeSkipped;
+				}
 			} catch (e) {
 				console.error('Failed to load flashcard settings', e);
+			}
+		}
+	}
+
+	private loadHistory() {
+		if (typeof window === 'undefined') return;
+		const saved = localStorage.getItem(HISTORY_KEY);
+		if (saved) {
+			try {
+				const ids: string[] = JSON.parse(saved);
+				this.seenQuestionIds = new Set(ids);
+			} catch (e) {
+				console.error('Failed to load flashcard history', e);
 			}
 		}
 	}
@@ -86,9 +113,16 @@ class FlashcardStore {
 			SETTINGS_KEY,
 			JSON.stringify({
 				areaWeights: this.areaWeights,
-				disabledSubareas: this.disabledSubareas
+				disabledSubareas: this.disabledSubareas,
+				trackHistory: this.trackHistory,
+				includeSkipped: this.includeSkipped
 			})
 		);
+	}
+
+	private saveHistory() {
+		if (typeof window === 'undefined') return;
+		localStorage.setItem(HISTORY_KEY, JSON.stringify([...this.seenQuestionIds]));
 	}
 
 	updateWeight(area: Area, weight: number) {
@@ -124,16 +158,30 @@ class FlashcardStore {
 		return question.tags.some((tag) => !disabled.includes(tag));
 	}
 
-	hasAvailableQuestions = $derived.by(() => {
-		const activeAreas = (Object.keys(this.areaWeights).map(Number) as unknown as Area[]).filter(
+	private getActiveAreas(): Area[] {
+		return (Object.keys(this.areaWeights).map(Number) as unknown as Area[]).filter(
 			(area) => this.areaWeights[area] > 0
 		);
+	}
 
-		if (activeAreas.length === 0) return false;
-
-		return this.allQuestions.some(
+	private getFilteredQuestions(): Question[] {
+		const activeAreas = this.getActiveAreas();
+		return this.allQuestions.filter(
 			(q) => activeAreas.includes(q.area) && this.matchesSubareaFilter(q)
 		);
+	}
+
+	hasAvailableQuestions = $derived.by(() => {
+		return this.getFilteredQuestions().length > 0;
+	});
+
+	allMatchingQuestionsSeen = $derived.by(() => {
+		if (!this.trackHistory) return false;
+
+		const filtered = this.getFilteredQuestions();
+		if (filtered.length === 0) return false;
+
+		return filtered.every((q) => this.seenQuestionIds.has(generateQuestionId(q)));
 	});
 
 	private clearCurrentQuestion() {
@@ -183,37 +231,59 @@ class FlashcardStore {
 		}
 	}
 
+	updateTrackHistory(enabled: boolean) {
+		this.trackHistory = enabled;
+		this.saveSettings();
+	}
+
+	updateIncludeSkipped(enabled: boolean) {
+		this.includeSkipped = enabled;
+		this.saveSettings();
+	}
+
+	markCurrentQuestionSeen() {
+		if (!this.trackHistory || !this.currentQuestion) return;
+
+		const id = generateQuestionId(this.currentQuestion);
+		this.seenQuestionIds.add(id);
+		this.saveHistory();
+	}
+
+	resetHistory() {
+		this.seenQuestionIds.clear();
+		this.usedQuestionIndices.clear();
+		this.saveHistory();
+	}
+
 	getRandomQuestion(): FlashcardQuestion | null {
-		// Filter questions by active areas
-		const activeAreas = (Object.keys(this.areaWeights).map(Number) as unknown as Area[]).filter(
-			(area) => this.areaWeights[area] > 0
-		);
+		const activeAreas = this.getActiveAreas();
 
 		if (activeAreas.length === 0) {
 			this.clearCurrentQuestion();
 			return null;
 		}
 
-		const filteredQuestions = this.allQuestions.filter(
-			(q) => activeAreas.includes(q.area) && this.matchesSubareaFilter(q)
-		);
+		const filteredQuestions = this.getFilteredQuestions();
 
 		if (filteredQuestions.length === 0) {
 			this.clearCurrentQuestion();
 			return null;
 		}
 
-		// If all questions in active areas have been used, reset
 		const availableIndices = filteredQuestions
 			.map((q) => this.allQuestions.indexOf(q))
-			.filter((index) => !this.usedQuestionIndices.has(index));
+			.filter((index) => {
+				if (this.usedQuestionIndices.has(index)) return false;
+				if (this.trackHistory) {
+					const id = generateQuestionId(this.allQuestions[index]);
+					if (this.seenQuestionIds.has(id)) return false;
+				}
+				return true;
+			});
 
 		if (availableIndices.length === 0) {
-			// Clear only those that belong to active areas to keep things fair
-			filteredQuestions.forEach((q) => {
-				this.usedQuestionIndices.delete(this.allQuestions.indexOf(q));
-			});
-			return this.getRandomQuestion();
+			this.clearCurrentQuestion();
+			return null;
 		}
 
 		// Weighted random selection

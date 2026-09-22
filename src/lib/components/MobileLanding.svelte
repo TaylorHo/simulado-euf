@@ -79,7 +79,7 @@
 		</button>
 
 		<div class="actions">
-			<button class="btn-primary action-btn" onclick={() => goto('/simulado/')}>
+			<button class="btn-primary action-btn" onclick={() => goto('/simulado/?novo=1')}>
 				<FileText size={22} />
 				Iniciar Simulado
 			</button>

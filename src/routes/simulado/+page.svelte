@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
 	import { examStore } from '$lib/stores/exam.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import ConfirmDialog from '$lib/components/ConfirmDialog.svelte';
@@ -12,7 +13,9 @@
 	import ScoreDisplay from '$lib/components/ScoreDisplay.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import QuickFillModal from '$lib/components/QuickFillModal.svelte';
-	import { Plus, Share2, Printer, ClipboardList, Grid3x3 } from '@lucide/svelte';
+	import { Plus, Share2, Printer, ClipboardList, Grid3x3, Settings2 } from '@lucide/svelte';
+	import { allQuestions } from '$lib/data';
+	import type { ExamConfig } from '$lib/services/exam';
 	import {
 		groupQuestionsByArea,
 		buildExamUrl,
@@ -39,6 +42,26 @@
 	let examId = $state<string | null>(null);
 	let pendingExamId = $state<string | null>(null);
 	let adsLoaded = $state(false);
+	let showConfigPanel = $state(false);
+	let configError = $state<string | null>(null);
+	let showStartScreen = $state(false);
+
+	const availableYearSemesters = $derived(
+		[...new Set(allQuestions.map((q) => `${q.year}-${q.semester}`))].sort().reverse()
+	);
+
+	let selectedYearSemesters = $state<string[]>(
+		[...new Set(allQuestions.map((q) => `${q.year}-${q.semester}`))].sort().reverse()
+	);
+	let selectedVersion = $state<'A' | 'B' | 'both'>('both');
+
+	function toggleYearSemester(ys: string) {
+		if (selectedYearSemesters.includes(ys)) {
+			selectedYearSemesters = selectedYearSemesters.filter((s) => s !== ys);
+		} else {
+			selectedYearSemesters = [...selectedYearSemesters, ys];
+		}
+	}
 
 	function copyExamLink() {
 		if (examStore.currentExam) {
@@ -85,12 +108,22 @@
 		showQuickFillModal = true;
 	}
 
+	function openStartScreen() {
+		showReview = false;
+		showConfigPanel = false;
+		configError = null;
+		examStore.resetExam();
+		showStartScreen = true;
+		goto('/simulado', { replaceState: true });
+	}
+
 	onMount(() => {
 		isTauriMobile = isTauriMobileApp();
 		isMobileWebBrowser = isMobileWeb();
 
 		examId = page.url.searchParams.get('id');
 		const seed = page.url.searchParams.get('seed') || undefined;
+		const wantsNew = page.url.searchParams.get('novo') === '1';
 		const savedExamData = examStore.getSavedExamData();
 		const qrLoad = examId ? examStore.consumeQrLoad(examId) : null;
 
@@ -125,6 +158,11 @@
 					}
 				);
 			}
+		} else if (wantsNew) {
+			examStore.resetExam();
+			showStartScreen = true;
+			goto('/simulado', { replaceState: true });
+			isLoading = false;
 		} else if (savedExamData && examStore.currentExam?.id !== savedExamData.examId) {
 			tryLoadExam(
 				savedExamData.examId,
@@ -141,6 +179,7 @@
 			);
 		} else if (!savedExamData) {
 			examStore.resetExam();
+			showStartScreen = true;
 			isLoading = false;
 		} else {
 			if (examStore.currentExam && examStore.currentSeed !== undefined) {
@@ -179,13 +218,38 @@
 	}
 
 	function handleGenerateExam() {
+		configError = null;
+		showStartScreen = false;
 		const result = examStore.generateNewExam();
 		goto(buildExamPath(result.exam.id, '/simulado', result.seed));
 	}
 
+	function handleGenerateConfiguredExam() {
+		configError = null;
+
+		if (selectedYearSemesters.length === 0) {
+			configError = 'Selecione pelo menos um ano-semestre.';
+			return;
+		}
+
+		const config: ExamConfig = {
+			yearSemesters: selectedYearSemesters,
+			version: selectedVersion
+		};
+
+		try {
+			showStartScreen = false;
+			const result = examStore.generateNewExam(config);
+			goto(buildExamPath(result.exam.id, '/simulado', result.seed));
+		} catch {
+			configError =
+				'Não há questões suficientes com os filtros selecionados. Tente incluir mais provas ou versões.';
+		}
+	}
+
 	function confirmNewExam() {
 		showNewExamConfirm = false;
-		handleGenerateExam();
+		openStartScreen();
 	}
 
 	function handleLoadFromQR() {
@@ -296,19 +360,92 @@
 				<div class="spinner"></div>
 			</div>
 		</div>
-	{:else if !examStore.currentExam}
+	{:else if showStartScreen || !examStore.currentExam}
 		<div class="container exam-start">
 			<div class="start-card">
 				<h2>Iniciar Simulado</h2>
 				<p>
-					Escolha como deseja começar seu simulado. Você pode gerar um novo simulado aleatório ou
-					carregar um simulado já impresso através do QR Code.
+					Escolha como deseja começar seu simulado. Você pode gerar um simulado aleatório,
+					configurar quais provas incluir, ou carregar um simulado já impresso através do QR Code.
 				</p>
 				<div class="start-actions">
-					<button class="btn-primary" onclick={handleGenerateExam}>
-						Gerar Simulado Aleatório
-					</button>
-					<button class="btn-secondary" onclick={handleLoadFromQR}> Carregar de QR Code </button>
+					<button class="btn-primary" onclick={handleGenerateExam}>Simulado Aleatório</button>
+
+					<div class="config-block" class:expanded={showConfigPanel}>
+						<button
+							type="button"
+							class="btn-secondary config-toggle"
+							aria-expanded={showConfigPanel}
+							onclick={() => {
+								showConfigPanel = !showConfigPanel;
+								configError = null;
+							}}
+						>
+							<Settings2 size={18} />
+							Configurar Simulado
+						</button>
+
+						{#if showConfigPanel}
+							<div
+								class="config-panel"
+								transition:slide={{ duration: 260, easing: (t) => t * (2 - t) }}
+							>
+								<div class="config-section">
+									<p class="config-label">Provas</p>
+									<div class="exam-chips">
+										{#each availableYearSemesters as ys (ys)}
+											<label class="exam-chip" class:selected={selectedYearSemesters.includes(ys)}>
+												<input
+													type="checkbox"
+													class="sr-only"
+													checked={selectedYearSemesters.includes(ys)}
+													onchange={() => toggleYearSemester(ys)}
+												/>
+												{ys}
+											</label>
+										{/each}
+									</div>
+								</div>
+
+								<div class="config-section">
+									<p class="config-label">Versões</p>
+									<div class="version-segment" role="radiogroup" aria-label="Versão das questões">
+										<label class="version-option" class:selected={selectedVersion === 'both'}>
+											<input
+												type="radio"
+												bind:group={selectedVersion}
+												value="both"
+												class="sr-only"
+											/>
+											Aleatório
+										</label>
+										<label class="version-option" class:selected={selectedVersion === 'A'}>
+											<input type="radio" bind:group={selectedVersion} value="A" class="sr-only" />
+											Apenas A
+										</label>
+										<label class="version-option" class:selected={selectedVersion === 'B'}>
+											<input type="radio" bind:group={selectedVersion} value="B" class="sr-only" />
+											Apenas B
+										</label>
+									</div>
+								</div>
+
+								{#if configError}
+									<p class="config-error">{configError}</p>
+								{/if}
+
+								<button
+									type="button"
+									class="btn-primary config-generate-btn"
+									onclick={handleGenerateConfiguredExam}
+								>
+									Gerar Simulado Configurado
+								</button>
+							</div>
+						{/if}
+					</div>
+
+					<button class="btn-secondary" onclick={handleLoadFromQR}>Carregar de QR Code</button>
 				</div>
 				<div class="exam-info">
 					<h3>Formato do Exame</h3>
@@ -327,7 +464,7 @@
 				<ScoreDisplay
 					score={examStore.examScore}
 					onReviewAnswers={handleReviewAnswers}
-					onNewExam={handleGenerateExam}
+					onNewExam={openStartScreen}
 				/>
 			</div>
 		{:else}
@@ -628,12 +765,190 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-md);
-		margin-bottom: var(--space-2xl);
+		margin-bottom: var(--space-xl);
 	}
 
-	.start-actions button {
+	.start-actions > .btn-primary,
+	.start-actions > .btn-secondary {
 		width: 100%;
 		min-height: 48px;
+	}
+
+	.config-block {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border-radius: var(--radius-md);
+		transition: box-shadow var(--transition-fast);
+	}
+
+	.config-block.expanded {
+		border: 1px solid var(--border-light);
+		box-shadow: var(--shadow-sm);
+		overflow: hidden;
+	}
+
+	.config-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-sm);
+		width: 100%;
+		min-height: 48px;
+		transition: background-color var(--transition-fast);
+	}
+
+	.config-block.expanded .config-toggle {
+		border: none;
+		border-radius: 0;
+		background-color: var(--bg-primary);
+	}
+
+	.config-panel {
+		text-align: left;
+		padding: var(--space-sm) var(--space-md) var(--space-md);
+		background-color: var(--bg-primary);
+		border-top: 1px solid var(--border-light);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		overflow: hidden;
+	}
+
+	.config-section {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.config-label {
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--text-muted);
+		margin: 0;
+	}
+
+	.exam-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.exam-chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 34px;
+		padding: 0 10px;
+		border-radius: 6px;
+		border: 1px solid var(--border-color);
+		background-color: var(--bg-secondary);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		color: var(--text-secondary);
+		cursor: pointer;
+		transition:
+			border-color var(--transition-fast),
+			background-color var(--transition-fast),
+			color var(--transition-fast),
+			box-shadow var(--transition-fast);
+		user-select: none;
+	}
+
+	.exam-chip:hover {
+		border-color: var(--accent-primary);
+		color: var(--text-primary);
+	}
+
+	.exam-chip.selected {
+		border-color: var(--accent-primary);
+		background-color: var(--accent-light);
+		color: var(--accent-primary);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-primary) 25%, transparent);
+	}
+
+	:global([data-theme='dark']) .exam-chip.selected {
+		background-color: rgba(59, 130, 246, 0.15);
+		color: #60a5fa;
+	}
+
+	.version-segment {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 4px;
+		padding: 4px;
+		border-radius: var(--radius-md);
+		background-color: var(--bg-tertiary);
+		border: 1px solid var(--border-color);
+	}
+
+	.version-option {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 36px;
+		padding: 0 var(--space-xs);
+		border-radius: calc(var(--radius-md) - 2px);
+		border: 1px solid transparent;
+		font-size: var(--text-xs);
+		font-weight: 600;
+		color: var(--text-secondary);
+		cursor: pointer;
+		transition:
+			background-color var(--transition-fast),
+			color var(--transition-fast),
+			border-color var(--transition-fast),
+			box-shadow var(--transition-fast);
+		user-select: none;
+	}
+
+	.version-option:hover {
+		color: var(--text-primary);
+		background-color: color-mix(in srgb, var(--bg-primary) 50%, transparent);
+	}
+
+	.version-option.selected {
+		background-color: var(--bg-primary);
+		color: var(--accent-primary);
+		border-color: var(--accent-primary);
+		box-shadow: var(--shadow-sm);
+		font-weight: 700;
+	}
+
+	:global([data-theme='dark']) .version-option.selected {
+		background-color: var(--bg-secondary);
+		color: #93c5fd;
+		border-color: #3b82f6;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.config-error {
+		color: var(--error);
+		font-size: var(--text-xs);
+		margin: 0;
+		line-height: 1.45;
+		padding: var(--space-xs) var(--space-sm);
+		background-color: var(--error-light);
+		border-radius: var(--radius-sm);
+	}
+
+	.config-generate-btn {
+		width: 100%;
+		min-height: 44px;
+		font-size: var(--text-sm);
 	}
 
 	.exam-info {

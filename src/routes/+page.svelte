@@ -44,7 +44,7 @@
 	});
 
 	function handleStartExam() {
-		goto('/simulado/');
+		goto('/simulado/?novo=1');
 	}
 
 	function handleStartFlashcard() {

@@ -1,4 +1,4 @@
-import { ExamService } from '$lib/services/exam';
+import { ExamService, type ExamConfig } from '$lib/services/exam';
 import type { GeneratedExam } from '$lib/models/exam';
 import type { QuestionAlternative } from '$lib/models/question';
 import type { ExamScore } from '$lib/models/score';
@@ -133,8 +133,8 @@ class ExamStore {
 		localStorage.removeItem(this.STORAGE_KEY);
 	}
 
-	generateNewExam(): { exam: GeneratedExam; seed: number } {
-		const result = this.examService.generateExam();
+	generateNewExam(config?: ExamConfig): { exam: GeneratedExam; seed: number } {
+		const result = this.examService.generateExam(config);
 		this.currentExam = result.exam;
 		this.currentSeed = result.seed;
 		this.currentQuestionIndex = 0;

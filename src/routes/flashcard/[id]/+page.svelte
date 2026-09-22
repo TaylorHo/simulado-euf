@@ -14,6 +14,7 @@
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { Settings } from '@lucide/svelte';
 	import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
+	import { allQuestions } from '$lib/data';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -110,6 +111,9 @@
 	function handleNext() {
 		// When clicking "Pular questão" (skip), go directly to next question without ads
 		if (!flashcardStore.showAnswer) {
+			if (flashcardStore.includeSkipped) {
+				flashcardStore.markCurrentQuestionSeen();
+			}
 			const question = flashcardStore.nextQuestion();
 			if (question) {
 				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`);
@@ -150,6 +154,7 @@
 
 	function proceedToNextQuestion() {
 		showInterstitialAd = false;
+		flashcardStore.markCurrentQuestionSeen();
 		const question = flashcardStore.nextQuestion();
 		if (question) {
 			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`);
@@ -190,13 +195,36 @@
 		data.questionId ? getAlternateVersionId(data.questionId) : null
 	);
 
+	const alternateVersionExists = $derived.by(() => {
+		if (!alternateVersionId) return false;
+		const id = parseQuestionId(alternateVersionId);
+		return allQuestions.some(
+			(q) =>
+				q.year === id.year &&
+				q.semester === id.semester &&
+				q.area === id.area &&
+				q.version === id.version &&
+				q.questionNumber === id.questionNumber
+		);
+	});
+
 	const versionSwitchTooltip = $derived(
 		currentExamQuestion
-			? currentExamQuestion.version === Version.A
-				? 'Trocar para versão B'
-				: 'Trocar para versão A'
+			? !alternateVersionExists
+				? `A versão ${currentExamQuestion.version === Version.A ? 'B' : 'A'} foi anulada`
+				: currentExamQuestion.version === Version.A
+					? 'Trocar para versão B'
+					: 'Trocar para versão A'
 			: ''
 	);
+
+	function handleResetHistory() {
+		flashcardStore.resetHistory();
+		const question = flashcardStore.getRandomQuestion();
+		if (question) {
+			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replaceState: true });
+		}
+	}
 
 	function handleSwitchVersion() {
 		if (!alternateVersionId) return;
@@ -291,6 +319,7 @@
 					onToggleDiscard={handleToggleDiscard}
 					onSwitchVersion={handleSwitchVersion}
 					{versionSwitchTooltip}
+					versionSwitchDisabled={!alternateVersionExists}
 				/>
 
 				<div class="actions-container">
@@ -311,6 +340,16 @@
 						{/if}
 					</div>
 				</div>
+			{:else if flashcardStore.allMatchingQuestionsSeen}
+				<div class="empty-state">
+					<p>Você já viu todas as questões que correspondem aos seus filtros.</p>
+					<p class="empty-state-hint">
+						Limpe o histórico para revisitar questões ou ajuste os filtros.
+					</p>
+					<button class="btn-primary" onclick={handleResetHistory}>
+						Limpar histórico e recomeçar
+					</button>
+				</div>
 			{:else}
 				<div class="empty-state">
 					<p>Os filtros estão muito restritivos e nenhuma questão foi encontrada.</p>
@@ -330,58 +369,96 @@
 </div>
 
 <Modal open={settingsOpen} title="Configurações dos flashcards" onClose={closeSettings}>
-	<div class="settings-content">
-		<div class="area-settings-list">
-			{#each Object.entries(AreaLabels) as [areaStr, label] (areaStr)}
-				{@const area = Number(areaStr) as Area}
-				<div class="area-setting-item">
-					<div class="area-info">
-						<span class="area-name">{label}</span>
-						<span class="area-weight" class:disabled={flashcardStore.areaWeights[area] === 0}>
-							{#if flashcardStore.areaWeights[area] === 0}
-								Off
-							{:else}
-								{flashcardStore.areaWeights[area]}%
-							{/if}
-						</span>
-					</div>
-					<input
-						type="range"
-						min="0"
-						max="100"
-						step="5"
-						value={flashcardStore.areaWeights[area]}
-						oninput={(e) => updateAreaWeight(area, Number(e.currentTarget.value))}
-						class="weight-slider"
-					/>
-					<details class="subarea-collapsible">
-						<summary class="subarea-summary">
-							<span class="subarea-summary-label">
-								Filtrar subáreas ({flashcardStore.getEnabledSubareaCount(area)}/{getSubareasForArea(
-									area
-								).length})
+	<div class="settings-layout">
+		<div class="settings-scroll">
+			<div class="area-settings-list">
+				{#each Object.entries(AreaLabels) as [areaStr, label] (areaStr)}
+					{@const area = Number(areaStr) as Area}
+					<div class="area-setting-item">
+						<div class="area-info">
+							<span class="area-name">{label}</span>
+							<span class="area-weight" class:disabled={flashcardStore.areaWeights[area] === 0}>
+								{#if flashcardStore.areaWeights[area] === 0}
+									Off
+								{:else}
+									{flashcardStore.areaWeights[area]}%
+								{/if}
 							</span>
-							<span class="subarea-hint">· toque para expandir</span>
-						</summary>
-						<div class="subarea-list">
-							{#each getSubareasForArea(area) as subarea (subarea)}
-								<label class="subarea-checkbox">
-									<input
-										type="checkbox"
-										checked={flashcardStore.isSubareaEnabled(area, subarea)}
-										onchange={() => toggleSubarea(area, subarea)}
-									/>
-									<span class="subarea-label">{subarea}</span>
-								</label>
-							{/each}
 						</div>
-					</details>
-				</div>
-			{/each}
+						<input
+							type="range"
+							min="0"
+							max="100"
+							step="5"
+							value={flashcardStore.areaWeights[area]}
+							oninput={(e) => updateAreaWeight(area, Number(e.currentTarget.value))}
+							class="weight-slider"
+						/>
+						<details class="subarea-collapsible">
+							<summary class="subarea-summary">
+								<span class="subarea-summary-label">
+									Filtrar subáreas ({flashcardStore.getEnabledSubareaCount(
+										area
+									)}/{getSubareasForArea(area).length})
+								</span>
+								<span class="subarea-hint">· toque para expandir</span>
+							</summary>
+							<div class="subarea-list">
+								{#each getSubareasForArea(area) as subarea (subarea)}
+									<label class="subarea-checkbox">
+										<input
+											type="checkbox"
+											checked={flashcardStore.isSubareaEnabled(area, subarea)}
+											onchange={() => toggleSubarea(area, subarea)}
+										/>
+										<span class="subarea-label">{subarea}</span>
+									</label>
+								{/each}
+							</div>
+						</details>
+					</div>
+				{/each}
+			</div>
+
+			<div class="history-settings">
+				<p class="history-settings-title">Repetição de questões</p>
+
+				<label class="history-row">
+					<input
+						type="checkbox"
+						checked={flashcardStore.trackHistory}
+						onchange={(e) => flashcardStore.updateTrackHistory(e.currentTarget.checked)}
+					/>
+					<span class="history-row-text">
+						<span class="history-row-label">Não repetir questões respondidas</span>
+						<span class="history-row-hint"
+							>Depois de confirmar a resposta, ela não aparece de novo</span
+						>
+					</span>
+				</label>
+
+				{#if flashcardStore.trackHistory}
+					<label class="history-row">
+						<input
+							type="checkbox"
+							checked={flashcardStore.includeSkipped}
+							onchange={(e) => flashcardStore.updateIncludeSkipped(e.currentTarget.checked)}
+						/>
+						<span class="history-row-text">
+							<span class="history-row-label">Ao pular, marcar como já vista</span>
+							<span class="history-row-hint">Questões puladas também deixam de aparecer</span>
+						</span>
+					</label>
+
+					<button type="button" class="history-reset-link" onclick={handleResetHistory}>
+						Zerar histórico
+					</button>
+				{/if}
+			</div>
 		</div>
 
 		<div class="settings-footer">
-			<button class="btn-primary full-width" onclick={closeSettings}> Pronto </button>
+			<button class="btn-primary full-width" onclick={closeSettings}>Pronto</button>
 		</div>
 	</div>
 </Modal>
@@ -608,18 +685,25 @@
 	}
 
 	/* Settings Modal Styles */
-	.settings-content {
+	.settings-layout {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-sm);
+		max-height: min(calc(90vh - 7rem), 640px);
+		margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-lg));
+	}
+
+	.settings-scroll {
+		flex: 1;
+		min-height: 0;
+		overflow-y: auto;
+		padding: var(--space-sm) var(--space-lg) var(--space-md);
 	}
 
 	.area-settings-list {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-sm);
-		margin-bottom: var(--space-md);
-		margin-top: var(--space-sm);
+		margin-bottom: var(--space-sm);
 	}
 
 	.area-setting-item {
@@ -757,8 +841,86 @@
 		flex: 1;
 	}
 
+	.history-settings {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		padding: var(--space-sm) var(--space-md);
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--border-light);
+		border-radius: var(--radius-md);
+	}
+
+	.history-settings-title {
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--text-muted);
+		margin: 0 0 var(--space-xs);
+	}
+
+	.history-row {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-sm);
+		padding: var(--space-xs) 0;
+		cursor: pointer;
+		min-height: 44px;
+	}
+
+	.history-row input {
+		width: 16px;
+		height: 16px;
+		margin-top: 2px;
+		accent-color: var(--accent-primary);
+		flex-shrink: 0;
+		cursor: pointer;
+	}
+
+	.history-row-text {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+		min-width: 0;
+	}
+
+	.history-row-label {
+		font-size: var(--text-xs);
+		font-weight: 600;
+		color: var(--text-primary);
+		line-height: 1.3;
+	}
+
+	.history-row-hint {
+		font-size: 10px;
+		color: var(--text-muted);
+		line-height: 1.35;
+	}
+
+	.history-reset-link {
+		align-self: flex-end;
+		padding: 0;
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--accent-primary);
+		background: none;
+		border: none;
+		cursor: pointer;
+		min-height: 32px;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.history-reset-link:hover {
+		color: var(--text-primary);
+	}
+
 	.settings-footer {
-		margin-top: var(--space-xs);
+		flex-shrink: 0;
+		padding: var(--space-sm) var(--space-lg) var(--space-md);
+		border-top: 1px solid var(--border-light);
+		background-color: var(--bg-primary);
 	}
 
 	.full-width {
@@ -801,6 +963,19 @@
 
 		.area-settings-list {
 			grid-template-columns: 1fr;
+		}
+
+		.settings-layout {
+			max-height: min(calc(92vh - 5.5rem), 680px);
+			margin: calc(-1 * var(--space-md));
+		}
+
+		.settings-scroll {
+			padding: var(--space-sm) var(--space-md) var(--space-sm);
+		}
+
+		.settings-footer {
+			padding: var(--space-sm) var(--space-md) calc(var(--space-md) + var(--safe-area-inset-bottom));
 		}
 
 		.action-buttons {
