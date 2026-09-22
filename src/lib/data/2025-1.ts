@@ -775,7 +775,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Uma carga elétrica estática é distribuída em uma casca esférica de raio interno $R_1$ e raio externo $R_2$. A densidade de carga elétrica na casca é dada por $\rho = a + br$, sendo igual a zero para $r < R_1$ e $r > R_2$, em que $r$ é a distância até a origem. Aqui $a$ e $b$ são constantes positivas. Qual é o módulo do campo elétrico $E$ na região $r > R2$?`
+			text: String.raw`Uma carga elétrica estática é distribuída em uma casca esférica de raio interno $R_1$ e raio externo $R_2$. A densidade de carga elétrica na casca é dada por $\rho = a + br$, sendo igual a zero para $r < R_1$ e $r > R_2$, em que $r$ é a distância até a origem. Aqui $a$ e $b$ são constantes positivas. Qual é o módulo do campo elétrico $E$ na região $r > R_2$?`
 		},
 		alternatives: [
 			{
@@ -810,7 +810,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Uma carga elétrica estática é distribuída em uma casca esférica de raio interno $R_1$ e raio externo $R_2$. A densidade de carga elétrica na casca é dada por $\rho = a + br$, sendo igual a zero para $r < R_1$ e $r > R_2$, em que $r$ é a distância até a origem. Aqui $a$ e $b$ são constantes positivas. Qual é o potencial elétrico $V$ na região $r > R2$? Considere $V(\infty) = 0$.`
+			text: String.raw`Uma carga elétrica estática é distribuída em uma casca esférica de raio interno $R_1$ e raio externo $R_2$. A densidade de carga elétrica na casca é dada por $\rho = a + br$, sendo igual a zero para $r < R_1$ e $r > R_2$, em que $r$ é a distância até a origem. Aqui $a$ e $b$ são constantes positivas. Qual é o potencial elétrico $V$ na região $r > R_2$? Considere $V(\infty) = 0$.`
 		},
 		alternatives: [
 			{
