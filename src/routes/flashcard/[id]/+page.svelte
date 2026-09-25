@@ -154,7 +154,7 @@
 
 	function proceedToNextQuestion() {
 		showInterstitialAd = false;
-		flashcardStore.markCurrentQuestionSeen();
+		flashcardStore.markCurrentQuestionSeen(true);
 		const question = flashcardStore.nextQuestion();
 		if (question) {
 			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`);
@@ -430,9 +430,9 @@
 						onchange={(e) => flashcardStore.updateTrackHistory(e.currentTarget.checked)}
 					/>
 					<span class="history-row-text">
-						<span class="history-row-label">Não repetir questões respondidas</span>
+						<span class="history-row-label">Não repetir questões acertadas</span>
 						<span class="history-row-hint"
-							>Depois de confirmar a resposta, ela não aparece de novo</span
+							>Depois de acertar a resposta, a questão deixa de aparecer</span
 						>
 					</span>
 				</label>

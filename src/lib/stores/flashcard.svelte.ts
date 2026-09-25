@@ -241,8 +241,15 @@ class FlashcardStore {
 		this.saveSettings();
 	}
 
-	markCurrentQuestionSeen() {
+	/** @param onlyIfCorrect When true, only records the question if the user answered correctly. */
+	markCurrentQuestionSeen(onlyIfCorrect = false) {
 		if (!this.trackHistory || !this.currentQuestion) return;
+
+		if (onlyIfCorrect) {
+			if (this.selectedAnswer === null || this.selectedAnswer !== this.currentQuestion.correct) {
+				return;
+			}
+		}
 
 		const id = generateQuestionId(this.currentQuestion);
 		this.seenQuestionIds.add(id);
