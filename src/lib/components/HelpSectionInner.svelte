@@ -89,7 +89,7 @@
 	{/if}
 	{#if question.help.youtubeVideoId}
 		<a
-			href={`https://www.youtube.com/watch?v=${question.help.youtubeVideoId}${question.help.youtubeVideoStartAt ? `&t=${question.help.youtubeVideoStartAt}s` : ''}`}
+			href={`https://youtu.be/${question.help.youtubeVideoId}?t=${question.help.youtubeVideoStartAt ?? 0}s`}
 			target="_blank"
 			rel="noopener noreferrer"
 			class="help-btn youtube"
