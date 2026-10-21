@@ -3,6 +3,12 @@ import type { SemesterMean } from '$lib/models/exam';
 export const SemesterMeans: SemesterMean[] = [
 	{
 		year: 2026,
+		semester: 2,
+		mean: 3.48,
+		deviation: 1.33
+	},
+	{
+		year: 2026,
 		semester: 1,
 		mean: 4.12,
 		deviation: 1.47

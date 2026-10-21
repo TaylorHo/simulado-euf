@@ -17,12 +17,16 @@
 	let searchText = $state('');
 	let visibleCount = $state(PAGE_SIZE);
 
-	const filteredQuestions = $derived(
-		filterQuestions(allQuestions, {
-			selectedExams,
-			selectedAreas,
-			searchText
-		})
+	const filterOptions = $derived({
+		selectedExams,
+		selectedAreas,
+		searchText
+	});
+
+	const filteredQuestions = $derived(filterQuestions(allQuestions, filterOptions));
+
+	const totalIncludingAllVersions = $derived(
+		filterQuestions(allQuestions, { ...filterOptions, onlyVersionA: false })
 	);
 
 	const visibleQuestions = $derived(filteredQuestions.slice(0, visibleCount));
@@ -72,10 +76,7 @@
 
 			<aside class="version-note" aria-label="Informação sobre versões">
 				<Info size={18} aria-hidden="true" />
-				<p>
-					Todas as questões possuem duas versões (A e B). Para simplificar, sempre exibimos a versão
-					A nesta listagem.
-				</p>
+				<p>Quando existem duas versões (A e B), exibimos apenas a versão A nesta listagem.</p>
 			</aside>
 
 			<QuestionFilters
@@ -93,7 +94,7 @@
 				<h2>
 					{filteredQuestions.length} questões encontradas
 					<span class="results-total">
-						({filteredQuestions.length * 2} incluindo versões A e B)
+						({totalIncludingAllVersions.length} incluindo versões A e B)
 					</span>
 				</h2>
 			</div>

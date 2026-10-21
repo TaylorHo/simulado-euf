@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { AreaLabels } from '$lib/models/area';
 	import type { ExamQuestion } from '$lib/models/exam';
-	import { Version } from '$lib/models/question';
+	import { formatQuestionNumberLabel } from '$lib/utils/questionBank';
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { BUG_REPORT_API_URL } from '$lib/variables';
 	import Modal from './Modal.svelte';
@@ -31,7 +31,7 @@
 
 		try {
 			const report = {
-				questionId: `${question.year}-${question.semester} ${AreaLabels[question.area]} Q${question.questionNumber}-${question.version === Version.A ? 'A' : 'B'}`,
+				questionId: `${question.year}-${question.semester} ${AreaLabels[question.area]} ${formatQuestionNumberLabel(question)}`,
 				url: window.location.href,
 				errorType,
 				comments

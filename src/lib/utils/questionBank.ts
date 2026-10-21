@@ -1,3 +1,4 @@
+import { allQuestions } from '$lib/data';
 import { Area, AreaLabels } from '$lib/models/area';
 import { Version, type Question } from '$lib/models/question';
 
@@ -15,8 +16,33 @@ export function getAvailableExams(questions: Question[]): string[] {
 	});
 }
 
-export function getQuestionTitle(question: Question): string {
-	return `Questão de ${AreaLabels[question.area]} da prova de ${question.year}-${question.semester} - Q${question.questionNumber}-A`;
+export function hasAlternateVersion(
+	question: Pick<Question, 'year' | 'semester' | 'area' | 'questionNumber' | 'version'>,
+	pool: Question[] = allQuestions
+): boolean {
+	const alternateVersion = question.version === Version.A ? Version.B : Version.A;
+	return pool.some(
+		(q) =>
+			q.year === question.year &&
+			q.semester === question.semester &&
+			q.area === question.area &&
+			q.questionNumber === question.questionNumber &&
+			q.version === alternateVersion
+	);
+}
+
+export function formatQuestionNumberLabel(
+	question: Pick<Question, 'year' | 'semester' | 'area' | 'questionNumber' | 'version'>,
+	pool: Question[] = allQuestions
+): string {
+	const suffix = hasAlternateVersion(question, pool)
+		? `-${question.version === Version.A ? 'A' : 'B'}`
+		: '';
+	return `Q${question.questionNumber}${suffix}`;
+}
+
+export function getQuestionTitle(question: Question, pool: Question[] = allQuestions): string {
+	return `Questão de ${AreaLabels[question.area]} da prova de ${question.year}-${question.semester} - ${formatQuestionNumberLabel(question, pool)}`;
 }
 
 export function filterQuestions(
@@ -25,12 +51,14 @@ export function filterQuestions(
 		selectedExams: string[];
 		selectedAreas: Area[];
 		searchText: string;
+		onlyVersionA?: boolean;
 	}
 ): Question[] {
 	const normalizedSearch = options.searchText.trim().toLowerCase();
+	const onlyVersionA = options.onlyVersionA ?? true;
 
 	return questions.filter((question) => {
-		if (question.version !== Version.A) return false;
+		if (onlyVersionA && question.version !== Version.A) return false;
 
 		if (options.selectedExams.length > 0 && !options.selectedExams.includes(getExamKey(question))) {
 			return false;

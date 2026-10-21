@@ -21,7 +21,6 @@
 		onToggleDiscard?: (alt: QuestionAlternative) => void;
 		onSwitchVersion?: () => void;
 		versionSwitchTooltip?: string;
-		versionSwitchDisabled?: boolean;
 	}
 
 	let {
@@ -34,8 +33,7 @@
 		onSelectAnswer,
 		onToggleDiscard,
 		onSwitchVersion,
-		versionSwitchTooltip,
-		versionSwitchDisabled = false
+		versionSwitchTooltip
 	}: Props = $props();
 
 	const alternativeLabels = ['A', 'B', 'C', 'D', 'E'];
@@ -82,22 +80,14 @@
 		{/if}
 		<div class="question-actions">
 			{#if onSwitchVersion}
-				<span
-					class="tooltip-wrapper"
-					class:has-tooltip={versionSwitchDisabled}
-					data-tooltip={versionSwitchDisabled ? versionSwitchTooltip : undefined}
+				<button
+					class="version-switch-btn"
+					onclick={onSwitchVersion}
+					title={versionSwitchTooltip}
+					aria-label={versionSwitchTooltip}
 				>
-					<button
-						class="version-switch-btn"
-						class:disabled={versionSwitchDisabled}
-						onclick={onSwitchVersion}
-						disabled={versionSwitchDisabled}
-						title={versionSwitchDisabled ? undefined : versionSwitchTooltip}
-						aria-label={versionSwitchTooltip}
-					>
-						<RefreshCw size={14} />
-					</button>
-				</span>
+					<RefreshCw size={14} />
+				</button>
 			{/if}
 			<a
 				href={`${BASE_URL}/assets/formulario.pdf`}
@@ -254,54 +244,10 @@
 		min-height: 0;
 	}
 
-	.version-switch-btn:hover:not(:disabled) {
+	.version-switch-btn:hover {
 		color: var(--text-primary);
 		background-color: var(--bg-tertiary);
 		border-color: var(--border-color);
-	}
-
-	.version-switch-btn.disabled,
-	.version-switch-btn:disabled {
-		opacity: 0.45;
-		cursor: not-allowed;
-	}
-
-	.tooltip-wrapper {
-		position: relative;
-		display: inline-flex;
-	}
-
-	.tooltip-wrapper.has-tooltip::after {
-		content: attr(data-tooltip);
-		position: absolute;
-		bottom: calc(100% + 8px);
-		left: 50%;
-		transform: translateX(-50%);
-		padding: 6px 10px;
-		background-color: var(--text-primary);
-		color: var(--bg-primary);
-		font-size: var(--text-xs);
-		line-height: 1.4;
-		border-radius: var(--radius-sm);
-		white-space: nowrap;
-		max-width: min(280px, 90vw);
-		min-width: 100px;
-		white-space: normal;
-		text-align: center;
-		pointer-events: none;
-		opacity: 0;
-		visibility: hidden;
-		transition:
-			opacity var(--transition-fast),
-			visibility var(--transition-fast);
-		z-index: 10;
-		box-shadow: var(--shadow-md);
-	}
-
-	.tooltip-wrapper.has-tooltip:hover::after,
-	.tooltip-wrapper.has-tooltip:focus-within::after {
-		opacity: 1;
-		visibility: visible;
 	}
 
 	.btn-form {

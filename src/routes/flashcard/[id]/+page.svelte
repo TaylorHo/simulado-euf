@@ -14,7 +14,7 @@
 	import { isTauriMobileApp } from '$lib/utils/platform';
 	import { Settings } from '@lucide/svelte';
 	import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
-	import { allQuestions } from '$lib/data';
+	import { formatQuestionNumberLabel, hasAlternateVersion } from '$lib/utils/questionBank';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -187,7 +187,7 @@
 
 	let questionTitle = $derived(
 		currentExamQuestion
-			? `de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - Q${currentExamQuestion.questionNumber}-${currentExamQuestion.version === Version.A ? 'A' : 'B'}`
+			? `de ${AreaLabels[currentExamQuestion.area]} da prova de ${currentExamQuestion.year}-${currentExamQuestion.semester} - ${formatQuestionNumberLabel(currentExamQuestion)}`
 			: ''
 	);
 
@@ -195,26 +195,15 @@
 		data.questionId ? getAlternateVersionId(data.questionId) : null
 	);
 
-	const alternateVersionExists = $derived.by(() => {
-		if (!alternateVersionId) return false;
-		const id = parseQuestionId(alternateVersionId);
-		return allQuestions.some(
-			(q) =>
-				q.year === id.year &&
-				q.semester === id.semester &&
-				q.area === id.area &&
-				q.version === id.version &&
-				q.questionNumber === id.questionNumber
-		);
-	});
+	const alternateVersionExists = $derived(
+		currentExamQuestion ? hasAlternateVersion(currentExamQuestion) : false
+	);
 
 	const versionSwitchTooltip = $derived(
 		currentExamQuestion
-			? !alternateVersionExists
-				? `A versão ${currentExamQuestion.version === Version.A ? 'B' : 'A'} foi anulada`
-				: currentExamQuestion.version === Version.A
-					? 'Trocar para versão B'
-					: 'Trocar para versão A'
+			? currentExamQuestion.version === Version.A
+				? 'Trocar para versão B'
+				: 'Trocar para versão A'
 			: ''
 	);
 
@@ -317,9 +306,8 @@
 					showDiscardButton={!flashcardStore.showAnswer}
 					onSelectAnswer={handleSelectAnswer}
 					onToggleDiscard={handleToggleDiscard}
-					onSwitchVersion={handleSwitchVersion}
+					onSwitchVersion={alternateVersionExists ? handleSwitchVersion : undefined}
 					{versionSwitchTooltip}
-					versionSwitchDisabled={!alternateVersionExists}
 				/>
 
 				<div class="actions-container">
