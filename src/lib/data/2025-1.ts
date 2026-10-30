@@ -29,7 +29,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Uma corda inicialmente em repouso sobre uma superfície horizontal é puxada para cima a partir do instante $t = 0$ por uma força $F(t)$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de densidade linear de massa $\lambda$, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $\lambda L gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = \lambda v^2$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = \lambda lg = \lambda vgt$.</li></ul><br/>Assinale a alternativa correta:`,
+			text: String.raw`Uma corda inicialmente em repouso sobre uma superfície horizontal é puxada para cima a partir do instante $t = 0$ por uma força $F(t)$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de densidade linear de massa $\lambda$, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ol type='I'><li>O aumento de energia potencial gravitacional é $\lambda L gl/2$.</li><li>A força resultante sobre a corda é constante e igual a $F_R = \lambda v^2$.</li><li>A força $F$ cresce linearmente com tempo e é igual a $F = \lambda lg = \lambda vgt$.</li></ol><br/>Assinale a alternativa correta:`,
 			image: '2025-1/mc-1.webp'
 		},
 		alternatives: [
@@ -65,7 +65,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Uma corda de massa $M$, inicialmente em repouso sobre uma superfície horizontal, é puxada para cima a partir do instante $t = 0$ por uma força $F$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ul><li>I. O aumento de energia potencial gravitacional é $M gl/2$.</li><li>II. A força resultante sobre a corda é constante e igual a $F_R = M v^2/L$.</li><li>III. A força $F$ cresce linearmente com tempo e é igual a $F = Mlg/L = Mvgt/L$.</li></ul><br/>Assinale a alternativa correta:`,
+			text: String.raw`Uma corda de massa $M$, inicialmente em repouso sobre uma superfície horizontal, é puxada para cima a partir do instante $t = 0$ por uma força $F$ tal que a corda sobe com velocidade $v$ constante, como ilustra a figura. A corda é homogênea, de comprimento total $L$, e a aceleração da gravidade é $g$. Considere as afirmações abaixo, que se referem à situação em que um comprimento $l \lt L$ de corda já foi puxado. Despreze a altura do montante da corda ainda apoiado na superfície.<br/><br/><ol type='I'><li>O aumento de energia potencial gravitacional é $M gl/2$.</li><li>A força resultante sobre a corda é constante e igual a $F_R = M v^2/L$.</li><li>A força $F$ cresce linearmente com tempo e é igual a $F = Mlg/L = Mvgt/L$.</li></ol><br/>Assinale a alternativa correta:`,
 			image: '2025-1/mc-1.webp'
 		},
 		alternatives: [
@@ -915,7 +915,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −6{,}0 \mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 18{,}0 \mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>`,
+			text: String.raw`Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −6{,}0 \mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 18{,}0 \mu C$. Pede-se:<br/><ol type='i'><li>a carga $q_C$ na superfície da cavidade esférica;</li><li>a carga $q_F$ em cada uma das faces do cubo.</li></ol>`,
 			image: '2025-1/em-5a.webp'
 		},
 		alternatives: [
@@ -951,7 +951,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −12{,}0 \mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 36{,}0 \mu C$. Pede-se:<br/><ul><li>i) a carga $q_C$ na superfície da cavidade esférica;</li><li>ii) a carga $q_F$ em cada uma das faces do cubo.</li></ul>`,
+			text: String.raw`Um cubo condutor maciço possui uma cavidade esférica cujo centro coincide com o centro do cubo. No centro da cavidade há uma carga $q = −12{,}0 \mu C$ (veja a figura). Além da carga no centro da cavidade, o condutor maciço está carregado com uma carga $Q = 36{,}0 \mu C$. Pede-se:<br/><ol type='i'><li>a carga $q_C$ na superfície da cavidade esférica;</li><li>a carga $q_F$ em cada uma das faces do cubo.</li></ol>`,
 			image: '2025-1/em-5b.webp'
 		},
 		alternatives: [
@@ -1068,7 +1068,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: 'Uma barra condutora, de comprimento $a$, resistência elétrica $R$ e massa $m$, pode deslizar sem atrito sobre um par de trilhos condutores paralelos e horizontais de resistência elétrica desprezível (veja a figura). Um campo magnético $B$ é perpendicular ao plano dos trilhos e a barra encontra-se inicialmente em repouso ($v_i = 0$). Uma bateria de força eletromotriz $V_0$ e resistência interna nula é conectada entre os dois trilhos no instante $t = 0$, gerando uma corrente inicial $i_0$. Pede-se:<br/><ul><li>i) a força $F(v)$ que age sobre a barra em função da sua velocidade $v$;</li><li>ii) a velocidade $v$ da barra quando a corrente for igual a $1/4$ do seu valor inicial, ou seja, quando $i = i_0/4$.</li></ul>',
+			text: String.raw`Uma barra condutora, de comprimento $a$, resistência elétrica $R$ e massa $m$, pode deslizar sem atrito sobre um par de trilhos condutores paralelos e horizontais de resistência elétrica desprezível (veja a figura). Um campo magnético $B$ é perpendicular ao plano dos trilhos e a barra encontra-se inicialmente em repouso ($v_i = 0$). Uma bateria de força eletromotriz $V_0$ e resistência interna nula é conectada entre os dois trilhos no instante $t = 0$, gerando uma corrente inicial $i_0$. Pede-se:<br/><ol type='i'><li>a força $F(v)$ que age sobre a barra em função da sua velocidade $v$;</li><li>a velocidade $v$ da barra quando a corrente for igual a $1/4$ do seu valor inicial, ou seja, quando $i = i_0/4$.</li></ol>`,
 			image: '2025-1/em-7a.webp'
 		},
 		alternatives: [
@@ -1107,7 +1107,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Uma barra condutora, de comprimento $L$, resistência elétrica $r$ e massa $M$, pode deslizar sem atrito sobre um par de trilhos condutores paralelos e horizontais de resistência elétrica desprezível (veja a figura). Um campo magnético $B$ é perpendicular ao plano dos trilhos e a barra encontra-se inicialmente em repouso ($v_i = 0$). Uma bateria de força eletromotriz $\varphi_0$ e resistência interna nula é conectada entre os dois trilhos no instante $t = 0$, gerando uma corrente inicial $i_0$. Pede-se:<br/><ul><li>i) a força $F(v)$ que age sobre a barra em função da sua velocidade $v$;</li><li>ii) a velocidade $v$ da barra quando a corrente for igual a $1/5$ do seu valor inicial, ou seja, quando $i = i_0/5$.</li></ul>`,
+			text: String.raw`Uma barra condutora, de comprimento $L$, resistência elétrica $r$ e massa $M$, pode deslizar sem atrito sobre um par de trilhos condutores paralelos e horizontais de resistência elétrica desprezível (veja a figura). Um campo magnético $B$ é perpendicular ao plano dos trilhos e a barra encontra-se inicialmente em repouso ($v_i = 0$). Uma bateria de força eletromotriz $\varphi_0$ e resistência interna nula é conectada entre os dois trilhos no instante $t = 0$, gerando uma corrente inicial $i_0$. Pede-se:<br/><ol type='i'><li>a força $F(v)$ que age sobre a barra em função da sua velocidade $v$;</li><li>a velocidade $v$ da barra quando a corrente for igual a $1/5$ do seu valor inicial, ou seja, quando $i = i_0/5$.</li></ol>`,
 			image: '2025-1/em-7b.webp'
 		},
 		alternatives: [
@@ -1441,7 +1441,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 49 elétrons.</li><li>II. O estado fundamental da molécula tem 45 elétrons.</li><li>III. O estado fundamental da molécula tem 55 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 45 a 55 elétrons.</li></ul><br/>Assinale a alternativa correta.',
+			text: String.raw`O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ol type='I'><li>O estado fundamental da molécula tem 49 elétrons.</li><li>O estado fundamental da molécula tem 45 elétrons.</li><li>O estado fundamental da molécula tem 55 elétrons.</li><li>O estado fundamental da molécula é degenerado, possuindo de 45 a 55 elétrons.</li></ol><br/>Assinale a alternativa correta.`,
 			image: '2025-1/fm-4a.webp'
 		},
 		alternatives: [
@@ -1477,7 +1477,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: 'O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ul><li>I. O estado fundamental da molécula tem 56 elétrons.</li><li>II. O estado fundamental da molécula tem 50 elétrons.</li><li>III. O estado fundamental da molécula tem 60 elétrons.</li><li>IV. O estado fundamental da molécula é degenerado, possuindo de 50 a 60 elétrons.</li></ul><br/>Assinale a alternativa correta.',
+			text: String.raw`O gráfico mostra a energia $E$ (medida em relação à energia da molécula dissociada) de uma determinada molécula como função do número $N$ de elétrons nela contidos. A respeito dessa molécula, considere as afirmações abaixo.<br/><br/><ol type='I'><li>O estado fundamental da molécula tem 56 elétrons.</li><li>O estado fundamental da molécula tem 50 elétrons.</li><li>O estado fundamental da molécula tem 60 elétrons.</li><li>O estado fundamental da molécula é degenerado, possuindo de 50 a 60 elétrons.</li></ol><br/>Assinale a alternativa correta.`,
 			image: '2025-1/fm-4b.webp'
 		},
 		alternatives: [
@@ -2344,7 +2344,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Seja $\{\ket{n}\}$ um conjunto de autofunções reais e ortonormais de um hamiltoniano $\hat{H}$ em uma dimensão, correspondentes aos autovalores de energia $E_n$. Seja $\hat{p}$ o operador momento linear. Qual (ou quais) das seguintes afirmações deve ser sempre verdadeira?<br/><br/><ul><li>I. $\braket{m|n} \neq 0$</li><li>II. $\ket{n}$ é uma autofunção de $\hat{p}^2$</li><li>III. $\braket{m|\hat{H}|n} = \delta_{mn}E_n$</li></ul>`
+			text: String.raw`Seja $\{\ket{n}\}$ um conjunto de autofunções reais e ortonormais de um hamiltoniano $\hat{H}$ em uma dimensão, correspondentes aos autovalores de energia $E_n$. Seja $\hat{p}$ o operador momento linear. Qual (ou quais) das seguintes afirmações deve ser sempre verdadeira?<br/><br/><ol type='I'><li>$\braket{m|n} \neq 0$</li><li>$\ket{n}$ é uma autofunção de $\hat{p}^2$</li><li>$\braket{m|\hat{H}|n} = \delta_{mn}E_n$</li></ol>`
 		},
 		alternatives: [
 			{
@@ -2382,7 +2382,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Seja $\{\ket{n}\}$ um conjunto de autofunções reais e ortonormais de um hamiltoniano $\hat{H}$ em uma dimensão, correspondentes aos autovalores de energia $E_n$. Seja $\hat{x}$ o operador posição. Qual (ou quais) das seguintes afirmações deve ser sempre verdadeira?<br/><br/><ul><li>I. $\braket{m|n} \neq 0$</li><li>II. $\braket{m|\hat{H}|n} = \delta_{mn}E_n$</li><li>III. $\ket{n}$ é uma autofunção de $\hat{x}^2$</li></ul>`
+			text: String.raw`Seja $\{\ket{n}\}$ um conjunto de autofunções reais e ortonormais de um hamiltoniano $\hat{H}$ em uma dimensão, correspondentes aos autovalores de energia $E_n$. Seja $\hat{x}$ o operador posição. Qual (ou quais) das seguintes afirmações deve ser sempre verdadeira?<br/><br/><ol type='I'><li>$\braket{m|n} \neq 0$</li><li>$\braket{m|\hat{H}|n} = \delta_{mn}E_n$</li><li>$\ket{n}$ é uma autofunção de $\hat{x}^2$</li></ol>`
 		},
 		alternatives: [
 			{
@@ -2420,7 +2420,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \rarr b} = 0$ para a expansão adiabática.</li><li>III. $W_{a \rarr b} = 0$ para a expansão livre.</li><li>IV. $U_{a \rarr b} = 0$ para as expansões isotérmica e livre.</li></ul><br/>Somente são <strong>corretas</strong> as afirmações:`
+			text: String.raw`Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ol type='I'><li>$Q_{a \rarr b} = 0$ para a expansão isotérmica.</li><li>$U_{a \rarr b} = 0$ para a expansão adiabática.</li><li>$W_{a \rarr b} = 0$ para a expansão livre.</li><li>$U_{a \rarr b} = 0$ para as expansões isotérmica e livre.</li></ol><br/>Somente são <strong>corretas</strong> as afirmações:`
 		},
 		alternatives: [
 			{
@@ -2458,7 +2458,7 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ul><li>I. $Q_{a \rarr b} = 0$ para a expansão isotérmica.</li><li>II. $U_{a \rarr b} = 0$ para as expansões isotérmica e livre.</li><li>III. $U_{a \rarr b} = 0$ para a expansão adiabática.</li><li>IV. $W_{a \rarr b} = 0$ para a expansão livre.</li></ul><br/>Somente são <strong>corretas</strong> as afirmações:`
+			text: String.raw`Um gás ideal, partindo de um estado de equilíbrio termodinâmico $a$, atinge outro estado de equilíbrio termodinâmico $b$ por meio de três processos termodinâmicos diferentes: expansão isotérmica, expansão adiabática e expansão livre. Denotando por $X_{a \rarr b}$ o valor da variável termodinâmica $X$ ao longo da transformação $a \rarr b$ ($X = Q$ para o calor trocado, $X = U$ para a variação da energia interna e $X = W$ para o trabalho realizado), considere as afirmativas a seguir.<br/><br/><ol type='I'><li>$Q_{a \rarr b} = 0$ para a expansão isotérmica.</li><li>$U_{a \rarr b} = 0$ para as expansões isotérmica e livre.</li><li>$U_{a \rarr b} = 0$ para a expansão adiabática.</li><li>$W_{a \rarr b} = 0$ para a expansão livre.</li></ol><br/>Somente são <strong>corretas</strong> as afirmações:`
 		},
 		alternatives: [
 			{

@@ -555,7 +555,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Uma partícula de massa $m$ se movimenta em três dimensões sob a ação de uma força central cuja energia potencial associada é dada por<br/><br/>$$U(r) = \frac{1}{3}kr^3$$<br/>onde $k$ é uma constante positiva.<br/>Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ul><li>I. A energia total $E$ da partícula e seu momento angular $L$ são constantes de movimento.</li><li>II. A partícula pode apresentar uma órbita circular estável e a relação entre o módulo do momento angular $L$ da partícula e o raio $a$ dessa órbita circular é $L^2 = mka^5$</li><li>III. Para determinados valores da energia total $E$, a partícula pode apresentar órbitas não limitadas, isto é, órbitas que não apresentam um limite superior para os valores assumidos pela coordenada radial $r$.</li></ul>`
+			text: String.raw`Uma partícula de massa $m$ se movimenta em três dimensões sob a ação de uma força central cuja energia potencial associada é dada por<br/><br/>$$U(r) = \frac{1}{3}kr^3$$<br/>onde $k$ é uma constante positiva.<br/>Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ol type='I'><li>A energia total $E$ da partícula e seu momento angular $L$ são constantes de movimento.</li><li>A partícula pode apresentar uma órbita circular estável e a relação entre o módulo do momento angular $L$ da partícula e o raio $a$ dessa órbita circular é $L^2 = mka^5$</li><li>Para determinados valores da energia total $E$, a partícula pode apresentar órbitas não limitadas, isto é, órbitas que não apresentam um limite superior para os valores assumidos pela coordenada radial $r$.</li></ol>`
 		},
 		alternatives: [
 			{
@@ -591,7 +591,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Uma partícula de massa $m$ se movimenta em três dimensões sob a ação de uma força central cuja energia potencial associada é dada por<br/><br/>$$U(r) = \frac{1}{3}kr^3$$<br/>onde $k$ é uma constante positiva.<br/>Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<ul><li>I. A energia total $E$ da partícula e seu momento angular $L$ são constantes de movimento.</li><li>II. A partícula pode apresentar uma órbita circular estável e a relação entre o módulo do momento angular $L$ da partícula e o raio $a$ dessa órbita circular é $L^2 = 2mka^5$</li><li>III. A partícula pode apresentar apenas órbitas limitadas, isto é, órbitas cuja coordenada radial $r$ somente pode assumir valores tais que $r_1 \leq r \leq r_2$, onde $r_1$ e $r_2$ são os pontos de retorno radiais da órbita.</li></ul>`
+			text: String.raw`Uma partícula de massa $m$ se movimenta em três dimensões sob a ação de uma força central cuja energia potencial associada é dada por<br/><br/>$$U(r) = \frac{1}{3}kr^3$$<br/>onde $k$ é uma constante positiva.<br/>Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<ol type='I'><li>A energia total $E$ da partícula e seu momento angular $L$ são constantes de movimento.</li><li>A partícula pode apresentar uma órbita circular estável e a relação entre o módulo do momento angular $L$ da partícula e o raio $a$ dessa órbita circular é $L^2 = 2mka^5$</li><li>A partícula pode apresentar apenas órbitas limitadas, isto é, órbitas cuja coordenada radial $r$ somente pode assumir valores tais que $r_1 \leq r \leq r_2$, onde $r_1$ e $r_2$ são os pontos de retorno radiais da órbita.</li></ol>`
 		},
 		alternatives: [
 			{
@@ -924,7 +924,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Uma barra metálica muito fina, homogênea e de comprimento $d$ move-se sem girar e com velocidade constante $\vec{v}$. A velocidade $\vec{v}$ faz um ângulo $\theta \neq \frac{\pi}{2}$ com a barra, como mostrado na figura abaixo. A barra move-se numa região onde há um campo magnético constante e uniforme $\vec{B}$, perpendicular à barra e a $\vec{v}$. Qual(is) das seguintes afirmações é(são) verdadeira(s)?<br/><br/><ul><li>I. Existe uma diferença de potencial elétrico não nula entre as extremidades da barra.</li><li>II. A força total devido a $\vec{B}$ sobre a barra é nula.</li><li>III. O torque total devido a $\vec{B}$ sobre a barra é nulo.</li></ul>`,
+			text: String.raw`Uma barra metálica muito fina, homogênea e de comprimento $d$ move-se sem girar e com velocidade constante $\vec{v}$. A velocidade $\vec{v}$ faz um ângulo $\theta \neq \frac{\pi}{2}$ com a barra, como mostrado na figura abaixo. A barra move-se numa região onde há um campo magnético constante e uniforme $\vec{B}$, perpendicular à barra e a $\vec{v}$. Qual(is) das seguintes afirmações é(são) verdadeira(s)?<br/><br/><ol type='I'><li>Existe uma diferença de potencial elétrico não nula entre as extremidades da barra.</li><li>A força total devido a $\vec{B}$ sobre a barra é nula.</li><li>O torque total devido a $\vec{B}$ sobre a barra é nulo.</li></ol>`,
 			image: '2023-2/em-5.webp'
 		},
 		alternatives: [
@@ -964,7 +964,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Uma barra metálica muito fina, homogênea e de comprimento $d$ move-se sem girar e com velocidade constante $\vec{v}$. A velocidade $\vec{v}$ faz um ângulo $\theta \neq \frac{\pi}{2}$ com a barra, como mostrado na figura abaixo. A barra move-se numa região onde há um campo magnético constante e uniforme $\vec{B}$, perpendicular à barra e a $\vec{v}$. Qual(is) das seguintes afirmações é(são) verdadeira(s)?<br/><br/><ul><li>I. Existe uma diferença de potencial elétrico não nula entre as extremidades da barra.</li><li>II. A força total devido a $\vec{B}$ sobre a barra é não nula.</li><li>III. O torque total devido a $\vec{B}$ sobre a barra é não nulo.</li></ul>`,
+			text: String.raw`Uma barra metálica muito fina, homogênea e de comprimento $d$ move-se sem girar e com velocidade constante $\vec{v}$. A velocidade $\vec{v}$ faz um ângulo $\theta \neq \frac{\pi}{2}$ com a barra, como mostrado na figura abaixo. A barra move-se numa região onde há um campo magnético constante e uniforme $\vec{B}$, perpendicular à barra e a $\vec{v}$. Qual(is) das seguintes afirmações é(são) verdadeira(s)?<br/><br/><ol type='I'><li>Existe uma diferença de potencial elétrico não nula entre as extremidades da barra.</li><li>A força total devido a $\vec{B}$ sobre a barra é não nula.</li><li>O torque total devido a $\vec{B}$ sobre a barra é não nulo.</li></ol>`,
 			image: '2023-2/em-5.webp'
 		},
 		alternatives: [

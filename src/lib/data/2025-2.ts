@@ -1271,7 +1271,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere os seguintes experimentos/fenômenos:<br/><br/><ul><li>I. Interferência da fenda dupla de Young.</li><li>II. Espalhamento Compton.</li><li>III. Efeito fotoelétrico.</li><li>IV. Raios catódicos de J. J. Thomson.</li><li>V. Espectro de radiação do corpo negro.</li></ul><br/>Quais deles fornecem evidências de que a luz interage com a matéria de maneira quantizada?'
+			text: String.raw`Considere os seguintes experimentos/fenômenos:<br/><br/><ol type='I'><li>Interferência da fenda dupla de Young.</li><li>Espalhamento Compton.</li><li>Efeito fotoelétrico.</li><li>Raios catódicos de J. J. Thomson.</li><li>Espectro de radiação do corpo negro.</li></ol><br/>Quais deles fornecem evidências de que a luz interage com a matéria de maneira quantizada?`
 		},
 		alternatives: [
 			{
@@ -1309,7 +1309,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: 'Considere os seguintes experimentos/fenômenos:<br/><br/><ul><li>I. Espalhamento Compton.</li><li>II. Interferência da fenda dupla de Young.</li><li>III. Raios catódicos de J. J. Thomson.</li><li>IV. Efeito fotoelétrico.</li><li>V. Espectro de radiação do corpo negro.</li></ul><br/>Quais deles fornecem evidências de que a luz interage com a matéria de maneira quantizada?'
+			text: String.raw`Considere os seguintes experimentos/fenômenos:<br/><br/><ol type='I'><li>Espalhamento Compton.</li><li>Interferência da fenda dupla de Young.</li><li>Raios catódicos de J. J. Thomson.</li><li>Efeito fotoelétrico.</li><li>Espectro de radiação do corpo negro.</li></ol><br/>Quais deles fornecem evidências de que a luz interage com a matéria de maneira quantizada?`
 		},
 		alternatives: [
 			{
@@ -1487,7 +1487,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Considere um trem que se move em relação a uma plataforma. Um observador em repouso na plataforma vê dois raios atingirem simultaneamente as extremidades do trem, no mesmo instante em que estas coincidem com as extremidades da plataforma. A respeito dessa observação, considere as afirmativas a seguir.<br/><br/><ul><li>I. Para um observador viajando no centro do trem, os dois relâmpagos atingem o trem no mesmo instante.</li><li>II. No referencial do trem, o raio da extremidade da frente atinge o trem antes do raio da extremidade de trás.</li><li>III. O comprimento de um trem idêntico em repouso na plataforma é menor do que o comprimento da plataforma.</li></ul><br/>Levando em conta efeitos relativísticos, quais das afirmativas são verdadeiras?'
+			text: String.raw`Considere um trem que se move em relação a uma plataforma. Um observador em repouso na plataforma vê dois raios atingirem simultaneamente as extremidades do trem, no mesmo instante em que estas coincidem com as extremidades da plataforma. A respeito dessa observação, considere as afirmativas a seguir.<br/><br/><ol type='I'><li>Para um observador viajando no centro do trem, os dois relâmpagos atingem o trem no mesmo instante.</li><li>No referencial do trem, o raio da extremidade da frente atinge o trem antes do raio da extremidade de trás.</li><li>O comprimento de um trem idêntico em repouso na plataforma é menor do que o comprimento da plataforma.</li></ol><br/>Levando em conta efeitos relativísticos, quais das afirmativas são verdadeiras?`
 		},
 		alternatives: [
 			{
@@ -1525,7 +1525,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: 'Considere um trem que se move em relação a uma plataforma. Um observador em repouso na plataforma vê dois raios atingirem simultaneamente as extremidades do trem, no mesmo instante em que estas coincidem com as extremidades da plataforma. A respeito dessa observação, considere as afirmativas a seguir.<br/><br/><ul><li>I. Para um observador viajando no centro do trem, os dois relâmpagos atingem o trem no mesmo instante.</li><li>II. No referencial do trem, o raio da extremidade da frente atinge o trem antes do raio da extremidade de trás.</li><li>III. O comprimento de um trem idêntico em repouso na plataforma é maior do que o comprimento da plataforma.</li></ul><br/>Levando em conta efeitos relativísticos, quais das afirmativas são verdadeiras?'
+			text: String.raw`Considere um trem que se move em relação a uma plataforma. Um observador em repouso na plataforma vê dois raios atingirem simultaneamente as extremidades do trem, no mesmo instante em que estas coincidem com as extremidades da plataforma. A respeito dessa observação, considere as afirmativas a seguir.<br/><br/><ol type='I'><li>Para um observador viajando no centro do trem, os dois relâmpagos atingem o trem no mesmo instante.</li><li>No referencial do trem, o raio da extremidade da frente atinge o trem antes do raio da extremidade de trás.</li><li>O comprimento de um trem idêntico em repouso na plataforma é maior do que o comprimento da plataforma.</li></ol><br/>Levando em conta efeitos relativísticos, quais das afirmativas são verdadeiras?`
 		},
 		alternatives: [
 			{
@@ -1706,7 +1706,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Um feixe de luz de frequência $f = 1{,}0 \times 10^{15}$ Hz incide sobre um metal cuja função trabalho é $\phi = 3{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 1,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 6{,}0 \times 10^{14}$ Hz, haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?`
+			text: String.raw`Um feixe de luz de frequência $f = 1{,}0 \times 10^{15}$ Hz incide sobre um metal cuja função trabalho é $\phi = 3{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ol type='I'><li>A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>Haverá elétrons ejetados com energia cinética maior do que 1,0 eV.</li><li>Se a frequência da luz for reduzida para $f = 6{,}0 \times 10^{14}$ Hz, haverá emissão fotoelétrica.</li></ol><br/>Quais das afirmativas são corretas?`
 		},
 		alternatives: [
 			{
@@ -1741,7 +1741,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Um feixe de luz de frequência $f = 5{,}0 \times 10^{14}$ Hz incide sobre um metal cuja função trabalho é $\phi = 1{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ul><li>I. A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>II. Haverá elétrons ejetados com energia cinética maior do que 2,0 eV.</li><li>III. Se a frequência da luz for reduzida para $f = 2{,}0 \times 10^{14}$ Hz, não haverá emissão fotoelétrica.</li></ul><br/>Quais das afirmativas são corretas?`
+			text: String.raw`Um feixe de luz de frequência $f = 5{,}0 \times 10^{14}$ Hz incide sobre um metal cuja função trabalho é $\phi = 1{,}0$ eV. Considere as afirmativas abaixo.<br/><br/><ol type='I'><li>A frequência da luz é suficiente para provocar emissão fotoelétrica.</li><li>Haverá elétrons ejetados com energia cinética maior do que 2,0 eV.</li><li>Se a frequência da luz for reduzida para $f = 2{,}0 \times 10^{14}$ Hz, não haverá emissão fotoelétrica.</li></ol><br/>Quais das afirmativas são corretas?`
 		},
 		alternatives: [
 			{
@@ -2123,7 +2123,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Dois spins 1/2, $\vec{S}_1$ e $\vec{S}_2$ têm sua interação descrita por meio do hamiltoniano<br/><br/>$$H = J\vec{S}_1 \cdot \vec{S}_2 = J(S_{1}^xS_{2}^x + S_{1}^yS_{2}^y + S_{1}^zS_{2}^z),$$<br/>em que $J > 0$ dá a escala de energia do problema. A respeito desse sistema, considere as afirmações a seguir.<br/><br/><ul><li>I. O estado fundamental possui spin total igual a 0.</li><li>II. O estado excitado possui spin total igual a 1.</li><li>III. O estado fundamental é degenerado.</li></ul><br/>Quais das afirmações são verdadeiras?`
+			text: String.raw`Dois spins 1/2, $\vec{S}_1$ e $\vec{S}_2$ têm sua interação descrita por meio do hamiltoniano<br/><br/>$$H = J\vec{S}_1 \cdot \vec{S}_2 = J(S_{1}^xS_{2}^x + S_{1}^yS_{2}^y + S_{1}^zS_{2}^z),$$<br/>em que $J > 0$ dá a escala de energia do problema. A respeito desse sistema, considere as afirmações a seguir.<br/><br/><ol type='I'><li>O estado fundamental possui spin total igual a 0.</li><li>O estado excitado possui spin total igual a 1.</li><li>O estado fundamental é degenerado.</li></ol><br/>Quais das afirmações são verdadeiras?`
 		},
 		alternatives: [
 			{
@@ -2161,7 +2161,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Dois spins 1/2, $\vec{S}_1$ e $\vec{S}_2$, têm sua interação descrita por meio do hamiltoniano<br/><br/>$$H = -J\vec{S}_1 \cdot \vec{S}_2 = -J(S_{1}^xS_{2}^x + S_{1}^yS_{2}^y + S_{1}^zS_{2}^z),$$<br/>em que $J > 0$ dá a escala de energia do problema. A respeito desse sistema, considere as afirmações a seguir.<br/><br/><ul><li>I. O estado fundamental possui spin total igual a 1.</li><li>II. O estado excitado possui spin total igual a 0.</li><li>III. O estado fundamental é degenerado.</li></ul><br/>Quais das afirmações são verdadeiras?`
+			text: String.raw`Dois spins 1/2, $\vec{S}_1$ e $\vec{S}_2$, têm sua interação descrita por meio do hamiltoniano<br/><br/>$$H = -J\vec{S}_1 \cdot \vec{S}_2 = -J(S_{1}^xS_{2}^x + S_{1}^yS_{2}^y + S_{1}^zS_{2}^z),$$<br/>em que $J > 0$ dá a escala de energia do problema. A respeito desse sistema, considere as afirmações a seguir.<br/><br/><ol type='I'><li>O estado fundamental possui spin total igual a 1.</li><li>O estado excitado possui spin total igual a 0.</li><li>O estado fundamental é degenerado.</li></ol><br/>Quais das afirmações são verdadeiras?`
 		},
 		alternatives: [
 			{

@@ -256,7 +256,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: String.raw`O pêndulo da figura, formado por uma barra rígida de massa desprezível e comprimento $L$ com uma massa pontual $M$ suspensa, está ligado a uma mola horizontal e longa de massa desprezível e constante de mola $k$ a uma distância $L/3$ de seu eixo de rotação. A mola está relaxada quando o pêndulo se encontra na posição vertical de equilíbrio $\theta = 0$. Sendo $g$ a aceleração da gravidade, considere as seguintes afirmações tendo em mente o regime de pequenas oscilações, ou seja, pequenas amplitudes de oscilação em torno do equilíbrio $\theta \ll 1$, onde $\cos{\theta} \approx 1 - \frac{1}{2}\theta^2$ e $\sin{\theta} \approx \theta$.<br/><br/><ul><li>I. A energia potencial gravitacional é conservada durante o movimento.</li><li>II. A energia mecânica do sistema é $E = \frac{1}{2}ML^2 [\dot{\theta}^2 + (\frac{g}{L} + \frac{k}{9M}) \theta^2]$.</li><li>III. A frequência de oscilação é $\omega = \sqrt{\frac{g}{L} + \frac{k}{9M}}$.</li></ul><br/>Qual das alternativas abaixo é a verdadeira?`,
+			text: String.raw`O pêndulo da figura, formado por uma barra rígida de massa desprezível e comprimento $L$ com uma massa pontual $M$ suspensa, está ligado a uma mola horizontal e longa de massa desprezível e constante de mola $k$ a uma distância $L/3$ de seu eixo de rotação. A mola está relaxada quando o pêndulo se encontra na posição vertical de equilíbrio $\theta = 0$. Sendo $g$ a aceleração da gravidade, considere as seguintes afirmações tendo em mente o regime de pequenas oscilações, ou seja, pequenas amplitudes de oscilação em torno do equilíbrio $\theta \ll 1$, onde $\cos{\theta} \approx 1 - \frac{1}{2}\theta^2$ e $\sin{\theta} \approx \theta$.<br/><br/><ol type='I'><li>A energia potencial gravitacional é conservada durante o movimento.</li><li>A energia mecânica do sistema é $E = \frac{1}{2}ML^2 [\dot{\theta}^2 + (\frac{g}{L} + \frac{k}{9M}) \theta^2]$.</li><li>A frequência de oscilação é $\omega = \sqrt{\frac{g}{L} + \frac{k}{9M}}$.</li></ol><br/>Qual das alternativas abaixo é a verdadeira?`,
 			image: '2024-2/mc-4a.webp'
 		},
 		alternatives: [
@@ -293,7 +293,7 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: String.raw`O pêndulo da figura, formado por uma barra rígida de massa desprezível e comprimento $L$ com uma massa pontual $M$ suspensa, está ligado a uma mola horizontal e longa de massa desprezível e constante de mola $k$ a uma distância $2L/5$ de seu eixo de rotação. A mola está relaxada quando o pêndulo se encontra na posição vertical de equilíbrio $\theta = 0$. Sendo $g$ a aceleração da gravidade, considere as seguintes afirmações tendo em mente o regime de pequenas oscilações, ou seja, pequenas amplitudes de oscilação em torno do equilíbrio, $\theta \ll 1$ onde $\cos{\theta} \approx 1 - \frac{1}{2}\theta^2$ e $\sin{\theta} \approx \theta$.<br/><br/><ul><li>I. A energia potencial elástica é conservada durante o movimento.</li><li>II. A energia mecânica do sistema é $E = \frac{1}{2}ML^2 [\dot{\theta}^2 + (\frac{g}{L} + \frac{4k}{25M}) \theta^2]$.</li><li>III. A frequência de oscilação é $\omega = \sqrt{\frac{g}{L} + \frac{4k}{25M}}$.</li></ul><br/>Qual das alternativas abaixo é a verdadeira?`,
+			text: String.raw`O pêndulo da figura, formado por uma barra rígida de massa desprezível e comprimento $L$ com uma massa pontual $M$ suspensa, está ligado a uma mola horizontal e longa de massa desprezível e constante de mola $k$ a uma distância $2L/5$ de seu eixo de rotação. A mola está relaxada quando o pêndulo se encontra na posição vertical de equilíbrio $\theta = 0$. Sendo $g$ a aceleração da gravidade, considere as seguintes afirmações tendo em mente o regime de pequenas oscilações, ou seja, pequenas amplitudes de oscilação em torno do equilíbrio, $\theta \ll 1$ onde $\cos{\theta} \approx 1 - \frac{1}{2}\theta^2$ e $\sin{\theta} \approx \theta$.<br/><br/><ol type='I'><li>A energia potencial elástica é conservada durante o movimento.</li><li>A energia mecânica do sistema é $E = \frac{1}{2}ML^2 [\dot{\theta}^2 + (\frac{g}{L} + \frac{4k}{25M}) \theta^2]$.</li><li>A frequência de oscilação é $\omega = \sqrt{\frac{g}{L} + \frac{4k}{25M}}$.</li></ol><br/>Qual das alternativas abaixo é a verdadeira?`,
 			image: '2024-2/mc-4b.webp'
 		},
 		alternatives: [
@@ -1004,7 +1004,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Uma onda eletromagnética plana propaga-se ao longo da direção $\hat{z}$ num meio dielétrico, não magnético ($\mu = \mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \exp{[i(kz - \omega t)](\hat{x} + 3\hat{y})}$, com $k = 1{,}8 \times 10^7 m^{-1}$, $\omega = 3{,}6 \times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3{,}0 \times 10^8 m/s$.`
+			text: String.raw`Uma onda eletromagnética plana propaga-se ao longo da direção $\hat{z}$ num meio dielétrico, não magnético ($\mu = \mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \exp{[i(kz - \omega t)](\hat{x} + 3\hat{y})}$, com $k = 1{,}8 \times 10^7 m^{-1}$, $\omega = 3{,}6 \times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ol type='i'><li>a velocidade de fase $v_f$ da onda;</li><li>o índice de refração $n$ do meio dielétrico;</li><li>o campo magnético $B(z,t)$ da onda.</li></ol><br/>A velocidade da luz no vácuo é $c = 3{,}0 \times 10^8 m/s$.`
 		},
 		alternatives: [
 			{
@@ -1043,7 +1043,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Uma onda eletromagnética plana propaga-se ao longo da direção $\hat{z}$ num meio dielétrico, não magnético ($\mu = \mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \exp{[i(kz - \omega t)](2\hat{x} - \hat{y})}$, com $k = 1{,}2 \times 10^7 m^{-1}$, $\omega = 3{,}0 \times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ul><li>i) a velocidade de fase $v_f$ da onda;</li><li>ii) o índice de refração $n$ do meio dielétrico;</li><li>iii) o campo magnético $B(z,t)$ da onda.</li></ul><br/>A velocidade da luz no vácuo é $c = 3{,}0 \times 10^8 m/s$.`
+			text: String.raw`Uma onda eletromagnética plana propaga-se ao longo da direção $\hat{z}$ num meio dielétrico, não magnético ($\mu = \mu_0$), homogêneo e isotrópico. O campo elétrico da onda é dado, em notação complexa, por $E(z,t) = E_0 \exp{[i(kz - \omega t)](2\hat{x} - \hat{y})}$, com $k = 1{,}2 \times 10^7 m^{-1}$, $\omega = 3{,}0 \times 10^{15} Hz$ e $E_0$ constante. Calcule:<br/><br/><ol type='i'><li>a velocidade de fase $v_f$ da onda;</li><li>o índice de refração $n$ do meio dielétrico;</li><li>o campo magnético $B(z,t)$ da onda.</li></ol><br/>A velocidade da luz no vácuo é $c = 3{,}0 \times 10^8 m/s$.`
 		},
 		alternatives: [
 			{
@@ -2058,7 +2058,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Para um observador no referencial $S$, duas bombas nas posições $x = -a$ e $x = +a$ no eixo $x$ explodem no mesmo instante. Um observador $S'$, por sua vez, move-se ao longo do eixo $x$ de $S$ com velocidade constante $v$ na direção de $x$ crescente. Indique a alternativa correta sobre as seguintes observações de $S'$:<br/><br/><ul><li>I. O intervalo de tempo entre as explosões depende da posição de $S'$.</li><li>II. A distância entre as bombas é $2a/\sqrt{1 - v^2/c^2}$, onde $c$ é a velocidade da luz.</li><li>III. A bomba em $x = +a$ explode antes da bomba em $x = -a$.</li></ul>`
+			text: String.raw`Para um observador no referencial $S$, duas bombas nas posições $x = -a$ e $x = +a$ no eixo $x$ explodem no mesmo instante. Um observador $S'$, por sua vez, move-se ao longo do eixo $x$ de $S$ com velocidade constante $v$ na direção de $x$ crescente. Indique a alternativa correta sobre as seguintes observações de $S'$:<br/><br/><ol type='I'><li>O intervalo de tempo entre as explosões depende da posição de $S'$.</li><li>A distância entre as bombas é $2a/\sqrt{1 - v^2/c^2}$, onde $c$ é a velocidade da luz.</li><li>A bomba em $x = +a$ explode antes da bomba em $x = -a$.</li></ol>`
 		},
 		alternatives: [
 			{
@@ -2097,7 +2097,7 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Para um observador no referencial $S$, duas bombas nas posições $x = -a$ e $x = +a$ no eixo $x$ explodem no mesmo instante. Um observador $S'$, por sua vez, move-se ao longo do eixo $x$ de $S$ com velocidade constante $v$ na direção de $x$ crescente. Indique a alternativa correta sobre as seguintes observações de $S'$:<br/><br/><ul><li>I. O intervalo de tempo entre as explosões depende da posição de $S'$.</li><li>II. A distância entre as bombas é $2a\sqrt{1 - v^2/c^2}$, onde $c$ é a velocidade da luz.</li><li>III. A bomba em $x = +a$ explode antes da bomba em $x = -a$.</li></ul>`
+			text: String.raw`Para um observador no referencial $S$, duas bombas nas posições $x = -a$ e $x = +a$ no eixo $x$ explodem no mesmo instante. Um observador $S'$, por sua vez, move-se ao longo do eixo $x$ de $S$ com velocidade constante $v$ na direção de $x$ crescente. Indique a alternativa correta sobre as seguintes observações de $S'$:<br/><br/><ol type='I'><li>O intervalo de tempo entre as explosões depende da posição de $S'$.</li><li>A distância entre as bombas é $2a\sqrt{1 - v^2/c^2}$, onde $c$ é a velocidade da luz.</li><li>A bomba em $x = +a$ explode antes da bomba em $x = -a$.</li></ol>`
 		},
 		alternatives: [
 			{

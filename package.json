@@ -68,14 +68,14 @@
 		"@tauri-apps/plugin-opener": "^2.7.2",
 		"jsqr": "^1.4.0",
 		"katex": "^0.19.1",
-		"posthog-js": "^1.442.0",
+		"posthog-js": "^1.442.1",
 		"qrcode": "^1.5.4"
 	},
 	"license": "AGPL-3.0",
 	"engines": {
 		"npm": ">=11",
 		"pnpm": ">=10",
-		"node": ">=20"
+		"node": ">=20 <26"
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",

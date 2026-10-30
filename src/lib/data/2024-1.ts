@@ -25,13 +25,12 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoUnidimensional),
 		help: {
-			imageDescription:
-				'Dois cones circulares retos, ambos com ângulo de abertura no vértice igual a alpha; o primeiro cone possui altura igual à metade da altura do segundo cone; ambos têm a base circular voltada para cima e o vértice voltado para baixo',
+			imageDescription: String.raw`Dois cones circulares retos, ambos com ângulo de abertura no vértice igual a alpha; o primeiro cone possui altura igual à metade da altura do segundo cone; ambos têm a base circular voltada para cima e o vértice voltado para baixo`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Cones semelhantes (mas de dimensões distintas) feitos do mesmo material são soltos do repouso, como ilustrado ao lado, e caem verticalmente sob ação da gravidade e da resistência do ar. Notase que as velocidades terminais desses cones são iguais. Dentre as afirmações a seguir, quais delas são <strong>necessárias</strong> para que as velocidades terminais sejam iguais? <br/><br/><ul><li>I. A força de arraste é proporcional ao quadrado da velocidade.</li><li>II. A força de arraste é proporcional à área do cone.</li><li>III. A força de arraste é proporcional ao raio do cone.</li></ul>',
+			text: String.raw`Cones semelhantes (mas de dimensões distintas) feitos do mesmo material são soltos do repouso, como ilustrado ao lado, e caem verticalmente sob ação da gravidade e da resistência do ar. Notase que as velocidades terminais desses cones são iguais. Dentre as afirmações a seguir, quais delas são <strong>necessárias</strong> para que as velocidades terminais sejam iguais? <br/><br/><ol type='I'><li>A força de arraste é proporcional ao quadrado da velocidade.</li><li>A força de arraste é proporcional à área do cone.</li><li>A força de arraste é proporcional ao raio do cone.</li></ol>`,
 			image: '2024-1/mc-1a.webp'
 		},
 		alternatives: [
@@ -63,13 +62,12 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoUnidimensional),
 		help: {
-			imageDescription:
-				'Duas calotas esféricas com a face curva voltada para baixo; cada calota é obtida cortando uma esfera por um cone imaginário interno, cujo vértice está voltado para baixo e possui ângulo de abertura alpha; a esfera da esquerda tem raio igual à metade do raio da esfera da direita; portanto, sua calota resultante também é proporcionalmente menor',
+			imageDescription: String.raw`Duas calotas esféricas com a face curva voltada para baixo; cada calota é obtida cortando uma esfera por um cone imaginário interno, cujo vértice está voltado para baixo e possui ângulo de abertura alpha; a esfera da esquerda tem raio igual à metade do raio da esfera da direita; portanto, sua calota resultante também é proporcionalmente menor`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 1,
 		statement: {
-			text: 'Calotas esféricas semelhantes (mas de dimensões distintas) feitas do mesmo material são soltas do repouso, como ilustrado ao lado, e caem verticalmente sob ação da gravidade e da resistência do ar. Nota-se que as velocidades terminais dessas calotas são iguais. Dentre as afirmações a seguir, quais delas são <strong>necessárias</strong> para que as velocidades terminais sejam iguais? <br/><br/><ul><li>I. A força de arraste é proporcional ao quadrado da velocidade.</li><li>II. A força de arraste é proporcional à área da calota.</li><li>III. A força de arraste é proporcional ao raio da calota.</li></ul>',
+			text: String.raw`Calotas esféricas semelhantes (mas de dimensões distintas) feitas do mesmo material são soltas do repouso, como ilustrado ao lado, e caem verticalmente sob ação da gravidade e da resistência do ar. Nota-se que as velocidades terminais dessas calotas são iguais. Dentre as afirmações a seguir, quais delas são <strong>necessárias</strong> para que as velocidades terminais sejam iguais? <br/><br/><ol type='I'><li>A força de arraste é proporcional ao quadrado da velocidade.</li><li>A força de arraste é proporcional à área da calota.</li><li>A força de arraste é proporcional ao raio da calota.</li></ol>`,
 			image: '2024-1/mc-1b.webp'
 		},
 		alternatives: [
@@ -101,13 +99,12 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoDuasTresDimensoes),
 		help: {
-			imageDescription:
-				'Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco',
+			imageDescription: String.raw`Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`A figura ao lado ilustra um bloco de densidade $\rho$ sobre um plano inclinado de ângulo $\alpha$ que é ligeiramente menor que o ângulo máximo de inclinação para que o bloco não deslize. O sistema todo está dentro de um recipiente com líquido de densidade $\rho' = \frac{\rho}{2}$ e cujo nível se eleva lentamente. <br/><br/>Desconsiderando os efeitos de arraste do líquido e assumindo que o coeficiente de atrito entre o bloco e o plano inclinado é <strong>inalterado</strong> pela presença do líquido, quais das afirmações a seguir são verdadeiras? <br/><br/><ul><li>I. Assim que a camada de líquido atingir o bloco, a força normal entre o bloco e o plano inclinado começa a diminuir.</li><li>II. O bloco desliza assim que a camada de líquido o atingir.</li><li>III. O bloco desliza apenas após a camada de líquido submergir $\frac{1}{2}$ de seu volume.</li></ul>`,
+			text: String.raw`A figura ao lado ilustra um bloco de densidade $\rho$ sobre um plano inclinado de ângulo $\alpha$ que é ligeiramente menor que o ângulo máximo de inclinação para que o bloco não deslize. O sistema todo está dentro de um recipiente com líquido de densidade $\rho' = \frac{\rho}{2}$ e cujo nível se eleva lentamente. <br/><br/>Desconsiderando os efeitos de arraste do líquido e assumindo que o coeficiente de atrito entre o bloco e o plano inclinado é <strong>inalterado</strong> pela presença do líquido, quais das afirmações a seguir são verdadeiras? <br/><br/><ol type='I'><li>Assim que a camada de líquido atingir o bloco, a força normal entre o bloco e o plano inclinado começa a diminuir.</li><li>O bloco desliza assim que a camada de líquido o atingir.</li><li>O bloco desliza apenas após a camada de líquido submergir $\frac{1}{2}$ de seu volume.</li></ol>`,
 			image: '2024-1/mc-2.webp'
 		},
 		alternatives: [
@@ -139,13 +136,12 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.LeisDeNewton, TagMC.MovimentoDuasTresDimensoes),
 		help: {
-			imageDescription:
-				'Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco',
+			imageDescription: String.raw`Triângulo retângulo com ângulo agudo alpha, definido entre o cateto adjacente e a hipotenusa; sobre a hipotenusa, encontra-se apoiado um bloco retangular, cuja base está em contato com essa superfície inclinada; a figura mostra ainda uma camada uniforme de líquido, cujo nível se encontra ligeiramente abaixo da base do bloco`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`A figura ao lado ilustra um bloco de densidade $\rho$ sobre um plano inclinado de ângulo $\alpha$ que é ligeiramente menor que o ângulo máximo de inclinação para que o bloco não deslize. O sistema todo está dentro de um recipiente com líquido de densidade $\rho' = \frac{\rho}{3}$ e cujo nível se eleva lentamente. <br/><br/>Desconsiderando os efeitos de arraste do líquido e assumindo que o coeficiente de atrito entre o bloco e o plano inclinado é <strong>inalterado</strong> pela presença do líquido, quais das afirmações a seguir são verdadeiras? <br/><br/><ul><li>I. A força normal entre o bloco e o plano inclinado é tanto menor quanto maior for a fração de bloco submersa.</li><li>II. O bloco desliza pouco após a camada de líquido o atingir.</li><li>III. O bloco desliza apenas após a camada de líquido submergir $\frac{2}{3}$ de seu volume.</li></ul>`,
+			text: String.raw`A figura ao lado ilustra um bloco de densidade $\rho$ sobre um plano inclinado de ângulo $\alpha$ que é ligeiramente menor que o ângulo máximo de inclinação para que o bloco não deslize. O sistema todo está dentro de um recipiente com líquido de densidade $\rho' = \frac{\rho}{3}$ e cujo nível se eleva lentamente. <br/><br/>Desconsiderando os efeitos de arraste do líquido e assumindo que o coeficiente de atrito entre o bloco e o plano inclinado é <strong>inalterado</strong> pela presença do líquido, quais das afirmações a seguir são verdadeiras? <br/><br/><ol type='I'><li>A força normal entre o bloco e o plano inclinado é tanto menor quanto maior for a fração de bloco submersa.</li><li>O bloco desliza pouco após a camada de líquido o atingir.</li><li>O bloco desliza apenas após a camada de líquido submergir $\frac{2}{3}$ de seu volume.</li></ol>`,
 			image: '2024-1/mc-2.webp'
 		},
 		alternatives: [
@@ -247,8 +243,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.OscilacoesLineares),
 		help: {
-			imageDescription:
-				'Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19',
+			imageDescription: String.raw`Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,
@@ -285,8 +280,7 @@ export default <Question[]>[
 		area: Area.MecanicaClassica,
 		tags: tagsForArea<Area.MecanicaClassica>(TagMC.OscilacoesLineares),
 		help: {
-			imageDescription:
-				'Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19',
+			imageDescription: String.raw`Gráfico da velocidade v (em cm/s) em função do tempo t (em s); o eixo das ordenadas varia de -4 a 4, e o eixo das abscissas de 0 a 20; a curva inicia em v≈4 quando t=0 e apresenta comportamento oscilatório, alternando entre valores positivos e negativos; são observados dois mínimos, próximos de t=3 e t=11, e dois máximos, em torno de t=7 e t=15; a velocidade torna-se negativa novamente ao final do intervalo, com v < 0 para t≈19`,
 			youtubeVideoId: videos[Area.MecanicaClassica]
 		},
 		questionNumber: 4,

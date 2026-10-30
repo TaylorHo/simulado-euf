@@ -487,7 +487,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: `Considere as assertativas abaixo sobre a dinâmica de uma partícula e assinale as verdadeiras.<br/><br/><ul><li>(I) Sempre que a força resultante for nula, não há forças atuando sobre a partícula.</li><li>(II) Durante um intervalo de tempo em que a força resultante sobre uma partícula é nula, ela está em repouso ou em movimento retilíneo uniforme.</li><li>(III) Em um movimento circular uniforme, a força resultante é nula, pois o módulo da velocidade linear é constante.</li><li>(IV) A força normal e a força peso formam um par de ação e reação.</li><li>(V) As forças de um par de ação e reação atuam sempre sobre partículas diferentes.</li></ul>`
+			text: `Considere as assertativas abaixo sobre a dinâmica de uma partícula e assinale as verdadeiras.<br/><br/><ol type='I'><li>Sempre que a força resultante for nula, não há forças atuando sobre a partícula.</li><li>Durante um intervalo de tempo em que a força resultante sobre uma partícula é nula, ela está em repouso ou em movimento retilíneo uniforme.</li><li>Em um movimento circular uniforme, a força resultante é nula, pois o módulo da velocidade linear é constante.</li><li>A força normal e a força peso formam um par de ação e reação.</li><li>As forças de um par de ação e reação atuam sempre sobre partículas diferentes.</li></ol>`
 		},
 		alternatives: [
 			{
@@ -523,7 +523,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: `Considere as assertativas abaixo sobre a dinâmica de uma partícula e assinale as verdadeiras.<br/><br/><ul><li>(I) Sempre que a força resultante for nula, não há forças atuando sobre a partícula.</li><li>(II) A força normal e a força peso formam um par de ação e reação.</li><li>(III) As duas primeiras leis de Newton são válidas apenas em referenciais inerciais.</li><li>(IV) As forças de um par de ação e reação atuam sempre sobre partículas diferentes.</li><li>(V) Em um movimento circular uniforme, a força resultante é nula, pois o módulo da velocidade linear é constante. </li></ul>`
+			text: `Considere as assertativas abaixo sobre a dinâmica de uma partícula e assinale as verdadeiras.<br/><br/><ol type='I'><li>Sempre que a força resultante for nula, não há forças atuando sobre a partícula.</li><li>A força normal e a força peso formam um par de ação e reação.</li><li>As duas primeiras leis de Newton são válidas apenas em referenciais inerciais.</li><li>As forças de um par de ação e reação atuam sempre sobre partículas diferentes.</li><li>Em um movimento circular uniforme, a força resultante é nula, pois o módulo da velocidade linear é constante. </li></ol>`
 		},
 		alternatives: [
 			{
@@ -1695,7 +1695,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes nesse mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\psi_1(x_1)\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado <em>não</em> pode ser $\psi_1(x_1)\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser </li></ul><br/>$$\frac{1}{\sqrt{2}} \left[\psi_1(x_1)\psi_2(x_2) + \psi_2(x_1)\psi_1(x_2)\right].$$<br/>Apenas estão corretas as afirmações`
+			text: String.raw`Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes nesse mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ol type='I'><li>A parte espacial da função de onda do sistema no estado fundamental é $\psi_1(x_1)\psi_1(x_2)$.</li><li>A parte espacial da função de onda do sistema no 1º estado excitado <em>não</em> pode ser $\psi_1(x_1)\psi_2(x_2)$.</li><li>A parte espacial da função de onda do sistema no 1º estado excitado pode ser </li></ol><br/>$$\frac{1}{\sqrt{2}} \left[\psi_1(x_1)\psi_2(x_2) + \psi_2(x_1)\psi_1(x_2)\right].$$<br/>Apenas estão corretas as afirmações`
 		},
 		alternatives: [
 			{
@@ -1731,7 +1731,7 @@ export default <Question[]>[
 		},
 		questionNumber: 7,
 		statement: {
-			text: String.raw`Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes neste mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ul><li>I. A parte espacial da função de onda do sistema no estado fundamental é $\psi_1(x_1)\psi_1(x_2)$.</li><li>II. A parte espacial da função de onda do sistema no 1º estado excitado pode ser $\psi_1(x_1)\psi_2(x_2)$.</li><li>III. A parte espacial da função de onda do sistema no 1º estado excitado pode ser</li></ul><br/>$$\frac{1}{\sqrt{2}} \left[\psi_1(x_1)\psi_2(x_2) + \psi_2(x_1)\psi_1(x_2)\right].$$<br/>Apenas estão corretas as afirmações`
+			text: String.raw`Quando um poço de potencial infinito contém apenas 1 elétron, suas autoenergias são $E_n$, com $n=1,2,3,...$ e $E_1 < E_2 < E_3 < ...$, enquanto suas respectivas autofunções são $\psi_n(x)$. Vamos analisar um sistema de 2 elétrons não interagentes neste mesmo poço. Denotando como $x_1$ e $x_2$ as coordenadas espaciais do sistema de 2 elétrons, considere as afirmações abaixo.<br/><br/><ol type='I'><li>A parte espacial da função de onda do sistema no estado fundamental é $\psi_1(x_1)\psi_1(x_2)$.</li><li>A parte espacial da função de onda do sistema no 1º estado excitado pode ser $\psi_1(x_1)\psi_2(x_2)$.</li><li>A parte espacial da função de onda do sistema no 1º estado excitado pode ser</li></ol><br/>$$\frac{1}{\sqrt{2}} \left[\psi_1(x_1)\psi_2(x_2) + \psi_2(x_1)\psi_1(x_2)\right].$$<br/>Apenas estão corretas as afirmações`
 		},
 		alternatives: [
 			{
@@ -1767,7 +1767,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ dos elétrons é $\langle J^2 \rangle = 15\hbar^2/4$, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li></ul><br/>Apenas estão corretas as afirmações:`
+			text: String.raw`Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ol type='I'><li>Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ dos elétrons é $\langle J^2 \rangle = 15\hbar^2/4$, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li></ol><br/>Apenas estão corretas as afirmações:`
 		},
 		alternatives: [
 			{
@@ -1803,7 +1803,7 @@ export default <Question[]>[
 		},
 		questionNumber: 8,
 		statement: {
-			text: String.raw`Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ul><li>I. Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>II. Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>III. Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ é $\langle J^2 \rangle = 15\hbar^2/4$, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li></ul><br/>Apenas estão corretas as afirmações:`
+			text: String.raw`Sobre experimentos do tipo Stern-Gerlach, feitos com campos magnéticos tipicamente acessíveis em laboratório, considere as afirmações abaixo.<br/><br/><ol type='I'><li>Se usarmos um feixe de átomos de hidrogênio no estado fundamental, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li><li>Se usarmos um feixe de átomos de hélio no estado fundamental, o feixe se divide em 4 feixes após atravessar a região com campo magnético.</li><li>Se usarmos um feixe de átomos cujo valor esperado do quadrado do momento angular total $J$ é $\langle J^2 \rangle = 15\hbar^2/4$, o feixe se divide em 2 feixes após atravessar a região com campo magnético.</li></ol><br/>Apenas estão corretas as afirmações:`
 		},
 		alternatives: [
 			{
@@ -1920,7 +1920,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Considere uma partícula num poço de potencial quadrado infinito unidimensional, denotando-se por $E_n$ os seus possíveis autovalores de energia e por $\psi_n$ as correspondentes autofunções. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ul><li>I. Se o sistema é descrito pela função de onda $\psi_1$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição não varia no tempo.</li><li>II. Se o sistema é descrito pela função de onda $\frac{1}{\sqrt{2}}(\psi_1 + \psi_2)$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>III. A <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia mais rapidamente no tempo se a função de onda em $t = 0$ for $\frac{1}{\sqrt{2}}(\psi_2 + \psi_3)$ do que se ela for $\frac{1}{\sqrt{2}}(\psi_1 - \psi_4)$. </li></ul>`
+			text: String.raw`Considere uma partícula num poço de potencial quadrado infinito unidimensional, denotando-se por $E_n$ os seus possíveis autovalores de energia e por $\psi_n$ as correspondentes autofunções. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ol type='I'><li>Se o sistema é descrito pela função de onda $\psi_1$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição não varia no tempo.</li><li>Se o sistema é descrito pela função de onda $\frac{1}{\sqrt{2}}(\psi_1 + \psi_2)$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>A <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia mais rapidamente no tempo se a função de onda em $t = 0$ for $\frac{1}{\sqrt{2}}(\psi_2 + \psi_3)$ do que se ela for $\frac{1}{\sqrt{2}}(\psi_1 - \psi_4)$. </li></ol>`
 		},
 		alternatives: [
 			{
@@ -1959,7 +1959,7 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Considere uma partícula num poço de potencial quadrado infinito unidimensional, denotando-se por $E_n$ os seus possíveis autovalores de energia e por $\psi_n$ as correspondentes autofunções. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ul><li>I. Se o sistema é descrito pela função de onda $\psi_1$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>II. Se o sistema é descrito pela função de onda $\frac{1}{\sqrt{2}}(\psi_1 + \psi_2)$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>III. A <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia mais rapidamente no tempo se a função de onda em $t = 0$ for $\frac{1}{\sqrt{2}}(\psi_1 - \psi_4)$ do que se ela for $\frac{1}{\sqrt{2}}(\psi_2 + \psi_3)$.</li></ul>`
+			text: String.raw`Considere uma partícula num poço de potencial quadrado infinito unidimensional, denotando-se por $E_n$ os seus possíveis autovalores de energia e por $\psi_n$ as correspondentes autofunções. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ol type='I'><li>Se o sistema é descrito pela função de onda $\psi_1$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>Se o sistema é descrito pela função de onda $\frac{1}{\sqrt{2}}(\psi_1 + \psi_2)$ no instante $t = 0$, então a <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia no tempo.</li><li>A <em>densidade de probabilidade</em> de encontrar a partícula em uma determinada posição varia mais rapidamente no tempo se a função de onda em $t = 0$ for $\frac{1}{\sqrt{2}}(\psi_1 - \psi_4)$ do que se ela for $\frac{1}{\sqrt{2}}(\psi_2 + \psi_3)$.</li></ol>`
 		},
 		alternatives: [
 			{
@@ -1998,7 +1998,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Um sistema com momento angular $\hat{J}$ é descrito pelo Hamiltoniano<br/><br/>$$\hat{H} = \alpha \left(\hat{J}_x^2 + \hat{J}_y^2\right) + \beta\hat{J}_z^2 \text{,}$$<br/>onde $\hat{J}_x$, $\hat{J}_y$ e $\hat{J}_z$ são as componentes cartesianas do momento angular e $\alpha$ e $\beta$ são constantes positivas, com $\beta > \alpha$. Na notação usual, o conjunto dos autoestados comuns a $\hat{J}^2$ e $\hat{J}_z$ é $\{\ket{j,m}\}$, com $j(j + 1)\hbar^2$ e $m\hbar$ como autovalores, respectivamente. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ul><li>I. Os possíveis autovalores de energia do sistema são $[\alpha j(j + 1) + (\beta - \alpha) m^2] \hbar^2$.</li><li>II. O valor médio de $\hat{J}_x$ no autoestado com maior energia é $0$.</li><li>III. $\hat{J}_x$ e $\hat{J}_z$ são observáveis compatíveis. </li></ul>`
+			text: String.raw`Um sistema com momento angular $\hat{J}$ é descrito pelo Hamiltoniano<br/><br/>$$\hat{H} = \alpha \left(\hat{J}_x^2 + \hat{J}_y^2\right) + \beta\hat{J}_z^2 \text{,}$$<br/>onde $\hat{J}_x$, $\hat{J}_y$ e $\hat{J}_z$ são as componentes cartesianas do momento angular e $\alpha$ e $\beta$ são constantes positivas, com $\beta > \alpha$. Na notação usual, o conjunto dos autoestados comuns a $\hat{J}^2$ e $\hat{J}_z$ é $\{\ket{j,m}\}$, com $j(j + 1)\hbar^2$ e $m\hbar$ como autovalores, respectivamente. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ol type='I'><li>Os possíveis autovalores de energia do sistema são $[\alpha j(j + 1) + (\beta - \alpha) m^2] \hbar^2$.</li><li>O valor médio de $\hat{J}_x$ no autoestado com maior energia é $0$.</li><li>$\hat{J}_x$ e $\hat{J}_z$ são observáveis compatíveis. </li></ol>`
 		},
 		alternatives: [
 			{
@@ -2037,7 +2037,7 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Um sistema com momento angular $\hat{J}$ é descrito pelo Hamiltoniano<br/><br/>$$\hat{H} = \alpha \left(\hat{J}_x^2 + \hat{J}_y^2\right) + \beta\hat{J}_z^2 \text{,}$$<br/>onde $\hat{J}_x$, $\hat{J}_y$ e $\hat{J}_z$ são as componentes cartesianas do momento angular e $\alpha$ e $\beta$ são constantes positivas, com $\beta > \alpha$. Na notação usual, o conjunto dos autoestados comuns a $\hat{J}^2$ e $\hat{J}_z$ é $\{\ket{j,m}\}$, com $j(j + 1)\hbar^2$ e $m\hbar$ como autovalores, respectivamente. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ul><li>I. Os possíveis autovalores de energia do sistema são $[\alpha j(j + 1) + (\beta - \alpha) m^2] \hbar^2$.</li><li>II. O valor médio de $\hat{J}_x$ em qualquer um dos autoestados $\ket{j,m}$ é $0$.</li><li>III. $J^2$ e $\hat{J}_z$ são observáveis compatíveis. </li></ul>`
+			text: String.raw`Um sistema com momento angular $\hat{J}$ é descrito pelo Hamiltoniano<br/><br/>$$\hat{H} = \alpha \left(\hat{J}_x^2 + \hat{J}_y^2\right) + \beta\hat{J}_z^2 \text{,}$$<br/>onde $\hat{J}_x$, $\hat{J}_y$ e $\hat{J}_z$ são as componentes cartesianas do momento angular e $\alpha$ e $\beta$ são constantes positivas, com $\beta > \alpha$. Na notação usual, o conjunto dos autoestados comuns a $\hat{J}^2$ e $\hat{J}_z$ é $\{\ket{j,m}\}$, com $j(j + 1)\hbar^2$ e $m\hbar$ como autovalores, respectivamente. Analise as três afirmações abaixo sobre esse sistema e escolha a alternativa correta.<br/><br/><ol type='I'><li>Os possíveis autovalores de energia do sistema são $[\alpha j(j + 1) + (\beta - \alpha) m^2] \hbar^2$.</li><li>O valor médio de $\hat{J}_x$ em qualquer um dos autoestados $\ket{j,m}$ é $0$.</li><li>$J^2$ e $\hat{J}_z$ são observáveis compatíveis. </li></ol>`
 		},
 		alternatives: [
 			{
