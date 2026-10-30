@@ -7,6 +7,7 @@ import data20242 from './2024-2';
 import data20251 from './2025-1';
 import data20252 from './2025-2';
 import data20261 from './2026-1';
+import data20262 from './2026-2';
 
 /**
  * All available exam questions from all datasets.
@@ -19,5 +20,6 @@ export const allQuestions: Question[] = [
 	...data20242,
 	...data20251,
 	...data20252,
-	...data20261
+	...data20261,
+	...data20262
 ];
