@@ -1,4 +1,4 @@
-import type { Announcement } from '$lib/models/announcement';
+import type { Announcement } from '#lib/models/announcement.ts';
 
 /**
  * External announcements shown at the top of the landing page.

@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { ExamQuestion } from '$lib/models/exam';
-	import { QuestionAlternative } from '$lib/models/question';
+	import type { ExamQuestion } from '#lib/models/exam.ts';
+	import { QuestionAlternative } from '#lib/models/question.ts';
 	import LaTeX from './LaTeX.svelte';
 	import HelpSection from './HelpSection.svelte';
-	import { imageInversionStore } from '$lib/stores/imageInversion';
-	import { themeStore } from '$lib/stores/theme';
-	import { getImagePath } from '$lib/utils/helpers';
+	import { imageInversionStore } from '#lib/stores/imageInversion.ts';
+	import { themeStore } from '#lib/stores/theme.ts';
+	import { getImagePath } from '#lib/utils/helpers.ts';
 	import { Eye, EyeOff, PaintBucket, ClipboardList, RefreshCw } from '@lucide/svelte';
 	import ReportError from './ReportError.svelte';
-	import { BASE_URL } from '$lib/variables';
+	import { BASE_URL } from '#lib/variables.ts';
 
 	interface Props {
 		question: ExamQuestion;

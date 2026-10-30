@@ -1,6 +1,6 @@
-import { Area } from '$lib/models/area';
-import { QuestionAlternative, Version, type Question } from '$lib/models/question';
-import { tagsForArea, TagEM, TagMC, TagFM, TagMQ, TagTD, TagFE } from '$lib/models/subareas';
+import { Area } from '#lib/models/area.ts';
+import { QuestionAlternative, Version, type Question } from '#lib/models/question.ts';
+import { tagsForArea, TagEM, TagMC, TagFM, TagMQ, TagTD, TagFE } from '#lib/models/subareas.ts';
 
 const defaultData = {
 	year: 2023,

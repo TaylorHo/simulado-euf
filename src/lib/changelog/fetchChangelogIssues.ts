@@ -1,5 +1,5 @@
-import type { GitHubIssue } from '$lib/models/githubIssue';
-import { GITHUB_ISSUES_API_URL } from '$lib/variables';
+import type { GitHubIssue } from '#lib/models/githubIssue.ts';
+import { GITHUB_ISSUES_API_URL } from '#lib/variables.ts';
 
 type RawIssue = {
 	title: string;

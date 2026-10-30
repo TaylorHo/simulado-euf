@@ -1,5 +1,5 @@
-import { announcements } from '$lib/data/announcements';
-import { getLatestActiveAnnouncement } from '$lib/announcements/helpers';
+import { announcements } from '#lib/data/announcements.ts';
+import { getLatestActiveAnnouncement } from '#lib/announcements/helpers.ts';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {

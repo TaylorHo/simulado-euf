@@ -1,6 +1,6 @@
-import { Area, AreaLabels } from '$lib/models/area';
-import type { ExamQuestion } from '$lib/models/exam';
-import { BASE_URL } from '$lib/variables';
+import { Area, AreaLabels } from '#lib/models/area.ts';
+import type { ExamQuestion } from '#lib/models/exam.ts';
+import { BASE_URL } from '#lib/variables.ts';
 
 /**
  * Get the full path for an image asset

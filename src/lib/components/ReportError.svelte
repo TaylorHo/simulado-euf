@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { AreaLabels } from '$lib/models/area';
-	import type { ExamQuestion } from '$lib/models/exam';
-	import { formatQuestionNumberLabel } from '$lib/utils/questionBank';
-	import { isTauriMobileApp } from '$lib/utils/platform';
-	import { BUG_REPORT_API_URL } from '$lib/variables';
+	import { AreaLabels } from '#lib/models/area.ts';
+	import type { ExamQuestion } from '#lib/models/exam.ts';
+	import { formatQuestionNumberLabel } from '#lib/utils/questionBank.ts';
+	import { isTauriMobileApp } from '#lib/utils/platform.ts';
+	import { BUG_REPORT_API_URL } from '#lib/variables.ts';
 	import Modal from './Modal.svelte';
 	import { Flag } from '@lucide/svelte';
 

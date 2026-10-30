@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { flashcardStore } from '$lib/stores/flashcard.svelte';
-	import { QuestionAlternative, Version } from '$lib/models/question';
-	import Footer from '$lib/components/Footer.svelte';
-	import Question from '$lib/components/Question.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import type { ExamQuestion } from '$lib/models/exam';
-	import { Area, AreaLabels } from '$lib/models/area';
-	import { getSubareasForArea, type Subarea as SubareaType } from '$lib/models/subareas';
-	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
-	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
-	import { isTauriMobileApp } from '$lib/utils/platform';
+	import { flashcardStore } from '#lib/stores/flashcard.svelte.ts';
+	import { QuestionAlternative, Version } from '#lib/models/question.ts';
+	import Footer from '#lib/components/Footer.svelte';
+	import Question from '#lib/components/Question.svelte';
+	import Modal from '#lib/components/Modal.svelte';
+	import type { ExamQuestion } from '#lib/models/exam.ts';
+	import { Area, AreaLabels } from '#lib/models/area.ts';
+	import { getSubareasForArea, type Subarea as SubareaType } from '#lib/models/subareas.ts';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '#lib/variables.ts';
+	import { adsPreferenceStore } from '#lib/stores/ads.svelte.ts';
+	import { isTauriMobileApp } from '#lib/utils/platform.ts';
 	import { Settings } from '@lucide/svelte';
-	import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
-	import { formatQuestionNumberLabel, hasAlternateVersion } from '$lib/utils/questionBank';
+	import { generateQuestionId, parseQuestionId } from '#lib/services/identifiers.ts';
+	import { formatQuestionNumberLabel, hasAlternateVersion } from '#lib/utils/questionBank.ts';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -60,7 +60,7 @@
 			const question = flashcardStore.getRandomQuestion();
 			if (question) {
 				goto(`/flashcard/${flashcardStore.getQuestionId(question)}`, {
-					replaceState: true
+					replace: true
 				});
 			}
 			isLoading = false;
@@ -180,7 +180,7 @@
 		if (!currentExamQuestion && flashcardStore.hasAvailableQuestions) {
 			const question = flashcardStore.getRandomQuestion();
 			if (question) {
-				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replaceState: true });
+				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replace: true });
 			}
 		}
 	}
@@ -211,14 +211,14 @@
 		flashcardStore.resetHistory();
 		const question = flashcardStore.getRandomQuestion();
 		if (question) {
-			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replaceState: true });
+			goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, { replace: true });
 		}
 	}
 
 	function handleSwitchVersion() {
 		if (!alternateVersionId) return;
 		flashcardStore.loadQuestionById(alternateVersionId);
-		goto(`/flashcard/${alternateVersionId}/`, { replaceState: true });
+		goto(`/flashcard/${alternateVersionId}/`, { replace: true });
 	}
 </script>
 

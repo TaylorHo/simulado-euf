@@ -2,8 +2,8 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { flashcardStore } from '$lib/stores/flashcard.svelte';
-	import { BASE_URL } from '$lib/variables';
+	import { flashcardStore } from '#lib/stores/flashcard.svelte.ts';
+	import { BASE_URL } from '#lib/variables.ts';
 
 	onMount(() => {
 		// Check if there's an old-style query parameter
@@ -11,16 +11,16 @@
 
 		if (questionId) {
 			// Redirect to new path-based URL
-			goto(`/flashcard/${questionId}/`, { replaceState: true });
+			goto(`/flashcard/${questionId}/`, { replace: true });
 		} else {
 			// No ID provided, get a random question and redirect
 			const question = flashcardStore.getRandomQuestion();
 			if (question) {
 				goto(`/flashcard/${flashcardStore.getQuestionId(question)}/`, {
-					replaceState: true
+					replace: true
 				});
 			} else {
-				goto('/flashcard/sem-resultados/', { replaceState: true });
+				goto('/flashcard/sem-resultados/', { replace: true });
 			}
 		}
 	});

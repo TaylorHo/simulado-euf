@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { BASE_URL } from '$lib/variables';
-	import { buildExamPath } from '$lib/utils/helpers';
-	import { examStore } from '$lib/stores/exam.svelte';
-	import { themeStore } from '$lib/stores/theme';
-	import Modal from '$lib/components/Modal.svelte';
-	import QRScanner from '$lib/components/QRScanner.svelte';
+	import { BASE_URL } from '#lib/variables.ts';
+	import { buildExamPath } from '#lib/utils/helpers.ts';
+	import { examStore } from '#lib/stores/exam.svelte.ts';
+	import { themeStore } from '#lib/stores/theme.ts';
+	import Modal from '#lib/components/Modal.svelte';
+	import QRScanner from '#lib/components/QRScanner.svelte';
 	import { BookOpen, ChevronRight, FileText, Moon, QrCode, Sun } from '@lucide/svelte';
-	import AnnouncementCallout from '$lib/components/AnnouncementCallout.svelte';
-	import { fetchLatestAnnouncement } from '$lib/announcements/fetchLatestAnnouncement';
-	import type { Announcement } from '$lib/models/announcement';
+	import AnnouncementCallout from '#lib/components/AnnouncementCallout.svelte';
+	import { fetchLatestAnnouncement } from '#lib/announcements/fetchLatestAnnouncement.ts';
+	import type { Announcement } from '#lib/models/announcement.ts';
 	import { onMount } from 'svelte';
 
 	let showQRModal = $state(false);

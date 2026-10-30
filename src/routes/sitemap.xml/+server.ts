@@ -1,7 +1,7 @@
-import { allQuestions } from '$lib/data';
-import { generateQuestionId } from '$lib/services/identifiers';
+import { allQuestions } from '#lib/data/index.ts';
+import { generateQuestionId } from '#lib/services/identifiers.ts';
 import type { RequestHandler } from './$types';
-import { BASE_URL } from '$lib/variables';
+import { BASE_URL } from '#lib/variables.ts';
 
 export const GET: RequestHandler = async () => {
 	// Generate flashcard URLs

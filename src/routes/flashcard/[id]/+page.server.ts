@@ -1,5 +1,5 @@
-import { allQuestions } from '$lib/data';
-import { generateQuestionId } from '$lib/services/identifiers';
+import { allQuestions } from '#lib/data/index.ts';
+import { generateQuestionId } from '#lib/services/identifiers.ts';
 import type { EntryGenerator } from './$types';
 
 // Generate all possible flashcard IDs for prerendering

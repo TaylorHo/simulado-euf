@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Area, AreaLabels } from '$lib/models/area';
-	import { countActiveFilters } from '$lib/utils/questionBank';
+	import { Area, AreaLabels } from '#lib/models/area.ts';
+	import { countActiveFilters } from '#lib/utils/questionBank.ts';
 	import FilterMultiSelect from './FilterMultiSelect.svelte';
 	import { Filter, Search, X } from '@lucide/svelte';
 

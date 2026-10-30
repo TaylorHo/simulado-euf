@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { GeneratedExam } from '$lib/models/exam';
-	import { groupQuestionsByArea } from '$lib/utils/helpers';
+	import type { GeneratedExam } from '#lib/models/exam.ts';
+	import { groupQuestionsByArea } from '#lib/utils/helpers.ts';
 	import { ChevronDown, ChevronUp } from '@lucide/svelte';
 
 	interface Props {

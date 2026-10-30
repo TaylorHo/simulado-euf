@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import QRCode from 'qrcode';
-	import { buildExamUrl } from '$lib/utils/helpers';
+	import { buildExamUrl } from '#lib/utils/helpers.ts';
 
 	interface Props {
 		examId: string;

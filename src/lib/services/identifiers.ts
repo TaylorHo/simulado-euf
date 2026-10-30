@@ -1,4 +1,4 @@
-import { type Question, type QuestionIdentifier } from '$lib/models/question';
+import { type Question, type QuestionIdentifier } from '#lib/models/question.ts';
 
 /**
  * Generate a unique identifier for a single question

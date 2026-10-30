@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { examStore } from '$lib/stores/exam.svelte';
-	import { AreaLabels } from '$lib/models/area';
-	import LaTeX from '$lib/components/LaTeX.svelte';
+	import { examStore } from '#lib/stores/exam.svelte.ts';
+	import { AreaLabels } from '#lib/models/area.ts';
+	import LaTeX from '#lib/components/LaTeX.svelte';
 	import QRCode from 'qrcode';
-	import { isMobileWeb, isTauriMobileApp } from '$lib/utils/platform';
+	import { isMobileWeb, isTauriMobileApp } from '#lib/utils/platform.ts';
 
 	let examId = $state<string | null>(null);
 	let examSeed = $state<string | null>(null);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Question } from '$lib/models/question';
+	import type { Question } from '#lib/models/question.ts';
 	import HelpSectionInner from './HelpSectionInner.svelte';
 
 	interface Props {

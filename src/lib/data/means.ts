@@ -1,4 +1,4 @@
-import type { SemesterMean } from '$lib/models/exam';
+import type { SemesterMean } from '#lib/models/exam.ts';
 
 export const SemesterMeans: SemesterMean[] = [
 	{

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { ExamScore } from '$lib/models/score';
-	import { getPercentageColor } from '$lib/utils/helpers';
+	import type { ExamScore } from '#lib/models/score.ts';
+	import { getPercentageColor } from '#lib/utils/helpers.ts';
 
 	interface Props {
 		score: ExamScore;

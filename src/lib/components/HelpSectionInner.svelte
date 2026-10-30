@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { AreaLabels } from '$lib/models/area';
-	import type { Question } from '$lib/models/question';
+	import { AreaLabels } from '#lib/models/area.ts';
+	import type { Question } from '#lib/models/question.ts';
 
 	interface Props {
 		question: Question;

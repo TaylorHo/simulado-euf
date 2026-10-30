@@ -1,19 +1,19 @@
-import { Area, AreaLabels, AreaQuestionCounts } from '$lib/models/area';
-import type { ExamQuestion, GeneratedExam } from '$lib/models/exam';
+import { Area, AreaLabels, AreaQuestionCounts } from '#lib/models/area.ts';
+import type { ExamQuestion, GeneratedExam } from '#lib/models/exam.ts';
 import {
 	QuestionAlternative,
 	Version,
 	type Question,
 	type QuestionIdentifier
-} from '$lib/models/question';
-import { generateIdentifier, parseIdentifier } from '$lib/services/identifiers';
-import { allQuestions } from '$lib/data';
-import type { AreaScore, ExamScore, TagScore } from '$lib/models/score';
+} from '#lib/models/question.ts';
+import { generateIdentifier, parseIdentifier } from '#lib/services/identifiers.ts';
+import { allQuestions } from '#lib/data/index.ts';
+import type { AreaScore, ExamScore, TagScore } from '#lib/models/score.ts';
 import {
 	shuffleAlternatives,
 	generateRandomSeed,
 	getDefaultSeed
-} from '$lib/services/alternativeSorting';
+} from '#lib/services/alternativeSorting.ts';
 
 export interface ExamConfig {
 	yearSemesters?: string[];

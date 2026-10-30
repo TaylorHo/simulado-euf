@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Area } from '$lib/models/area';
-	import { allQuestions } from '$lib/data';
-	import Footer from '$lib/components/Footer.svelte';
-	import QuestionFilters from '$lib/components/QuestionFilters.svelte';
-	import QuestionListItem from '$lib/components/QuestionListItem.svelte';
-	import { filterQuestions, getAvailableExams } from '$lib/utils/questionBank';
-	import { generateQuestionId } from '$lib/services/identifiers';
-	import { BASE_URL } from '$lib/variables';
+	import { Area } from '#lib/models/area.ts';
+	import { allQuestions } from '#lib/data/index.ts';
+	import Footer from '#lib/components/Footer.svelte';
+	import QuestionFilters from '#lib/components/QuestionFilters.svelte';
+	import QuestionListItem from '#lib/components/QuestionListItem.svelte';
+	import { filterQuestions, getAvailableExams } from '#lib/utils/questionBank.ts';
+	import { generateQuestionId } from '#lib/services/identifiers.ts';
+	import { BASE_URL } from '#lib/variables.ts';
 	import { Info, Library } from '@lucide/svelte';
 
 	const PAGE_SIZE = 25;

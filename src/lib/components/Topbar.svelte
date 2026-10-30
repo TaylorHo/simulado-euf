@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { GITHUB_REPO_URL } from '$lib/variables';
+	import { GITHUB_REPO_URL } from '#lib/variables.ts';
 	import { Moon, Sun } from '@lucide/svelte';
 	import GitHub from './icons/GitHub.svelte';
 

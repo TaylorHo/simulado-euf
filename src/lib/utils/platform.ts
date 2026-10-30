@@ -1,4 +1,4 @@
-import { browser } from '$app/environment';
+import { browser } from '$app/env';
 import { isTauri } from '@tauri-apps/api/core';
 
 export interface PlatformState {
@@ -31,6 +31,7 @@ function detectMobileDevice(): boolean {
 	}
 
 	const userAgent = navigator.userAgent.toLowerCase();
+
 	const mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
 
 	return (

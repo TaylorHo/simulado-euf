@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Area } from '$lib/models/area';
-	import type { Question } from '$lib/models/question';
-	import { Subarea } from '$lib/models/subareas';
-	import { generateQuestionId } from '$lib/services/identifiers';
-	import { getImagePath } from '$lib/utils/helpers';
-	import { getQuestionTitle } from '$lib/utils/questionBank';
+	import { Area } from '#lib/models/area.ts';
+	import type { Question } from '#lib/models/question.ts';
+	import { Subarea } from '#lib/models/subareas.ts';
+	import { generateQuestionId } from '#lib/services/identifiers.ts';
+	import { getImagePath } from '#lib/utils/helpers.ts';
+	import { getQuestionTitle } from '#lib/utils/questionBank.ts';
 	import LaTeX from './LaTeX.svelte';
 	import { ExternalLink } from '@lucide/svelte';
 

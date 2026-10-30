@@ -1,9 +1,9 @@
-import { ExamService, type ExamConfig } from '$lib/services/exam';
-import type { GeneratedExam } from '$lib/models/exam';
-import type { QuestionAlternative } from '$lib/models/question';
-import type { ExamScore } from '$lib/models/score';
-import { browser } from '$app/environment';
-import { parseSeed } from '$lib/services/alternativeSorting';
+import { ExamService, type ExamConfig } from '#lib/services/exam.ts';
+import type { GeneratedExam } from '#lib/models/exam.ts';
+import type { QuestionAlternative } from '#lib/models/question.ts';
+import type { ExamScore } from '#lib/models/score.ts';
+import { browser } from '$app/env';
+import { parseSeed } from '#lib/services/alternativeSorting.ts';
 
 interface ExamProgress {
 	examId: string;

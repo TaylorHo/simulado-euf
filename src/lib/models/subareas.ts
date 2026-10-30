@@ -1,4 +1,4 @@
-import { Area } from '$lib/models/area';
+import { Area } from '#lib/models/area.ts';
 
 export const Subarea = {
 	[Area.Eletromagnetismo]: {

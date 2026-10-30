@@ -197,8 +197,8 @@ function generateTypeScriptFile(questions, edition) {
 		})
 		.join(',\n');
 
-	return `import { Area } from '$lib/models/area';
-import { QuestionAlternative, Version, type Question } from '$lib/models/question';
+	return `import { Area } from '#lib/models/area.ts';
+import { QuestionAlternative, Version, type Question } from '#lib/models/question.ts';
 
 const defaultData = {
 \tyear: ${edition.year},

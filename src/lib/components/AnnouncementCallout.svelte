@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Announcement } from '$lib/models/announcement';
+	import type { Announcement } from '#lib/models/announcement.ts';
 	import { ExternalLink, Megaphone } from '@lucide/svelte';
 
 	let {

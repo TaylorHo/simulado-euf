@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
-	import { BASE_URL } from '$lib/variables';
+	import Footer from '#lib/components/Footer.svelte';
+	import { BASE_URL } from '#lib/variables.ts';
 	import { ShieldCheck } from '@lucide/svelte';
 </script>
 

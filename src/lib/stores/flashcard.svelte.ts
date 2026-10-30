@@ -1,9 +1,9 @@
-import { allQuestions } from '$lib/data';
-import type { Question, Alternative } from '$lib/models/question';
-import { QuestionAlternative } from '$lib/models/question';
-import { Area } from '$lib/models/area';
-import { getSubareasForArea, type Subarea } from '$lib/models/subareas';
-import { generateQuestionId, parseQuestionId } from '$lib/services/identifiers';
+import { allQuestions } from '#lib/data/index.ts';
+import type { Question, Alternative } from '#lib/models/question.ts';
+import { QuestionAlternative } from '#lib/models/question.ts';
+import { Area } from '#lib/models/area.ts';
+import { getSubareasForArea, type Subarea } from '#lib/models/subareas.ts';
+import { generateQuestionId, parseQuestionId } from '#lib/services/identifiers.ts';
 
 interface FlashcardQuestion extends Question {
 	shuffledAlternatives: Alternative[];

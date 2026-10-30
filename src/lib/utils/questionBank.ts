@@ -1,6 +1,6 @@
-import { allQuestions } from '$lib/data';
-import { Area, AreaLabels } from '$lib/models/area';
-import { Version, type Question } from '$lib/models/question';
+import { allQuestions } from '#lib/data/index.ts';
+import { Area, AreaLabels } from '#lib/models/area.ts';
+import { Version, type Question } from '#lib/models/question.ts';
 
 export function getExamKey(question: Pick<Question, 'year' | 'semester'>): string {
 	return `${question.year}-${question.semester}`;

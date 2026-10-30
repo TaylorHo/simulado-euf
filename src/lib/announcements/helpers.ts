@@ -1,4 +1,4 @@
-import type { Announcement } from '$lib/models/announcement';
+import type { Announcement } from '#lib/models/announcement.ts';
 
 function toDateString(date: Date): string {
 	return date.toISOString().slice(0, 10);

@@ -3,30 +3,30 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
-	import { examStore } from '$lib/stores/exam.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import ConfirmDialog from '$lib/components/ConfirmDialog.svelte';
-	import QRScanner from '$lib/components/QRScanner.svelte';
-	import ExamQRCode from '$lib/components/ExamQRCode.svelte';
-	import Question from '$lib/components/Question.svelte';
-	import ExamNavigation from '$lib/components/ExamNavigation.svelte';
-	import ScoreDisplay from '$lib/components/ScoreDisplay.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import QuickFillModal from '$lib/components/QuickFillModal.svelte';
+	import { examStore } from '#lib/stores/exam.svelte.ts';
+	import Modal from '#lib/components/Modal.svelte';
+	import ConfirmDialog from '#lib/components/ConfirmDialog.svelte';
+	import QRScanner from '#lib/components/QRScanner.svelte';
+	import ExamQRCode from '#lib/components/ExamQRCode.svelte';
+	import Question from '#lib/components/Question.svelte';
+	import ExamNavigation from '#lib/components/ExamNavigation.svelte';
+	import ScoreDisplay from '#lib/components/ScoreDisplay.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import QuickFillModal from '#lib/components/QuickFillModal.svelte';
 	import { Plus, Share2, Printer, ClipboardList, Grid3x3, Settings2 } from '@lucide/svelte';
-	import { allQuestions } from '$lib/data';
-	import type { ExamConfig } from '$lib/services/exam';
+	import { allQuestions } from '#lib/data/index.ts';
+	import type { ExamConfig } from '#lib/services/exam.ts';
 	import {
 		groupQuestionsByArea,
 		buildExamUrl,
 		buildExamPath,
 		tryLoadExam
-	} from '$lib/utils/helpers';
-	import { isTauriMobileApp, isMobileWeb } from '$lib/utils/platform';
+	} from '#lib/utils/helpers.ts';
+	import { isTauriMobileApp, isMobileWeb } from '#lib/utils/platform.ts';
 	import { openUrl } from '@tauri-apps/plugin-opener';
-	import type { QuestionAlternative } from '$lib/models/question';
-	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '$lib/variables';
-	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
+	import type { QuestionAlternative } from '#lib/models/question.ts';
+	import { ADSENSE_CLIENT_ID, AD_SLOTS, ADS_ENABLED, BASE_URL } from '#lib/variables.ts';
+	import { adsPreferenceStore } from '#lib/stores/ads.svelte.ts';
 	let isTauriMobile = $state(false);
 	let isMobileWebBrowser = $state(false);
 	let isLoading = $state(true);
@@ -114,7 +114,7 @@
 		configError = null;
 		examStore.resetExam();
 		showStartScreen = true;
-		goto('/simulado', { replaceState: true });
+		goto('/simulado', { replace: true });
 	}
 
 	onMount(() => {
@@ -153,7 +153,7 @@
 					() => {
 						alert('Erro ao carregar simulado. Código inválido.');
 						examStore.resetExam();
-						goto('/simulado', { replaceState: true });
+						goto('/simulado', { replace: true });
 						isLoading = false;
 					}
 				);
@@ -161,7 +161,7 @@
 		} else if (wantsNew) {
 			examStore.resetExam();
 			showStartScreen = true;
-			goto('/simulado', { replaceState: true });
+			goto('/simulado', { replace: true });
 			isLoading = false;
 		} else if (savedExamData && examStore.currentExam?.id !== savedExamData.examId) {
 			tryLoadExam(
@@ -169,7 +169,7 @@
 				(id) => {
 					examStore.loadExamFromIdentifier(id);
 					const urlSeed = examStore.currentSeed ?? savedExamData.seed;
-					goto(buildExamPath(id, '/simulado', urlSeed), { replaceState: true });
+					goto(buildExamPath(id, '/simulado', urlSeed), { replace: true });
 					isLoading = false;
 				},
 				() => {
@@ -185,7 +185,7 @@
 			if (examStore.currentExam && examStore.currentSeed !== undefined) {
 				if (!page.url.searchParams.get('seed')) {
 					goto(buildExamPath(examStore.currentExam.id, '/simulado', examStore.currentSeed), {
-						replaceState: true
+						replace: true
 					});
 				}
 			}
@@ -199,7 +199,7 @@
 			examStore.loadExamFromIdentifier(savedExamData.examId);
 			const seed = examStore.currentSeed ?? savedExamData.seed;
 			goto(buildExamPath(savedExamData.examId, '/simulado', seed), {
-				replaceState: true
+				replace: true
 			});
 		}
 		showProgressWarning = false;
@@ -263,7 +263,7 @@
 			try {
 				examStore.loadExamFromIdentifier(id, seed);
 				showLoadModal = false;
-				goto(buildExamPath(id, '/simulado', seed), { replaceState: true });
+				goto(buildExamPath(id, '/simulado', seed), { replace: true });
 			} catch (error) {
 				alert('Código inválido. Por favor, tente novamente.');
 				console.error(error);

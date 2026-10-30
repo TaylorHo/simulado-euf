@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { buildExamPath } from '$lib/utils/helpers';
-	import { isTauriMobileApp } from '$lib/utils/platform';
-	import { examStore } from '$lib/stores/exam.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import QRScanner from '$lib/components/QRScanner.svelte';
-	import MobileLanding from '$lib/components/MobileLanding.svelte';
-	import AnnouncementCallout from '$lib/components/AnnouncementCallout.svelte';
-	import { announcements } from '$lib/data/announcements';
-	import { getLatestActiveAnnouncement } from '$lib/announcements/helpers';
+	import { buildExamPath } from '#lib/utils/helpers.ts';
+	import { isTauriMobileApp } from '#lib/utils/platform.ts';
+	import { examStore } from '#lib/stores/exam.svelte.ts';
+	import Footer from '#lib/components/Footer.svelte';
+	import Modal from '#lib/components/Modal.svelte';
+	import QRScanner from '#lib/components/QRScanner.svelte';
+	import MobileLanding from '#lib/components/MobileLanding.svelte';
+	import AnnouncementCallout from '#lib/components/AnnouncementCallout.svelte';
+	import { announcements } from '#lib/data/announcements.ts';
+	import { getLatestActiveAnnouncement } from '#lib/announcements/helpers.ts';
 	import {
 		FileText,
 		Target,
@@ -31,8 +31,8 @@
 		BUY_ME_A_COFFEE_URL,
 		GITHUB_REPO_URL,
 		GITHUB_SPONSORS_URL
-	} from '$lib/variables';
-	import GitHub from '$lib/components/icons/GitHub.svelte';
+	} from '#lib/variables.ts';
+	import GitHub from '#lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
 	let isTauriMobile = $state(false);

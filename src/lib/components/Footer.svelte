@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Heart, HeartCrack } from '@lucide/svelte';
-	import { ADS_ENABLED, BASE_URL } from '$lib/variables';
-	import { adsPreferenceStore } from '$lib/stores/ads.svelte';
-	import { isTauriMobileApp } from '$lib/utils/platform';
+	import { ADS_ENABLED, BASE_URL } from '#lib/variables.ts';
+	import { adsPreferenceStore } from '#lib/stores/ads.svelte.ts';
+	import { isTauriMobileApp } from '#lib/utils/platform.ts';
 	import GitHub from './icons/GitHub.svelte';
 	import LinkedIn from './icons/LinkedIn.svelte';
 

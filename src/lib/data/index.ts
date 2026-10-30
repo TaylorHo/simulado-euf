@@ -1,4 +1,4 @@
-import type { Question } from '$lib/models/question';
+import type { Question } from '#lib/models/question.ts';
 
 import data20231 from './2023-1';
 import data20232 from './2023-2';

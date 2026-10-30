@@ -1,5 +1,5 @@
-import type { Area } from '$lib/models/area';
-import type { Subarea } from '$lib/models/subareas';
+import type { Area } from '#lib/models/area.ts';
+import type { Subarea } from '#lib/models/subareas.ts';
 
 export interface Statement {
 	text?: string;

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
+	import Footer from '#lib/components/Footer.svelte';
 	import {
 		fetchChangelogIssues,
 		type ChangelogLoadResult
-	} from '$lib/changelog/fetchChangelogIssues';
-	import { BASE_URL, GITHUB_REPO_URL } from '$lib/variables';
+	} from '#lib/changelog/fetchChangelogIssues.ts';
+	import { BASE_URL, GITHUB_REPO_URL } from '#lib/variables.ts';
 	import { Bug, CirclePlus, ExternalLink, Sparkles, Wrench } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 

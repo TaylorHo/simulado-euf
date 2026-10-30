@@ -1,4 +1,4 @@
-import type { Alternative, QuestionIdentifier } from '$lib/models/question';
+import type { Alternative, QuestionIdentifier } from '#lib/models/question.ts';
 
 /**
  * Generate a random seed for shuffling

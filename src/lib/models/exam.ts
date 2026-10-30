@@ -1,4 +1,4 @@
-import { QuestionAlternative, type Question } from '$lib/models/question';
+import { QuestionAlternative, type Question } from '#lib/models/question.ts';
 
 export interface ExamQuestion extends Question {
 	selected: QuestionAlternative | null;

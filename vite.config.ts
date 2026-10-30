@@ -1,10 +1,29 @@
+import { default as vercelAdapter } from '@sveltejs/adapter-vercel';
+import { default as staticAdapter } from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 const host = process.env.TAURI_DEV_HOST;
 
+function getAdapter(adapter: string) {
+	switch (adapter) {
+		case 'mobile':
+			return staticAdapter({ fallback: 'index.html' });
+
+		default:
+			return vercelAdapter();
+	}
+}
+
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [
+		sveltekit({
+			preprocess: vitePreprocess(),
+			adapter: getAdapter(process.env.TARGET || 'web'),
+			paths: { origin: 'https://euf.hoffmann.io' }
+		})
+	],
 
 	// prevent vite from obscuring rust errors
 	clearScreen: false,
@@ -32,16 +51,10 @@ export default defineConfig({
 	envPrefix: ['VITE_', 'TAURI_ENV_*'],
 	build: {
 		// Tauri uses Chromium on Windows and WebKit on macOS and Linux
-		target: process.env.TAURI_ENV_PLATFORM == 'windows' ? 'chrome105' : 'safari13',
+		target: process.env.TAURI_ENV_PLATFORM == 'windows' ? 'chrome105' : 'safari14.1',
 		// don't minify for debug builds
 		minify: !process.env.TAURI_ENV_DEBUG ? 'esbuild' : false,
 		// produce sourcemaps for debug builds
 		sourcemap: !!process.env.TAURI_ENV_DEBUG
-	},
-	esbuild: {
-		supported: {
-			// Needed because it wouldn't compile otherwise. It seems that Safari <14.1 doesn't support destructuring, so we would need to change our target from 'safari13' to 'safari14', but we want to support older versions of Safari.
-			destructuring: true
-		}
 	}
 });

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { X } from '@lucide/svelte';
-	import { examStore } from '$lib/stores/exam.svelte';
-	import { isTauriMobileApp } from '$lib/utils/platform';
+	import { examStore } from '#lib/stores/exam.svelte.ts';
+	import { isTauriMobileApp } from '#lib/utils/platform.ts';
 
 	let isTauriMobile = $state(false);
 
