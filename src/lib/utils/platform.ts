@@ -36,7 +36,8 @@ function detectMobileDevice(): boolean {
 
 	return (
 		mobileKeywords.some((keyword) => userAgent.includes(keyword)) ||
-		window.matchMedia?.('(max-width: 768px)').matches
+		// iPadOS reports a Macintosh UA but has touch points
+		(userAgent.includes('macintosh') && navigator.maxTouchPoints > 1)
 	);
 }
 
