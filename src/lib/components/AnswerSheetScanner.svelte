@@ -14,8 +14,8 @@
 	let { onScanned, onCancel }: Props = $props();
 
 	const MAX_SIDE = 2400;
-	// Dev-only: download the rectified page with the configured grid overlay.
-	const canDebug = import.meta.env.DEV;
+	// Temporary: enabled in production too for testing. Restore to `import.meta.env.DEV` (or remove) later.
+	const canDebug = true;
 	let debug = $state(false);
 	const omr = $derived(new OMR(OMR_DATA, { ...OMR_CONFIG, debug }));
 
