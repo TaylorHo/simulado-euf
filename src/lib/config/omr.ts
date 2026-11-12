@@ -5,13 +5,13 @@ import type { QuestionAlternative } from '#lib/models/question.ts';
 export const OMR_DATA: Data = {
 	cornerPattern: 'bullseye',
 	cornerSize: 100,
-	answersBlocks: [172, 990].map((startX) => ({
+	answersBlocks: [174, 990].map((startX) => ({
 		startX,
-		startY: 336,
+		startY: 337.5,
 		rows: 20,
 		columns: 5,
 		width: 50,
-		gaps: { columns: 21, rows: 30 }
+		gaps: { columns: 21, rows: 29.75 }
 	}))
 };
 
@@ -20,7 +20,7 @@ export const OMR_CONFIG: AdvancedConfig = {
 	aspectRatio: 0.75,
 	rotation: 0,
 	orientation: 'auto',
-	fillThreshold: 0.5,
+	fillThreshold: 0.6,
 	debug: false,
 	nccThreshold: 0.75,
 	// zero-based position of the printed alternative (0 = A)
