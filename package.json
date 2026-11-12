@@ -68,6 +68,7 @@
 		"@tauri-apps/plugin-opener": "^2.7.2",
 		"jsqr": "^1.4.0",
 		"katex": "^0.19.1",
+		"omrjs": "^2.0.0",
 		"posthog-js": "^1.447.5",
 		"qrcode": "^1.5.4"
 	},

@@ -31,6 +31,9 @@ importers:
       katex:
         specifier: ^0.19.1
         version: 0.19.1
+      omrjs:
+        specifier: ^2.0.0
+        version: 2.0.0
       posthog-js:
         specifier: ^1.447.5
         version: 1.447.5
@@ -1966,6 +1969,10 @@ packages:
   obug@2.2.1:
     resolution: {integrity: sha512-XrsrhT5sybtKI6wakr2SPOlGZWWYbUXZ7a0jT8/QOeAPau+1X/bSegNe5YR75oJmEZQbKningirmGOEJCIk61Q==}
     engines: {node: '>=12.20.0'}
+
+  omrjs@2.0.0:
+    resolution: {integrity: sha512-4Mcr6uQddl3UB0Tazl+SL2s2Y+0uXVoIOqdHU2vueXZxlIo/sZX1/AyBGL9dgstSdGlvjtI6a+tE/Hw/Zu7mvg==}
+    engines: {node: '>=20'}
 
   onetime@6.0.0:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
@@ -4403,6 +4410,8 @@ snapshots:
   object-assign@4.1.1: {}
 
   obug@2.2.1: {}
+
+  omrjs@2.0.0: {}
 
   onetime@6.0.0:
     dependencies:

@@ -7,6 +7,9 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import Modal from '#lib/components/Modal.svelte';
 	import QRScanner from '#lib/components/QRScanner.svelte';
+	import AnswerInputMethodModal from '#lib/components/AnswerInputMethodModal.svelte';
+	import AnswerSheetScanner from '#lib/components/AnswerSheetScanner.svelte';
+	import type { ScanResult } from '#lib/config/omr.ts';
 	import MobileLanding from '#lib/components/MobileLanding.svelte';
 	import AnnouncementCallout from '#lib/components/AnnouncementCallout.svelte';
 	import { announcements } from '#lib/data/announcements.ts';
@@ -35,6 +38,9 @@
 	import GitHub from '#lib/components/icons/GitHub.svelte';
 
 	let showQRModal = $state(false);
+	let showMethodModal = $state(false);
+	let showSheetModal = $state(false);
+	let scannedExam = $state<{ id: string; seed: string } | null>(null);
 	let isTauriMobile = $state(false);
 
 	const latestAnnouncement = getLatestActiveAnnouncement(announcements);
@@ -60,11 +66,19 @@
 		const seed = url.searchParams.get('seed');
 		showQRModal = false;
 		if (id && seed) {
-			examStore.prepareQrLoad(id, seed);
-			goto(buildExamPath(id, '/simulado', seed));
+			scannedExam = { id, seed };
+			showMethodModal = true;
 		} else {
 			alert('Código inválido. Por favor, tente novamente.');
 		}
+	}
+
+	function startExam(scan?: ScanResult) {
+		if (!scannedExam) return;
+		const { id, seed } = scannedExam;
+		showMethodModal = showSheetModal = false;
+		examStore.prepareQrLoad(id, seed, scan?.answers);
+		goto(buildExamPath(id, '/simulado', seed));
 	}
 </script>
 
@@ -325,6 +339,34 @@
 
 	<Modal open={showQRModal} title="Escanear QR Code" onClose={() => (showQRModal = false)}>
 		<QRScanner onScan={handleQRScan} />
+	</Modal>
+
+	<Modal
+		open={showMethodModal}
+		title="Escolher Método de Preenchimento"
+		onClose={() => (showMethodModal = false)}
+	>
+		<AnswerInputMethodModal
+			onSelectManual={() => startExam()}
+			onSelectPhoto={() => {
+				showMethodModal = false;
+				showSheetModal = true;
+			}}
+		/>
+	</Modal>
+
+	<Modal
+		open={showSheetModal}
+		title="Escanear Folha de Respostas"
+		onClose={() => (showSheetModal = false)}
+	>
+		<AnswerSheetScanner
+			onScanned={startExam}
+			onCancel={() => {
+				showSheetModal = false;
+				showMethodModal = true;
+			}}
+		/>
 	</Modal>
 {/if}
 

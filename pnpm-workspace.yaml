@@ -1,6 +1,8 @@
 allowBuilds:
   core-js: true
   esbuild: true
+minimumReleaseAgeExclude:
+  - omrjs@2.0.0
 onlyBuiltDependencies:
   - core-js
   - esbuild
