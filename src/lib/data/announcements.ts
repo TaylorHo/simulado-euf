@@ -6,6 +6,14 @@ import type { Announcement } from '#lib/models/announcement.ts';
  */
 export const announcements: Announcement[] = [
 	{
+		id: 'omrjs-implemented',
+		title: 'Agora você pode fazer a leitura do gabarito pelo celular',
+		message:
+			'Você pode escanear a folha de respostas do simulado com seu celular e ter suas respostas corrigidas automaticamente. Basta carregar um simulado pelo QR Code.',
+		startDate: '2026-11-13',
+		endDate: '2026-11-13'
+	},
+	{
 		id: '2026-2-exam-date',
 		title: 'A prova está próxima!',
 		message:
