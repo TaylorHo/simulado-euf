@@ -23,18 +23,31 @@ class ExamStore {
 	showResults = $state(false);
 	examScore = $state<ExamScore | null>(null);
 	currentSeed = $state<number | undefined>(undefined);
-	private qrLoad: { id: string; seed: string } | null = null;
+	private qrLoad: {
+		id: string;
+		seed: string;
+		scanned?: Array<QuestionAlternative | null>;
+	} | null = null;
 
-	prepareQrLoad(id: string, seed: string) {
-		this.qrLoad = { id, seed };
+	prepareQrLoad(id: string, seed: string, scanned?: Array<QuestionAlternative | null>) {
+		this.qrLoad = { id, seed, scanned };
 	}
 
-	consumeQrLoad(examId: string): { seed: string } | null {
+	consumeQrLoad(examId: string) {
 		if (this.qrLoad?.id !== examId) return null;
 
-		const { seed } = this.qrLoad;
+		const { seed, scanned } = this.qrLoad;
 		this.qrLoad = null;
-		return { seed };
+		return { seed, scanned };
+	}
+
+	/** Applies printed positions (0 = A) from a scanned sheet, mapping to the shuffled alternatives. */
+	applyScannedAnswers(printed: Array<QuestionAlternative | null>) {
+		printed.forEach((position, index) => {
+			const alternative =
+				position === null ? null : this.currentExam?.questions[index]?.alternatives[position];
+			if (alternative) this.selectAnswer(index, alternative.number);
+		});
 	}
 
 	private saveProgress() {

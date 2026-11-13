@@ -27,3 +27,4 @@ merged_native_libs.zip
 *.log
 .scannerwork/
 .eslintcache
+*.tgz

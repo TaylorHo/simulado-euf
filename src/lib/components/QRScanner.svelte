@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
 	import jsQR from 'jsqr';
+	import { startCamera, stopStream } from '#lib/utils/camera.ts';
 
 	interface Props {
 		onScan: (data: URL) => void;
@@ -24,13 +25,8 @@
 
 	async function initCamera() {
 		try {
-			stream = await navigator.mediaDevices.getUserMedia({
-				video: { facingMode: 'environment' }
-			});
-
 			if (videoElement) {
-				videoElement.srcObject = stream;
-				await videoElement.play();
+				stream = await startCamera(videoElement);
 				isReady = true;
 				requestAnimationFrame(tick);
 			}
@@ -46,9 +42,7 @@
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId);
 		}
-		if (stream) {
-			stream.getTracks().forEach((track) => track.stop());
-		}
+		stopStream(stream);
 	});
 
 	function tick() {

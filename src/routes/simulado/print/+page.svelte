@@ -155,7 +155,14 @@
 		{/each}
 
 		<div class="answer-sheet">
+			{#each ['tl', 'tr', 'bl', 'br'] as corner (corner)}
+				<img src="/assets/marker.png" alt="" class="omr-marker {corner}" />
+			{/each}
 			<h2>Folha de Respostas</h2>
+			<p class="answer-hint">
+				Ao fotografar esta folha, mostre os quatro cantos da página e mantenha o dispositivo firme
+				para obter uma boa foto.
+			</p>
 
 			<div class="answer-grid">
 				{#each examStore.currentExam.questions, index (index)}
@@ -386,6 +393,36 @@
 		position: relative;
 		min-height: calc(297mm - 40mm);
 		box-sizing: border-box;
+	}
+
+	.omr-marker {
+		position: absolute;
+		width: 12mm;
+		height: 12mm;
+	}
+	.omr-marker.tl {
+		top: 0;
+		left: 0;
+	}
+	.omr-marker.tr {
+		top: 0;
+		right: 0;
+	}
+	.omr-marker.bl {
+		bottom: 0;
+		left: 0;
+	}
+	.omr-marker.br {
+		bottom: 0;
+		right: 0;
+	}
+
+	.answer-hint {
+		margin: 0 auto 10px;
+		max-width: 120mm;
+		font-size: 10pt;
+		text-align: center;
+		color: #000000 !important;
 	}
 
 	.answer-sheet h2 {

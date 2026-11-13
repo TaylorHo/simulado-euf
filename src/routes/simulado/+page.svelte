@@ -13,7 +13,9 @@
 	import ScoreDisplay from '#lib/components/ScoreDisplay.svelte';
 	import Footer from '#lib/components/Footer.svelte';
 	import QuickFillModal from '#lib/components/QuickFillModal.svelte';
-	import { Plus, Share2, Printer, ClipboardList, Grid3x3, Settings2 } from '@lucide/svelte';
+	import AnswerSheetScanner from '#lib/components/AnswerSheetScanner.svelte';
+	import type { ScanResult } from '#lib/config/omr.ts';
+	import { Plus, Share2, Printer, ClipboardList, Grid3x3, Camera, Settings2 } from '@lucide/svelte';
 	import { allQuestions } from '#lib/data/index.ts';
 	import type { ExamConfig } from '#lib/services/exam.ts';
 	import {
@@ -37,6 +39,7 @@
 	let showNewExamConfirm = $state(false);
 	let showReview = $state(false);
 	let showQuickFillModal = $state(false);
+	let showScanModal = $state(false);
 	let showMobileWebPrintWarning = $state(false);
 	let showTauriMobilePrintWarning = $state(false);
 	let examId = $state<string | null>(null);
@@ -104,6 +107,12 @@
 		showQuickFillModal = false;
 	}
 
+	function handleScanned({ answers }: ScanResult) {
+		examStore.applyScannedAnswers(answers);
+		showScanModal = false;
+		showQuickFillModal = true; // review and complete what the scan missed
+	}
+
 	function openQuickFillModal() {
 		showQuickFillModal = true;
 	}
@@ -140,6 +149,7 @@
 					(id) => {
 						if (qrLoad) {
 							examStore.loadFreshExamFromIdentifier(id, qrLoad.seed);
+							if (qrLoad.scanned) examStore.applyScannedAnswers(qrLoad.scanned);
 						} else {
 							examStore.loadExamFromIdentifier(id, seed);
 						}
@@ -585,6 +595,15 @@
 
 					<button
 						class="compact-action-btn export"
+						onclick={() => (showScanModal = true)}
+						title="Preencher com foto"
+					>
+						<Camera size={14} />
+						<span>Foto</span>
+					</button>
+
+					<button
+						class="compact-action-btn export"
 						onclick={openQuickFillModal}
 						title="Preenchimento rápido"
 					>
@@ -619,6 +638,14 @@
 {#if showQuickFillModal}
 	<QuickFillModal onClose={closeQuickFillModal} />
 {/if}
+
+<Modal
+	open={showScanModal}
+	title="Escanear Folha de Respostas"
+	onClose={() => (showScanModal = false)}
+>
+	<AnswerSheetScanner onScanned={handleScanned} onCancel={() => (showScanModal = false)} />
+</Modal>
 
 <Modal open={showLoadModal} title="Carregar Simulado" onClose={() => (showLoadModal = false)}>
 	<QRScanner onScan={handleQRScan} />
